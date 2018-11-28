@@ -5,30 +5,33 @@ using UnityEngine;
 public class FollowMovement : MonoBehaviour {
 
     [SerializeField] bool targetIsRadius = false;
-    public float limitUp    =    5;
-    public float limitDown  =    -5;
-    public float limitLeft  =    -5;
-    public float limitRight =    5;
-    public float speed = 3;
-    public float offSetX = 0;
-    public float offSetY = 2;
-    public float offSetZ = -10;
+    public float limitUp    =    0;
+    public float limitDown  =    0;
+    public float limitLeft  =    0;
+    public float limitRight =    0;
+    public float speed      =    3;
+    public float offSetX    =    0;
+    public float offSetY    =    2;
+    public float offSetZ    =   -10;
 
-    [SerializeField] int randoTimer = 10;
+    //[SerializeField] int randoTimer = 10;
 
-    GameObject player;
-    EnemyAdvanceMovement eam;
-    Vector3 rando = Vector3.zero;
-    int useRando = 0;
+    public GameObject player;
+
+    //EnemyAdvanceMovement eam;
+    //Vector3 rando = Vector3.zero;
+    //int useRando = 0;
 
     void Awake ()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
-        if(GetComponentInChildren<EnemyAdvanceMovement>())
+        //player = GameObject.FindGameObjectWithTag("Player");
+        player = GameObject.Find("Player");
+
+        /*if(GetComponentInChildren<EnemyAdvanceMovement>())
         {
             eam = GetComponentInChildren<EnemyAdvanceMovement>();
-        }
-	}
+        }*/
+    }
 	
 	void FixedUpdate ()
     {
@@ -48,7 +51,7 @@ public class FollowMovement : MonoBehaviour {
             target.y += offSetY;
             target.z = offSetZ;
         }
-        if (limitUp == 0 && limitUp == limitDown && limitRight == limitLeft)
+        if (limitUp == 0 && limitDown == 0 && limitRight == 0 && limitLeft == 0)
         {
 
         }
@@ -72,7 +75,10 @@ public class FollowMovement : MonoBehaviour {
                 target.x = limitLeft;
             }
         }
-        if (!eam || !eam.attacking)
+
+        transform.position = Vector3.Lerp(transform.position, target, speed * Time.fixedDeltaTime);
+
+        /*if (!eam || !eam.attacking)
         {
             if (eam && useRando >= randoTimer)
             {
@@ -81,6 +87,6 @@ public class FollowMovement : MonoBehaviour {
             }
             transform.position = Vector3.Lerp(transform.position, target + rando, speed * Time.fixedDeltaTime);
             useRando++;
-        }
+        }*/
     }
 }

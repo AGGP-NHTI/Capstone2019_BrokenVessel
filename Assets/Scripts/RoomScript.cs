@@ -9,16 +9,6 @@ public class RoomScript : MonoBehaviour {
     public float Lright = 0;
     public float Lleft = 0;
 
-    // Use this for initialization
-    void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.GetComponent<PlayerMovement>())

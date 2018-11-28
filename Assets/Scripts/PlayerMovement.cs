@@ -6,16 +6,15 @@ public class PlayerMovement : MonoBehaviour {
 
     public float maxSpeed = 7;
     public float jumpForce = 50;
-    bool facingRight = true;
-    int airTime = 0;
-    int airLimit = 30;
 
+    bool facingRight = true;
     bool grounded = false;
     bool hitHead = false;
     bool isJumping = false;
+
     public Transform groundCheck;
-    public Transform headCheck;
     public LayerMask realGround;
+
     Vector2 boxCheckSize = new Vector2(.9f, .25f);
 
     Rigidbody2D rig;
@@ -27,20 +26,13 @@ public class PlayerMovement : MonoBehaviour {
     }
 
 
-    void FixedUpdate()
+    void Update()
     //protected override void ComputeVelocity()
     {
-        float move = 0;
-        //float move = Input.GetAxis("Horizontal");
-
-        if (Input.GetKey(KeyCode.A))
-        {
-            move = -1;
-        }
-        if (Input.GetKey(KeyCode.D))
-        {
-            move = 1;
-        }
+        Vector2 processVelocity = rig.velocity;
+        //float move = 0;
+        float move = Input.GetAxis("Horizontal");
+        processVelocity.x = move * maxSpeed;
 
         if (move > 0 && facingRight != true)
         {
@@ -54,41 +46,37 @@ public class PlayerMovement : MonoBehaviour {
         }
 
         grounded = Physics2D.OverlapBox(groundCheck.position, boxCheckSize, 0, realGround);
-        hitHead = Physics2D.OverlapBox(headCheck.position, boxCheckSize, 0, realGround);
-        //Debug.Log("g" + grounded);
-        //Debug.Log("h" + hitHead);
 
-        if (Input.GetKey(KeyCode.Space) && grounded)
+        if (Input.GetKeyDown(KeyCode.Space) && grounded)
         {
             isJumping = true;
-            rig.AddForce(Vector2.up * jumpForce);
+            processVelocity.y = jumpForce;
         }
-        if (Input.GetKey(KeyCode.Space) && isJumping && hitHead == false)
+        if (Input.GetKeyUp(KeyCode.Space))
         {
-            airTime++;
-            //Debug.Log(airTime);
-            if (airTime <= 15)
-            {
-                rig.AddForce(Vector2.up * jumpForce * 2);
-            }
-            else if (airTime < 30)
-            {
-                rig.AddForce(Vector2.up * jumpForce);
-            }
-            if (airTime >= airLimit)
-            {
-                rig.velocity = new Vector2(move * maxSpeed, 0);
-                isJumping = false;
-            }
-        }
-        else if (!Input.GetKey(KeyCode.Space) || hitHead || airTime > airLimit || isJumping == false)
-        {
-            airTime = 0;
             isJumping = false;
-            rig.AddForce(Vector2.down * jumpForce * 2);
+            if (processVelocity.y > 0)
+            {
+                processVelocity.y /= 3f;
+            }
+        }
+        if (!grounded)
+        {
+            processVelocity.y -= 18f * Time.deltaTime;
+
+            if (processVelocity.y < -18f)
+            {
+                processVelocity.y = -18f;
+            }
+        }
+        else if(!isJumping)
+        {
+            isJumping = false;
+            processVelocity.y = 0;
         }
 
-        rig.velocity = new Vector2(move * maxSpeed, 0);
+        rig.velocity = new Vector2(move * maxSpeed, processVelocity.y);
+
     }
 
     void Flip()
