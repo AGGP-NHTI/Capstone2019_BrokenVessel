@@ -4,13 +4,19 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour {
 
+    PlayerData data;
+
     public float maxSpeed = 7;
     public float jumpForce = 50;
 
     bool facingRight = true;
     bool grounded = false;
-    bool hitHead = false;
     bool isJumping = false;
+
+    bool dashUnlocked = false;
+    bool dashing = false;
+    int dashFrames = 0;
+    float dashTimer = 0f;
 
     public Transform groundCheck;
     public LayerMask realGround;
@@ -21,16 +27,16 @@ public class PlayerMovement : MonoBehaviour {
 
     void Start()
     {
+        data = GetComponent<PlayerData>();
         rig = GetComponent<Rigidbody2D>();
-    
+
+        dashUnlocked = data.dash;
     }
 
 
     void Update()
-    //protected override void ComputeVelocity()
     {
         Vector2 processVelocity = rig.velocity;
-        //float move = 0;
         float move = Input.GetAxis("Horizontal");
         processVelocity.x = move * maxSpeed;
 
@@ -49,6 +55,7 @@ public class PlayerMovement : MonoBehaviour {
 
         if (Input.GetKeyDown(KeyCode.Space) && grounded)
         {
+            dashTimer = 0f;
             isJumping = true;
             processVelocity.y = jumpForce;
         }
@@ -76,6 +83,28 @@ public class PlayerMovement : MonoBehaviour {
         }
 
         rig.velocity = new Vector2(move * maxSpeed, processVelocity.y);
+        if (dashUnlocked && Input.GetKeyDown(KeyCode.Q) && !dashing && dashTimer <= 0)
+        {
+            Debug.Log("DASH!");
+            dashing = true;
+            dashFrames = 7;
+            dashTimer = .5f;
+        }
+        if(dashTimer > 0 && grounded)
+        {
+            dashTimer -= Time.deltaTime;
+        }
+        if (dashing)
+        {
+            dashFrames--;
+            rig.velocity = Vector2.right * transform.localScale.x * 25;
+            Debug.Log("DASH FRAME: " + dashFrames);
+            if (dashFrames == 0)
+            {
+                Debug.Log("DASH END");
+                dashing = false;
+            }
+        }
 
     }
 
@@ -85,4 +114,5 @@ public class PlayerMovement : MonoBehaviour {
         theScale.x *= -1;
         transform.localScale = theScale;
     }
+
 }
