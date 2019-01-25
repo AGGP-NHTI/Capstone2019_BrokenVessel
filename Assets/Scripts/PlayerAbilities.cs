@@ -50,35 +50,42 @@ public class PlayerAbilities : MonoBehaviour {
         grounded = Physics2D.OverlapBox(groundCheck.position, boxCheckSize, 0, realGround);
 
         //---DASH---------------------------------------------------------------------------------
-        if (Input.GetKeyDown(KeyCode.Space) && grounded)
+        if (dashUnlocked)
         {
-            dashTimer = 0f;
-        }
-        if (dashUnlocked && Input.GetKeyDown(KeyCode.Q) && !dashing && dashTimer <= 0)
-        {
-            Debug.Log("DASH!");
-            dashing = true;
-            dashFrames = 7;
-            dashTimer = .5f;
-        }
-        if (dashTimer > 0 && grounded)
-        {
-            dashTimer -= Time.deltaTime;
-        }
-        if (dashing)
-        {
-            dashFrames--;
-            rig.velocity = Vector2.right * transform.localScale.x * 25;
-            Debug.Log("DASH FRAME: " + dashFrames);
-            if (dashFrames == 0)
+            if (Input.GetKeyDown(KeyCode.Space) && grounded)
             {
-                Debug.Log("DASH END");
-                dashing = false;
+                dashTimer = 0f;
+            }
+            if (Input.GetKeyDown(KeyCode.Q) && !dashing && dashTimer <= 0)
+            {
+                dashing = true;
+                dashFrames = 7;
+                dashTimer = .5f;
+            }
+            if (dashTimer > 0 && grounded)
+            {
+                dashTimer -= Time.deltaTime;
+            }
+            if (dashing)
+            {
+                dashFrames--;
+                rig.velocity = Vector2.right * transform.localScale.x * 25;
+                if (dashFrames == 0)
+                {
+                    dashing = false;
+                }
             }
         }
         //----------------------------------------------------------------------------------------
-        //---WALL CLIMB---------------------------------------------------------------------------
+        //---WALL GRAB----------------------------------------------------------------------------
+        if (wallGrabUnlocked)
+        {
+            if (!grounded)
+            {
 
+            }
+
+        }
         //----------------------------------------------------------------------------------------
     }
 }
