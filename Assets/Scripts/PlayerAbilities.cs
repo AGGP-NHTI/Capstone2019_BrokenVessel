@@ -14,6 +14,17 @@ public class PlayerAbilities : MonoBehaviour {
     bool chargeJumpUnlocked = false;
     int shipControlUnlocked = 0;
 
+    [SerializeField] Transform groundCheck;
+    public LayerMask realGround;
+    Vector2 boxCheckSize = new Vector2(.9f, .25f);
+    bool grounded = true;
+
+    bool dashing = false;
+    int dashFrames = 0;
+    float dashTimer = 0f;
+
+    bool wallclimb = false;
+
     Rigidbody2D rig;
 
     private void Start()
@@ -21,6 +32,7 @@ public class PlayerAbilities : MonoBehaviour {
         //data = GameObject.Find("DATA").GetComponent<PlayerData>();
         data = GetComponent<PlayerData>();
 
+        dashUnlocked = data.dash;
         wallGrabUnlocked = data.wallGrab;
         grappleHookUnlocked = data.grappleHook;
         phaseUnlocked = data.phase;
@@ -35,6 +47,38 @@ public class PlayerAbilities : MonoBehaviour {
 
     private void Update()
     {
+        grounded = Physics2D.OverlapBox(groundCheck.position, boxCheckSize, 0, realGround);
 
+        //---DASH---------------------------------------------------------------------------------
+        if (Input.GetKeyDown(KeyCode.Space) && grounded)
+        {
+            dashTimer = 0f;
+        }
+        if (dashUnlocked && Input.GetKeyDown(KeyCode.Q) && !dashing && dashTimer <= 0)
+        {
+            Debug.Log("DASH!");
+            dashing = true;
+            dashFrames = 7;
+            dashTimer = .5f;
+        }
+        if (dashTimer > 0 && grounded)
+        {
+            dashTimer -= Time.deltaTime;
+        }
+        if (dashing)
+        {
+            dashFrames--;
+            rig.velocity = Vector2.right * transform.localScale.x * 25;
+            Debug.Log("DASH FRAME: " + dashFrames);
+            if (dashFrames == 0)
+            {
+                Debug.Log("DASH END");
+                dashing = false;
+            }
+        }
+        //----------------------------------------------------------------------------------------
+        //---WALL CLIMB---------------------------------------------------------------------------
+
+        //----------------------------------------------------------------------------------------
     }
 }

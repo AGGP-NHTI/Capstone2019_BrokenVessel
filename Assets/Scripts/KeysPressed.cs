@@ -19,7 +19,9 @@ public class KeysPressed : MonoBehaviour {
     {
         if (Input.GetKey("w") == true)
         {
-            wHeld = false;
+            wHeld = true;
+
+            //dash();
         }
         else
         {
