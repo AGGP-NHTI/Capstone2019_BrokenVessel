@@ -2,31 +2,31 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Spear : MonoBehaviour {
+public class Dagger : MonoBehaviour {
 
     public GameObject HitBox;
     public GameObject WorldScriptManager;
 
     // Use this for initialization
     void Start () {
-        //StartCoroutine(SwingSpear());
-    }
+		
+	}
 	
 	// Update is called once per frame
 	void Update () {
-		if(Input.GetKeyDown("e"))
+        if (Input.GetKeyDown("space"))
         {
-            StartCoroutine(SwingSpear());
+            StartCoroutine(SwingDagger());
         }
-	}
+    }
 
-    public IEnumerator SwingSpear()
+    public IEnumerator SwingDagger()
     {
         yield return new WaitForSeconds(.1f);
         HitBox.GetComponent<BoxCollider>().enabled = true;
-        gameObject.transform.Translate(2f, 0, 0);
+        gameObject.transform.Translate(1f, 0, 0);
         yield return new WaitForSeconds(.1f);
-        gameObject.transform.Translate(-2f, 0, 0);
+        gameObject.transform.Translate(-1f, 0, 0);
         HitBox.GetComponent<BoxCollider>().enabled = false;
         //StartCoroutine(SwingSpear());
     }

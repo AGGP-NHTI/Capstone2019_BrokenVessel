@@ -7,6 +7,7 @@ public class Sword : MonoBehaviour {
     public GameObject Pivot;
     public GameObject HitBox;
     public GameObject WorldScriptManager;
+    public GameObject Player;
 
     // Use this for initialization
     void Start () {
@@ -23,11 +24,23 @@ public class Sword : MonoBehaviour {
 
     public IEnumerator SwingSword()
     {
-        yield return new WaitForSeconds(.1f);
-        HitBox.GetComponent<MeshCollider>().enabled = true;
-        gameObject.transform.RotateAround(Pivot.transform.position, Vector3.forward * -1, 90);
-        yield return new WaitForSeconds(.1f);
-        gameObject.transform.RotateAround(Pivot.transform.position, Vector3.forward * -1, -90);
-        HitBox.GetComponent<MeshCollider>().enabled = false;
+        if (Player.GetComponent<PlayerMovement>().facingRight)
+        {
+            yield return new WaitForSeconds(.1f);
+            HitBox.GetComponent<MeshCollider>().enabled = true;
+            gameObject.transform.RotateAround(Pivot.transform.position, Vector3.forward * -1, 90);
+            yield return new WaitForSeconds(.1f);
+            gameObject.transform.RotateAround(Pivot.transform.position, Vector3.forward * -1, -90);
+            HitBox.GetComponent<MeshCollider>().enabled = false;
+        }
+        else
+        {
+            yield return new WaitForSeconds(.1f);
+            HitBox.GetComponent<MeshCollider>().enabled = true;
+            gameObject.transform.RotateAround(Pivot.transform.position, Vector3.forward, 90);
+            yield return new WaitForSeconds(.1f);
+            gameObject.transform.RotateAround(Pivot.transform.position, Vector3.forward, -90);
+            HitBox.GetComponent<MeshCollider>().enabled = false;
+        }
     }
 }
