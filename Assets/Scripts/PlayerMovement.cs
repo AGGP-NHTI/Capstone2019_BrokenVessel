@@ -12,9 +12,11 @@ public class PlayerMovement : MonoBehaviour {
 
     bool facingRight = true;
     public bool grounded = false;
+    public bool facingRight = true;
     bool isJumping = false;
 
     [SerializeField] Transform groundCheck;
+    public Transform groundCheck;
     public LayerMask realGround;
 
     Vector2 boxCheckSize = new Vector2(.9f, .25f);
