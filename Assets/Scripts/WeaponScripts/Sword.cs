@@ -10,14 +10,14 @@ public class Sword : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        StartCoroutine(SwingSword());
+        //StartCoroutine(SwingSword());
     }
 	
 	// Update is called once per frame
 	void Update () {
-        if (WorldScriptManager.GetComponent<KeysPressed>().qHeld)
+        if (Input.GetKeyDown("q"))
         {
-            SwingSword();
+            StartCoroutine(SwingSword());
         }
     }
 

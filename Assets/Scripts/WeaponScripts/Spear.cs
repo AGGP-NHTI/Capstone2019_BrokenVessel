@@ -9,14 +9,14 @@ public class Spear : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        StartCoroutine(SwingSpear());
+        //StartCoroutine(SwingSpear());
     }
 	
 	// Update is called once per frame
 	void Update () {
-		if(WorldScriptManager.GetComponent<KeysPressed>().wHeld)
+		if(Input.GetKeyDown("e"))
         {
-            SwingSpear();
+            StartCoroutine(SwingSpear());
         }
 	}
 
@@ -24,9 +24,9 @@ public class Spear : MonoBehaviour {
     {
         yield return new WaitForSeconds(.1f);
         HitBox.GetComponent<BoxCollider>().enabled = true;
-        gameObject.transform.Translate(1, 0, 0);
+        gameObject.transform.Translate(1f, 0, 0);
         yield return new WaitForSeconds(.1f);
-        gameObject.transform.Translate(-1, 0, 0);
+        gameObject.transform.Translate(-1f, 0, 0);
         HitBox.GetComponent<BoxCollider>().enabled = false;
         //StartCoroutine(SwingSpear());
     }
