@@ -2,23 +2,28 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Spear : MonoBehaviour {
-
-    public GameObject HitBox;
-    public GameObject WorldScriptManager;
+public class Spear : Weapon
+{
 
     // Use this for initialization
     void Start () {
         //StartCoroutine(SwingSpear());
     }
-	
-	// Update is called once per frame
-	void Update () {
-		if(Input.GetKeyDown("e"))
+
+    // Update is called once per frame
+    public override void Update() {
+        base.Update();
+        if (HitBox == null)
         {
-            StartCoroutine(SwingSpear());
+            HitBox = GameObject.Find("SpearHitBox");
         }
-	}
+    }
+
+    public override void Attack()
+    {
+        StartCoroutine(SwingSpear());
+        base.Attack();
+    }
 
     public IEnumerator SwingSpear()
     {

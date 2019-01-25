@@ -2,22 +2,27 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Dagger : MonoBehaviour {
-
-    public GameObject HitBox;
-    public GameObject WorldScriptManager;
+public class Dagger : Weapon
+{
 
     // Use this for initialization
     void Start () {
 		
 	}
-	
-	// Update is called once per frame
-	void Update () {
-        if (Input.GetKeyDown("space"))
+
+    // Update is called once per frame
+    public override void Update () {
+        base.Update();
+        if (HitBox == null)
         {
-            StartCoroutine(SwingDagger());
+            HitBox = GameObject.Find("DaggerHitBox");
         }
+    }
+
+    public override void Attack()
+    {
+        StartCoroutine(SwingDagger());
+        base.Attack();
     }
 
     public IEnumerator SwingDagger()

@@ -704,8 +704,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02932474286dfeb47a337603dc25010e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HitBox: {fileID: 650593707}
-  WorldScriptManager: {fileID: 1291899723}
+  HitBox: {fileID: 0}
+  WorldScriptManager: {fileID: 0}
 --- !u!1 &1162112503
 GameObject:
   m_ObjectHideFlags: 0
@@ -1210,10 +1210,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7be0b630c82db94d978a3dcea378694, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Pivot: {fileID: 1181760305}
-  HitBox: {fileID: 1330163096}
-  WorldScriptManager: {fileID: 1291899723}
-  Player: {fileID: 312877405}
+  Pivot: {fileID: 0}
+  HitBox: {fileID: 0}
+  WorldScriptManager: {fileID: 0}
+  Player: {fileID: 0}
 --- !u!65 &1628021906
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1469,8 +1469,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14c22bfb1d96c4741b84900432ff3372, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HitBox: {fileID: 328249300}
-  WorldScriptManager: {fileID: 1291899723}
+  HitBox: {fileID: 0}
+  WorldScriptManager: {fileID: 0}
 --- !u!65 &2059796163
 BoxCollider:
   m_ObjectHideFlags: 0

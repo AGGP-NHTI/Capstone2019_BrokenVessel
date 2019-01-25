@@ -2,24 +2,37 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Sword : MonoBehaviour {
+public class Sword : Weapon {
 
     public GameObject Pivot;
-    public GameObject HitBox;
-    public GameObject WorldScriptManager;
     public GameObject Player;
 
     // Use this for initialization
     void Start () {
         //StartCoroutine(SwingSword());
     }
-	
-	// Update is called once per frame
-	void Update () {
-        if (Input.GetKeyDown("q"))
+
+    // Update is called once per frame
+    public override void Update () {
+        base.Update();
+        if (HitBox == null)
         {
-            StartCoroutine(SwingSword());
+            HitBox = GameObject.Find("SwordHitBox");
         }
+        if (Pivot == null)
+        {
+            Pivot = GameObject.Find("Pivot");
+        }
+        if (Player == null)
+        {
+            Player = GameObject.Find("Player");
+        }
+    }
+
+    public override void Attack()
+    {
+        StartCoroutine(SwingSword());
+        base.Attack();
     }
 
     public IEnumerator SwingSword()
