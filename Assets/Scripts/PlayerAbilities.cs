@@ -23,9 +23,15 @@ public class PlayerAbilities : MonoBehaviour {
     int dashFrames = 0;
     float dashTimer = 0f;
 
-    bool wallclimb = false;
+    public bool wallclimb = false;
+    bool collide = false;
+    bool leftCollide = false;
+    bool rightCollide = false;
 
     Rigidbody2D rig;
+    [SerializeField] Transform center;
+    [SerializeField] Transform back;
+    [SerializeField] Transform front;
 
     private void Start()
     {
@@ -42,12 +48,13 @@ public class PlayerAbilities : MonoBehaviour {
 
         rig = GetComponent<Rigidbody2D>();
 
-
     }
 
     private void Update()
     {
         grounded = Physics2D.OverlapBox(groundCheck.position, boxCheckSize, 0, realGround);
+        leftCollide = Physics2D.OverlapBox(back.position, new Vector2(.5f, 1f), 0, realGround);
+        rightCollide = Physics2D.OverlapBox(front.position, new Vector2(.5f, 1f), 0, realGround);
 
         //---DASH---------------------------------------------------------------------------------
         if (dashUnlocked)
@@ -80,11 +87,35 @@ public class PlayerAbilities : MonoBehaviour {
         //---WALL GRAB----------------------------------------------------------------------------
         if (wallGrabUnlocked)
         {
-            if (!grounded)
+            if (wallclimb)
             {
-
+                if (!Input.GetKey(KeyCode.Space))
+                {
+                    rig.velocity = Vector2.zero;
+                }
             }
+            if (!grounded && !Input.GetKey(KeyCode.Space))
+            {
+                if (rightCollide)
+                {
 
+                }
+                if(Input.GetKey(KeyCode.A))
+                {
+                    wallclimb = true;
+                }
+                if (Input.GetKey(KeyCode.D))
+                {
+                    wallclimb = true;
+                }
+                else
+                {
+                    wallclimb = false;
+                }
+            
+                Debug.Log("grab");
+            }
+            
         }
         //----------------------------------------------------------------------------------------
     }

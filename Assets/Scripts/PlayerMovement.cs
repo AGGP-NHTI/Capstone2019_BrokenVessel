@@ -5,12 +5,13 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour {
 
     PlayerData data;
+    [SerializeField] PlayerAbilities pa;
 
     public float maxSpeed = 7;
     public float jumpForce = 50;
 
     bool facingRight = true;
-    bool grounded = false;
+    public bool grounded = false;
     bool isJumping = false;
 
     [SerializeField] Transform groundCheck;
@@ -47,7 +48,7 @@ public class PlayerMovement : MonoBehaviour {
 
         grounded = Physics2D.OverlapBox(groundCheck.position, boxCheckSize, 0, realGround);
 
-        if (Input.GetKeyDown(KeyCode.Space) && grounded)
+        if (Input.GetKeyDown(KeyCode.Space) && (grounded || pa.wallclimb))
         {
             isJumping = true;
             processVelocity.y = jumpForce;
