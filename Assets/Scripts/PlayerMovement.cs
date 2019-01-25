@@ -15,11 +15,6 @@ public class PlayerMovement : MonoBehaviour {
 
     bool isJumping = false;
 
-    bool dashUnlocked = false;
-    bool dashing = false;
-    int dashFrames = 0;
-    float dashTimer = 0f;
-
     public Transform groundCheck;
     public LayerMask realGround;
 
