@@ -6,15 +6,19 @@ public class Sword : MonoBehaviour {
 
     public GameObject Pivot;
     public GameObject HitBox;
+    public GameObject WorldScriptManager;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
         StartCoroutine(SwingSword());
     }
 	
 	// Update is called once per frame
 	void Update () {
-        
+        if (WorldScriptManager.GetComponent<KeysPressed>().qHeld)
+        {
+            SwingSword();
+        }
     }
 
     public IEnumerator SwingSword()
@@ -25,6 +29,5 @@ public class Sword : MonoBehaviour {
         yield return new WaitForSeconds(.1f);
         gameObject.transform.RotateAround(Pivot.transform.position, Vector3.forward * -1, -90);
         HitBox.GetComponent<MeshCollider>().enabled = false;
-        StartCoroutine(SwingSword());
     }
 }
