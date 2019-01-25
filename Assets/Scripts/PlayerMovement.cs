@@ -13,12 +13,7 @@ public class PlayerMovement : MonoBehaviour {
     bool grounded = false;
     bool isJumping = false;
 
-    bool dashUnlocked = false;
-    bool dashing = false;
-    int dashFrames = 0;
-    float dashTimer = 0f;
-
-    public Transform groundCheck;
+    [SerializeField] Transform groundCheck;
     public LayerMask realGround;
 
     Vector2 boxCheckSize = new Vector2(.9f, .25f);
@@ -30,7 +25,6 @@ public class PlayerMovement : MonoBehaviour {
         data = GetComponent<PlayerData>();
         rig = GetComponent<Rigidbody2D>();
 
-        dashUnlocked = data.dash;
     }
 
 
@@ -55,7 +49,6 @@ public class PlayerMovement : MonoBehaviour {
 
         if (Input.GetKeyDown(KeyCode.Space) && grounded)
         {
-            dashTimer = 0f;
             isJumping = true;
             processVelocity.y = jumpForce;
         }
@@ -83,28 +76,7 @@ public class PlayerMovement : MonoBehaviour {
         }
 
         rig.velocity = new Vector2(move * maxSpeed, processVelocity.y);
-        if (dashUnlocked && Input.GetKeyDown(KeyCode.Q) && !dashing && dashTimer <= 0)
-        {
-            Debug.Log("DASH!");
-            dashing = true;
-            dashFrames = 7;
-            dashTimer = .5f;
-        }
-        if(dashTimer > 0 && grounded)
-        {
-            dashTimer -= Time.deltaTime;
-        }
-        if (dashing)
-        {
-            dashFrames--;
-            rig.velocity = Vector2.right * transform.localScale.x * 25;
-            Debug.Log("DASH FRAME: " + dashFrames);
-            if (dashFrames == 0)
-            {
-                Debug.Log("DASH END");
-                dashing = false;
-            }
-        }
+
 
     }
 
