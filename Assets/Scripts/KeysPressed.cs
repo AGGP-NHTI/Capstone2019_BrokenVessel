@@ -9,6 +9,12 @@ public class KeysPressed : MonoBehaviour {
     public bool sHeld = false;
     public bool dHeld = false;
     public bool qHeld = false;
+    public bool eHeld = false;
+    public bool spaceHeld = false;
+    public bool upArrowHeld = false;
+    public bool leftArrowHeld = false;
+    public bool downArrowHeld = false;
+    public bool rightArrowHeld = false;
 
     private void Update()
     {
@@ -20,8 +26,6 @@ public class KeysPressed : MonoBehaviour {
         if (Input.GetKey("w") == true)
         {
             wHeld = true;
-
-            //dash();
         }
         else
         {
@@ -58,6 +62,54 @@ public class KeysPressed : MonoBehaviour {
         else
         {
             qHeld = false;
+        }
+        if (Input.GetKey("e") == true)
+        {
+            eHeld = true;
+        }
+        else
+        {
+            eHeld = false;
+        }
+        if (Input.GetKey("space") == true)
+        {
+            spaceHeld = true;
+        }
+        else
+        {
+            spaceHeld = false;
+        }
+        if (Input.GetKey(KeyCode.UpArrow) == true)
+        {
+            upArrowHeld = true;
+        }
+        else
+        {
+            upArrowHeld = false;
+        }
+        if (Input.GetKey(KeyCode.LeftArrow) == true)
+        {
+            leftArrowHeld = true;
+        }
+        else
+        {
+            leftArrowHeld = false;
+        }
+        if (Input.GetKey(KeyCode.DownArrow) == true)
+        {
+            downArrowHeld = true;
+        }
+        else
+        {
+            downArrowHeld = false;
+        }
+        if (Input.GetKey(KeyCode.RightArrow) == true)
+        {
+            rightArrowHeld = true;
+        }
+        else
+        {
+            rightArrowHeld = false;
         }
     }
 }
