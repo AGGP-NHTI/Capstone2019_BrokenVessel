@@ -10,12 +10,16 @@ public class PlayerMovement : MonoBehaviour {
     public float maxSpeed = 7;
     public float jumpForce = 50;
 
-    bool facingRight = true;
-    public bool grounded = false;
     public bool facingRight = true;
+    bool grounded = false;
+
     bool isJumping = false;
 
-    [SerializeField] Transform groundCheck;
+    bool dashUnlocked = false;
+    bool dashing = false;
+    int dashFrames = 0;
+    float dashTimer = 0f;
+
     public Transform groundCheck;
     public LayerMask realGround;
 
@@ -27,7 +31,6 @@ public class PlayerMovement : MonoBehaviour {
     {
         data = GetComponent<PlayerData>();
         rig = GetComponent<Rigidbody2D>();
-
     }
 
 
@@ -79,8 +82,6 @@ public class PlayerMovement : MonoBehaviour {
         }
 
         rig.velocity = new Vector2(move * maxSpeed, processVelocity.y);
-
-
     }
 
     void Flip()
