@@ -4,25 +4,32 @@ using UnityEngine;
 
 public class SwitchWeapon : MonoBehaviour {
 
-    public Weapon weapon1;
-    public Weapon weapon2;
+    public Weapon equippedWeapon;
+    public Weapon backupWeapon;
+    public Weapon placeHolder;
 
 	// Use this for initialization
 	void Start () {
-        weapon1.equipped = true;
+        
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		if(Input.GetKeyDown("e"))
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (Input.GetKeyDown("e"))
         {
             Switch();
         }
-	}
+        if (Input.GetKeyDown("q"))
+        {
+            equippedWeapon.Attack();
+        }
+    }
 
     void Switch()
     {
-        weapon1.equipped = !weapon1.equipped;
-        weapon2.equipped = !weapon2.equipped;
+        placeHolder = equippedWeapon;
+        equippedWeapon = backupWeapon;
+        backupWeapon = placeHolder;
     }
 }

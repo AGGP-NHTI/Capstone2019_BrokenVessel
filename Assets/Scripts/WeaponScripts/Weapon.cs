@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour {
 
-    public bool equipped = false;
     public GameObject HitBox;
     public GameObject WorldScriptManager;
 
@@ -13,13 +12,6 @@ public class Weapon : MonoBehaviour {
         if (WorldScriptManager == null)
         {
             WorldScriptManager = GameObject.Find("WorldScriptManager");
-        }
-        if (equipped)
-        {
-            if (Input.GetKeyDown("q"))
-            {
-                Attack();
-            }
         }
     }
 
