@@ -1413,15 +1413,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b9d6520490bae04f86abc3a52e8dfa4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pa: {fileID: 1836622585}
   facingRight: 1
-  grounded: 0
   isJumping: 0
   move: 0
-  groundCheck: {fileID: 2050560681}
-  realGround:
-    serializedVersion: 2
-    m_Bits: 1
 --- !u!61 &1836622581
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1501,7 +1495,7 @@ MonoBehaviour:
   energy: 100
   metalScrap: 0
   speed: 7
-  jumpForce: 50
+  jumpForce: 11
   iFrameTimer: 0
   ignoreDamage: 0
   dash: 1
@@ -1526,6 +1520,7 @@ MonoBehaviour:
   realGround:
     serializedVersion: 2
     m_Bits: 1
+  dash: 0
   wallclimb: 0
   center: {fileID: 804278221}
   back: {fileID: 1566741209}
@@ -1541,8 +1536,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb0f692b34d4d83478b8437db80368d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 7
-  jumpForce: 10
+  center: {fileID: 804278221}
+  groundCheck: {fileID: 2050560681}
+  realGround:
+    serializedVersion: 2
+    m_Bits: 1
 --- !u!1 &2050560680
 GameObject:
   m_ObjectHideFlags: 0
