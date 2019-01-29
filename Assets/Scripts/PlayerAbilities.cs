@@ -19,9 +19,8 @@ public class PlayerAbilities : MonoBehaviour {
     Vector2 boxCheckSize = new Vector2(.9f, .25f);
     bool grounded = true;
 
-    bool dashing = false;
-    int dashFrames = 0;
-    float dashTimer = 0f;
+    public bool dash = false;
+
 
     public bool wallclimb = false;
     bool collide = false;
@@ -61,29 +60,14 @@ public class PlayerAbilities : MonoBehaviour {
         //---DASH---------------------------------------------------------------------------------
         if (dashUnlocked)
         {
-            if ((Input.GetKeyDown(KeyCode.Space) && grounded) || wallclimb)
+
+            if (Input.GetKeyDown(KeyCode.Q))
             {
-                dashTimer = 0f;
+                dash = true;
             }
-            if (Input.GetKeyDown(KeyCode.Q) && !dashing && dashTimer <= 0)
+            if(!Input.GetKeyDown(KeyCode.Q))
             {
-                dashing = true;
-                dashFrames = 7;
-                dashTimer = .5f;
-            }
-            if (dashTimer > 0 && grounded)
-            {
-                dashTimer -= Time.deltaTime;
-            }
-            if (dashing)
-            {
-                Debug.Log("dashing");
-                dashFrames--;
-                rig.velocity = Vector2.right * transform.localScale.x * 25;
-                if (dashFrames == 0)
-                {
-                    dashing = false;
-                }
+                dash = false;
             }
         }
         //----------------------------------------------------------------------------------------
@@ -97,13 +81,11 @@ public class PlayerAbilities : MonoBehaviour {
                     if (transform.localScale.x > 0)
                     {
                         wallclimb = true;
-                        dashTimer = 0f;
                         wallside = 1;
                     }
                     if (transform.localScale.x < 0)
                     {
                         wallclimb = true;
-                        dashTimer = 0f;
                         wallside = -1;
                     }
                 }

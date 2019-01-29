@@ -11,6 +11,11 @@ public class PlayerPhysics : MonoBehaviour {
     float maxSpeed = 0;
     float jumpForce = 0;
 
+    float dashTimer = 0f;
+
+    bool sideCollide = false;
+    public Transform center;
+
     bool grounded = false;
     public Transform groundCheck;
     public LayerMask realGround;
@@ -37,6 +42,7 @@ public class PlayerPhysics : MonoBehaviour {
         Vector2 processVelocity = rig.velocity;
         processVelocity.x = pm.move * maxSpeed;
         grounded = Physics2D.OverlapBox(groundCheck.position, boxCheckSize, 0, realGround);
+        sideCollide = Physics2D.OverlapBox(center.position, new Vector2(.5f, 1f), 0, realGround);
         //----------------------------------------------------------------------------------------
         //---JUMP---------------------------------------------------------------------------------
         if (grounded && pm.isJumping)
@@ -49,6 +55,25 @@ public class PlayerPhysics : MonoBehaviour {
             {
                 processVelocity.y /= 3f;
             }
+        }
+        //----------------------------------------------------------------------------------------
+        //---DASH---------------------------------------------------------------------------------
+        if ((pm.isJumping && grounded) || (sideCollide && !grounded))
+        {
+            dashTimer = 0f;
+        }
+        if (pa.dash && dashTimer <= 0f)
+        {
+            processVelocity.x += transform.localScale.x * 25;
+            
+        }
+        if(!pa.dash)
+        {
+            dashTimer = .5f;
+        }
+        if (dashTimer > 0 && grounded)
+        {
+            dashTimer -= Time.deltaTime;
         }
 
         //----------------------------------------------------------------------------------------
