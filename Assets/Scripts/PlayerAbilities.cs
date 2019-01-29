@@ -25,8 +25,10 @@ public class PlayerAbilities : MonoBehaviour {
 
     public bool wallclimb = false;
     bool collide = false;
-    bool leftCollide = false;
-    bool rightCollide = false;
+    bool frontCollide = false;
+    bool backCollide = false;
+    int walljumpFrames = 0;
+    int wallside = 0;
 
     Rigidbody2D rig;
     [SerializeField] Transform center;
@@ -53,13 +55,13 @@ public class PlayerAbilities : MonoBehaviour {
     private void Update()
     {
         grounded = Physics2D.OverlapBox(groundCheck.position, boxCheckSize, 0, realGround);
-        leftCollide = Physics2D.OverlapBox(back.position, new Vector2(.5f, 1f), 0, realGround);
-        rightCollide = Physics2D.OverlapBox(front.position, new Vector2(.5f, 1f), 0, realGround);
+        backCollide = Physics2D.OverlapBox(front.position, new Vector2(.5f, 1f), 0, realGround);
+        frontCollide = Physics2D.OverlapBox(front.position, new Vector2(.5f, 1f), 0, realGround);
 
         //---DASH---------------------------------------------------------------------------------
         if (dashUnlocked)
         {
-            if (Input.GetKeyDown(KeyCode.Space) && grounded)
+            if ((Input.GetKeyDown(KeyCode.Space) && grounded) || wallclimb)
             {
                 dashTimer = 0f;
             }
@@ -75,6 +77,7 @@ public class PlayerAbilities : MonoBehaviour {
             }
             if (dashing)
             {
+                Debug.Log("dashing");
                 dashFrames--;
                 rig.velocity = Vector2.right * transform.localScale.x * 25;
                 if (dashFrames == 0)
@@ -87,35 +90,48 @@ public class PlayerAbilities : MonoBehaviour {
         //---WALL GRAB----------------------------------------------------------------------------
         if (wallGrabUnlocked)
         {
+            if (!grounded && !Input.GetKey(KeyCode.Space))
+            {
+                if ((frontCollide || backCollide) && (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D)))
+                {
+                    if (transform.localScale.x > 0)
+                    {
+                        wallclimb = true;
+                        dashTimer = 0f;
+                        wallside = 1;
+                    }
+                    if (transform.localScale.x < 0)
+                    {
+                        wallclimb = true;
+                        dashTimer = 0f;
+                        wallside = -1;
+                    }
+                }
+            }
             if (wallclimb)
             {
                 if (!Input.GetKey(KeyCode.Space))
                 {
-                    rig.velocity = Vector2.zero;
-                }
-            }
-            if (!grounded && !Input.GetKey(KeyCode.Space))
-            {
-                if (rightCollide)
-                {
-
-                }
-                if(Input.GetKey(KeyCode.A))
-                {
-                    wallclimb = true;
-                }
-                if (Input.GetKey(KeyCode.D))
-                {
-                    wallclimb = true;
+                    rig.velocity = Vector2.down;
                 }
                 else
                 {
-                    wallclimb = false;
+                    Debug.Log("else");
                 }
-            
-                Debug.Log("grab");
             }
-            
+
+            if (Input.GetKeyDown(KeyCode.Space) && (frontCollide || backCollide) && !grounded)
+            {
+                Debug.Log("boing");
+                walljumpFrames = 30;
+            }
+            if (walljumpFrames > 0)
+            {
+                rig.velocity = new Vector2(7 * -wallside, 5);
+                walljumpFrames--;
+            }
+
+            wallclimb = false;
         }
         //----------------------------------------------------------------------------------------
     }

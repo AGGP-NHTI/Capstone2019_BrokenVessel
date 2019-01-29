@@ -9,7 +9,7 @@ public class PlayerData : MonoBehaviour {
     public int metalScrap = 0;
 
     public float speed = 7f;
-    public float jumpForce = 50f;
+    public float jumpForce = 11f;
 
     public float iFrameTimer = 0f;
     public bool ignoreDamage = false;
@@ -24,7 +24,7 @@ public class PlayerData : MonoBehaviour {
 
     public void takeDamage(float value, float iFrames) //, Vector2 Knockback
     {
-        if(iFrameTimer <= 0 || ignoreDamage)
+        if(iFrameTimer <= 0 || !ignoreDamage)
         {
             health -= value;
             iFrameTimer = iFrames;
