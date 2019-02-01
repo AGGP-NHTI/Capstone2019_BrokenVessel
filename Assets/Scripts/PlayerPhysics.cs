@@ -8,13 +8,11 @@ public class PlayerPhysics : MonoBehaviour {
     PlayerMovement pm;
     PlayerAbilities pa;
 
-    float maxSpeed = 0;
+    float speed = 0;
     float jumpForce = 0;
 
-    float dashTimer = 0f;
-
     bool sideCollide = false;
-    public Transform center;
+    [SerializeField] Transform center;
 
     bool grounded = false;
     public Transform groundCheck;
@@ -31,7 +29,7 @@ public class PlayerPhysics : MonoBehaviour {
         pa = GetComponent<PlayerAbilities>();
         rig = GetComponent<Rigidbody2D>();
 
-        maxSpeed = data.speed;
+        speed = data.speed;
         jumpForce = data.jumpForce;
 	}
 	
@@ -40,9 +38,9 @@ public class PlayerPhysics : MonoBehaviour {
     {
         //----------------------------------------------------------------------------------------
         Vector2 processVelocity = rig.velocity;
-        processVelocity.x = pm.move * maxSpeed;
+        processVelocity.x = pm.move * speed;
         grounded = Physics2D.OverlapBox(groundCheck.position, boxCheckSize, 0, realGround);
-        sideCollide = Physics2D.OverlapBox(center.position, new Vector2(.5f, 1f), 0, realGround);
+        sideCollide = Physics2D.OverlapBox(center.position, new Vector2(1.55f, 1f), 0, realGround);
         //----------------------------------------------------------------------------------------
         //---DASH---------------------------------------------------------------------------------
         if ((pm.isJumping && grounded) || (sideCollide && !grounded))
@@ -52,7 +50,10 @@ public class PlayerPhysics : MonoBehaviour {
         if (pa.dash)
         {
             processVelocity.x = transform.localScale.x * 20;
-
+        }
+        if (grounded && pa.dashTimer > 0)
+        {
+            pa.dashTimer -= Time.deltaTime;
         }
 
         //----------------------------------------------------------------------------------------
@@ -68,6 +69,26 @@ public class PlayerPhysics : MonoBehaviour {
                 processVelocity.y /= 3f;
             }
         }
+        //----------------------------------------------------------------------------------------
+        //---WALL JUMP----------------------------------------------------------------------------
+        if (pa.wallclimb)
+        {
+            if (!Input.GetKey(KeyCode.Space))
+            {
+                rig.velocity = Vector2.down;
+            }
+            else
+            {
+                Debug.Log("else");
+            }
+        }
+        if(pa.wallJump)
+        {
+            processVelocity.x = speed * -pa.wallside;
+            processVelocity.y = jumpForce;
+        }
+
+
         //----------------------------------------------------------------------------------------
         //---PROCESS------------------------------------------------------------------------------
         if (!grounded)

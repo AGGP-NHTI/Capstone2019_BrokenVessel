@@ -25,16 +25,12 @@ public class PlayerAbilities : MonoBehaviour {
 
 
     public bool wallclimb = false;
-    bool collide = false;
-    bool frontCollide = false;
-    bool backCollide = false;
-    int walljumpFrames = 0;
-    int wallside = 0;
+    public bool wallJump = false;
+    bool sideCollide = false;
+    public int wallside = 0;
 
     Rigidbody2D rig;
     [SerializeField] Transform center;
-    [SerializeField] Transform back;
-    [SerializeField] Transform front;
 
     private void Start()
     {
@@ -56,8 +52,7 @@ public class PlayerAbilities : MonoBehaviour {
     private void Update()
     {
         grounded = Physics2D.OverlapBox(groundCheck.position, boxCheckSize, 0, realGround);
-        backCollide = Physics2D.OverlapBox(front.position, new Vector2(.5f, 1f), 0, realGround);
-        frontCollide = Physics2D.OverlapBox(front.position, new Vector2(.5f, 1f), 0, realGround);
+        sideCollide = Physics2D.OverlapBox(center.position, new Vector2(1.55f, 1f), 0, realGround);
 
         //---DASH---------------------------------------------------------------------------------
         if (dashUnlocked)
@@ -76,10 +71,6 @@ public class PlayerAbilities : MonoBehaviour {
                     dash = false;
                 }
             }
-            if(grounded && dashTimer > 0)
-            {
-                dashTimer -= Time.deltaTime;
-            }
         }
         //----------------------------------------------------------------------------------------
         //---WALL GRAB----------------------------------------------------------------------------
@@ -87,41 +78,21 @@ public class PlayerAbilities : MonoBehaviour {
         {
             if (!grounded && !Input.GetKey(KeyCode.Space))
             {
-                if ((frontCollide || backCollide) && (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D)))
+                if (sideCollide && (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D)))
                 {
-                    if (transform.localScale.x > 0)
-                    {
-                        wallclimb = true;
-                        wallside = 1;
-                    }
-                    if (transform.localScale.x < 0)
-                    {
-                        wallclimb = true;
-                        wallside = -1;
-                    }
-                }
-            }
-            if (wallclimb)
-            {
-                if (!Input.GetKey(KeyCode.Space))
-                {
-                    rig.velocity = Vector2.down;
-                }
-                else
-                {
-                    Debug.Log("else");
+                    wallclimb = true;
+                    wallside = (int)transform.localScale.x;
                 }
             }
 
-            if (Input.GetKeyDown(KeyCode.Space) && (frontCollide || backCollide) && !grounded)
+
+            if (Input.GetKeyDown(KeyCode.Space) && sideCollide && !grounded)
             {
-                Debug.Log("boing");
-                walljumpFrames = 30;
+                wallJump = true;
             }
-            if (walljumpFrames > 0)
+            if(Input.GetKeyDown(KeyCode.Space))
             {
-                rig.velocity = new Vector2(7 * -wallside, 5);
-                walljumpFrames--;
+                wallJump = false;
             }
 
             wallclimb = false;
