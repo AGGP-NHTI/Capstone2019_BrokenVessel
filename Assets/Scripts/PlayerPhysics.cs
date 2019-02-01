@@ -44,6 +44,18 @@ public class PlayerPhysics : MonoBehaviour {
         grounded = Physics2D.OverlapBox(groundCheck.position, boxCheckSize, 0, realGround);
         sideCollide = Physics2D.OverlapBox(center.position, new Vector2(.5f, 1f), 0, realGround);
         //----------------------------------------------------------------------------------------
+        //---DASH---------------------------------------------------------------------------------
+        if ((pm.isJumping && grounded) || (sideCollide && !grounded))
+        {
+            pa.dashTimer = 0f;
+        }
+        if (pa.dash)
+        {
+            processVelocity.x = transform.localScale.x * 20;
+
+        }
+
+        //----------------------------------------------------------------------------------------
         //---JUMP---------------------------------------------------------------------------------
         if (grounded && pm.isJumping)
         {
@@ -57,26 +69,6 @@ public class PlayerPhysics : MonoBehaviour {
             }
         }
         //----------------------------------------------------------------------------------------
-        //---DASH---------------------------------------------------------------------------------
-        if ((pm.isJumping && grounded) || (sideCollide && !grounded))
-        {
-            dashTimer = 0f;
-        }
-        if (pa.dash && dashTimer <= 0f)
-        {
-            processVelocity.x += transform.localScale.x * 25;
-            
-        }
-        if(!pa.dash)
-        {
-            dashTimer = .5f;
-        }
-        if (dashTimer > 0 && grounded)
-        {
-            dashTimer -= Time.deltaTime;
-        }
-
-        //----------------------------------------------------------------------------------------
         //---PROCESS------------------------------------------------------------------------------
         if (!grounded)
         {
@@ -86,6 +78,10 @@ public class PlayerPhysics : MonoBehaviour {
             {
                 processVelocity.y = -18f;
             }
+        }
+        if (pa.dash)
+        {
+            processVelocity.y = 0;
         }
         rig.velocity = new Vector2(processVelocity.x, processVelocity.y);
         //----------------------------------------------------------------------------------------

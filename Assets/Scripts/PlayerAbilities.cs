@@ -20,6 +20,8 @@ public class PlayerAbilities : MonoBehaviour {
     bool grounded = true;
 
     public bool dash = false;
+    public float dashTimer = 0f;
+    float dashDuration = 0f;
 
 
     public bool wallclimb = false;
@@ -60,14 +62,23 @@ public class PlayerAbilities : MonoBehaviour {
         //---DASH---------------------------------------------------------------------------------
         if (dashUnlocked)
         {
-
-            if (Input.GetKeyDown(KeyCode.Q))
+            if (Input.GetKeyDown(KeyCode.Q) && dashTimer <= 0)
             {
                 dash = true;
+                dashTimer = .6f;
+                dashDuration = .2f;
             }
-            if(!Input.GetKeyDown(KeyCode.Q))
+            if(dash)
             {
-                dash = false;
+                dashDuration -= Time.deltaTime;
+                if(dashDuration <= 0)
+                {
+                    dash = false;
+                }
+            }
+            if(grounded && dashTimer > 0)
+            {
+                dashTimer -= Time.deltaTime;
             }
         }
         //----------------------------------------------------------------------------------------
