@@ -11,6 +11,9 @@ public class PlayerPhysics : MonoBehaviour {
     float speed = 0;
     float jumpForce = 0;
 
+    bool wallJumping = false;
+    int wallside = 0;
+
     bool sideCollide = false;
     [SerializeField] Transform center;
 
@@ -38,9 +41,12 @@ public class PlayerPhysics : MonoBehaviour {
     {
         //----------------------------------------------------------------------------------------
         Vector2 processVelocity = rig.velocity;
-        processVelocity.x = pm.move * speed;
+        if(!wallJumping)
+        {
+            processVelocity.x = pm.move * speed;
+        }
         grounded = Physics2D.OverlapBox(groundCheck.position, boxCheckSize, 0, realGround);
-        sideCollide = Physics2D.OverlapBox(center.position, new Vector2(1.55f, 1f), 0, realGround);
+        sideCollide = Physics2D.OverlapBox(center.position, new Vector2(1.6f, 1f), 0, realGround);
         //----------------------------------------------------------------------------------------
         //---DASH---------------------------------------------------------------------------------
         if ((pm.isJumping && grounded) || (sideCollide && !grounded))
@@ -62,36 +68,45 @@ public class PlayerPhysics : MonoBehaviour {
         {
             processVelocity.y = jumpForce;
         }
-        if (!pm.isJumping)
+        //----------------------------------------------------------------------------------------
+        //---WALL JUMP----------------------------------------------------------------------------
+        if (pa.wallClimb)
+        {
+            processVelocity.y = -1f;
+        }
+        Debug.Log(wallJumping);
+        if (wallJumping)
+        {
+            if (Mathf.Sign(pm.move) == Mathf.Sign(wallside))
+            {
+                processVelocity.x = .5f * speed * pm.move;
+                //processVelocity.y = -1f ;
+                pa.wallJump = false;
+            }
+        }
+
+        if (grounded || sideCollide)
+        {
+            wallJumping = false;
+        }
+        if (pa.wallJump && sideCollide && !grounded)
+        {
+            wallJumping = true;
+            processVelocity.y = jumpForce;
+            processVelocity.x = speed * -wallside;
+        }
+
+
+        //----------------------------------------------------------------------------------------
+        //---PROCESS------------------------------------------------------------------------------
+        if (!pa.wallJump && !pm.isJumping)
         {
             if (processVelocity.y > 0)
             {
                 processVelocity.y /= 3f;
             }
         }
-        //----------------------------------------------------------------------------------------
-        //---WALL JUMP----------------------------------------------------------------------------
-        if (pa.wallclimb)
-        {
-            if (!Input.GetKey(KeyCode.Space))
-            {
-                rig.velocity = Vector2.down;
-            }
-            else
-            {
-                Debug.Log("else");
-            }
-        }
-        if(pa.wallJump)
-        {
-            processVelocity.x = speed * -pa.wallside;
-            processVelocity.y = jumpForce;
-        }
-
-
-        //----------------------------------------------------------------------------------------
-        //---PROCESS------------------------------------------------------------------------------
-        if (!grounded)
+        if (!grounded && !pa.wallClimb)
         {
             processVelocity.y -= 18f * Time.deltaTime;
 
@@ -106,5 +121,18 @@ public class PlayerPhysics : MonoBehaviour {
         }
         rig.velocity = new Vector2(processVelocity.x, processVelocity.y);
         //----------------------------------------------------------------------------------------
+    }
+
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (transform.position.x > collision.transform.position.x)
+        {
+            wallside = -1;
+        }
+        else if (transform.position.x < collision.transform.position.x)
+        {
+            wallside = 1;
+        }
+        Debug.Log(wallside);
     }
 }

@@ -24,10 +24,10 @@ public class PlayerAbilities : MonoBehaviour {
     float dashDuration = 0f;
 
 
-    public bool wallclimb = false;
+    public bool wallClimb = false;
     public bool wallJump = false;
+
     bool sideCollide = false;
-    public int wallside = 0;
 
     Rigidbody2D rig;
     [SerializeField] Transform center;
@@ -76,26 +76,25 @@ public class PlayerAbilities : MonoBehaviour {
         //---WALL GRAB----------------------------------------------------------------------------
         if (wallGrabUnlocked)
         {
-            if (!grounded && !Input.GetKey(KeyCode.Space))
+            if (!grounded && !Input.GetKeyDown(KeyCode.Space) && sideCollide)
             {
-                if (sideCollide && (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D)))
-                {
-                    wallclimb = true;
-                    wallside = (int)transform.localScale.x;
-                }
+                wallJump = false;
+                wallClimb = true;
+            }
+            else
+            {
+                wallClimb = false;
             }
 
 
-            if (Input.GetKeyDown(KeyCode.Space) && sideCollide && !grounded)
+            if (Input.GetKeyDown(KeyCode.Space))
             {
                 wallJump = true;
             }
-            if(Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyUp(KeyCode.Space))
             {
                 wallJump = false;
             }
-
-            wallclimb = false;
         }
         //----------------------------------------------------------------------------------------
     }
