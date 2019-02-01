@@ -249,7 +249,10 @@ GameObject:
   - component: {fileID: 312877409}
   - component: {fileID: 312877408}
   - component: {fileID: 312877407}
+  - component: {fileID: 312877413}
+  - component: {fileID: 312877412}
   - component: {fileID: 312877406}
+  - component: {fileID: 312877411}
   - component: {fileID: 312877410}
   m_Layer: 9
   m_Name: Player
@@ -269,13 +272,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b9d6520490bae04f86abc3a52e8dfa4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 7
-  jumpForce: 10
   facingRight: 1
-  groundCheck: {fileID: 437346211}
-  realGround:
-    serializedVersion: 2
-    m_Bits: 1
+  isJumping: 0
+  move: 0
 --- !u!61 &312877407
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -354,6 +353,68 @@ MonoBehaviour:
   equippedWeapon: {fileID: 726886344}
   backupWeapon: {fileID: 2059796162}
   placeHolder: {fileID: 0}
+--- !u!114 &312877411
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 312877405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb0f692b34d4d83478b8437db80368d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  center: {fileID: 294159906}
+  groundCheck: {fileID: 437346211}
+  realGround:
+    serializedVersion: 2
+    m_Bits: 1
+--- !u!114 &312877412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 312877405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c947466ca2648cf4993e95c5d44aee86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  groundCheck: {fileID: 437346211}
+  realGround:
+    serializedVersion: 2
+    m_Bits: 1
+  dash: 0
+  dashTimer: 0
+  wallclimb: 0
+  wallJump: 0
+  wallside: 0
+  center: {fileID: 294159906}
+--- !u!114 &312877413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 312877405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 313fa633f5b0947498643e1c4e40f068, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  energy: 100
+  metalScrap: 0
+  speed: 7
+  jumpForce: 11
+  iFrameTimer: 0
+  ignoreDamage: 0
+  dash: 0
+  wallGrab: 0
+  grappleHook: 0
+  phase: 0
+  phaseDash: 0
+  chargeJump: 0
+  shipControl: 0
 --- !u!1 &351075052
 GameObject:
   m_ObjectHideFlags: 0
