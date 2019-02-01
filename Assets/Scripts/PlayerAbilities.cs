@@ -29,7 +29,6 @@ public class PlayerAbilities : MonoBehaviour {
 
     bool sideCollide = false;
 
-    Rigidbody2D rig;
     [SerializeField] Transform center;
 
     private void Start()
@@ -44,9 +43,6 @@ public class PlayerAbilities : MonoBehaviour {
         phaseDashUnlocked = data.phaseDash;
         chargeJumpUnlocked = data.chargeJump;
         shipControlUnlocked = data.shipControl;
-
-        rig = GetComponent<Rigidbody2D>();
-
     }
 
     private void Update()
