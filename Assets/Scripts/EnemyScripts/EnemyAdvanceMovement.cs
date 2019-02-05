@@ -5,6 +5,8 @@ using UnityEngine;
 public class EnemyAdvanceMovement : MonoBehaviour
 {
 
+    public bool seePlayer = false;
+
     [SerializeField] bool targetIsRadius = false;
     public float speed = 5;
     public float offSetX = 0;
@@ -26,12 +28,16 @@ public class EnemyAdvanceMovement : MonoBehaviour
 
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
+        player = transform;
         rig = GetComponent<Rigidbody2D>();
     }
 
-    void FixedUpdate()
+    void Update()
     {
+        if(seePlayer)
+        {
+            player = GameObject.FindGameObjectWithTag("Player").transform;
+        }
         if (targetIsRadius)
         {
             target = (transform.position - lastPlayerPosition).normalized * offSetX;
@@ -53,8 +59,7 @@ public class EnemyAdvanceMovement : MonoBehaviour
             timer++;
             rig.velocity = Vector2.zero;
             transform.position = Vector3.MoveTowards(transform.position, orbitPoint.position, speed * Time.fixedDeltaTime);
-            //rig.AddForce((orbitPoint.position - transform.position).normalized * speed * 100 * Time.fixedDeltaTime);
-            if (timer >= timerMax)
+            if (timer >= timerMax && seePlayer)
             {
                 timer = 0;
                 attacking = true;
