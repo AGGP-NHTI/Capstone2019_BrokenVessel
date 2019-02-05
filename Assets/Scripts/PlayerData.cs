@@ -22,10 +22,13 @@ public class PlayerData : MonoBehaviour {
     public bool chargeJump = false;
     public int shipControl = 0;
 
+    [SerializeField] GameObject testShield;
+
     public void takeDamage(float value, float iFrames) //, Vector2 Knockback
     {
-        if(iFrameTimer <= 0 || !ignoreDamage)
+        if(iFrameTimer <= 0 && !ignoreDamage)
         {
+            testShield.SetActive(true);
             health -= value;
             iFrameTimer = iFrames;
             //knockback
@@ -36,6 +39,10 @@ public class PlayerData : MonoBehaviour {
         if(iFrameTimer > 0)
         {
             iFrameTimer -= Time.deltaTime;
+        }
+        if(iFrameTimer < 0)
+        {
+            testShield.SetActive(false);
         }
     }
 

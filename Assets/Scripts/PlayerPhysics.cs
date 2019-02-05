@@ -79,9 +79,9 @@ public class PlayerPhysics : MonoBehaviour {
         {
             if (Mathf.Sign(pm.move) == Mathf.Sign(wallside))
             {
-                processVelocity.x = .5f * speed * pm.move;
+                //processVelocity.x = .5f * speed * pm.move;
                 //processVelocity.y = -1f ;
-                pa.wallJump = false;
+                //pa.wallJump = false;
             }
         }
 
