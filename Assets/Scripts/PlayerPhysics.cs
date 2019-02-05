@@ -74,14 +74,13 @@ public class PlayerPhysics : MonoBehaviour {
         {
             processVelocity.y = -1f;
         }
-        Debug.Log(wallJumping);
         if (wallJumping)
         {
             if (Mathf.Sign(pm.move) == Mathf.Sign(wallside))
             {
-                processVelocity.x = .5f * speed * pm.move;
+                //processVelocity.x = .5f * speed * pm.move;
                 //processVelocity.y = -1f ;
-                pa.wallJump = false;
+                //pa.wallJump = false;
             }
         }
 
@@ -133,6 +132,5 @@ public class PlayerPhysics : MonoBehaviour {
         {
             wallside = 1;
         }
-        Debug.Log(wallside);
     }
 }
