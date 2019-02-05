@@ -15,6 +15,9 @@ public class EnemyCombat : MonoBehaviour {
     public float range = 10f;
     public bool seePlayer = false;
 
+
+    float timer = 0;
+
     public Transform faceCheck;
 
     //Rigidbody2D rig;
@@ -32,7 +35,7 @@ public class EnemyCombat : MonoBehaviour {
                 seePlayer = true;
                 break;
             case DetectionType.ray:
-                seePlayer = Physics2D.Raycast(faceCheck.position, Vector2.right * transform.localScale.x, range, target);
+                seePlayer = Physics2D.Raycast(faceCheck.position, transform.right * transform.localScale.x, range, target);
                 Debug.DrawRay(faceCheck.position, Vector2.right * transform.localScale.x, Color.red, range);
                 break;
             case DetectionType.circle:
@@ -42,6 +45,35 @@ public class EnemyCombat : MonoBehaviour {
                 Debug.Log("ERROR: NOT ADDED");
                 break;
         }
+
+        timer -= Time.deltaTime;
+        if (seePlayer && timer <= 0)
+        {
+
+            if (meleeEnemy)
+            {
+                Debug.Log("attack");
+                timer = 1f;
+                StartCoroutine("meleeAttack");
+            }
+            if (rangeEnemy)
+            {
+                Debug.Log("pew");
+                timer = .5f;
+                StartCoroutine("rangeAttack");
+            }
+        }
+
+    }
+
+    IEnumerable meleeAttack()
+    {
+        yield return 1;
+    }
+
+    IEnumerable rangeAttack()
+    {
+        yield return 1;
     }
 
     void OnCollisionStay2D(Collision2D collision)

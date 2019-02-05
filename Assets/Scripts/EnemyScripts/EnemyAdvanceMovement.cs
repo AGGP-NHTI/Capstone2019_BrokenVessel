@@ -26,17 +26,24 @@ public class EnemyAdvanceMovement : MonoBehaviour
 
     Rigidbody2D rig;
 
+    EnemyCombat ec;
+
     void Start()
     {
         player = transform;
+        ec = GetComponentInParent<EnemyCombat>();
         rig = GetComponent<Rigidbody2D>();
     }
 
     void Update()
     {
-        if(seePlayer)
+        if(ec.seePlayer)
         {
             player = GameObject.FindGameObjectWithTag("Player").transform;
+        }
+        else
+        {
+            player = transform;
         }
         if (targetIsRadius)
         {
