@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EnemyCombat : MonoBehaviour {
 
+    public LayerMask target;
+
     public bool contactEnemy = false;
     public bool rangeEnemy = false;
     public bool meleeEnemy = false;
@@ -11,20 +13,17 @@ public class EnemyCombat : MonoBehaviour {
     public enum DetectionType { none, ray, circle, box };
     public DetectionType choice = DetectionType.none;
     public float range = 10f;
-    bool seePlayer = false;
-    public LayerMask target;
+    public bool seePlayer = false;
 
     public Transform faceCheck;
 
-    Rigidbody2D rig;
+    //Rigidbody2D rig;
 
-    // Use this for initialization
     void Start ()
     {
-        rig = GetComponent<Rigidbody2D>();
+        //rig = GetComponent<Rigidbody2D>();
     }
 	
-	// Update is called once per frame
 	void Update ()
     {
         switch (choice)
@@ -45,11 +44,15 @@ public class EnemyCombat : MonoBehaviour {
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    void OnCollisionStay2D(Collision2D collision)
     {
-        if(contactEnemy && collision.gameObject.layer == target)
+        Debug.Log(collision.gameObject.layer);
+        if (contactEnemy)
         {
-            collision.gameObject.GetComponent<PlayerData>().takeDamage(10, 5);
+            if (collision.gameObject.layer == 9)
+            {
+                collision.gameObject.GetComponent<PlayerData>().takeDamage(10, 5);
+            }
         }
 
     }

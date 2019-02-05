@@ -26,9 +26,10 @@ public class PlayerData : MonoBehaviour {
 
     public void takeDamage(float value, float iFrames) //, Vector2 Knockback
     {
+        Debug.Log("ow");
         if(iFrameTimer <= 0 && !ignoreDamage)
         {
-            testShield.SetActive(true);
+            testShield.GetComponent<MeshRenderer>().enabled = true;
             health -= value;
             iFrameTimer = iFrames;
             //knockback
@@ -42,7 +43,7 @@ public class PlayerData : MonoBehaviour {
         }
         if(iFrameTimer < 0)
         {
-            testShield.SetActive(false);
+            testShield.GetComponent<MeshRenderer>().enabled = false;
         }
     }
 

@@ -19,7 +19,6 @@ public class EnemyMovement : MonoBehaviour {
     bool grounded = true;
     bool isJumping = false;
     int timer = 0;
-    bool seePlayer = false;
 
     public Transform faceCheck;
     public Transform ledgeCheck;
@@ -28,12 +27,15 @@ public class EnemyMovement : MonoBehaviour {
 
     Rigidbody2D rig;
 
+    EnemyCombat ec;
+
     void Start ()
     {
+        ec = GetComponent<EnemyCombat>();
         rig = GetComponent<Rigidbody2D>();
 	}
-	
-	void Update()
+
+    void Update()
     {
         grounded = Physics2D.CircleCast(ledgeCheck.position, .2f, Vector2.zero, 0, realGround);
         onLedge = !Physics2D.CircleCast(ledgeCheck.position, .075f, Vector2.zero, 0, realGround);
@@ -48,12 +50,12 @@ public class EnemyMovement : MonoBehaviour {
             rig.gravityScale = 1;
             rig.freezeRotation = false;
         }
-        if(bounceOff && (hitHead || onLedge) && !moveOnJump)
+        if (bounceOff && (hitHead || onLedge) && !moveOnJump)
         {
             Flip();
             speed = -speed;
         }
-        if(bounceOff && moveOnJump && hitHead)
+        if (bounceOff && moveOnJump && hitHead)
         {
             Flip();
             speed = -speed;
@@ -61,10 +63,10 @@ public class EnemyMovement : MonoBehaviour {
         if (!grounded && !moveOnJump)
         {
             transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
-            RaycastHit2D hit = Physics2D.Raycast(ledgeCheck.position, Vector2.down, .3f, realGround);
-            if(hit)
+            RaycastHit2D hit = Physics2D.Raycast(ledgeCheck.position, Vector2.down, .25f, realGround);
+            if (hit)
             {
-                transform.position = new Vector3(transform.position.x, hit.transform.position.y);
+                transform.position = new Vector3(transform.position.x, hit.transform.position.y + (hit.transform.localScale.y/2));
             }
         }
         else if (followLedge && hitHead)
@@ -75,27 +77,12 @@ public class EnemyMovement : MonoBehaviour {
             rig.isKinematic = false;
         }
         hitHead = false;
-    }
-    private void FixedUpdate()
-    {
-        switch (choice)
-        {
-            case DetectionType.none:
-                seePlayer = true;
-                break;
-            case DetectionType.ray:
-                seePlayer = Physics2D.Raycast(faceCheck.position, Vector2.right * transform.localScale.x, range, target);
-                Debug.DrawRay(faceCheck.position, Vector2.right * transform.localScale.x, Color.red, range);
-                break;
-            case DetectionType.circle:
-                seePlayer = Physics2D.CircleCast(transform.position, range, Vector2.zero, 0, target);
-                break;
-            case DetectionType.box:
-                Debug.Log("ERROR: NOT ADDED");
-                break;
-        }
 
-        if (seePlayer)
+        //---------------------------------------------------------------------------------------
+        //--Movement-----------------------------------------------------------------------------
+        
+        Vector2 processVelocity = transform.InverseTransformDirection(rig.velocity);
+        if (ec.seePlayer)
         {
             if (moveOnJump)
             {
@@ -103,14 +90,14 @@ public class EnemyMovement : MonoBehaviour {
                 {
                     isJumping = true;
                 }
-                if(isJumping && timer >= 80)
+                if (isJumping && timer >= 80)
                 {
-                    rig.AddForce(transform.up * Mathf.Abs(speed) * 450, ForceMode2D.Force);
-                    rig.AddForce(transform.right * speed * 150);
+                    processVelocity.y = Mathf.Abs(speed) * 2;
+                    processVelocity.x = speed;
                 }
                 if (timer >= 90)
                 {
-                    rig.AddForce(transform.up * -speed * 500, ForceMode2D.Force);
+                    processVelocity.y = -speed;
                     timer = 0;
                     isJumping = false;
                 }
@@ -120,16 +107,16 @@ public class EnemyMovement : MonoBehaviour {
             {
                 if (!onLedge || !followLedge)
                 {
-                    rig.AddForce(transform.right * speed * 100, ForceMode2D.Force);
+                    processVelocity.x = speed;
                 }
                 else if (grounded)
                 {
-                    transform.Rotate(new Vector3(0, 0, -10 * transform.localScale.x));
-                    rig.velocity = Vector3.zero;
+                    transform.Rotate(new Vector3(0, 0, -15 * transform.localScale.x));
+                    processVelocity = Vector2.zero;
                 }
             }
         }
-        seePlayer = false;
+        rig.velocity = transform.TransformDirection(processVelocity);
     }
 
 
