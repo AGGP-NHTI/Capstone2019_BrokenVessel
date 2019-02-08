@@ -25,6 +25,7 @@ public class TalkyBoi : MonoBehaviour {
             if(textBoxVisible == false)
             {
                 textBoxInstance = Instantiate(textBox);
+                textBoxInstance.transform.parent = GameObject.Find("Cube").transform;
                 textBoxVisible = true;
             }
         }
