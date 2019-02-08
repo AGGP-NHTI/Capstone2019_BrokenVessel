@@ -20,8 +20,9 @@ public class EnemyCombat : MonoBehaviour {
     public float range = 10f;
     public bool seePlayer = false;
 
+    [SerializeField] GameObject weapon;
 
-    float timer = 0;
+    float timer = 1f;
 
     public Transform faceCheck;
     public GameObject projectile;
@@ -76,38 +77,49 @@ public class EnemyCombat : MonoBehaviour {
             }
         }
 
-
-        timer -= Time.deltaTime;
+        if (!attacking && (meleeEnemy || rangeEnemy))
+        {
+            timer -= Time.deltaTime;
+        }
         if (seePlayer && timer <= 0)
         {
 
             if (meleeEnemy)
             {
                 attacking = true;
-                Debug.Log("attack");
+
                 timer = 1f;
-                StartCoroutine("meleeAttack");
+                StartCoroutine(meleeAttack());
+                
             }
             if (rangeEnemy)
             {
                 attacking = true;
                 Debug.Log("pew");
                 timer = .5f;
-                StartCoroutine("rangeAttack");
+                StartCoroutine(rangeAttack());
             }
         }
 
     }
 
-    IEnumerable meleeAttack()
+    IEnumerator meleeAttack()
     {
-        yield return 1;
+        weapon.transform.rotation = Quaternion.Euler(0, 0, -45);
+        yield return new WaitForSeconds(2);
+        weapon.transform.rotation = Quaternion.Euler(0, 0, -90);
+        Debug.Log("melee attack");
+        yield return new WaitForSeconds(2);
+        weapon.transform.rotation = Quaternion.identity;
         attacking = false;
     }
 
-    IEnumerable rangeAttack()
+    IEnumerator rangeAttack()
     {
-        yield return 1;
+        yield return new WaitForSeconds(.5f);
+        //pew
+        yield return new WaitForSeconds(.5f);
+        //coil
         attacking = false;
     }
 

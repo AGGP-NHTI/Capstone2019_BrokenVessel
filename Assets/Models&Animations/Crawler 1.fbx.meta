@@ -39,7 +39,12 @@ ModelImporter:
     2300000: node_id8
     3300000: node_id8
     4300000: node_id8
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_63
+    second: {fileID: 2100000, guid: 69660fce79b84ca43974b3cdfa709b6d, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

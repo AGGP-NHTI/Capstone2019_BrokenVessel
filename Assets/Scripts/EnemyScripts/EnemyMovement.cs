@@ -78,7 +78,7 @@ public class EnemyMovement : MonoBehaviour {
         //--Movement-----------------------------------------------------------------------------
 
         Vector2 processVelocity = transform.InverseTransformDirection(rig.velocity);
-        if (ec.seePlayer || (ec.AlwaysMove && !ec.attacking))
+        if ((ec.seePlayer && !ec.AlwaysMove) || (ec.AlwaysMove && !ec.attacking))
         {
             if (moveOnJump)
             {
