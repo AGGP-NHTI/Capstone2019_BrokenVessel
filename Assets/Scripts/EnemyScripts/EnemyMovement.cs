@@ -9,10 +9,6 @@ public class EnemyMovement : MonoBehaviour {
     public bool followLedge = false;
     public bool bounceOff = false;
     public bool moveOnJump = false;
-    public bool activeIfPlayer = false;
-    public enum DetectionType {none, ray, circle, box};
-    public DetectionType choice = DetectionType.none;
-    public float range = 10f;
 
     public bool hitHead = false;
     bool onLedge = false;
@@ -66,7 +62,7 @@ public class EnemyMovement : MonoBehaviour {
             RaycastHit2D hit = Physics2D.Raycast(ledgeCheck.position, Vector2.down, .25f, realGround);
             if (hit)
             {
-                transform.position = new Vector3(transform.position.x, hit.transform.position.y + (hit.transform.localScale.y/2));
+                transform.position = new Vector3(transform.position.x, hit.transform.position.y + (hit.transform.localScale.y / 2));
             }
         }
         else if (followLedge && hitHead)
@@ -80,9 +76,9 @@ public class EnemyMovement : MonoBehaviour {
 
         //---------------------------------------------------------------------------------------
         //--Movement-----------------------------------------------------------------------------
-        
+
         Vector2 processVelocity = transform.InverseTransformDirection(rig.velocity);
-        if (ec.seePlayer)
+        if (ec.seePlayer || (ec.AlwaysMove && !ec.attacking))
         {
             if (moveOnJump)
             {

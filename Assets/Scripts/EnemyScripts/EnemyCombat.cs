@@ -10,7 +10,12 @@ public class EnemyCombat : MonoBehaviour {
     public bool rangeEnemy = false;
     public bool meleeEnemy = false;
 
-    public enum DetectionType { none, ray, circle, box };
+    public bool forgetPlayer = false;
+    public bool AlwaysMove = false;
+
+    public bool attacking = false;
+
+    public enum DetectionType { none, ignore, ray, circle, box };
     public DetectionType choice = DetectionType.none;
     public float range = 10f;
     public bool seePlayer = false;
@@ -19,32 +24,58 @@ public class EnemyCombat : MonoBehaviour {
     float timer = 0;
 
     public Transform faceCheck;
-
-    //Rigidbody2D rig;
-
-    void Start ()
-    {
-        //rig = GetComponent<Rigidbody2D>();
-    }
+    public GameObject projectile;
 	
 	void Update ()
     {
         switch (choice)
         {
             case DetectionType.none:
+                seePlayer = false;
+                break;
+            case DetectionType.ignore:
                 seePlayer = true;
                 break;
-            case DetectionType.ray:
-                seePlayer = Physics2D.Raycast(faceCheck.position, transform.right * transform.localScale.x, range, target);
-                Debug.DrawRay(faceCheck.position, Vector2.right * transform.localScale.x, Color.red, range);
-                break;
-            case DetectionType.circle:
-                seePlayer = Physics2D.CircleCast(transform.position, range, Vector2.zero, 0, target);
-                break;
-            case DetectionType.box:
-                Debug.Log("ERROR: NOT ADDED");
-                break;
         }
+        if (forgetPlayer)
+        {
+            switch (choice)
+            {
+                case DetectionType.ray:
+                    seePlayer = Physics2D.Raycast(faceCheck.position, transform.right * transform.localScale.x, range, target);
+                    Debug.DrawRay(faceCheck.position, Vector2.right * transform.localScale.x, Color.red, range);
+                    break;
+                case DetectionType.circle:
+                    seePlayer = Physics2D.CircleCast(transform.position, range, Vector2.zero, 0, target);
+                    break;
+                case DetectionType.box:
+                    Debug.Log("ERROR: NOT ADDED");
+                    break;
+            }
+        }
+        else
+        {
+            switch (choice)
+            {
+                case DetectionType.ray:
+                    if(Physics2D.Raycast(faceCheck.position, transform.right * transform.localScale.x, range, target))
+                    {
+                        seePlayer = true;
+                    }
+                    Debug.DrawRay(faceCheck.position, Vector2.right * transform.localScale.x, Color.red, range);
+                    break;
+                case DetectionType.circle:
+                    if(Physics2D.CircleCast(transform.position, range, Vector2.zero, 0, target))
+                    {
+                        seePlayer = true;
+                    }
+                    break;
+                case DetectionType.box:
+                    Debug.Log("ERROR: NOT ADDED");
+                    break;
+            }
+        }
+
 
         timer -= Time.deltaTime;
         if (seePlayer && timer <= 0)
@@ -52,12 +83,14 @@ public class EnemyCombat : MonoBehaviour {
 
             if (meleeEnemy)
             {
+                attacking = true;
                 Debug.Log("attack");
                 timer = 1f;
                 StartCoroutine("meleeAttack");
             }
             if (rangeEnemy)
             {
+                attacking = true;
                 Debug.Log("pew");
                 timer = .5f;
                 StartCoroutine("rangeAttack");
@@ -69,16 +102,17 @@ public class EnemyCombat : MonoBehaviour {
     IEnumerable meleeAttack()
     {
         yield return 1;
+        attacking = false;
     }
 
     IEnumerable rangeAttack()
     {
         yield return 1;
+        attacking = false;
     }
 
     void OnCollisionStay2D(Collision2D collision)
     {
-        Debug.Log(collision.gameObject.layer);
         if (contactEnemy)
         {
             if (collision.gameObject.layer == 9)

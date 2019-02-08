@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class EnemyAdvanceMovement : MonoBehaviour
 {
-
-    public bool seePlayer = false;
-
     [SerializeField] bool targetIsRadius = false;
     public float speed = 5;
     public float offSetX = 0;
@@ -14,15 +11,12 @@ public class EnemyAdvanceMovement : MonoBehaviour
     public float offSetZ = 0;
 
     public bool attacking = false;
-    int timer = 0;
-    [SerializeField] int timerMax = 10;
+    float timer = 0;
 
-    public Transform homePlate;
+
     Transform player;
     Vector3 lastPlayerPosition = Vector3.zero;
     Vector3 target = Vector3.one * 5;
-    [SerializeField] Transform pivot;
-    [SerializeField] Transform orbitPoint;
 
     Rigidbody2D rig;
 
@@ -37,13 +31,16 @@ public class EnemyAdvanceMovement : MonoBehaviour
 
     void Update()
     {
+        timer -= Time.deltaTime;
         if(ec.seePlayer)
         {
             player = GameObject.FindGameObjectWithTag("Player").transform;
+            GetComponentInChildren<LookAt>().FocusObject = player;
         }
         else
         {
             player = transform;
+            GetComponentInChildren<LookAt>().FocusObject = null;
         }
         if (targetIsRadius)
         {
@@ -59,43 +56,33 @@ public class EnemyAdvanceMovement : MonoBehaviour
             target.y += offSetY;
             target.z = offSetZ;
         }
-        pivot.Rotate(Vector3.forward, 180 * Time.fixedDeltaTime);
 
-        if (!attacking)
-        {
-            timer++;
-            rig.velocity = Vector2.zero;
-            transform.position = Vector3.MoveTowards(transform.position, orbitPoint.position, speed * Time.fixedDeltaTime);
-            if (timer >= timerMax && seePlayer)
-            {
-                timer = 0;
-                attacking = true;
-                lastPlayerPosition = player.position;
-                
-                rig.velocity = Vector2.zero;
-            }
-        }
         if (attacking)
         {
             Attack();
+        }
+        if (!attacking && ec.seePlayer)
+        {
+            rig.velocity = (transform.position - player.position).normalized * speed / 3;
+            if (timer <= 0)
+            {
+                timer = 5;
+                attacking = true;
+                lastPlayerPosition = player.position;
+            }
         }
     }
 
     public virtual void Attack()
     {
-        timer++;
-        //transform.position = Vector3.MoveTowards(transform.position, target, speed * Time.fixedDeltaTime);
-        rig.AddForce((target - transform.position).normalized * speed * 100 * Time.fixedDeltaTime);
-        if (timer >= timerMax / 2)
+        if (Vector3.Distance(target, transform.position) > 1f)
         {
-            timer = 0;
+            rig.velocity = (target - transform.position).normalized * speed * 2;
+        }
+        if (timer <= 1 || Vector3.Distance(target, transform.position) <= 1f)
+        {
+            timer = 1;
             attacking = false;
-            rig.velocity = Vector2.zero;
-            if (Vector3.Distance(player.position, orbitPoint.position) < Vector3.Distance(transform.position, orbitPoint.position))
-            {
-                homePlate.position = transform.position;
-                transform.localPosition = Vector3.zero;
-            }
         }
     }
 }
