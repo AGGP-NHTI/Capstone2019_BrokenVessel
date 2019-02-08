@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 44f34e2368a286b4eaef9c715fe7a9e6
+guid: a445ad034fcfe6a458fb596a2e3c9a42
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -47,7 +47,6 @@ ModelImporter:
     2300000: pasted__pasted__pasted__polySurface2
     3300000: pasted__pasted__pasted__polySurface2
     4300000: pasted__pasted__pasted__polySurface2
-    2186277476908879412: ImportLogs
   externalObjects: {}
   materials:
     importMaterials: 1
