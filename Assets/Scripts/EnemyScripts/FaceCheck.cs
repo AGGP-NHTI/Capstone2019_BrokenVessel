@@ -5,6 +5,7 @@ using UnityEngine;
 public class FaceCheck : MonoBehaviour
 {
     EnemyMovement me;
+
 	void Start ()
     {
         me = GetComponentInParent<EnemyMovement>();
@@ -12,7 +13,7 @@ public class FaceCheck : MonoBehaviour
 	
     private void OnTriggerStay2D(Collider2D other)
     {
-        if (other.gameObject.layer == 0)
+        if (other.gameObject.layer == 0) //|| other.gameObject.layer == 9)
         {
             me.hitHead = true;
         }
