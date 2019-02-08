@@ -11,8 +11,8 @@ public class EnemyAdvanceMovement : MonoBehaviour
     public float offSetZ = 0;
 
     public bool attacking = false;
-    int timer = 0;
-    [SerializeField] int timerMax = 10;
+    float timer = 0;
+
 
     Transform player;
     Vector3 lastPlayerPosition = Vector3.zero;
@@ -31,6 +31,7 @@ public class EnemyAdvanceMovement : MonoBehaviour
 
     void Update()
     {
+        timer -= Time.deltaTime;
         if(ec.seePlayer)
         {
             player = GameObject.FindGameObjectWithTag("Player").transform;
@@ -60,13 +61,12 @@ public class EnemyAdvanceMovement : MonoBehaviour
         {
             Attack();
         }
-        if (!attacking)
+        if (!attacking && ec.seePlayer)
         {
-            timer++;
-            rig.velocity = -(transform.position - target).normalized * speed / 2 * Time.fixedDeltaTime;
-            if (timer >= timerMax && ec.seePlayer)
+            rig.velocity = (transform.position - player.position).normalized * speed / 3;
+            if (timer <= 0)
             {
-                timer = 0;
+                timer = 5;
                 attacking = true;
                 lastPlayerPosition = player.position;
             }
@@ -75,14 +75,13 @@ public class EnemyAdvanceMovement : MonoBehaviour
 
     public virtual void Attack()
     {
-        timer++;
-        if (Vector3.Distance(target, transform.position) > 1)
+        if (Vector3.Distance(target, transform.position) > 1f)
         {
-            rig.velocity = (target - transform.position).normalized * speed * 100 * Time.fixedDeltaTime;
+            rig.velocity = (target - transform.position).normalized * speed * 2;
         }
-        if (timer >= timerMax / 2)
+        if (timer <= 1 || Vector3.Distance(target, transform.position) <= 1f)
         {
-            timer = 0;
+            timer = 1;
             attacking = false;
         }
     }
