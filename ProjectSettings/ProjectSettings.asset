@@ -649,7 +649,7 @@ PlayerSettings:
   cloudServicesEnabled:
     UNet: 1
   facebookSdkVersion: 7.9.4
-  apiCompatibilityLevel: 2
+  apiCompatibilityLevel: 3
   cloudProjectId: 64f5bba0-9f1c-490d-bbac-ad9617c8c95b
   projectName: BrokenVessel
   organizationId: nhti
