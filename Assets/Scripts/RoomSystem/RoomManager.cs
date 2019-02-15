@@ -52,7 +52,7 @@ namespace BrokenVessel.RoomSystem
 			Rooms.Add(scr);
 			
 			// Get text
-			string text = Resources.Load<TextAsset>(fileName).text;
+			string text = Resources.Load<TextAsset>($"Rooms/{fileName}").text;
 
 			// Split text
 			string[] array = text.Split("\n".ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
