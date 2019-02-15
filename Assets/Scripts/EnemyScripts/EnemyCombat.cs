@@ -4,28 +4,38 @@ using UnityEngine;
 
 public class EnemyCombat : MonoBehaviour {
 
+    public enum DetectionType { none, ignore, ray, circle, box };
+    public DetectionType choice = DetectionType.none;
+    public float range = 10f;
+    public bool seePlayer = false;
+
     public LayerMask target;
 
     public bool contactEnemy = false;
-    public bool rangeEnemy = false;
+
     public bool meleeEnemy = false;
+    [SerializeField] Vector3 SlashRotation = Vector3.zero;
+    [SerializeField] float drawBack = 45;
+    [SerializeField] float slashAngle = -90;
+
+    public bool rangeEnemy = false;
+    public GameObject projectile;
+
+
 
     public bool forgetPlayer = false;
     public bool AlwaysMove = false;
 
     public bool attacking = false;
 
-    public enum DetectionType { none, ignore, ray, circle, box };
-    public DetectionType choice = DetectionType.none;
-    public float range = 10f;
-    public bool seePlayer = false;
 
+    [SerializeField] Transform faceCheck;
     [SerializeField] GameObject weapon;
 
     float timer = 1f;
 
-    public Transform faceCheck;
-    public GameObject projectile;
+
+
 	
 	void Update ()
     {
@@ -105,9 +115,9 @@ public class EnemyCombat : MonoBehaviour {
 
     IEnumerator meleeAttack()
     {
-        weapon.transform.rotation = Quaternion.Euler(0, 0, -45);
+        weapon.transform.rotation = Quaternion.Euler(SlashRotation * drawBack);
         yield return new WaitForSeconds(2);
-        weapon.transform.rotation = Quaternion.Euler(0, 0, -90);
+        weapon.transform.rotation = Quaternion.Euler(SlashRotation * slashAngle);
         Debug.Log("melee attack");
         yield return new WaitForSeconds(2);
         weapon.transform.rotation = Quaternion.identity;
@@ -117,7 +127,7 @@ public class EnemyCombat : MonoBehaviour {
     IEnumerator rangeAttack()
     {
         yield return new WaitForSeconds(.5f);
-        //pew
+        Instantiate(projectile, weapon.transform.position, weapon.transform.rotation);
         yield return new WaitForSeconds(.5f);
         //coil
         attacking = false;
