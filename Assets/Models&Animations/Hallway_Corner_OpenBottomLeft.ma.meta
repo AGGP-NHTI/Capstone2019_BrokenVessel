@@ -47,6 +47,7 @@ ModelImporter:
     2300000: pasted__pasted__pasted__polySurface2
     3300000: pasted__pasted__pasted__polySurface2
     4300000: pasted__pasted__pasted__polySurface2
+    2186277476908879412: ImportLogs
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -119,7 +120,6 @@ ModelImporter:
     legStretch: 0.05
     feetSpacing: 0
     rootMotionBoneName: 
-    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
