@@ -90,7 +90,7 @@ namespace BrokenVessel.RoomSystem
 				text += "\n";
 			}
 
-			File.WriteAllText($"{Application.dataPath}/Resources/{room.name}.txt", text);
+			File.WriteAllText($"{Application.dataPath}/Resources/Rooms/{room.name}.txt", text);
 			AssetDatabase.Refresh();
 		}
 	}

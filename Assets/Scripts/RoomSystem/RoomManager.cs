@@ -106,7 +106,7 @@ namespace BrokenVessel.RoomSystem
 
 		public static void LoadRoomByDoorID(int doorID)
 		{
-			string[] files = Directory.GetFiles($"{Application.dataPath}/Resources/", "*.txt");
+			string[] files = Directory.GetFiles($"{Application.dataPath}/Resources/Rooms/", "*.txt");
 
 			foreach (string file in files)
 			{
@@ -179,7 +179,7 @@ namespace BrokenVessel.RoomSystem
 			RoomManager scr = (RoomManager)target;
 			if (GUILayout.Button("Load from File"))
 			{
-				string path = EditorUtility.OpenFilePanel("Load from File", $"{Application.dataPath}/Resources/", "txt");
+				string path = EditorUtility.OpenFilePanel("Load from File", $"{Application.dataPath}/Resources/Rooms/", "txt");
 				if (path.Length != 0)
 				{
 					path = Path.GetFileName(path);
