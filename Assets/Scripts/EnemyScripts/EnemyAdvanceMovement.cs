@@ -35,12 +35,14 @@ public class EnemyAdvanceMovement : MonoBehaviour
         if(ec.seePlayer)
         {
             player = GameObject.FindGameObjectWithTag("Player").transform;
-            GetComponentInChildren<LookAt>().FocusObject = player;
+            GetComponentsInChildren<LookAt>()[0].FocusObject = player;
+            GetComponentsInChildren<LookAt>()[1].FocusObject = player;
         }
         else
         {
             player = transform;
-            GetComponentInChildren<LookAt>().FocusObject = null;
+            GetComponentsInChildren<LookAt>()[0].FocusObject = null;
+            GetComponentsInChildren<LookAt>()[1].FocusObject = null;
         }
         if (targetIsRadius)
         {
