@@ -2,29 +2,58 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Sword : MonoBehaviour {
+public class Sword : Weapon {
 
     public GameObject Pivot;
-    public GameObject HitBox;
+    public GameObject Player;
 
-	// Use this for initialization
-	void Start () {
-        StartCoroutine(SwingSword());
+    // Use this for initialization
+    void Start () {
+        //StartCoroutine(SwingSword());
     }
-	
-	// Update is called once per frame
-	void Update () {
-        
+
+    // Update is called once per frame
+    public override void Update () {
+        base.Update();
+        if (HitBox == null)
+        {
+            HitBox = GameObject.Find("SwordHitBox");
+        }
+        if (Pivot == null)
+        {
+            Pivot = GameObject.Find("Pivot");
+        }
+        if (Player == null)
+        {
+            Player = GameObject.Find("Player");
+        }
+    }
+
+    public override void Attack()
+    {
+        StartCoroutine(SwingSword());
+        base.Attack();
     }
 
     public IEnumerator SwingSword()
     {
-        yield return new WaitForSeconds(.1f);
-        HitBox.GetComponent<MeshCollider>().enabled = true;
-        gameObject.transform.RotateAround(Pivot.transform.position, Vector3.forward * -1, 90);
-        yield return new WaitForSeconds(.1f);
-        gameObject.transform.RotateAround(Pivot.transform.position, Vector3.forward * -1, -90);
-        HitBox.GetComponent<MeshCollider>().enabled = false;
-        StartCoroutine(SwingSword());
+        if (Player.GetComponent<PlayerMovement>().facingRight)
+        {
+            yield return new WaitForSeconds(.1f);
+            HitBox.GetComponent<MeshCollider>().enabled = true;
+            gameObject.transform.RotateAround(Pivot.transform.position, Vector3.forward * -1, 90);
+            yield return new WaitForSeconds(.1f);
+            gameObject.transform.RotateAround(Pivot.transform.position, Vector3.forward * -1, -90);
+            HitBox.GetComponent<MeshCollider>().enabled = false;
+        }
+        else
+        {
+            yield return new WaitForSeconds(.1f);
+            HitBox.GetComponent<MeshCollider>().enabled = true;
+            gameObject.transform.RotateAround(Pivot.transform.position, Vector3.forward, 90);
+            yield return new WaitForSeconds(.1f);
+            gameObject.transform.RotateAround(Pivot.transform.position, Vector3.forward, -90);
+            HitBox.GetComponent<MeshCollider>().enabled = false;
+        }
     }
 }

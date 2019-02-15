@@ -9,7 +9,7 @@ public class PlayerData : MonoBehaviour {
     public int metalScrap = 0;
 
     public float speed = 7f;
-    public float jumpForce = 50f;
+    public float jumpForce = 11f;
 
     public float iFrameTimer = 0f;
     public bool ignoreDamage = false;
@@ -22,10 +22,13 @@ public class PlayerData : MonoBehaviour {
     public bool chargeJump = false;
     public int shipControl = 0;
 
+    [SerializeField] GameObject testShield;
+
     public void takeDamage(float value, float iFrames) //, Vector2 Knockback
     {
-        if(iFrameTimer <= 0 || ignoreDamage)
+        if(iFrameTimer <= 0 && !ignoreDamage)
         {
+            testShield.GetComponent<MeshRenderer>().enabled = true;
             health -= value;
             iFrameTimer = iFrames;
             //knockback
@@ -36,6 +39,10 @@ public class PlayerData : MonoBehaviour {
         if(iFrameTimer > 0)
         {
             iFrameTimer -= Time.deltaTime;
+        }
+        if(iFrameTimer < 0)
+        {
+            testShield.GetComponent<MeshRenderer>().enabled = false;
         }
     }
 
