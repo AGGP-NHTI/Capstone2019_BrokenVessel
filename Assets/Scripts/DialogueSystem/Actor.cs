@@ -16,7 +16,7 @@ public class Actor : MonoBehaviour {
     CharacterEmotions myState;
 
 	// Use this for initialization
-	void Start () {
+	void Awake () {
         myState = CharacterEmotions.neutral;
         spRend = GetComponent<SpriteRenderer>();
 	}
@@ -33,24 +33,28 @@ public class Actor : MonoBehaviour {
     IEnumerator HappyState()
     {
         spRend.sprite = emotionSprites[0];
+        myState = CharacterEmotions.happy;
         yield return null;
     }
 
     IEnumerator SadState()
     {
         spRend.sprite = emotionSprites[1];
+        myState = CharacterEmotions.sad;
         yield return null;
     }
 
     IEnumerator NeutralState()
     {
         spRend.sprite = emotionSprites[2];
+        myState = CharacterEmotions.neutral;
         yield return null;
     }
 
     IEnumerator AngryState()
     {
         spRend.sprite = emotionSprites[3];
+        myState = CharacterEmotions.angry;
         yield return null;
     }
 }

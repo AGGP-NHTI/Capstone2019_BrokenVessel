@@ -87,6 +87,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cff7e5f2238e7f47a18dd84a7b40e92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  characters:
+  - {fileID: 1722386102361938, guid: 56f9032504053d249840ac40804efd45, type: 2}
+  - {fileID: 1722386102361938, guid: 89bf3edb08871f54f95cded0973d0137, type: 2}
+  - {fileID: 1722386102361938, guid: 1ceeeafb22ac65141a65c22158e3834b, type: 2}
+  - {fileID: 1722386102361938, guid: 8a87d3369cfed6f4cb6b3f4d14f71832, type: 2}
+  actorsList: []
+  leftActorPosition: {x: 0, y: 0, z: 0}
+  rightActorPosition: {x: 0, y: 0, z: 0}
 --- !u!114 &114847558365170124
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -98,7 +106,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bf0558c47e725544819b96a420fcf56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inkJSONAsset: {fileID: 0}
+  inkJSONAsset: {fileID: 4900000, guid: 3eb18c203bb1a9c4dbbada5e94e64ccd, type: 3}
   canvas: {fileID: 0}
   textPrefab: {fileID: 11456674, guid: 1aab6ef84d87c416f8f0b3e1ef3d77d2, type: 2}
   buttonPrefab: {fileID: 11455116, guid: 37c108a6c38964f79a6621eccb33ddc1, type: 2}

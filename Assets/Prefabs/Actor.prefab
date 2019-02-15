@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4030513524213526}
   - component: {fileID: 114111897826864882}
+  - component: {fileID: 212723273666297040}
   m_Layer: 0
   m_Name: Actor
   m_TagString: Untagged
@@ -51,3 +52,55 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7224ea304897b74092391a11cb74c7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  emotionSprites:
+  - {fileID: 21300000, guid: a37643852e0126b479c0504657dc736a, type: 3}
+  - {fileID: 21300000, guid: 51bcb829f7118a641abea75097655d6e, type: 3}
+  - {fileID: 21300000, guid: 5b22bdcdc61d14b4cafd7fbf66f4fa7d, type: 3}
+  - {fileID: 21300000, guid: 350b80b956840524d9631b28afc84cb0, type: 3}
+  ID: 0
+--- !u!212 &212723273666297040
+SpriteRenderer:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1722386102361938}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 0
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
