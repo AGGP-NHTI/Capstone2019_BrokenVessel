@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Models&Animations/Large Room Models/BottomRightRoomDoor.fbx.meta
 guid: 6d33306b6db3d2c49b58889b4c3db629
+=======
+guid: c2fb8d11c325f8d489f6295e2b44f371
+>>>>>>> 93491491453444499017bf9beb832beae984d059:Assets/Models&Animations/Assets/BottomRightRoomDoor.fbx.meta
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:

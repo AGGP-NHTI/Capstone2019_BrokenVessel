@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyCombat : MonoBehaviour {
 
+<<<<<<< HEAD
     public float health = 100;
     public bool dead = false;
 
@@ -12,35 +13,39 @@ public class EnemyCombat : MonoBehaviour {
     public float range = 10f;
     public bool seePlayer = false;
 
+=======
+>>>>>>> 93491491453444499017bf9beb832beae984d059
     public LayerMask target;
 
     public bool contactEnemy = false;
-
-    public bool meleeEnemy = false;
-    [SerializeField] Vector3 SlashRotation = Vector3.zero;
-    [SerializeField] float drawBack = 45;
-    [SerializeField] float slashAngle = -90;
-
     public bool rangeEnemy = false;
-    public GameObject projectile;
-
-
+    public bool meleeEnemy = false;
 
     public bool forgetPlayer = false;
     public bool AlwaysMove = false;
 
     public bool attacking = false;
 
+    public enum DetectionType { none, ignore, ray, circle, box };
+    public DetectionType choice = DetectionType.none;
+    public float range = 10f;
+    public bool seePlayer = false;
 
-    [SerializeField] Transform faceCheck;
     [SerializeField] GameObject weapon;
 
     float timer = 1f;
 
+<<<<<<< HEAD
 
 
 
     void Update()
+=======
+    public Transform faceCheck;
+    public GameObject projectile;
+	
+	void Update ()
+>>>>>>> 93491491453444499017bf9beb832beae984d059
     {
         switch (choice)
         {
@@ -142,9 +147,9 @@ public class EnemyCombat : MonoBehaviour {
 
     IEnumerator meleeAttack()
     {
-        weapon.transform.rotation = Quaternion.Euler(SlashRotation * drawBack);
+        weapon.transform.rotation = Quaternion.Euler(0, 0, -45);
         yield return new WaitForSeconds(2);
-        weapon.transform.rotation = Quaternion.Euler(SlashRotation * slashAngle);
+        weapon.transform.rotation = Quaternion.Euler(0, 0, -90);
         Debug.Log("melee attack");
         //damage trigger = true
         yield return new WaitForSeconds(2);
@@ -155,7 +160,7 @@ public class EnemyCombat : MonoBehaviour {
     IEnumerator rangeAttack()
     {
         yield return new WaitForSeconds(.5f);
-        Instantiate(projectile, weapon.transform.position, weapon.transform.rotation);
+        //pew
         yield return new WaitForSeconds(.5f);
         attacking = false;
     }

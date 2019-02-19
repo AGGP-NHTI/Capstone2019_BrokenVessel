@@ -31,6 +31,7 @@ public class EnemyAdvanceMovement : MonoBehaviour
     {
         if (!ec.dead)
         {
+<<<<<<< HEAD
             timer -= Time.deltaTime;
             if (ec.seePlayer)
             {
@@ -58,6 +59,30 @@ public class EnemyAdvanceMovement : MonoBehaviour
                 target.y += offSet.y;
                 target.z = offSet.z;
             }
+=======
+            player = GameObject.FindGameObjectWithTag("Player").transform;
+            GetComponentInChildren<LookAt>().FocusObject = player;
+        }
+        else
+        {
+            player = transform;
+            GetComponentInChildren<LookAt>().FocusObject = null;
+        }
+        if (targetIsRadius)
+        {
+            target = (transform.position - lastPlayerPosition).normalized * offSetX;
+            target.y = Mathf.Abs(target.y);
+            target += lastPlayerPosition;
+            target.y += offSetY;
+        }
+        else
+        {
+            target = lastPlayerPosition;
+            target.x += offSetX;
+            target.y += offSetY;
+            target.z = offSetZ;
+        }
+>>>>>>> 93491491453444499017bf9beb832beae984d059
 
             if (attacking && ec.contactEnemy)
             {
