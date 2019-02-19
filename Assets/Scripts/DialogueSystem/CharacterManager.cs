@@ -9,7 +9,7 @@ public class CharacterManager : MonoBehaviour {
     [SerializeField]
     Vector3 leftActorPosition, rightActorPosition;
 
-    List<Actor> activeActors = new List<Actor>();
+    public List<Actor> activeActors = new List<Actor>();
 
 	// Use this for initialization
 	void Start () {
@@ -45,8 +45,6 @@ public class CharacterManager : MonoBehaviour {
                 activeActors.Add(gO.GetComponent<Actor>());
                 gO.transform.position = rightActorPosition;
             }
-            
-            
         }
     }
 

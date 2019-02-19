@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 62311bf67f1fb584aa101ac122c8a435
+guid: 2797cb5dfd251c04292ba3c236be27c7
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -15,6 +15,7 @@ ModelImporter:
     2300000: node_id6
     3300000: node_id6
     4300000: node_id6
+    9500000: //RootNode
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -66,8 +67,8 @@ ModelImporter:
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
-    previousCalculatedGlobalScale: 1
-    hasPreviousCalculatedGlobalScale: 0
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -87,11 +88,12 @@ ModelImporter:
     legStretch: 0.05
     feetSpacing: 0
     rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 

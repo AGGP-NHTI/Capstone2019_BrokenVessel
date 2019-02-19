@@ -33,6 +33,5 @@ public class Dagger : Weapon
         yield return new WaitForSeconds(.1f);
         gameObject.transform.Translate(-1f, 0, 0);
         HitBox.GetComponent<BoxCollider>().enabled = false;
-        //StartCoroutine(SwingSpear());
     }
 }

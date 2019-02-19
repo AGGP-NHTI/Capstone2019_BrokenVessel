@@ -9,7 +9,7 @@ public class Sword : Weapon {
 
     // Use this for initialization
     void Start () {
-        //StartCoroutine(SwingSword());
+        
     }
 
     // Update is called once per frame

@@ -33,86 +33,89 @@ public class EnemyMovement : MonoBehaviour {
 
     void Update()
     {
-        grounded = Physics2D.CircleCast(ledgeCheck.position, .2f, Vector2.zero, 0, realGround);
-        onLedge = !Physics2D.CircleCast(ledgeCheck.position, .075f, Vector2.zero, 0, realGround);
+        if (!ec.dead)
+        {
+            grounded = Physics2D.CircleCast(ledgeCheck.position, .2f, Vector2.zero, 0, realGround);
+            onLedge = !Physics2D.CircleCast(ledgeCheck.position, .075f, Vector2.zero, 0, realGround);
 
-        if (followLedge && grounded)
-        {
-            rig.gravityScale = 0;
-            rig.freezeRotation = true;
-        }
-        else
-        {
-            rig.gravityScale = 1;
-            rig.freezeRotation = false;
-        }
-        if (bounceOff && (hitHead || onLedge) && !moveOnJump)
-        {
-            Flip();
-            speed = -speed;
-        }
-        if (bounceOff && moveOnJump && hitHead)
-        {
-            Flip();
-            speed = -speed;
-        }
-        if (!grounded && !moveOnJump)
-        {
-            transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
-            RaycastHit2D hit = Physics2D.Raycast(ledgeCheck.position, Vector2.down, .25f, realGround);
-            if (hit)
+            if (followLedge && grounded)
             {
-                transform.position = new Vector3(transform.position.x, hit.transform.position.y + (hit.transform.localScale.y / 2));
-            }
-        }
-        else if (followLedge && hitHead)
-        {
-            rig.isKinematic = true;
-            transform.position = faceCheck.position;
-            transform.rotation = Quaternion.Euler(new Vector3(0, 0, transform.rotation.eulerAngles.z + (90 * transform.localScale.x)));
-            rig.isKinematic = false;
-        }
-        hitHead = false;
-
-        //---------------------------------------------------------------------------------------
-        //--Movement-----------------------------------------------------------------------------
-
-        Vector2 processVelocity = transform.InverseTransformDirection(rig.velocity);
-        if ((ec.seePlayer && !ec.AlwaysMove) || (ec.AlwaysMove && !ec.attacking))
-        {
-            if (moveOnJump)
-            {
-                if (!onLedge)
-                {
-                    isJumping = true;
-                }
-                if (isJumping && timer >= 80)
-                {
-                    processVelocity.y = Mathf.Abs(speed) * 2;
-                    processVelocity.x = speed;
-                }
-                if (timer >= 90)
-                {
-                    processVelocity.y = -speed;
-                    timer = 0;
-                    isJumping = false;
-                }
-                timer++;
+                rig.gravityScale = 0;
+                rig.freezeRotation = true;
             }
             else
             {
-                if (!onLedge || !followLedge)
+                rig.gravityScale = 1;
+                rig.freezeRotation = false;
+            }
+            if (bounceOff && (hitHead || onLedge) && !moveOnJump)
+            {
+                Flip();
+                speed = -speed;
+            }
+            if (bounceOff && moveOnJump && hitHead)
+            {
+                Flip();
+                speed = -speed;
+            }
+            if (!grounded && !moveOnJump)
+            {
+                transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
+                RaycastHit2D hit = Physics2D.Raycast(ledgeCheck.position, Vector2.down, .25f, realGround);
+                if (hit)
                 {
-                    processVelocity.x = speed;
-                }
-                else if (grounded)
-                {
-                    transform.Rotate(new Vector3(0, 0, -15 * transform.localScale.x));
-                    processVelocity = Vector2.zero;
+                    transform.position = new Vector3(transform.position.x, hit.transform.position.y + (hit.transform.localScale.y / 2));
                 }
             }
+            else if (followLedge && hitHead)
+            {
+                rig.isKinematic = true;
+                transform.position = faceCheck.position;
+                transform.rotation = Quaternion.Euler(new Vector3(0, 0, transform.rotation.eulerAngles.z + (90 * transform.localScale.x)));
+                rig.isKinematic = false;
+            }
+            hitHead = false;
+
+            //---------------------------------------------------------------------------------------
+            //--Movement-----------------------------------------------------------------------------
+
+            Vector2 processVelocity = transform.InverseTransformDirection(rig.velocity);
+            if ((ec.seePlayer && !ec.AlwaysMove) || (ec.AlwaysMove && !ec.attacking))
+            {
+                if (moveOnJump)
+                {
+                    if (!onLedge)
+                    {
+                        isJumping = true;
+                    }
+                    if (isJumping && timer >= 80)
+                    {
+                        processVelocity.y = Mathf.Abs(speed) * 2;
+                        processVelocity.x = speed;
+                    }
+                    if (timer >= 90)
+                    {
+                        processVelocity.y = -speed;
+                        timer = 0;
+                        isJumping = false;
+                    }
+                    timer++;
+                }
+                else
+                {
+                    if (!onLedge || !followLedge)
+                    {
+                        processVelocity.x = speed;
+                    }
+                    else if (grounded)
+                    {
+                        transform.Rotate(new Vector3(0, 0, -15 * transform.localScale.x));
+                        processVelocity = Vector2.zero;
+                    }
+                }
+            }
+            rig.velocity = transform.TransformDirection(processVelocity);
         }
-        rig.velocity = transform.TransformDirection(processVelocity);
     }
 
 

@@ -15,6 +15,8 @@ ModelImporter:
     100018: node_id6
     100020: node_id7
     100022: node_id8
+    100024: node_id12
+    100026: node_id9
     400000: //RootNode
     400002: pCube1
     400004: pSphere1
@@ -27,21 +29,31 @@ ModelImporter:
     400018: node_id6
     400020: node_id7
     400022: node_id8
+    400024: node_id12
+    400026: node_id9
     2100000: lambert1
     2100002: Material_55
     2300000: pSphere2
     2300002: node_id8
+    2300004: node_id10
     3300000: pSphere2
     3300002: node_id8
+    3300004: node_id10
     4300000: pSphere2
     4300002: node_id8
+    4300004: node_id10
     2186277476908879412: ImportLogs
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_52
+    second: {fileID: 2100000, guid: b951cf57808fefd4cb9f984fe0687b72, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
-    materialLocation: 1
+    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -108,6 +120,7 @@ ModelImporter:
     legStretch: 0.05
     feetSpacing: 0
     rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
