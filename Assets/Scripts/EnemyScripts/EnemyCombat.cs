@@ -145,7 +145,7 @@ public class EnemyCombat : MonoBehaviour {
     IEnumerator rangeAttack()
     {
         yield return new WaitForSeconds(.5f);
-        //pew
+        Instantiate(projectile, weapon.transform.position, weapon.transform.rotation);
         yield return new WaitForSeconds(.5f);
         attacking = false;
     }

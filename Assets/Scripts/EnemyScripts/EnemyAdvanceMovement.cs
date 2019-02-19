@@ -87,7 +87,7 @@ public class EnemyAdvanceMovement : MonoBehaviour
             }
             if (!attacking && ec.seePlayer)
             {
-                rig.velocity = (transform.position - target).normalized * speed;
+                rig.velocity = (transform.position - target).normalized * -speed;
                 if (timer <= 0)
                 {
                     timer = 5;
