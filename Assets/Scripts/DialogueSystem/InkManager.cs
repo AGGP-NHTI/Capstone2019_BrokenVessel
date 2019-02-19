@@ -35,14 +35,14 @@ public class InkManager : MonoBehaviour {
     void StartStory()
     {
         story = new Story(inkJSONAsset.text);
-        story.BindExternalFunction("place_actors", (string leftName, string rightName) => 
+        /*story.BindExternalFunction("place_actors", (string leftName, string rightName) => 
         {
             cm.PlaceActors(leftName, rightName);
         });
         story.BindExternalFunction("change_emotion", (string emotion, int ID) => 
         {
             cm.ChangeActorEmotion(emotion, ID);
-        });
+        });*/
         RefreshView();
     }
 
@@ -81,7 +81,7 @@ public class InkManager : MonoBehaviour {
         // If we've read all the content and there's no choices, the story is finished!
         else
         {
-            Button choice = CreateChoiceView("End of story.\nRestart?");
+            Button choice = CreateChoiceView("ButtonBoi");
             choice.onClick.AddListener(delegate {
                 StartStory();
             });

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class TalkyBoi : MonoBehaviour {
 
+    //learn how to draw your Ink document story into 3dTextBubbles
+
     public GameObject Cube1;
     public GameObject Cube2;
     public float Distance_;

@@ -9,17 +9,17 @@ public class CharacterManager : MonoBehaviour {
     [SerializeField]
     Vector3 leftActorPosition, rightActorPosition;
 
-    public List<Actor> activeActors = new List<Actor>();
+    List<Actor> activeActors = new List<Actor>();
 
 	// Use this for initialization
 	void Start () {
-		for(int i = 0; i < characters.Length; i++)
+		/*for(int i = 0; i < characters.Length; i++)
         {
             GameObject newActor = Instantiate(characters[i]);
             newActor.SetActive(false);
             newActor.name = characters[i].name;
             actorsList.Add(newActor);
-        }
+        }*/
 	}
 	
 	// Update is called once per frame
