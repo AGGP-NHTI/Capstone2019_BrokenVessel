@@ -11,7 +11,6 @@ public class EnemyAdvanceMovement : MonoBehaviour
     public bool attacking = false;
     float timer = 0;
 
-
     Transform player;
     Vector3 lastPlayerPosition = Vector3.zero;
     Vector3 target = Vector3.one * 5;
@@ -31,7 +30,6 @@ public class EnemyAdvanceMovement : MonoBehaviour
     {
         if (!ec.dead)
         {
-<<<<<<< HEAD
             timer -= Time.deltaTime;
             if (ec.seePlayer)
             {
@@ -59,7 +57,7 @@ public class EnemyAdvanceMovement : MonoBehaviour
                 target.y += offSet.y;
                 target.z = offSet.z;
             }
-=======
+
             player = GameObject.FindGameObjectWithTag("Player").transform;
             GetComponentInChildren<LookAt>().FocusObject = player;
         }
@@ -70,19 +68,18 @@ public class EnemyAdvanceMovement : MonoBehaviour
         }
         if (targetIsRadius)
         {
-            target = (transform.position - lastPlayerPosition).normalized * offSetX;
+            target = (transform.position - lastPlayerPosition).normalized * offSet.x;
             target.y = Mathf.Abs(target.y);
             target += lastPlayerPosition;
-            target.y += offSetY;
+            target.y += offSet.y;
         }
         else
         {
             target = lastPlayerPosition;
-            target.x += offSetX;
-            target.y += offSetY;
-            target.z = offSetZ;
+            target.x += offSet.x;
+            target.y += offSet.y;
+            target.z = offSet.z;
         }
->>>>>>> 93491491453444499017bf9beb832beae984d059
 
             if (attacking && ec.contactEnemy)
             {
@@ -99,9 +96,9 @@ public class EnemyAdvanceMovement : MonoBehaviour
                 }
             }
         }
-    }
+    
 
-    public virtual void ChargeAttack()
+    public void ChargeAttack()
     {
         if (Vector3.Distance(target, transform.position) > 1f)
         {

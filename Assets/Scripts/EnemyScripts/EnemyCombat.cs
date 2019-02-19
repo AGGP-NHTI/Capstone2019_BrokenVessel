@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class EnemyCombat : MonoBehaviour {
 
-<<<<<<< HEAD
     public float health = 100;
     public bool dead = false;
 
@@ -13,8 +12,6 @@ public class EnemyCombat : MonoBehaviour {
     public float range = 10f;
     public bool seePlayer = false;
 
-=======
->>>>>>> 93491491453444499017bf9beb832beae984d059
     public LayerMask target;
 
     public bool contactEnemy = false;
@@ -26,26 +23,14 @@ public class EnemyCombat : MonoBehaviour {
 
     public bool attacking = false;
 
-    public enum DetectionType { none, ignore, ray, circle, box };
-    public DetectionType choice = DetectionType.none;
-    public float range = 10f;
-    public bool seePlayer = false;
-
     [SerializeField] GameObject weapon;
 
     float timer = 1f;
 
-<<<<<<< HEAD
-
-
-
-    void Update()
-=======
     public Transform faceCheck;
     public GameObject projectile;
 	
 	void Update ()
->>>>>>> 93491491453444499017bf9beb832beae984d059
     {
         switch (choice)
         {
