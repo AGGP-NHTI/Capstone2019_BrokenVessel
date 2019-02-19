@@ -58,6 +58,11 @@ namespace BrokenVessel.Player
 			if (CheckFloor()) { velocity.y = jumpStrength; }
 		}
 
+		public void Move(float dir)
+		{
+
+		}
+
 		private bool CheckFloor()
 		{
 			float temp;
