@@ -18,8 +18,10 @@ namespace BrokenVessel.Player
 		void Update()
 		{
 			if (input.jump) { phys.Jump(); }
-			if (input.left && !input.right) { phys.Move(-1); }
-			if (input.right && !input.left) { phys.Move(1); }
+			if (input.jumpEnd) { phys.HalveJump(); }
+			if (input.left == input.right) { phys.Move(0); }
+			else if (input.left) { phys.Move(-1); }
+			else if (input.right) { phys.Move(1); }
 		}
 	}
 }

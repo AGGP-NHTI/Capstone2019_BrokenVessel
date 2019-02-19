@@ -467,6 +467,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpStrength: 10
+  maxSpeed: 5
+  groundSpeed: 45
+  airSpeed: 10
+  groundFric: 25
+  airFric: 0
   gravity: 20
   terminalVelocity: 20
   collisionMask:
