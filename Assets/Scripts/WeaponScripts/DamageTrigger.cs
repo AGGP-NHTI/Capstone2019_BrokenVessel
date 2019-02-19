@@ -5,6 +5,7 @@ using UnityEngine;
 public class DamageTrigger : MonoBehaviour {
 
     [SerializeField] int OwnerLayer;
+    public bool isProjectile = true;
 
     void OnTriggerEnter2D(Collider2D collision)
     {
@@ -15,11 +16,19 @@ public class DamageTrigger : MonoBehaviour {
             {
                 collision.gameObject.GetComponent<PlayerData>().takeDamage(10, 5);
             }
-            if (transform.parent)
+            if (collision.gameObject.GetComponent<EnemyCombat>())
             {
-                Destroy(transform.parent.gameObject);
+                collision.gameObject.GetComponent<EnemyCombat>().takeDamage(10);
             }
-            Destroy(gameObject);
+
+            if (isProjectile)
+            {
+                if (transform.parent)
+                {
+                    Destroy(transform.parent.gameObject);
+                }
+                Destroy(gameObject);
+            }
         }
     }
 

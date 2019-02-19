@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class EnemyCombat : MonoBehaviour {
 
+    public float health = 100;
+    public bool dead = false;
+
     public enum DetectionType { none, ignore, ray, circle, box };
     public DetectionType choice = DetectionType.none;
     public float range = 10f;
@@ -36,8 +39,8 @@ public class EnemyCombat : MonoBehaviour {
 
 
 
-	
-	void Update ()
+
+    void Update()
     {
         switch (choice)
         {
@@ -69,14 +72,14 @@ public class EnemyCombat : MonoBehaviour {
             switch (choice)
             {
                 case DetectionType.ray:
-                    if(Physics2D.Raycast(faceCheck.position, transform.right * transform.localScale.x, range, target))
+                    if (Physics2D.Raycast(faceCheck.position, transform.right * transform.localScale.x, range, target))
                     {
                         seePlayer = true;
                     }
                     Debug.DrawRay(faceCheck.position, Vector2.right * transform.localScale.x, Color.red, range);
                     break;
                 case DetectionType.circle:
-                    if(Physics2D.CircleCast(transform.position, range, Vector2.zero, 0, target))
+                    if (Physics2D.CircleCast(transform.position, range, Vector2.zero, 0, target))
                     {
                         seePlayer = true;
                     }
@@ -100,7 +103,7 @@ public class EnemyCombat : MonoBehaviour {
 
                 timer = 1f;
                 StartCoroutine(meleeAttack());
-                
+
             }
             if (rangeEnemy)
             {
@@ -113,12 +116,37 @@ public class EnemyCombat : MonoBehaviour {
 
     }
 
+    public void takeDamage(float value) //Vector2 knockback)
+    {
+        health -= value;
+        if(health <= 0)
+        {
+            StartCoroutine(Die());
+        }
+    }
+
+    IEnumerator Die()
+    {
+        dead = true;
+        choice = DetectionType.none;
+        AlwaysMove = false;
+        GetComponent<Rigidbody2D>().gravityScale = 1;
+
+        //particles
+        //animation
+        yield return new WaitForSeconds(2);
+        Destroy(gameObject);
+    }
+
+
+
     IEnumerator meleeAttack()
     {
         weapon.transform.rotation = Quaternion.Euler(SlashRotation * drawBack);
         yield return new WaitForSeconds(2);
         weapon.transform.rotation = Quaternion.Euler(SlashRotation * slashAngle);
         Debug.Log("melee attack");
+        //damage trigger = true
         yield return new WaitForSeconds(2);
         weapon.transform.rotation = Quaternion.identity;
         attacking = false;
@@ -129,7 +157,6 @@ public class EnemyCombat : MonoBehaviour {
         yield return new WaitForSeconds(.5f);
         Instantiate(projectile, weapon.transform.position, weapon.transform.rotation);
         yield return new WaitForSeconds(.5f);
-        //coil
         attacking = false;
     }
 

@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< HEAD:Assets/Models&Animations/Large Room Models/BottomRightRoom.fbx.meta
 guid: e90568ce6f58b74429957fc1cf02cbbf
-=======
-guid: dbb9f034d7b4c1447a8f5e6e2b149881
->>>>>>> d12e548f919b41d5783f163afb041cec7e091d21:Assets/Models&Animations/Large Room Models/BottomRightRoom.fbx.meta
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -39,6 +35,7 @@ ModelImporter:
     2300000: polySurface1
     3300000: polySurface1
     4300000: polySurface1
+    9500000: //RootNode
     2186277476908879412: ImportLogs
   externalObjects: {}
   materials:
@@ -91,8 +88,8 @@ ModelImporter:
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
-    previousCalculatedGlobalScale: 1
-    hasPreviousCalculatedGlobalScale: 0
+    previousCalculatedGlobalScale: 0.099999994
+    hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -117,7 +114,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
