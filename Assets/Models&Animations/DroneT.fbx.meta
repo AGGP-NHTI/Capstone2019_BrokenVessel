@@ -1,15 +1,26 @@
 fileFormatVersion: 2
-guid: 8905a6c3d26327d409744e0eb30d4ff9
+guid: d3308544b4fb56743ade164a6a1869ab
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
+    100002: node_id10
+    100004: node_id4
+    100006: node_id5
+    100008: node_id6
+    100010: node_id7
+    100012: node_id8
     400000: //RootNode
-    2100000: lambert1
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: pCube1
-    2186277476908879412: ImportLogs
+    400002: node_id10
+    400004: node_id4
+    400006: node_id5
+    400008: node_id6
+    400010: node_id7
+    400012: node_id8
+    2100000: Material_50
+    2300000: node_id8
+    3300000: node_id8
+    4300000: node_id8
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -82,6 +93,7 @@ ModelImporter:
     legStretch: 0.05
     feetSpacing: 0
     rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1

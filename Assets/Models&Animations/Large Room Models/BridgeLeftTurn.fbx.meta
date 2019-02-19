@@ -1,53 +1,36 @@
 fileFormatVersion: 2
-guid: 21249d672d9fc4342baea8b4c720aadd
+guid: 4a47b40fc1283d3489bbcc95f996e8de
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: group
-    100002: group1
-    100004: group2
-    100006: //RootNode
-    100008: pasted__group
-    100010: pasted__group1
-    100012: pasted__pasted__group
-    100014: pasted__pasted__pasted__pCube1
-    100016: pasted__pasted__pasted__polySurface2
-    100018: pasted__pasted__pasted__polySurface2 1
-    100020: pasted__pasted__pasted__transform1
-    100022: pasted__pasted__pCube1
-    100024: pasted__pasted__polySurface2
-    100026: pasted__pasted__transform1
-    100028: pasted__pCube1
-    100030: pasted__transform1
-    100032: pCube1
-    100034: transform1
-    100036: transform2
-    100038: transform3
-    400000: group
-    400002: group1
-    400004: group2
-    400006: //RootNode
-    400008: pasted__group
-    400010: pasted__group1
-    400012: pasted__pasted__group
-    400014: pasted__pasted__pasted__pCube1
-    400016: pasted__pasted__pasted__polySurface2
-    400018: pasted__pasted__pasted__polySurface2 1
-    400020: pasted__pasted__pasted__transform1
-    400022: pasted__pasted__pCube1
-    400024: pasted__pasted__polySurface2
-    400026: pasted__pasted__transform1
-    400028: pasted__pCube1
-    400030: pasted__transform1
-    400032: pCube1
-    400034: transform1
-    400036: transform2
-    400038: transform3
+    100000: //RootNode
+    100002: pCube10
+    100004: pCube11
+    100006: pCube12
+    100008: pCube14
+    100010: pCube15
+    100012: pCube9
+    100014: transform14
+    100016: transform15
+    100018: transform16
+    100020: transform17
+    100022: transform18
+    400000: //RootNode
+    400002: pCube10
+    400004: pCube11
+    400006: pCube12
+    400008: pCube14
+    400010: pCube15
+    400012: pCube9
+    400014: transform14
+    400016: transform15
+    400018: transform16
+    400020: transform17
+    400022: transform18
     2100000: lambert1
-    2300000: pasted__pasted__pasted__polySurface2
-    3300000: pasted__pasted__pasted__polySurface2
-    4300000: pasted__pasted__pasted__polySurface2
-    2186277476908879412: ImportLogs
+    2300000: pCube15
+    3300000: pCube15
+    4300000: pCube15
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -120,6 +103,7 @@ ModelImporter:
     legStretch: 0.05
     feetSpacing: 0
     rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1

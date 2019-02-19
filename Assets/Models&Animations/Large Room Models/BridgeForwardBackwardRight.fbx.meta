@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 1046ae76ecd23374aa4654db984c4e86
+guid: 9fc500ac23025394e84395312dac25f5
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -8,8 +8,7 @@ ModelImporter:
     2100000: lambert1
     2300000: //RootNode
     3300000: //RootNode
-    4300000: pCube1
-    2186277476908879412: ImportLogs
+    4300000: pCube25
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -82,6 +81,7 @@ ModelImporter:
     legStretch: 0.05
     feetSpacing: 0
     rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1

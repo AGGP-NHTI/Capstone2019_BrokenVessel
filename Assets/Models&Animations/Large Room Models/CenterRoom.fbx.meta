@@ -1,53 +1,26 @@
 fileFormatVersion: 2
-guid: d2b053c1098e64f4e8ae32263afc06c5
+guid: 616534e840b7f0145a82c1cb2876adce
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: group
-    100002: group1
-    100004: group2
-    100006: //RootNode
-    100008: pasted__group
-    100010: pasted__group1
-    100012: pasted__pasted__group
-    100014: pasted__pasted__pasted__pCube1
-    100016: pasted__pasted__pasted__polySurface2
-    100018: pasted__pasted__pasted__polySurface2 1
-    100020: pasted__pasted__pasted__transform1
-    100022: pasted__pasted__pCube1
-    100024: pasted__pasted__polySurface2
-    100026: pasted__pasted__transform1
-    100028: pasted__pCube1
-    100030: pasted__transform1
-    100032: pCube1
-    100034: transform1
-    100036: transform2
-    100038: transform3
-    400000: group
-    400002: group1
-    400004: group2
-    400006: //RootNode
-    400008: pasted__group
-    400010: pasted__group1
-    400012: pasted__pasted__group
-    400014: pasted__pasted__pasted__pCube1
-    400016: pasted__pasted__pasted__polySurface2
-    400018: pasted__pasted__pasted__polySurface2 1
-    400020: pasted__pasted__pasted__transform1
-    400022: pasted__pasted__pCube1
-    400024: pasted__pasted__polySurface2
-    400026: pasted__pasted__transform1
-    400028: pasted__pCube1
-    400030: pasted__transform1
-    400032: pCube1
-    400034: transform1
-    400036: transform2
-    400038: transform3
+    100000: //RootNode
+    100002: pCube8
+    100004: polySurface12
+    100006: polySurface13
+    100008: polySurface13 1
+    100010: transform12
+    100012: transform13
+    400000: //RootNode
+    400002: pCube8
+    400004: polySurface12
+    400006: polySurface13
+    400008: polySurface13 1
+    400010: transform12
+    400012: transform13
     2100000: lambert1
-    2300000: pasted__pasted__pasted__polySurface2
-    3300000: pasted__pasted__pasted__polySurface2
-    4300000: pasted__pasted__pasted__polySurface2
-    2186277476908879412: ImportLogs
+    2300000: polySurface13
+    3300000: polySurface13
+    4300000: polySurface13
   externalObjects: {}
   materials:
     importMaterials: 1

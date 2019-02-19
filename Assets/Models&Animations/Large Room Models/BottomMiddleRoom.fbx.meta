@@ -1,59 +1,40 @@
 fileFormatVersion: 2
-guid: e9cd3c56fd06ff94daffa3b94fae578c
+guid: 6509b58a2546a5643b3f6f36f94252dc
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
-    100002: pCube1
-    100004: pCube10
-    100006: pCube2
-    100008: pCube3
-    100010: pCube4
-    100012: pCube5
-    100014: pCube6
-    100016: pCube7
-    100018: pCube8
-    100020: pCube9
-    100022: pCylinder1
-    100024: transform1
-    100026: transform2
-    100028: transform3
-    100030: transform4
-    100032: transform5
-    100034: transform6
-    100036: transform7
-    100038: transform8
+    100002: pCube2
+    100004: pCube3
+    100006: pCube4
+    100008: pCube5
+    100010: pCube6
+    100012: pCube7
+    100014: polySurface2
+    100016: transform1
+    100018: transform2
+    100020: transform3
+    100022: transform4
+    100024: transform5
+    100026: transform6
     400000: //RootNode
-    400002: pCube1
-    400004: pCube10
-    400006: pCube2
-    400008: pCube3
-    400010: pCube4
-    400012: pCube5
-    400014: pCube6
-    400016: pCube7
-    400018: pCube8
-    400020: pCube9
-    400022: pCylinder1
-    400024: transform1
-    400026: transform2
-    400028: transform3
-    400030: transform4
-    400032: transform5
-    400034: transform6
-    400036: transform7
-    400038: transform8
+    400002: pCube2
+    400004: pCube3
+    400006: pCube4
+    400008: pCube5
+    400010: pCube6
+    400012: pCube7
+    400014: polySurface2
+    400016: transform1
+    400018: transform2
+    400020: transform3
+    400022: transform4
+    400024: transform5
+    400026: transform6
     2100000: lambert1
-    2300000: pCube10
-    2300002: pCube5
-    2300004: pCylinder1
-    3300000: pCube10
-    3300002: pCube5
-    3300004: pCylinder1
-    4300000: pCube5
-    4300002: pCylinder1
-    4300004: pCube10
-    2186277476908879412: ImportLogs
+    2300000: polySurface2
+    3300000: polySurface2
+    4300000: polySurface2
   externalObjects: {}
   materials:
     importMaterials: 1
