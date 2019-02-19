@@ -15,9 +15,9 @@ namespace BrokenVessel.Player
 		[SerializeField]
 		private float airSpeed = 5;
 		[SerializeField]
-		private float groundFric = 25;
+		private float groundFriction = 25;
 		[SerializeField]
-		private float airFric = 0;
+		private float airFriction = 0;
 
 		[Header("Physics")]
 		[SerializeField]
@@ -77,10 +77,10 @@ namespace BrokenVessel.Player
 			// Apply friction
 			if (dir == 0 && velocity.x != 0)
 			{
-				float fric = CheckFloor() ? groundFric : airFric * Time.deltaTime;
+				float fric = (CheckFloor() ? groundFriction : airFriction) * Time.deltaTime;
 
 				velocity.x -= fric * Mathf.Sign(velocity.x);
-
+				
 				// Zero out velocity if slow enough
 				if (Mathf.Abs(velocity.x) < fric)
 				{

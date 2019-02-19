@@ -17,11 +17,12 @@ namespace BrokenVessel.Player
 		
 		void Update()
 		{
-			if (input.jump) { phys.Jump(); }
-			if (input.jumpEnd) { phys.HalveJump(); }
-			if (input.left == input.right) { phys.Move(0); }
-			else if (input.left) { phys.Move(-1); }
-			else if (input.right) { phys.Move(1); }
+			if (input.Jump) { phys.Jump(); }
+			if (input.JumpEnd) { phys.HalveJump(); }
+			if (input.Left == input.Right) { phys.Move(0); }
+			else if (input.Left) { phys.Move(-1); }
+			else if (input.Right) { phys.Move(1); }
+			if (input.Dash) { Debug.Log("dash"); }
 		}
 	}
 }
