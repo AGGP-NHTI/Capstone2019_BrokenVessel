@@ -2,6 +2,7 @@
 
 namespace BrokenVessel.Player
 {
+	[RequireComponent(typeof(BoxCollider2D))]
 	public class PlayerPhysics : MonoBehaviour
 	{
 		[Header("Stats")]
@@ -21,10 +22,11 @@ namespace BrokenVessel.Player
 
 		private Vector2 velocity = Vector2.zero;
 		private bool grounded = false;
+		private BoxCollider2D box;
 
 		void Start()
 		{
-
+			box = GetComponent<BoxCollider2D>();
 		}
 
 		void Update()
@@ -64,9 +66,9 @@ namespace BrokenVessel.Player
 		
 		private bool CheckFloor(out float dist)
 		{
-			RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, -velocity.y * Time.deltaTime + 0.5f, collisionMask);
+			RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, -velocity.y * Time.deltaTime + box.size.y / 2f, collisionMask);
 
-			dist = hit.distance - 0.5f;
+			dist = hit.distance - box.size.y / 2f;
 
 			return hit.distance != 0;
 		}
