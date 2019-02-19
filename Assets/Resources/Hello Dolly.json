@@ -1,1 +1,1 @@
-﻿{"inkVersion":19,"root":[["ev","str","^Actor","/str","str","^Actor1","/str",{"x()":"place_actors","exArgs":2},"out","/ev","\n","ev","str","^Angry","/str",0,{"x()":"change_emotion","exArgs":2},"out","/ev","\n","ev","str","^Happy","/str",1,{"x()":"change_emotion","exArgs":2},"out","/ev","\n","^Hello DollyWorld","\n",["done",{"#f":7,"#n":"g-0"}],null],"done",{"#f":3}],"listDefs":{}}
+﻿{"inkVersion":19,"root":[["^Hello World Hello World Hello World Hello World Hello World","\n",["done",{"#f":7,"#n":"g-0"}],null],"done",{"#f":3}],"listDefs":{}}
