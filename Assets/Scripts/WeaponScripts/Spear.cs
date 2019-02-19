@@ -7,7 +7,7 @@ public class Spear : Weapon
 
     // Use this for initialization
     void Start () {
-        //StartCoroutine(SwingSpear());
+        
     }
 
     // Update is called once per frame
@@ -33,6 +33,5 @@ public class Spear : Weapon
         yield return new WaitForSeconds(.1f);
         gameObject.transform.Translate(-2f, 0, 0);
         HitBox.GetComponent<BoxCollider>().enabled = false;
-        //StartCoroutine(SwingSpear());
     }
 }

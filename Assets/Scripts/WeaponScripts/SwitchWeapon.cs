@@ -4,25 +4,34 @@ using UnityEngine;
 
 public class SwitchWeapon : MonoBehaviour {
 
-    public Weapon equippedWeapon;
-    public Weapon backupWeapon;
-    public Weapon placeHolder;
+    public GameObject equippedWeapon;
+    public GameObject backupWeapon;
+    public GameObject placeHolder;
+    public GameObject equippedWeaponInstance;
+    public GameObject Player;
 
-	// Use this for initialization
-	void Start () {
-        
+    // Use this for initialization
+    void Start () {
+        Player = GameObject.Find("Player");
 	}
 
     // Update is called once per frame
     void Update()
     {
+        if (equippedWeaponInstance == null)
+        {
+            equippedWeaponInstance = Instantiate(equippedWeapon, Player.transform);
+            equippedWeaponInstance.transform.parent = Player.transform;
+        }
+
         if (Input.GetKeyDown("e"))
         {
             Switch();
+            Destroy(equippedWeaponInstance);
         }
         if (Input.GetKeyDown("q"))
         {
-            equippedWeapon.Attack();
+            equippedWeaponInstance.GetComponent<Weapon>().Attack();
         }
     }
 

@@ -13,7 +13,7 @@ public class Actor : MonoBehaviour {
         happy, sad, neutral, angry
     }
 
-    CharacterEmotions myState;
+    public CharacterEmotions myState;
 
 	// Use this for initialization
 	void Awake () {
