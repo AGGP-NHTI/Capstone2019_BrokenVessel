@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Models&Animations/Large Room Models/BridgeForwardBackwardLeft.fbx.meta
 guid: 59c599e783bec544e8b3652de664b06d
+=======
+guid: 56eafb15db0eee14893ed32ef81d95bf
+>>>>>>> d12e548f919b41d5783f163afb041cec7e091d21:Assets/Models&Animations/Large Room Models/BridgeForwardBackwardLeft.fbx.meta
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:

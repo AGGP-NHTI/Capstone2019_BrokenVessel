@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Models&Animations/Large Room Models/4WayBridge.fbx.meta
 guid: c12f9933930a456499492b1878484066
+=======
+guid: fe88195690af5484884a42df691f032b
+>>>>>>> d12e548f919b41d5783f163afb041cec7e091d21:Assets/Models&Animations/Large Room Models/4WayBridge.fbx.meta
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:

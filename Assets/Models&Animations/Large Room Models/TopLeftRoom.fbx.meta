@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Models&Animations/Large Room Models/TopLeftRoom.fbx.meta
 guid: 0b4debcaa7106874a961df2f07d17fa2
+=======
+guid: 3065a5f86a5036d4b929a1ab01fa571c
+>>>>>>> d12e548f919b41d5783f163afb041cec7e091d21:Assets/Models&Animations/Large Room Models/TopLeftRoom.fbx.meta
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
