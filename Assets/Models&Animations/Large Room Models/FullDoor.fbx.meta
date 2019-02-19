@@ -1,75 +1,14 @@
 fileFormatVersion: 2
-guid: f01247ba560b55945b61237d3bdb5240
+guid: 739761a729581ed4c8e2cbb1bc4a2c95
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
-    100002: pCube1
-    100004: pCube11
-    100006: pCube12
-    100008: pCube13
-    100010: pCube14
-    100012: pCube15
-    100014: pCube2
-    100016: pCube3
-    100018: pCube4
-    100020: pCube5
-    100022: pCube6
-    100024: pCube7
-    100026: pCube8
-    100028: pCube9
-    100030: pCylinder1
-    100032: transform1
-    100034: transform10
-    100036: transform11
-    100038: transform12
-    100040: transform2
-    100042: transform3
-    100044: transform4
-    100046: transform5
-    100048: transform6
-    100050: transform7
-    100052: transform8
-    100054: transform9
     400000: //RootNode
-    400002: pCube1
-    400004: pCube11
-    400006: pCube12
-    400008: pCube13
-    400010: pCube14
-    400012: pCube15
-    400014: pCube2
-    400016: pCube3
-    400018: pCube4
-    400020: pCube5
-    400022: pCube6
-    400024: pCube7
-    400026: pCube8
-    400028: pCube9
-    400030: pCylinder1
-    400032: transform1
-    400034: transform10
-    400036: transform11
-    400038: transform12
-    400040: transform2
-    400042: transform3
-    400044: transform4
-    400046: transform5
-    400048: transform6
-    400050: transform7
-    400052: transform8
-    400054: transform9
     2100000: lambert1
-    2300000: pCube15
-    2300002: pCube5
-    2300004: pCylinder1
-    3300000: pCube15
-    3300002: pCube5
-    3300004: pCylinder1
-    4300000: pCube5
-    4300002: pCylinder1
-    4300004: pCube15
-    2186277476908879412: ImportLogs
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: pasted__polySurface3
   externalObjects: {}
   materials:
     importMaterials: 1

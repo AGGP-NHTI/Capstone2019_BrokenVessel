@@ -1,15 +1,18 @@
 fileFormatVersion: 2
-guid: 1046ae76ecd23374aa4654db984c4e86
+guid: d09e8f4ef83729340abcfb26528a9849
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
+    100000: polySurface5
+    100002: //RootNode
+    100004: transform7
+    400000: polySurface5
+    400002: //RootNode
+    400004: transform7
     2100000: lambert1
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: pCube1
-    2186277476908879412: ImportLogs
+    2300000: polySurface5
+    3300000: polySurface5
+    4300000: polySurface5
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -82,6 +85,7 @@ ModelImporter:
     legStretch: 0.05
     feetSpacing: 0
     rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1

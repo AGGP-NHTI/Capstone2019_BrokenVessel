@@ -1,53 +1,14 @@
 fileFormatVersion: 2
-guid: a445ad034fcfe6a458fb596a2e3c9a42
+guid: 59c599e783bec544e8b3652de664b06d
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: group
-    100002: group1
-    100004: group2
-    100006: //RootNode
-    100008: pasted__group
-    100010: pasted__group1
-    100012: pasted__pasted__group
-    100014: pasted__pasted__pasted__pCube1
-    100016: pasted__pasted__pasted__polySurface2
-    100018: pasted__pasted__pasted__polySurface2 1
-    100020: pasted__pasted__pasted__transform1
-    100022: pasted__pasted__pCube1
-    100024: pasted__pasted__polySurface2
-    100026: pasted__pasted__transform1
-    100028: pasted__pCube1
-    100030: pasted__transform1
-    100032: pCube1
-    100034: transform1
-    100036: transform2
-    100038: transform3
-    400000: group
-    400002: group1
-    400004: group2
-    400006: //RootNode
-    400008: pasted__group
-    400010: pasted__group1
-    400012: pasted__pasted__group
-    400014: pasted__pasted__pasted__pCube1
-    400016: pasted__pasted__pasted__polySurface2
-    400018: pasted__pasted__pasted__polySurface2 1
-    400020: pasted__pasted__pasted__transform1
-    400022: pasted__pasted__pCube1
-    400024: pasted__pasted__polySurface2
-    400026: pasted__pasted__transform1
-    400028: pasted__pCube1
-    400030: pasted__transform1
-    400032: pCube1
-    400034: transform1
-    400036: transform2
-    400038: transform3
+    100000: //RootNode
+    400000: //RootNode
     2100000: lambert1
-    2300000: pasted__pasted__pasted__polySurface2
-    3300000: pasted__pasted__pasted__polySurface2
-    4300000: pasted__pasted__pasted__polySurface2
-    2186277476908879412: ImportLogs
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: pCube24
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -120,6 +81,7 @@ ModelImporter:
     legStretch: 0.05
     feetSpacing: 0
     rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1

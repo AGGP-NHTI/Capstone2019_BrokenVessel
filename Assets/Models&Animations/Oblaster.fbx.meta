@@ -1,53 +1,20 @@
 fileFormatVersion: 2
-guid: 1319528d0cd5448438c396d3ec0a4d3f
+guid: 2797cb5dfd251c04292ba3c236be27c7
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: group
-    100002: group1
-    100004: group2
+    100000: node_id4
+    100002: node_id5
+    100004: node_id6
     100006: //RootNode
-    100008: pasted__group
-    100010: pasted__group1
-    100012: pasted__pasted__group
-    100014: pasted__pasted__pasted__pCube1
-    100016: pasted__pasted__pasted__polySurface2
-    100018: pasted__pasted__pasted__polySurface2 1
-    100020: pasted__pasted__pasted__transform1
-    100022: pasted__pasted__pCube1
-    100024: pasted__pasted__polySurface2
-    100026: pasted__pasted__transform1
-    100028: pasted__pCube1
-    100030: pasted__transform1
-    100032: pCube1
-    100034: transform1
-    100036: transform2
-    100038: transform3
-    400000: group
-    400002: group1
-    400004: group2
+    400000: node_id4
+    400002: node_id5
+    400004: node_id6
     400006: //RootNode
-    400008: pasted__group
-    400010: pasted__group1
-    400012: pasted__pasted__group
-    400014: pasted__pasted__pasted__pCube1
-    400016: pasted__pasted__pasted__polySurface2
-    400018: pasted__pasted__pasted__polySurface2 1
-    400020: pasted__pasted__pasted__transform1
-    400022: pasted__pasted__pCube1
-    400024: pasted__pasted__polySurface2
-    400026: pasted__pasted__transform1
-    400028: pasted__pCube1
-    400030: pasted__transform1
-    400032: pCube1
-    400034: transform1
-    400036: transform2
-    400038: transform3
-    2100000: lambert1
-    2300000: pasted__pasted__pasted__polySurface2
-    3300000: pasted__pasted__pasted__polySurface2
-    4300000: pasted__pasted__pasted__polySurface2
-    2186277476908879412: ImportLogs
+    2100000: Material_52
+    2300000: node_id6
+    3300000: node_id6
+    4300000: node_id6
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -120,6 +87,7 @@ ModelImporter:
     legStretch: 0.05
     feetSpacing: 0
     rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1

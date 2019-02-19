@@ -2,16 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Projectile : MonoBehaviour {
+public class DamageTrigger : MonoBehaviour {
 
     [SerializeField] int OwnerLayer;
-    public float speed = 5;
-
-	void Start ()
-    {
-        Destroy(gameObject, 5f);
-        GetComponent<Rigidbody2D>().velocity = transform.forward * speed;
-	}
 
     void OnTriggerEnter2D(Collider2D collision)
     {
@@ -22,7 +15,12 @@ public class Projectile : MonoBehaviour {
             {
                 collision.gameObject.GetComponent<PlayerData>().takeDamage(10, 5);
             }
+            if (transform.parent)
+            {
+                Destroy(transform.parent.gameObject);
+            }
             Destroy(gameObject);
         }
     }
+
 }
