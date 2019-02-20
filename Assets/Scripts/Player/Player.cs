@@ -22,7 +22,7 @@ namespace BrokenVessel.Player
 			if (input.Left == input.Right) { phys.Move(0); }
 			else if (input.Left) { phys.Move(-1); }
 			else if (input.Right) { phys.Move(1); }
-			if (input.Dash) { Debug.Log("dash"); }
+			if (input.Dash) { phys.Dash(); }
 		}
 	}
 }

@@ -9,17 +9,19 @@ namespace BrokenVessel.Player
 		[SerializeField]
 		private float jumpStrength = 10;
 		[SerializeField]
+		private float dashSpeed = 10;
+		[SerializeField]
 		private float maxSpeed = 5;
+
+		[Header("Physics")]
 		[SerializeField]
-		private float groundSpeed = 25;
-		[SerializeField]
-		private float airSpeed = 5;
+		private float groundSpeed = 45;
 		[SerializeField]
 		private float groundFriction = 25;
 		[SerializeField]
+		private float airSpeed = 10;
+		[SerializeField]
 		private float airFriction = 0;
-
-		[Header("Physics")]
 		[SerializeField]
 		private float gravity = 20;
 		[SerializeField]
@@ -75,7 +77,7 @@ namespace BrokenVessel.Player
 		public void Move(float dir)
 		{
 			// Apply friction
-			if (dir == 0 && velocity.x != 0)
+			if (dir == 0 && velocity.x != 0 || Mathf.Abs(velocity.x) > maxSpeed)
 			{
 				float fric = (CheckFloor() ? groundFriction : airFriction) * Time.deltaTime;
 
@@ -88,8 +90,16 @@ namespace BrokenVessel.Player
 				}
 			}
 
-			velocity.x += dir * (CheckFloor() ? groundSpeed : airSpeed) * Time.deltaTime;
-			velocity.x = Mathf.Clamp(velocity.x, -maxSpeed, maxSpeed); // Cap to max speed
+			float newVelX = velocity.x + dir * (CheckFloor() ? groundSpeed : airSpeed) * Time.deltaTime;
+			if (Mathf.Abs(velocity.x) < maxSpeed)
+			{
+				velocity.x = Mathf.Clamp(newVelX, -maxSpeed, maxSpeed); // Cap to max speed
+			}
+		}
+
+		public void Dash()
+		{
+			velocity.x = Mathf.Sign(velocity.x) * dashSpeed;
 		}
 
 		private bool CheckFloor()
@@ -100,9 +110,11 @@ namespace BrokenVessel.Player
 		
 		private bool CheckFloor(out float dist)
 		{
-			RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, -velocity.y * Time.deltaTime + box.size.y / 2f, collisionMask);
+			float half = box.size.y / 2f;
+			
+			RaycastHit2D hit = Physics2D.BoxCast(transform.position + Vector3.up * half, box.size, 0, Vector2.down, -velocity.y * Time.deltaTime + half, collisionMask);
 
-			dist = hit.distance - box.size.y / 2f;
+			dist = hit.distance - half;
 
 			return hit.distance != 0;
 		}
