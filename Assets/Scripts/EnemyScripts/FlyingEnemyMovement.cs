@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class FlyingEnemyMovement : MonoBehaviour {
 
+    [SerializeField] float speed = 2;
+    [SerializeField] float orbitField = 3;
     [SerializeField] bool approachPlayer;
     [SerializeField] float approachDistance = 2;
 
     Transform target;
+    Vector3 process;
     Vector3 offSet;
 
     EnemyCombat ec;
@@ -29,7 +32,10 @@ public class FlyingEnemyMovement : MonoBehaviour {
             if(ec.seePlayer)
             {
                 target = GameObject.FindGameObjectWithTag("Player").transform;
+                process = target.position;
                 offSet.y += 1.15f; //adding so target is center of player
+                offSet = (offSet - process).normalized * orbitField;
+                offSet.y = Mathf.Abs(offSet.y) + 2f;
             }
             else
             {
@@ -41,7 +47,12 @@ public class FlyingEnemyMovement : MonoBehaviour {
             Vector2 processVelocity = transform.InverseTransformDirection(rig.velocity);
             if ((ec.seePlayer && !ec.AlwaysMove) || (ec.AlwaysMove && !ec.attacking))
             {
-
+                process += offSet;
+                processVelocity = (transform.position - process).normalized * -speed;
+                if (Vector3.Distance(process, transform.position) < .1f)
+                {
+                    processVelocity = Vector3.zero;
+                }
             }
             rig.velocity = transform.TransformDirection(processVelocity);
         }
