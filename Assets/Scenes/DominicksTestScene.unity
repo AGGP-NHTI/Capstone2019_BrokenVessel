@@ -450,9 +450,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f9b13ad009a9ce49929fd9f1353ac64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  equippedWeapon: {fileID: 1035899845998428, guid: e38872914fd39ee499ec4239a2ac81b0,
+  equippedWeapon: {fileID: 1035899845998428, guid: 4ad892d644f1f9842a1887c42d290cea,
     type: 2}
-  backupWeapon: {fileID: 1675117104826286, guid: 7cbf3b2df6e872c47b856f3311484d5e,
+  backupWeapon: {fileID: 1675117104826286, guid: a640303fff14ba8439097d01f0fd0210,
     type: 2}
   placeHolder: {fileID: 0}
   equippedWeaponInstance: {fileID: 0}
