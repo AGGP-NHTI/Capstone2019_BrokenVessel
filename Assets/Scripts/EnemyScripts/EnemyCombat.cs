@@ -7,30 +7,30 @@ public class EnemyCombat : MonoBehaviour {
     public float health = 100;
     public bool dead = false;
 
-    public enum DetectionType { none, ignore, ray, circle, box };
+    [SerializeField] bool directSight = false;
+    public enum DetectionType { none, ignore, ray, circle, cone };
     public DetectionType choice = DetectionType.none;
     public float range = 10f;
     public bool seePlayer = false;
 
-    public LayerMask target;
+    public float playerDistance = -1f;
 
-    public bool contactEnemy = false;
-    public bool rangeEnemy = false;
-    public bool meleeEnemy = false;
+    [SerializeField] LayerMask target;
 
-    public bool forgetPlayer = false;
+
     public bool AlwaysMove = false;
 
     public bool attacking = false;
 
-    [SerializeField] GameObject weapon;
-
-    float timer = 1f;
-
     public Transform faceCheck;
-    public GameObject projectile;
-	
-	void Update ()
+    Transform targetTransform;
+
+    void Start()
+    {
+        targetTransform = GameObject.Find("Player").transform;
+    }
+
+    void Update ()
     {
         switch (choice)
         {
@@ -41,7 +41,7 @@ public class EnemyCombat : MonoBehaviour {
                 seePlayer = true;
                 break;
         }
-        if (forgetPlayer)
+        if (directSight)
         {
             switch (choice)
             {
@@ -52,7 +52,7 @@ public class EnemyCombat : MonoBehaviour {
                 case DetectionType.circle:
                     seePlayer = Physics2D.CircleCast(transform.position, range, Vector2.zero, 0, target);
                     break;
-                case DetectionType.box:
+                case DetectionType.cone:
                     Debug.Log("ERROR: NOT ADDED");
                     break;
             }
@@ -74,36 +74,24 @@ public class EnemyCombat : MonoBehaviour {
                         seePlayer = true;
                     }
                     break;
-                case DetectionType.box:
+                case DetectionType.cone:
                     Debug.Log("ERROR: NOT ADDED");
                     break;
             }
         }
 
-        if (!attacking && (meleeEnemy || rangeEnemy))
+        if(seePlayer)
         {
-            timer -= Time.deltaTime;
-        }
-        if (seePlayer && timer <= 0)
-        {
-
-            if (meleeEnemy)
+            playerDistance = (transform.position - targetTransform.position).magnitude;
+            if(!directSight && playerDistance > range * 2)
             {
-                attacking = true;
-
-                timer = 1f;
-                StartCoroutine(meleeAttack());
-
-            }
-            if (rangeEnemy)
-            {
-                attacking = true;
-                Debug.Log("pew");
-                timer = .5f;
-                StartCoroutine(rangeAttack());
+                seePlayer = false;
             }
         }
-
+        else
+        {
+            playerDistance = -1f;
+        }
     }
 
     public void takeDamage(float value) //Vector2 knockback)
@@ -124,41 +112,8 @@ public class EnemyCombat : MonoBehaviour {
 
         //particles
         //animation
+
         yield return new WaitForSeconds(2);
         Destroy(gameObject);
-    }
-
-
-
-    IEnumerator meleeAttack()
-    {
-        weapon.transform.rotation = Quaternion.Euler(0, 0, -45);
-        yield return new WaitForSeconds(2);
-        weapon.transform.rotation = Quaternion.Euler(0, 0, -90);
-        Debug.Log("melee attack");
-        //damage trigger = true
-        yield return new WaitForSeconds(2);
-        weapon.transform.rotation = Quaternion.identity;
-        attacking = false;
-    }
-
-    IEnumerator rangeAttack()
-    {
-        yield return new WaitForSeconds(.5f);
-        Instantiate(projectile, weapon.transform.position, weapon.transform.rotation);
-        yield return new WaitForSeconds(.5f);
-        attacking = false;
-    }
-
-    void OnCollisionStay2D(Collision2D collision)
-    {
-        if (contactEnemy)
-        {
-            if (collision.gameObject.layer == 9)
-            {
-                collision.gameObject.GetComponent<PlayerData>().takeDamage(10, 5);
-            }
-        }
-
     }
 }

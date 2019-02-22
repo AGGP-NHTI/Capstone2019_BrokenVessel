@@ -2,43 +2,40 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyMovement : MonoBehaviour {
+public class JumpingEnemyMovement : MonoBehaviour {
 
     public float speed = 5;
+    public float jump = 3;
+    float jumpTimer = 0;
 
-    bool onLedge = false;
-    bool grounded = true;
-
-    Transform faceCheck;
+    [SerializeField] Transform faceCheck;
     [SerializeField] Transform ledgeCheck;
     [SerializeField] LayerMask realGround;
     public LayerMask target;
 
     Rigidbody2D rig;
     EnemyCombat ec;
-    FaceCheck fc;
+    FaceCheck face;
+    FaceCheck feet;
 
-    void Start ()
+    void Start()
     {
         ec = GetComponent<EnemyCombat>();
         rig = GetComponent<Rigidbody2D>();
-        fc = GetComponentInChildren<FaceCheck>();
-        faceCheck = fc.gameObject.transform;
+        face = faceCheck.gameObject.GetComponent<FaceCheck>();
+        feet = ledgeCheck.gameObject.GetComponent<FaceCheck>();
     }
 
     void Update()
     {
         if (!ec.dead)
         {
-            grounded = Physics2D.CircleCast(ledgeCheck.position, .2f, Vector2.zero, 0, realGround);
-            onLedge = !Physics2D.CircleCast(ledgeCheck.position, .075f, Vector2.zero, 0, realGround);
-
-            if (fc.hit || onLedge)
+            if (face.hit)
             {
                 Flip();
                 speed = -speed;
             }
-            if (!grounded)
+            if (!feet.hit && jumpTimer < 0)
             {
                 transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
                 RaycastHit2D hit = Physics2D.Raycast(ledgeCheck.position, Vector2.down, .25f, realGround);
@@ -48,7 +45,7 @@ public class EnemyMovement : MonoBehaviour {
                 }
             }
 
-            fc.hit = false;
+            face.hit = false;
 
             //---------------------------------------------------------------------------------------
             //--Movement-----------------------------------------------------------------------------
@@ -56,9 +53,15 @@ public class EnemyMovement : MonoBehaviour {
             Vector2 processVelocity = transform.InverseTransformDirection(rig.velocity);
             if ((ec.seePlayer && !ec.AlwaysMove) || (ec.AlwaysMove && !ec.attacking))
             {
-                if (grounded)
+                if (feet.hit)
                 {
-                    processVelocity.x = speed;
+                    jumpTimer -= Time.deltaTime;
+                    if(jumpTimer <= 0)
+                    {
+                        jumpTimer = 1f;
+                        processVelocity.x = speed;
+                        processVelocity.y = jump;
+                    } 
                 }
             }
             rig.velocity = transform.TransformDirection(processVelocity);

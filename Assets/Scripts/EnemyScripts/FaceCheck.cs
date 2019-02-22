@@ -4,18 +4,21 @@ using UnityEngine;
 
 public class FaceCheck : MonoBehaviour
 {
-    EnemyMovement me;
+    [SerializeField] int targetLayer = 0;
+    public bool hit = false;
 
-	void Start ()
-    {
-        me = GetComponentInParent<EnemyMovement>();
-	}
-	
     private void OnTriggerStay2D(Collider2D other)
     {
-        if (other.gameObject.layer == 0) //|| other.gameObject.layer == 9)
+        if (other.gameObject.layer == targetLayer) //|| other.gameObject.layer == 9)
         {
-            me.hitHead = true;
+            hit = true;
+        }
+    }
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.gameObject.layer == targetLayer) //|| other.gameObject.layer == 9)
+        {
+            hit = false;
         }
     }
 }
