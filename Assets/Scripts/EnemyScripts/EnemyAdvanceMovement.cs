@@ -81,7 +81,7 @@ public class EnemyAdvanceMovement : MonoBehaviour
             target.z = offSet.z;
         }
 
-            if (attacking && ec.contactEnemy)
+            if (attacking)
             {
                 ChargeAttack();
             }
