@@ -70,7 +70,7 @@ namespace BrokenVessel.Player
 
 		public void HalveJump()
 		{
-			if (velocity.y > 0 && !halvedJump) { velocity.y /= 2f; halvedJump = true; }
+			if (velocity.y > 0 && halvedJump) { velocity.y /= 2f; halvedJump = false; }
 		}
 
 		public void Move(float dir)
