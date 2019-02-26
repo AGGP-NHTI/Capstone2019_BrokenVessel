@@ -97,9 +97,9 @@ namespace BrokenVessel.Player
 			}
 		}
 
-		public void Dash()
+		public void Dash(float dir)
 		{
-			velocity.x = Mathf.Sign(velocity.x) * dashSpeed;
+			velocity.x = Mathf.Sign(dir) * dashSpeed;
 		}
 
 		private bool CheckFloor()

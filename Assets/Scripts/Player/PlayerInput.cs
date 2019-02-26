@@ -17,25 +17,33 @@ namespace BrokenVessel.Player
 		public bool JumpEnd { get => Input.GetKeyUp(jumpKey); }
 		public bool Left { get => Input.GetKey(leftKey); }
 		public bool Right { get => Input.GetKey(rightKey); }
-		public bool Dash { get; private set; }
+		public float Dash { get; private set; }
 
 		private float time = 0;
+		private KeyCode lastKey = KeyCode.None;
 
 		void Update()
 		{
-			Dash = false;
+			Dash = 0;
 
 			if (Input.GetKeyDown(rightKey) || Input.GetKeyDown(leftKey))
 			{
-				if (Time.time < time + dblClickThreshold)
+				if (Input.GetKeyDown(rightKey) && lastKey != rightKey) { lastKey = KeyCode.None; }
+				if (Input.GetKeyDown(leftKey) && lastKey != leftKey) { lastKey = KeyCode.None; }
+
+				if (Time.time < time + dblClickThreshold && lastKey != KeyCode.None)
 				{
-					Dash = true;
+					Dash = lastKey == rightKey ? 1 : -1;
 				}
 				else
 				{
 					time = Time.time;
 				}
+				lastKey = KeyCode.None;
 			}
+
+			if (Input.GetKeyDown(rightKey)) { lastKey = rightKey; }
+			if (Input.GetKeyDown(leftKey)) { lastKey = leftKey; }
 		}
 	}
 }
