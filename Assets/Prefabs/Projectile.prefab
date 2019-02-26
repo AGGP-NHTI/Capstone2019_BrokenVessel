@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4077437996430868}
   - component: {fileID: 50274550767296994}
-  - component: {fileID: 114381735711013138}
+  - component: {fileID: 114406516005732586}
   m_Layer: 0
   m_Name: Projectile
   m_TagString: Untagged
@@ -37,9 +37,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4067699509599704}
   - component: {fileID: 61626112591951704}
-  - component: {fileID: 114981299615248876}
   - component: {fileID: 33599354709120210}
   - component: {fileID: 23144006158439606}
+  - component: {fileID: 114501752201799036}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -161,7 +161,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &114381735711013138
+--- !u!114 &114406516005732586
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -169,11 +169,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1079376429161390}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3f53774542ab1154b8f8d125397014fb, type: 3}
+  m_Script: {fileID: 11500000, guid: 76cbf7e30f954ea49a6b54e93accfe0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
---- !u!114 &114981299615248876
+--- !u!114 &114501752201799036
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -181,7 +181,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1259641436445242}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bffc307380bed434693573f63f463389, type: 3}
+  m_Script: {fileID: 11500000, guid: 738fff6393cda8c4fabdb2a482e412c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   OwnerLayer: 10

@@ -5,3 +5,8 @@
 //{change_emotion("Happy",1)}
 
 Hello World Hello World Hello World Hello World Hello World
+*ChoiceHoney
+Honey Honey
+
+*ChoiceBaby
+Baby Baby

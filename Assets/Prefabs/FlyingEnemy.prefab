@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4066150005345864}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: node_id9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35,7 +35,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4550464564826398}
   - component: {fileID: 114667612254290454}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: JOE'S FLY MODEL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -66,7 +66,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4025035514512570}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: node_id6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -81,7 +81,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4083818389290300}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: node_id12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: 4647508412142578}
   - component: {fileID: 33509338141237486}
   - component: {fileID: 23359604717926596}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: node_id10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -132,7 +132,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4364184597500978}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: node_id8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -147,7 +147,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4870989110371130}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: node_id7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -296,7 +296,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: b951cf57808fefd4cb9f984fe0687b72, type: 2}
+  - {fileID: 2100000, guid: 479936811639b0c42a5f7882acda04a4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -385,7 +385,7 @@ MonoBehaviour:
   attacking: 0
   weapon: {fileID: 1325465495368448}
   faceCheck: {fileID: 4522589568659046}
-  projectile: {fileID: 1079376429161390, guid: 91f309da7ceda044f818ae7cec11a536, type: 2}
+  projectile: {fileID: 0}
 --- !u!114 &114608956007795172
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -413,7 +413,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FocusObject: {fileID: 0}
-  offSet: {x: 0, y: 0, z: 2}
+  offSet: {x: 0, y: 2, z: -5}
 --- !u!114 &114846801495419466
 MonoBehaviour:
   m_ObjectHideFlags: 1

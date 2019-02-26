@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyMovement : MonoBehaviour {
+public class ClimbEnemyMovement : MonoBehaviour {
 
-    public float speed = 5;
+
+    [SerializeField] float speed = 5;
+    [SerializeField] bool bounceOff = false;
 
     bool onLedge = false;
     bool grounded = true;
@@ -25,21 +27,23 @@ public class EnemyMovement : MonoBehaviour {
         fc = GetComponentInChildren<FaceCheck>();
         faceCheck = fc.gameObject.transform;
     }
-
-    void Update()
+	
+	void Update ()
     {
-        if (!ec.dead)
+		if(!ec.dead)
         {
             grounded = Physics2D.CircleCast(ledgeCheck.position, .2f, Vector2.zero, 0, realGround);
             onLedge = !Physics2D.CircleCast(ledgeCheck.position, .075f, Vector2.zero, 0, realGround);
 
-            if (fc.hit || onLedge)
+            if (grounded)//if onground
             {
-                Flip();
-                speed = -speed;
+                rig.gravityScale = 0;
+                rig.freezeRotation = true;
             }
-            if (!grounded)
+            else //if falling
             {
+                rig.gravityScale = 1;
+                rig.freezeRotation = false;
                 transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
                 RaycastHit2D hit = Physics2D.Raycast(ledgeCheck.position, Vector2.down, .25f, realGround);
                 if (hit)
@@ -48,23 +52,44 @@ public class EnemyMovement : MonoBehaviour {
                 }
             }
 
+            if (fc.hit)//walked into something
+            {
+                if (bounceOff)//turn around
+                {
+                    Flip();
+                    speed = -speed;
+                }
+                else //grab wall walked into
+                {
+                    rig.isKinematic = true;
+                    transform.position = faceCheck.position;
+                    transform.rotation = Quaternion.Euler(new Vector3(0, 0, transform.rotation.eulerAngles.z + (90 * transform.localScale.x)));
+                    rig.isKinematic = false;
+                }
+            }
             fc.hit = false;
 
-            //---------------------------------------------------------------------------------------
             //--Movement-----------------------------------------------------------------------------
 
             Vector2 processVelocity = transform.InverseTransformDirection(rig.velocity);
             if ((ec.seePlayer && !ec.AlwaysMove) || (ec.AlwaysMove && !ec.attacking))
             {
-                if (grounded)
+
+                if (!onLedge)
                 {
                     processVelocity.x = speed;
                 }
+                else if (grounded)
+                {
+                    transform.Rotate(new Vector3(0, 0, -speed * transform.localScale.x));
+                    processVelocity = Vector2.zero;
+                }
+
             }
             rig.velocity = transform.TransformDirection(processVelocity);
+
         }
     }
-
 
     void Flip()
     {
