@@ -56,6 +56,20 @@ namespace BrokenVessel.Player
 				halvedJump = true; // Reset jump halver
 			}
 
+			// Check wall
+			float sign = Mathf.Sign(velocity.x);
+			Vector2 size = box.size;
+			size.x /= 2f;
+
+			RaycastHit2D hit = Physics2D.BoxCast(transform.position, size,
+				0, new Vector2(velocity.x, 0), Mathf.Abs(velocity.x) * Time.deltaTime + 0.25f, collisionMask);
+
+			if (hit.distance != 0)
+			{
+				pos.x += (hit.distance - 0.25f) * sign;
+				velocity.x = 0;
+			}
+
 			// Move position
 			pos += (Vector3)velocity * Time.deltaTime;
 
@@ -89,6 +103,7 @@ namespace BrokenVessel.Player
 				}
 			}
 
+			// Apply velocity
 			float newVelX = velocity.x + dir * (grounded ? groundSpeed : airSpeed) * Time.deltaTime;
 			if (Mathf.Abs(velocity.x) <= maxSpeed)
 			{
@@ -114,7 +129,8 @@ namespace BrokenVessel.Player
 			Vector2 size = box.size;
 			size.y /= 2f;
 			
-			RaycastHit2D hit = Physics2D.BoxCast(transform.position + Vector3.up * quarter, size, 0, Vector2.down, -velocity.y * Time.deltaTime + half, collisionMask);
+			RaycastHit2D hit = Physics2D.BoxCast(transform.position + Vector3.up * quarter,
+				size, 0, Vector2.down, -velocity.y * Time.deltaTime + half, collisionMask);
 
 			dist = hit.distance - half;
 
