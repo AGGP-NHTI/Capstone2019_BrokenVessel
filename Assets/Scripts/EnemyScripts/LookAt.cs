@@ -11,7 +11,7 @@ public class LookAt : MonoBehaviour {
     {
         if (FocusObject)
         {
-            transform.rotation = Quaternion.LookRotation(-transform.position - (FocusObject.position - offSet), Vector3.up);
+            transform.rotation = Quaternion.LookRotation(-transform.position + (FocusObject.position + offSet), Vector3.up);
         }
     }
 }
