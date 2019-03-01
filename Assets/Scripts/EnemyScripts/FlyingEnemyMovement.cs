@@ -32,6 +32,10 @@ public class FlyingEnemyMovement : MonoBehaviour {
             if(ec.seePlayer)
             {
                 target = GameObject.FindGameObjectWithTag("Player").transform;
+                foreach(LookAt la in GetComponentsInChildren<LookAt>())
+                {
+                    la.FocusObject = target;
+                }
                 process = target.position;
                 offSet.y += 1.15f; //adding so target is center of player
                 offSet = (offSet - process).normalized * orbitField;
@@ -40,6 +44,10 @@ public class FlyingEnemyMovement : MonoBehaviour {
             else
             {
                 target = transform;
+                foreach (LookAt la in GetComponentsInChildren<LookAt>())
+                {
+                    la.FocusObject = null;
+                }
                 offSet = Vector3.zero;
             }
 

@@ -83,7 +83,7 @@ public class EnemyCombat : MonoBehaviour {
         if(seePlayer)
         {
             playerDistance = (transform.position - targetTransform.position).magnitude;
-            if(!directSight && playerDistance > range * 2)
+            if(!directSight && playerDistance > range * 1.5f)
             {
                 seePlayer = false;
             }
