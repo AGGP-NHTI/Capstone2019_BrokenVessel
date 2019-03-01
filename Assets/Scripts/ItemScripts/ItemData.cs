@@ -6,7 +6,6 @@ public class ItemData : MonoBehaviour {
     public bool autoPickup;
     public bool stackable;
 
-
 	// Use this for initialization
 	void Start () {
 		
