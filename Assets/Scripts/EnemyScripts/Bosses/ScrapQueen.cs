@@ -48,7 +48,7 @@ public class ScrapQueen : MonoBehaviour
             if(transform.position.y - pivot.y < .0005f && speed != 0)
             {
 
-                    StartCoroutine(SpawnMinions());
+                    //StartCoroutine(SpawnMinions());
 
             }
 

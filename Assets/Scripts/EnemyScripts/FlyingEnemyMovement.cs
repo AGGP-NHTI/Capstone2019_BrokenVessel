@@ -48,6 +48,7 @@ public class FlyingEnemyMovement : MonoBehaviour {
                 {
                     la.FocusObject = null;
                 }
+                process = transform.position;
                 offSet = Vector3.zero;
             }
 
@@ -59,10 +60,14 @@ public class FlyingEnemyMovement : MonoBehaviour {
                 processVelocity = (transform.position - process).normalized * -speed;
                 if (Vector3.Distance(process, transform.position) < .1f)
                 {
-                    processVelocity = Vector3.zero;
+                    processVelocity = Vector2.zero;
                 }
             }
             rig.velocity = transform.TransformDirection(processVelocity);
+            if (ec.playerDistance == -1)
+            {
+                rig.velocity = Vector3.zero;
+            }
         }
 
 	}

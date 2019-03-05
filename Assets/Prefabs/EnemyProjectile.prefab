@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4077437996430868}
   - component: {fileID: 50274550767296994}
-  - component: {fileID: 3948787441534156161}
+  - component: {fileID: 3370053800581307771}
   m_Layer: 0
   m_Name: EnemyProjectile
   m_TagString: Untagged
@@ -54,7 +54,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &3948787441534156161
+--- !u!114 &3370053800581307771
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -63,7 +63,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1079376429161390}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6183d6ca9fc9c2a4fbe8ea7e7d51533d, type: 3}
+  m_Script: {fileID: 11500000, guid: 912078f391232da4c90565cdfd424909, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
@@ -79,7 +79,7 @@ GameObject:
   - component: {fileID: 61626112591951704}
   - component: {fileID: 33599354709120210}
   - component: {fileID: 23144006158439606}
-  - component: {fileID: 114501752201799036}
+  - component: {fileID: 1220341057764914638}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -172,7 +172,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &114501752201799036
+--- !u!114 &1220341057764914638
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -181,7 +181,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1259641436445242}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43a091475485e2046b39013cffd02a8a, type: 3}
+  m_Script: {fileID: 11500000, guid: bbedd6f5d24854a4da36d3b0943d3d80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   OwnerLayer: 10

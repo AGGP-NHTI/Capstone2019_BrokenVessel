@@ -121,7 +121,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FocusObject: {fileID: 0}
-  offSet: {x: 0, y: 0, z: 0}
+  offSet: {x: 0, y: 1, z: 0}
 --- !u!1 &1479312583347320
 GameObject:
   m_ObjectHideFlags: 0
@@ -243,7 +243,7 @@ MeshRenderer:
   m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 731ebba24164d9e4d98bbb08178d2569, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -275,8 +275,8 @@ GameObject:
   - component: {fileID: 58978693418247742}
   - component: {fileID: 50610552690887128}
   - component: {fileID: 114448538464671302}
-  - component: {fileID: 2968658516727663173}
-  - component: {fileID: 2232078056875502502}
+  - component: {fileID: 1812528421932969130}
+  - component: {fileID: 469133741602250986}
   m_Layer: 10
   m_Name: FlyingEnemy
   m_TagString: Untagged
@@ -353,7 +353,7 @@ MonoBehaviour:
   dead: 0
   directSight: 0
   choice: 3
-  range: 2
+  range: 3
   seePlayer: 0
   playerDistance: -1
   target:
@@ -362,7 +362,7 @@ MonoBehaviour:
   AlwaysMove: 0
   attacking: 0
   faceCheck: {fileID: 4522589568659046}
---- !u!114 &2968658516727663173
+--- !u!114 &1812528421932969130
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -371,14 +371,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1867132984220346}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 333dd74646f9ddd4d9a212a35c60e586, type: 3}
+  m_Script: {fileID: 11500000, guid: c334af11a8541a04b9f7e5b5fc5e2247, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
   orbitField: 3
   approachPlayer: 0
   approachDistance: 2
---- !u!114 &2232078056875502502
+--- !u!114 &469133741602250986
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -387,11 +387,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1867132984220346}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 27d26e253f26f2b47a3cf1b8925c6188, type: 3}
+  m_Script: {fileID: 11500000, guid: f044205f74d428843b906e62eaf0bd14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   weapon: {fileID: 4715596301545262}
-  projectile: {fileID: 1079376429161390, guid: 7c5992df816ad8c41976795d2a4ba440, type: 3}
+  projectile: {fileID: 1079376429161390, guid: be35a9a39deda0d4fa0d1197143328ec, type: 3}
   damage: 10
   rangeCD: 0.5
   attackRange: 3

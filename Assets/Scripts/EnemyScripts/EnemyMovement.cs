@@ -60,6 +60,14 @@ public class EnemyMovement : MonoBehaviour {
                 {
                     processVelocity.x = speed;
                 }
+                else
+                {
+                    processVelocity.y -= 4.5f;
+                    if(processVelocity.y < -27f)
+                    {
+                        processVelocity.y = -27f;
+                    }
+                }
             }
             rig.velocity = transform.TransformDirection(processVelocity);
         }
