@@ -26,6 +26,8 @@ namespace BrokenVessel.Player
 		private float gravity = 20;
 		[SerializeField]
 		private float terminalVelocity = 20;
+
+		[Header("Technical")]
 		[SerializeField]
 		private LayerMask collisionMask;
 
@@ -33,108 +35,77 @@ namespace BrokenVessel.Player
 		private bool grounded = false;
 		private bool halvedJump = false;
 		private BoxCollider2D box;
+		private Rigidbody2D rg;
 
 		void Start()
 		{
 			box = GetComponent<BoxCollider2D>();
+			rg = GetComponent<Rigidbody2D>();
 		}
 
 		void Update()
 		{
-			// Get position
-			Vector3 pos = transform.position;
-
-			// Apply gravity
-			velocity.y -= gravity * Time.deltaTime;
-			velocity.y = Mathf.Max(velocity.y, -terminalVelocity); // Cap to terminal velocity
-
 			// Check floor
-			if (grounded = CheckFloor(out float dist))
+			if (grounded = CheckFloor())
 			{
-				pos.y -= dist; // Snap to floor
-				velocity.y = 0; // Remove gravity
 				halvedJump = true; // Reset jump halver
 			}
-
-			// Check wall
-			float sign = Mathf.Sign(velocity.x);
-			Vector2 size = box.size;
-			size.x /= 2f;
-
-			RaycastHit2D hit = Physics2D.BoxCast(transform.position, size,
-				0, new Vector2(velocity.x, 0), Mathf.Abs(velocity.x) * Time.deltaTime + 0.25f, collisionMask);
-
-			if (hit.distance != 0)
-			{
-				pos.x += (hit.distance - 0.25f) * sign;
-				velocity.x = 0;
-			}
-
-			// Move position
-			pos += (Vector3)velocity * Time.deltaTime;
-
-			// Set position
-			transform.position = pos;
 		}
 
 		public void Jump()
 		{
-			if (grounded) { velocity.y = jumpStrength; }
+			if (grounded)
+			{
+				rg.AddForce(Vector2.up * jumpStrength, ForceMode2D.Impulse);
+			}
 		}
 
 		public void HalveJump()
 		{
-			if (velocity.y > 0 && halvedJump) { velocity.y /= 2f; halvedJump = false; }
+			if (velocity.y > 0 && halvedJump)
+			{
+				halvedJump = false;
+
+				Vector2 vel = rg.velocity;
+				vel.y /= 2f;
+				rg.velocity = vel;
+			}
 		}
 
 		public void Move(float dir)
 		{
-			// Apply friction
-			if (dir == 0 && velocity.x != 0 || Mathf.Abs(velocity.x) > maxSpeed)
+			Vector2 vel = rg.velocity;
+
+			if (dir == 0 && vel.x != 0 || Mathf.Abs(vel.x) > maxSpeed)
 			{
 				float fric = (grounded ? groundFriction : airFriction) * Time.deltaTime;
 
-				velocity.x -= fric * Mathf.Sign(velocity.x);
-				
+				vel.x -= fric * Mathf.Sign(vel.x);
+
 				// Zero out velocity if slow enough
-				if (Mathf.Abs(velocity.x) < fric)
+				if (Mathf.Abs(vel.x) < fric)
 				{
-					velocity.x = 0;
+					vel.x = 0;
 				}
 			}
 
-			// Apply velocity
-			float newVelX = velocity.x + dir * (grounded ? groundSpeed : airSpeed) * Time.deltaTime;
-			if (Mathf.Abs(velocity.x) <= maxSpeed)
+			float newVelX = vel.x + dir * (grounded ? groundSpeed : airSpeed) * Time.deltaTime;
+			if (Mathf.Abs(vel.x) <= maxSpeed)
 			{
-				velocity.x = Mathf.Clamp(newVelX, -maxSpeed, maxSpeed); // Cap to max speed
+				vel.x = Mathf.Clamp(newVelX, -maxSpeed, maxSpeed); // Cap to max speed
 			}
+
+			rg.velocity = vel;
 		}
 
 		public void Dash(float dir)
 		{
-			velocity.x = Mathf.Sign(dir) * dashSpeed;
-		}
-
-		private bool CheckFloor()
-		{
-			float temp;
-			return CheckFloor(out temp);
+			rg.AddForce(Vector2.right * Mathf.Sign(dir) * dashSpeed, ForceMode2D.Impulse);
 		}
 		
-		private bool CheckFloor(out float dist)
+		private bool CheckFloor()
 		{
-			float half = box.size.y / 2f;
-			float quarter = box.size.y / 4f;
-			Vector2 size = box.size;
-			size.y /= 2f;
-			
-			RaycastHit2D hit = Physics2D.BoxCast(transform.position + Vector3.up * quarter,
-				size, 0, Vector2.down, -velocity.y * Time.deltaTime + half, collisionMask);
-
-			dist = hit.distance - half;
-
-			return hit.distance != 0;
+			return Physics2D.BoxCast(transform.position, box.size, 0, Vector2.down, 0.1f, collisionMask).distance != 0;
 		}
 	}
 }
