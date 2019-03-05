@@ -12,6 +12,8 @@ public class TalkyBoi : MonoBehaviour {
     public bool textBoxVisible = false;
     public GameObject textBox;
     public GameObject textBoxInstance;
+    public GameObject WorldScriptManager;
+    public GameObject canvas;
 
     // Use this for initialization
     void Start () {
@@ -29,6 +31,10 @@ public class TalkyBoi : MonoBehaviour {
                 textBoxInstance = Instantiate(textBox);
                 textBoxInstance.transform.parent = GameObject.Find("Cube").transform;
                 textBoxVisible = true;
+            }
+            if (WorldScriptManager.GetComponent<KeysPressed>().jHeld == true)
+            {
+                canvas.SetActive(true);
             }
         }
         else

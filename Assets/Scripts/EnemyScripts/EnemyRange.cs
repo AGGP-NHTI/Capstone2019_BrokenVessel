@@ -15,7 +15,11 @@ public class EnemyRange : MonoBehaviour {
 
     EnemyCombat ec;
 
-    // Update is called once per frame
+    void Start()
+    {
+        ec = GetComponent<EnemyCombat>();
+    }
+
     void Update()
     {
         if (!attacking)

@@ -10,6 +10,7 @@ public class KeysPressed : MonoBehaviour {
     public bool dHeld = false;
     public bool qHeld = false;
     public bool eHeld = false;
+    public bool jHeld = false;
     public bool spaceHeld = false;
     public bool upArrowHeld = false;
     public bool leftArrowHeld = false;
@@ -70,6 +71,14 @@ public class KeysPressed : MonoBehaviour {
         else
         {
             eHeld = false;
+        }
+        if (Input.GetKey("j") == true)
+        {
+            jHeld = true;
+        }
+        else
+        {
+            jHeld = false;
         }
         if (Input.GetKey("space") == true)
         {

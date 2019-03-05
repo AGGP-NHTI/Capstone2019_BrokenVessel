@@ -26,8 +26,10 @@ public class PlayerData : MonoBehaviour {
 
     public void takeDamage(float value, float iFrames) //, Vector2 Knockback
     {
+        //Debug.Log("ow");
         if(iFrameTimer <= 0 && !ignoreDamage)
         {
+            //Debug.Log("dmg");
             testShield.GetComponent<MeshRenderer>().enabled = true;
             health -= value;
             iFrameTimer = iFrames;

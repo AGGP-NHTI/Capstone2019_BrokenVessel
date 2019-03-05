@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class SwitchWeapon : MonoBehaviour {
 
-    public GameObject equippedWeapon;
-    public GameObject backupWeapon;
     public GameObject placeHolder;
     public GameObject equippedWeaponInstance;
     public GameObject Player;
@@ -20,7 +18,7 @@ public class SwitchWeapon : MonoBehaviour {
     {
         if (equippedWeaponInstance == null)
         {
-            equippedWeaponInstance = Instantiate(equippedWeapon, Player.transform);
+            equippedWeaponInstance = Instantiate(Player.GetComponent<InventoryScript>().hotBarItems[0], Player.transform);
             equippedWeaponInstance.transform.parent = Player.transform;
         }
 
@@ -37,8 +35,8 @@ public class SwitchWeapon : MonoBehaviour {
 
     void Switch()
     {
-        placeHolder = equippedWeapon;
-        equippedWeapon = backupWeapon;
-        backupWeapon = placeHolder;
+        placeHolder = Player.GetComponent<InventoryScript>().hotBarItems[0];
+        Player.GetComponent<InventoryScript>().hotBarItems[0] = Player.GetComponent<InventoryScript>().hotBarItems[1];
+        Player.GetComponent<InventoryScript>().hotBarItems[1] = placeHolder;
     }
 }
