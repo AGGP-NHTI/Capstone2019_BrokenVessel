@@ -8,14 +8,16 @@ public class ScrapQueen : MonoBehaviour
     [SerializeField] GameObject crawlSpawn;
     [SerializeField] GameObject flySpawn;
     [SerializeField] Vector3 pivot;
-    public float angle = Mathf.PI;
+    public float angle = Mathf.PI / 2;
     [SerializeField] float radius = 10;
 
-    bool seePlayer = false;
     bool attacking = false;
 
     public bool intro;
     [SerializeField] GameObject platform;
+    [SerializeField] FaceCheck fc;
+    [SerializeField] Transform offSet;
+    [SerializeField] Transform spawnMinionsPoint;
 
     Rigidbody2D rig;
 
@@ -36,36 +38,45 @@ public class ScrapQueen : MonoBehaviour
         }
         else
         {
-            if (seePlayer && speed == 5)
+            if((int)offSet.rotation.eulerAngles.y == 90)
+            {
+                fc.gameObject.GetComponent<BoxCollider2D>().offset = Vector2.up;
+            }
+            if ((int)offSet.rotation.eulerAngles.y == 270)
+            {
+                fc.gameObject.GetComponent<BoxCollider2D>().offset = Vector2.down;
+            }
+
+            if (fc.hit && speed < 4)
             {
                 speed += 3;
             }
-            else if (speed == 8)
+            if (fc.hit == false && speed >= 4)
             {
                 speed -= 3;
             }
 
-            if(transform.position.y - pivot.y < .0005f && speed != 0)
+            if (!attacking && (transform.position - spawnMinionsPoint.position).magnitude < 1f)
             {
-
-                    //StartCoroutine(SpawnMinions());
-
+                StartCoroutine(SpawnMinions());
             }
-
+            if (attacking == false)
+            {
                 angle += speed * Time.deltaTime;
                 if (angle >= Mathf.PI * 2)
                 {
                     angle -= Mathf.PI * 2;
                 }
-                Vector3 next = new Vector3(pivot.x + (radius * Mathf.Cos(angle)), pivot.y + (radius * Mathf.Sin(angle)), 0);
+                Vector3 next = new Vector3(pivot.x + (radius * Mathf.Cos(-angle)), pivot.y + (radius * Mathf.Sin(-angle)), 0);
                 transform.position = next;
+            }
 
         }
     }
 
     IEnumerator SpawnMinions()
     {
-        speed = 0;
+        attacking = true;
         yield return new WaitForSeconds(2f);
         Instantiate(flySpawn, pivot, Quaternion.identity);
         yield return new WaitForSeconds(.5f);
@@ -73,8 +84,9 @@ public class ScrapQueen : MonoBehaviour
         yield return new WaitForSeconds(.5f);
         Instantiate(flySpawn, pivot, Quaternion.identity);
         yield return new WaitForSeconds(2f);
-        angle += .01f;
-        speed = 2;
+        float randoAngle = Random.Range(0, Mathf.PI * 2);
+        spawnMinionsPoint.position = new Vector3(pivot.x + (radius * Mathf.Cos(randoAngle)), pivot.y + (radius * Mathf.Sin(randoAngle)), 0);
+        attacking = false;
     }
 
     void Intro()
