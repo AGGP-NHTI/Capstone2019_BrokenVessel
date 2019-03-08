@@ -694,8 +694,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hotBarItems:
-  - {fileID: 1035899845998428, guid: c3235d31887d2c0488d0cd28e38f57da, type: 3}
-  - {fileID: 1675117104826286, guid: 65e00782666f50041858e688018b71d0, type: 3}
+  - {fileID: 1035899845998428, guid: 993f264ed83f1b84986e333b6d077c56, type: 3}
+  - {fileID: 1675117104826286, guid: cd5a0c69ed5e64c4f93a331da9d4245b, type: 3}
   inventoryStorage: []
 --- !u!1 &351075052
 GameObject:
@@ -1577,7 +1577,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvasBoi: {fileID: 1839792143}
-  inkJSONAsset: {fileID: 4900000, guid: 20a850ddceb0b604ca8ea5aac9575f17, type: 3}
+  inkJSONAsset: {fileID: 4900000, guid: 20fc8091796644e4087e13a625563151, type: 3}
   canvas: {fileID: 1839792147}
   textPrefab: {fileID: 11456674, guid: 1aab6ef84d87c416f8f0b3e1ef3d77d2, type: 3}
   buttonPrefab: {fileID: 11455116, guid: 37c108a6c38964f79a6621eccb33ddc1, type: 3}
