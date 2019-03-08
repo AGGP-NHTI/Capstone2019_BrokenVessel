@@ -6,6 +6,7 @@ public class EnemyMovement : MonoBehaviour {
 
     public float speed = 5;
 
+    public bool bounceOffLedge = false;
     bool onLedge = false;
     bool grounded = true;
 
@@ -33,7 +34,7 @@ public class EnemyMovement : MonoBehaviour {
             grounded = Physics2D.CircleCast(ledgeCheck.position, .2f, Vector2.zero, 0, realGround);
             onLedge = !Physics2D.CircleCast(ledgeCheck.position, .075f, Vector2.zero, 0, realGround);
 
-            if (fc.hit || onLedge)
+            if (fc.hit || (onLedge && bounceOffLedge))
             {
                 Flip();
                 speed = -speed;
@@ -62,10 +63,14 @@ public class EnemyMovement : MonoBehaviour {
                 }
                 else
                 {
-                    processVelocity.y -= 4.5f;
-                    if(processVelocity.y < -27f)
+                    if(!bounceOffLedge)
                     {
-                        processVelocity.y = -27f;
+                        processVelocity.x = speed / 2;
+                    }
+                    processVelocity.y -= 4.5f;
+                    if(processVelocity.y < -18f)
+                    {
+                        processVelocity.y = -18f;
                     }
                 }
             }
