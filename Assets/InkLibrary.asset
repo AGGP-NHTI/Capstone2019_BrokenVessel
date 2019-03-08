@@ -25,5 +25,22 @@ MonoBehaviour:
     inkAsset: {fileID: 102900000, guid: 429b0fea30275e94c967a9405351fc1e, type: 3}
     jsonAssetPath: {fileID: 0}
     jsonAsset: {fileID: 4900000, guid: 3eb18c203bb1a9c4dbbada5e94e64ccd, type: 3}
+  - compileAutomatically: 0
+    inkAsset: {fileID: 102900000, guid: 8841705efdd54534bbcac4f06c7b2cd6, type: 3}
+    jsonAssetPath: {fileID: 0}
+    jsonAsset: {fileID: 0}
   pendingCompilationStack: []
-  compilationStack: []
+  compilationStack:
+  - state: 1
+    inkFile:
+      compileAutomatically: 0
+      inkAsset: {fileID: 102900000, guid: 429b0fea30275e94c967a9405351fc1e, type: 3}
+      jsonAssetPath: {fileID: 0}
+      jsonAsset: {fileID: 4900000, guid: 3eb18c203bb1a9c4dbbada5e94e64ccd, type: 3}
+    inkAbsoluteFilePath: C:/Users/NHTI/Desktop/Capstone2019_BrokenVessel/Assets/Resources/Hello
+      Dolly.ink
+    jsonAbsoluteFilePath: C:/Users/NHTI/Desktop/Capstone2019_BrokenVessel/Assets/Resources/Hello
+      Dolly.json
+    output: []
+    errorOutput: []
+    timeTaken: 0
