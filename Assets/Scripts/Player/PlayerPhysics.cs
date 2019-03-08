@@ -30,8 +30,7 @@ namespace BrokenVessel.Player
 		[Header("Technical")]
 		[SerializeField]
 		private LayerMask collisionMask;
-
-		private Vector2 velocity = Vector2.zero;
+		
 		private bool grounded = false;
 		private bool halvedJump = false;
 		private BoxCollider2D box;
@@ -62,11 +61,12 @@ namespace BrokenVessel.Player
 
 		public void HalveJump()
 		{
-			if (velocity.y > 0 && halvedJump)
+			Vector2 vel = rg.velocity;
+
+			if (halvedJump && vel.y > 0)
 			{
 				halvedJump = false;
-
-				Vector2 vel = rg.velocity;
+				
 				vel.y /= 2f;
 				rg.velocity = vel;
 			}

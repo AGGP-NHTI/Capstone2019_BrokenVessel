@@ -14,10 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inkLibrary:
   - compileAutomatically: 0
-    inkAsset: {fileID: 102900000, guid: 1ef4d53c3635eed4cb15722ad6ca13be, type: 3}
+<<<<<<< HEAD
+=======
+    inkAsset: {fileID: 102900000, guid: d27fc6f4fa91c1046992b4af8d08c171, type: 3}
     jsonAssetPath: {fileID: 0}
-    jsonAsset: {fileID: 4900000, guid: 99faeed3e9632a447a3c4dddfbd14e0d, type: 3}
+    jsonAsset: {fileID: 0}
   - compileAutomatically: 0
+>>>>>>> 0159639d248730ca82a319c5bcfafb9572c83c6b
     inkAsset: {fileID: 102900000, guid: 1460e815e969b43b8a83a7caa8b48c27, type: 3}
     jsonAssetPath: {fileID: 0}
     jsonAsset: {fileID: 4900000, guid: 6cf48bb6d89824cc69e35b43f9a1aca6, type: 3}
@@ -26,21 +29,8 @@ MonoBehaviour:
     jsonAssetPath: {fileID: 0}
     jsonAsset: {fileID: 4900000, guid: 3eb18c203bb1a9c4dbbada5e94e64ccd, type: 3}
   - compileAutomatically: 0
-    inkAsset: {fileID: 102900000, guid: 8841705efdd54534bbcac4f06c7b2cd6, type: 3}
+    inkAsset: {fileID: 102900000, guid: 9d50afabc30ecae4f85dcfec5cf8e020, type: 3}
     jsonAssetPath: {fileID: 0}
     jsonAsset: {fileID: 0}
   pendingCompilationStack: []
-  compilationStack:
-  - state: 1
-    inkFile:
-      compileAutomatically: 0
-      inkAsset: {fileID: 102900000, guid: 429b0fea30275e94c967a9405351fc1e, type: 3}
-      jsonAssetPath: {fileID: 0}
-      jsonAsset: {fileID: 4900000, guid: 3eb18c203bb1a9c4dbbada5e94e64ccd, type: 3}
-    inkAbsoluteFilePath: C:/Users/NHTI/Desktop/Capstone2019_BrokenVessel/Assets/Resources/Hello
-      Dolly.ink
-    jsonAbsoluteFilePath: C:/Users/NHTI/Desktop/Capstone2019_BrokenVessel/Assets/Resources/Hello
-      Dolly.json
-    output: []
-    errorOutput: []
-    timeTaken: 0
+  compilationStack: []
