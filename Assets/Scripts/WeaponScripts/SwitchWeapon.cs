@@ -9,7 +9,8 @@ public class SwitchWeapon : MonoBehaviour {
     public GameObject Player;
 
     // Use this for initialization
-    void Start () {
+    void Start ()
+    {
         Player = GameObject.Find("Player");
 	}
 
@@ -21,7 +22,6 @@ public class SwitchWeapon : MonoBehaviour {
             equippedWeaponInstance = Instantiate(Player.GetComponent<InventoryScript>().hotBarItems[0], Player.transform);
             equippedWeaponInstance.transform.parent = Player.transform;
         }
-
         if (Input.GetKeyDown("e"))
         {
             Switch();
