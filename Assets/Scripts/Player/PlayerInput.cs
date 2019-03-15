@@ -11,14 +11,12 @@ namespace BrokenVessel.Player
 		[SerializeField]
 		private KeyCode rightKey = KeyCode.D;
 		[SerializeField]
-		private bool holdRightKey = false;
-		[SerializeField]
 		private float dblClickThreshold = 0.2f;
 
 		public bool Jump { get => Input.GetKeyDown(jumpKey); }
 		public bool JumpEnd { get => Input.GetKeyUp(jumpKey); }
 		public bool Left { get => Input.GetKey(leftKey); }
-		public bool Right { get => Input.GetKey(rightKey) || holdRightKey; }
+		public bool Right { get => Input.GetKey(rightKey); }
 		public float Dash { get; private set; }
 
 		private float time = 0;

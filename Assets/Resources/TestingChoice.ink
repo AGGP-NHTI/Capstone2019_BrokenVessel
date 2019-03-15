@@ -1,3 +1,1 @@
-Hello World!
-*choiceboi
-*otherchoiceboi
+-Hello World!
