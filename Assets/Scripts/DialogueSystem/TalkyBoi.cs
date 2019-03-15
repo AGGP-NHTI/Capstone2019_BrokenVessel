@@ -25,7 +25,7 @@ public class TalkyBoi : MonoBehaviour {
         Distance_ = Vector3.Distance(Cube1.transform.position, Cube2.transform.position);
         if(Distance_ < 7)
         {
-            if(textBoxVisible == false)
+            if (textBoxVisible == false)
             {
                 textBoxInstance = Instantiate(textBox);
                 textBoxInstance.transform.parent = GameObject.Find("Cube").transform;
