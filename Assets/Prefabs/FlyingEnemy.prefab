@@ -276,7 +276,6 @@ GameObject:
   - component: {fileID: 50610552690887128}
   - component: {fileID: 114448538464671302}
   - component: {fileID: 1812528421932969130}
-  - component: {fileID: 469133741602250986}
   m_Layer: 10
   m_Name: FlyingEnemy
   m_TagString: Untagged
@@ -353,7 +352,7 @@ MonoBehaviour:
   dead: 0
   directSight: 0
   choice: 3
-  range: 3
+  range: 50
   seePlayer: 0
   playerDistance: -1
   target:
@@ -371,31 +370,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1867132984220346}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c334af11a8541a04b9f7e5b5fc5e2247, type: 3}
+  m_Script: {fileID: 11500000, guid: ad6e4800d6e0aa245827927d85f11f5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
-  orbitField: 3
+  speed: 3
+  orbitField: 5
   approachPlayer: 0
-  approachDistance: 2
---- !u!114 &469133741602250986
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1867132984220346}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f044205f74d428843b906e62eaf0bd14, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weapon: {fileID: 4715596301545262}
-  projectile: {fileID: 1079376429161390, guid: be35a9a39deda0d4fa0d1197143328ec, type: 3}
-  damage: 10
-  rangeCD: 0.5
-  attackRange: 3
-  attacking: 0
+  approachDistance: 1
 --- !u!1 &1876038205391468
 GameObject:
   m_ObjectHideFlags: 0

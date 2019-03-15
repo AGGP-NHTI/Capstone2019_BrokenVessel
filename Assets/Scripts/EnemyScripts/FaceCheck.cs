@@ -12,7 +12,6 @@ public class FaceCheck : MonoBehaviour
         if (other.gameObject.layer == targetLayer && hit) //|| other.gameObject.layer == 9)
         {
             hit = false;
-            Debug.Log(hit);
         }
     }
     

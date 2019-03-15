@@ -25,7 +25,6 @@ public class TalkyBoi : MonoBehaviour {
         Distance_ = Vector3.Distance(Cube1.transform.position, Cube2.transform.position);
         if(Distance_ < 7)
         {
-            Debug.Log("ALERT ENEMY");
             if(textBoxVisible == false)
             {
                 textBoxInstance = Instantiate(textBox);
