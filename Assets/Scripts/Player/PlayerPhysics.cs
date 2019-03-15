@@ -9,6 +9,8 @@ namespace BrokenVessel.Player
 		[SerializeField]
 		private float jumpStrength = 10;
 		[SerializeField]
+		private float wallJumpStrength = 10;
+		[SerializeField]
 		private float dashSpeed = 10;
 		[SerializeField]
 		private float maxSpeed = 5;
@@ -23,9 +25,9 @@ namespace BrokenVessel.Player
 		[SerializeField]
 		private float airFriction = 0;
 		[SerializeField]
-		private float gravity = 20;
+		private float wallStickTime = 0.1f;
 		[SerializeField]
-		private float terminalVelocity = 20;
+		private float wallJumpAngle = 45;
 
 		[Header("Technical")]
 		[SerializeField]
@@ -33,6 +35,9 @@ namespace BrokenVessel.Player
 		
 		private bool grounded = false;
 		private bool halvedJump = false;
+		private float stickFrames = 0;
+		private bool canStickWall = false;
+		private float lastDir = 0;
 		private BoxCollider2D box;
 		private Rigidbody2D rg;
 
@@ -49,6 +54,22 @@ namespace BrokenVessel.Player
 			{
 				halvedJump = true; // Reset jump halver
 			}
+
+			// Stick to wall
+			if (CheckWall() && canStickWall && !grounded && stickFrames <= 0)
+			{
+				stickFrames = wallStickTime;
+				canStickWall = false;
+			}
+			// Decrement
+			if (stickFrames > 0) { stickFrames -= Time.deltaTime; }
+
+			// Release and reset if not next to wall or grounded
+			if (!CheckWall() || grounded)
+			{
+				stickFrames = 0;
+				canStickWall = true;
+			}
 		}
 
 		public void Jump()
@@ -56,6 +77,21 @@ namespace BrokenVessel.Player
 			if (grounded)
 			{
 				rg.AddForce(Vector2.up * jumpStrength, ForceMode2D.Impulse);
+			}
+			else if (CheckWall())
+			{
+				// Prevent wall jumping into the wall
+				if (lastDir == 0 || lastDir > 0 && !CheckLeftWall() || lastDir < 0 && !CheckRightWall())
+				{
+					return;
+				}
+
+				// Remove y velocity and stick frames
+				rg.velocity = new Vector2(rg.velocity.x, 0);
+				stickFrames = 0;
+
+				// Apply force
+				rg.AddForce(Quaternion.Euler(0, 0, (90f - wallJumpAngle) * (lastDir > 0 ? -1 : 1)) * Vector2.up * wallJumpStrength, ForceMode2D.Impulse);
 			}
 		}
 
@@ -74,6 +110,8 @@ namespace BrokenVessel.Player
 
 		public void Move(float dir)
 		{
+			lastDir = dir;
+
 			Vector2 vel = rg.velocity;
 
 			if (dir == 0 && vel.x != 0 || Mathf.Abs(vel.x) > maxSpeed)
@@ -95,6 +133,11 @@ namespace BrokenVessel.Player
 				vel.x = Mathf.Clamp(newVelX, -maxSpeed, maxSpeed); // Cap to max speed
 			}
 
+			if (stickFrames > 0)
+			{
+				vel.x = 0;
+			}
+
 			rg.velocity = vel;
 		}
 
@@ -106,6 +149,28 @@ namespace BrokenVessel.Player
 		private bool CheckFloor()
 		{
 			return Physics2D.BoxCast(transform.position, box.size, 0, Vector2.down, 0.1f, collisionMask).distance != 0;
+		}
+
+		private bool CheckWall()
+		{
+			Vector2 size = box.size;
+			size.x *= 1.05f;
+			size.y *= 0.75f;
+			return Physics2D.OverlapBox(transform.position, size, 0, collisionMask) != null;
+		}
+
+		private bool CheckLeftWall()
+		{
+			Vector2 size = box.size;
+			size.y *= 0.75f;
+			return Physics2D.OverlapBox(transform.position + Vector3.left * 0.025f, size, 0, collisionMask) != null;
+		}
+
+		private bool CheckRightWall()
+		{
+			Vector2 size = box.size;
+			size.y *= 0.75f;
+			return Physics2D.OverlapBox(transform.position + Vector3.right * 0.025f, size, 0, collisionMask) != null;
 		}
 	}
 }
