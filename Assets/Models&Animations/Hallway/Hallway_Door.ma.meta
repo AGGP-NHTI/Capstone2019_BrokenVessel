@@ -115,8 +115,11 @@ ModelImporter:
     400108: transform4
     2100000: lambert1
     2300000: polySurface1
+    2300002: //RootNode
     3300000: polySurface1
+    3300002: //RootNode
     4300000: polySurface1
+    4300002: Hallway_Door
     2186277476908879412: ImportLogs
   externalObjects: {}
   materials:
