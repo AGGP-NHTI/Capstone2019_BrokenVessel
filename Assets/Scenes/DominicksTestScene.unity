@@ -694,8 +694,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hotBarItems:
-  - {fileID: 1035899845998428, guid: 993f264ed83f1b84986e333b6d077c56, type: 3}
-  - {fileID: 1675117104826286, guid: cd5a0c69ed5e64c4f93a331da9d4245b, type: 3}
+  - {fileID: 1035899845998428, guid: ff68d355f3870874b81f909cbe30691d, type: 3}
+  - {fileID: 1675117104826286, guid: 8be15c403f7a97442b4027c9b54dc012, type: 3}
   inventoryStorage: []
 --- !u!1 &351075052
 GameObject:
