@@ -1,1 +1,0 @@
-﻿{"inkVersion":19,"root":[["ev","str","^option1","/str","/ev",{"*":"0.c-0","flg":20},"ev","str","^option2","/str","/ev",{"*":"0.c-1","flg":20},{"c-0":["\n","^You've chosen option 1!!!","\n",{"->":"0.g-0"},{"#f":7}],"c-1":["\n","^You've chosen option 2!!!","\n",{"->":"0.g-0"},{"#f":7}],"g-0":["done",{"#f":7}]}],"done",{"#f":3}],"listDefs":{}}
