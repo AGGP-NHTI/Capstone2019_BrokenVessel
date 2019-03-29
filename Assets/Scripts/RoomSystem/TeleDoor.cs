@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using BrokenVessel.Player;
+﻿using BrokenVessel.Player;
 using UnityEngine;
 
 public class TeleDoor : Interact

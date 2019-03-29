@@ -7,6 +7,8 @@ namespace BrokenVessel.Player
 		[SerializeField]
 		private KeyCode jumpKey = KeyCode.Space;
 		[SerializeField]
+		private KeyCode interactKey = KeyCode.E;
+		[SerializeField]
 		private KeyCode leftKey = KeyCode.A;
 		[SerializeField]
 		private KeyCode rightKey = KeyCode.D;
@@ -15,6 +17,7 @@ namespace BrokenVessel.Player
 
 		public bool Jump { get => Input.GetKeyDown(jumpKey); }
 		public bool JumpEnd { get => Input.GetKeyUp(jumpKey); }
+		public bool Interact { get => Input.GetKeyDown(interactKey); }
 		public bool Left { get => Input.GetKey(leftKey); }
 		public bool Right { get => Input.GetKey(rightKey); }
 		public float Dash { get; private set; }
