@@ -4,8 +4,13 @@ using UnityEngine;
 
 public class DamageTrigger : MonoBehaviour {
 
-    [SerializeField] int OwnerLayer;
+    public int OwnerLayer;
     public bool isProjectile = true;
+
+    private void Start()
+    {
+        transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, 0, transform.rotation.eulerAngles.z);
+    }
 
     void OnTriggerEnter2D(Collider2D collision)
     {
