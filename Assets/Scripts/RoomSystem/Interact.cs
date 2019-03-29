@@ -1,13 +1,16 @@
 ﻿using UnityEngine;
 
-[RequireComponent(typeof(BoxCollider2D))]
-public abstract class Interact : MonoBehaviour
+namespace BrokenVessel.Interact
 {
-    public abstract void Impulse();
-
-	void Reset()
+	[RequireComponent(typeof(BoxCollider2D))]
+	public abstract class Interact : MonoBehaviour
 	{
-		GetComponent<BoxCollider2D>().isTrigger = true;
-		gameObject.layer = 2;
+		public abstract void Impulse();
+
+		void Reset()
+		{
+			GetComponent<BoxCollider2D>().isTrigger = true;
+			gameObject.layer = 2;
+		}
 	}
 }

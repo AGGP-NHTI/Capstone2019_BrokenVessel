@@ -1,12 +1,14 @@
-﻿using BrokenVessel.Player;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class TeleDoor : Interact
+namespace BrokenVessel.Interact
 {
-    public Transform Door;
-   
-    public override void Impulse()
-    {
-        Player.This.transform.position = Door.position;
-    }
+	public class Door : Interact
+	{
+		public Transform door;
+
+		public override void Impulse()
+		{
+			Player.Player.This.transform.position = door.position;
+		}
+	}
 }
