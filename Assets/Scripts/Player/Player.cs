@@ -9,10 +9,13 @@ namespace BrokenVessel.Player
 		private PlayerInput input;
 		private PlayerPhysics phys;
 
+        public static Player This { get; private set; }
+
 		void Start()
 		{
 			input = GetComponent<PlayerInput>();
 			phys = GetComponent<PlayerPhysics>();
+            This = this;
 		}
 		
 		void Update()
