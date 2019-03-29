@@ -29,7 +29,7 @@ namespace BrokenVessel.Player
 
 			if (input.Interact)
 			{
-				foreach (Interact inter in FindObjectsOfType<Interact>())
+				foreach (Interact.Interact inter in FindObjectsOfType<Interact.Interact>())
 				{
 					if (GetComponent<BoxCollider2D>().bounds.Intersects(inter.GetComponent<BoxCollider2D>().bounds))
 					{
