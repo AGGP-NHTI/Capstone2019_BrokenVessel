@@ -501,6 +501,7 @@ GameObject:
   - component: {fileID: 50654431414838862}
   - component: {fileID: 114253093163872208}
   - component: {fileID: 114619048996695446}
+  - component: {fileID: 8438670443624840110}
   m_Layer: 10
   m_Name: BasicEnemy
   m_TagString: Untagged
@@ -618,6 +619,20 @@ MonoBehaviour:
   AlwaysMove: 1
   attacking: 0
   faceCheck: {fileID: 4107295000405272}
+--- !u!114 &8438670443624840110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1885734154438102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a7cd29b0d4e42d40960e46dbffc72ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 10
+  iFrames: 1
 --- !u!1 &1894143432911296
 GameObject:
   m_ObjectHideFlags: 0
