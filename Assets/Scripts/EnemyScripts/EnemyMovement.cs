@@ -39,15 +39,6 @@ public class EnemyMovement : MonoBehaviour {
                 Flip();
                 speed = -speed;
             }
-            if (!grounded)
-            {
-                transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
-                RaycastHit2D hit = Physics2D.Raycast(ledgeCheck.position, Vector2.down, .25f, realGround);
-                if (hit)
-                {
-                    transform.position = new Vector3(transform.position.x, hit.transform.position.y + (hit.transform.localScale.y / 2));
-                }
-            }
 
             fc.hit = false;
 
