@@ -83,13 +83,21 @@ public class EnemyCombat : MonoBehaviour {
         if(seePlayer)
         {
             playerDistance = (transform.position - targetTransform.position).magnitude;
-            if(!directSight && playerDistance > range * 1.5f)
+            foreach (LookAt la in GetComponentsInChildren<LookAt>())
+            {
+                la.FocusObject = targetTransform;
+            }
+            if (!directSight && playerDistance > range * 1.5f)
             {
                 seePlayer = false;
             }
         }
         else
         {
+            foreach (LookAt la in GetComponentsInChildren<LookAt>())
+            {
+                la.FocusObject = null;
+            }
             playerDistance = -1f;
         }
     }
