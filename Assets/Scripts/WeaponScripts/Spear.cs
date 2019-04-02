@@ -28,10 +28,10 @@ public class Spear : Weapon
     public IEnumerator SwingSpear()
     {
         yield return new WaitForSeconds(.1f);
-        HitBox.GetComponent<BoxCollider>().enabled = true;
-        gameObject.transform.Translate(2f, 0, 0);
+        HitBox.GetComponent<BoxCollider2D>().enabled = true;
+        gameObject.transform.Translate(0, 0, -2f);
         yield return new WaitForSeconds(.1f);
-        gameObject.transform.Translate(-2f, 0, 0);
-        HitBox.GetComponent<BoxCollider>().enabled = false;
+        gameObject.transform.Translate(0, 0, 2f);
+        HitBox.GetComponent<BoxCollider2D>().enabled = false;
     }
 }

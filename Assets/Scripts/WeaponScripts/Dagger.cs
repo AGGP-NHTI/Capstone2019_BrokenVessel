@@ -29,9 +29,9 @@ public class Dagger : Weapon
     {
         yield return new WaitForSeconds(.1f);
         HitBox.GetComponent<BoxCollider>().enabled = true;
-        gameObject.transform.Translate(1f, 0, 0);
+        gameObject.transform.Translate(0, 0, 1f);
         yield return new WaitForSeconds(.1f);
-        gameObject.transform.Translate(-1f, 0, 0);
+        gameObject.transform.Translate(0, 0, -1f);
         HitBox.GetComponent<BoxCollider>().enabled = false;
     }
 }
