@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ScrapQueen : MonoBehaviour
 {
+    public bool start = false;
+
     [SerializeField] float speed = 2;
     [SerializeField] GameObject crawlSpawn;
     [SerializeField] GameObject flySpawn;
@@ -33,58 +35,61 @@ public class ScrapQueen : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (intro)
+        if (start)
         {
-            //StartCoroutine(Intro());
-            Intro();
-        }
-        else
-        {
-            if((int)offSet.rotation.eulerAngles.y == 90)
+            if (intro)
             {
-                fc.gameObject.GetComponent<BoxCollider2D>().offset = Vector2.up;
+                //StartCoroutine(Intro());
+                Intro();
             }
-            if ((int)offSet.rotation.eulerAngles.y == 270)
+            else
             {
-                fc.gameObject.GetComponent<BoxCollider2D>().offset = Vector2.down;
-            }
-
-            if (fc.hit && speed < 2)
-            {
-                speed += 1;
-            }
-            if (fc.hit == false && speed >= 2)
-            {
-                speed -= 1;
-            }
-
-            if (!attacking && (transform.position - spawnMinionsPoint.position).magnitude < 1f)
-            {
-                StartCoroutine(SpawnMinions());
-            }
-            if (attacking == false)
-            {
-                angle += speed * Time.deltaTime;
-                if (angle >= Mathf.PI * 2)
+                if ((int)offSet.rotation.eulerAngles.y == 90)
                 {
-                    angle -= Mathf.PI * 2;
+                    fc.gameObject.GetComponent<BoxCollider2D>().offset = Vector2.up;
                 }
-                if(angle >= Mathf.PI && transform.localScale.x > 0)
+                if ((int)offSet.rotation.eulerAngles.y == 270)
                 {
-                    Vector3 theScale = transform.localScale;
-                    theScale.x *= -1;
-                    transform.localScale = theScale;
+                    fc.gameObject.GetComponent<BoxCollider2D>().offset = Vector2.down;
                 }
-                else if (angle >= 0 && angle < Mathf.PI && transform.localScale.x < 0)
-                {
-                    Vector3 theScale = transform.localScale;
-                    theScale.x *= -1;
-                    transform.localScale = theScale;
-                }
-                Vector3 next = new Vector3(pivot.x + (radius * Mathf.Cos(-angle)), pivot.y + (radius * Mathf.Sin(-angle)), 0);
-                transform.position = next;
-            }
 
+                if (fc.hit && speed < 2)
+                {
+                    speed += 1;
+                }
+                if (fc.hit == false && speed >= 2)
+                {
+                    speed -= 1;
+                }
+
+                if (!attacking && (transform.position - spawnMinionsPoint.position).magnitude < 1f)
+                {
+                    StartCoroutine(SpawnMinions());
+                }
+                if (attacking == false)
+                {
+                    angle += speed * Time.deltaTime;
+                    if (angle >= Mathf.PI * 2)
+                    {
+                        angle -= Mathf.PI * 2;
+                    }
+                    if (angle >= Mathf.PI && transform.localScale.x > 0)
+                    {
+                        Vector3 theScale = transform.localScale;
+                        theScale.x *= -1;
+                        transform.localScale = theScale;
+                    }
+                    else if (angle >= 0 && angle < Mathf.PI && transform.localScale.x < 0)
+                    {
+                        Vector3 theScale = transform.localScale;
+                        theScale.x *= -1;
+                        transform.localScale = theScale;
+                    }
+                    Vector3 next = new Vector3(pivot.x + (radius * Mathf.Cos(-angle)), pivot.y + (radius * Mathf.Sin(-angle)), 4);
+                    transform.position = next;
+                }
+
+            }
         }
     }
 
@@ -99,7 +104,7 @@ public class ScrapQueen : MonoBehaviour
         Instantiate(flySpawn, spawnMinionsPoint.position, Quaternion.identity);
         yield return new WaitForSeconds(2f);
         float randoAngle = Random.Range(0, Mathf.PI * 2);
-        spawnMinionsPoint.position = new Vector3(pivot.x + (radius * Mathf.Cos(randoAngle)), pivot.y + (radius * Mathf.Sin(randoAngle)), 0);
+        spawnMinionsPoint.position = new Vector3(pivot.x + (radius * Mathf.Cos(randoAngle)), pivot.y + (radius * Mathf.Sin(randoAngle)), 4);
         attacking = false;
     }
 
@@ -111,7 +116,7 @@ public class ScrapQueen : MonoBehaviour
         if ((angle - (Mathf.PI / 4)) < .025f && timer > 0)
         {
             angle += speed * Time.deltaTime;
-            Vector3 next = new Vector3(pivot.x + (radius * Mathf.Cos(-angle)), pivot.y + (radius * Mathf.Sin(-angle)), 0);
+            Vector3 next = new Vector3(pivot.x + (radius * Mathf.Cos(-angle)), pivot.y + (radius * Mathf.Sin(-angle)), 4);
             transform.position = next;
         }
         if ((angle - (Mathf.PI / 4)) >= .025f)
@@ -122,7 +127,7 @@ public class ScrapQueen : MonoBehaviour
         if (timer < 0)
         {
             angle += speed * Time.deltaTime;
-            Vector3 next = new Vector3(pivot.x + (radius * Mathf.Cos(-angle)), pivot.y + (radius * Mathf.Sin(-angle)), 0);
+            Vector3 next = new Vector3(pivot.x + (radius * Mathf.Cos(-angle)), pivot.y + (radius * Mathf.Sin(-angle)), 4);
             transform.position = next;
 
             if ((angle - (Mathf.PI / 2)) < .025f && (angle - (Mathf.PI / 2)) > -.025f)
