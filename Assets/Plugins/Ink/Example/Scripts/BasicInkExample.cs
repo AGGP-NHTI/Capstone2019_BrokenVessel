@@ -8,12 +8,13 @@ public class BasicInkExample : MonoBehaviour {
 	
 	void Awake () {
 		// Remove the default message
-		RemoveChildren();
-		StartStory();
+		//RemoveChildren();
+		//StartStory();
+
 	}
 
 	// Creates a new Story object with the compiled story which we can then play!
-	void StartStory () {
+	public void StartStory () {
 		story = new Story (inkJSONAsset.text);
 		RefreshView();
 	}
@@ -48,10 +49,11 @@ public class BasicInkExample : MonoBehaviour {
 		}
 		// If we've read all the content and there's no choices, the story is finished!
 		else {
-			Button choice = CreateChoiceView("End of story.\nRestart?");
+			Button choice = CreateChoiceView("Drop The Ball");
 			choice.onClick.AddListener(delegate{
-				StartStory();
-			});
+                RemoveChildren();
+                Debug.Log("yep");
+            });
 		}
 	}
 
@@ -86,7 +88,7 @@ public class BasicInkExample : MonoBehaviour {
 	}
 
 	// Destroys all the children of this gameobject (all the UI)
-	void RemoveChildren () {
+	public void RemoveChildren () {
 		int childCount = canvas.transform.childCount;
 		for (int i = childCount - 1; i >= 0; --i) {
 			GameObject.Destroy (canvas.transform.GetChild (i).gameObject);
