@@ -40,20 +40,20 @@ public class Sword : Weapon {
         if (Player.GetComponent<PlayerMovement>().facingRight)
         {
             yield return new WaitForSeconds(.1f);
-            HitBox.GetComponent<MeshCollider>().enabled = true;
+            HitBox.GetComponent<BoxCollider2D>().enabled = true;
             gameObject.transform.RotateAround(Pivot.transform.position, Vector3.forward * -1, 90);
             yield return new WaitForSeconds(.1f);
             gameObject.transform.RotateAround(Pivot.transform.position, Vector3.forward * -1, -90);
-            HitBox.GetComponent<MeshCollider>().enabled = false;
+            HitBox.GetComponent<BoxCollider2D>().enabled = false;
         }
         else
         {
             yield return new WaitForSeconds(.1f);
-            HitBox.GetComponent<MeshCollider>().enabled = true;
+            HitBox.GetComponent<BoxCollider2D>().enabled = true;
             gameObject.transform.RotateAround(Pivot.transform.position, Vector3.forward, 90);
             yield return new WaitForSeconds(.1f);
             gameObject.transform.RotateAround(Pivot.transform.position, Vector3.forward, -90);
-            HitBox.GetComponent<MeshCollider>().enabled = false;
+            HitBox.GetComponent<BoxCollider2D>().enabled = false;
         }
     }
 }
