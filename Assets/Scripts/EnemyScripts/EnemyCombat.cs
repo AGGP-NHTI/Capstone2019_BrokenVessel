@@ -117,6 +117,8 @@ public class EnemyCombat : MonoBehaviour {
         choice = DetectionType.none;
         AlwaysMove = false;
         GetComponent<Rigidbody2D>().gravityScale = 1;
+        GetComponent<Rigidbody2D>().isKinematic = false;
+        GetComponent<Rigidbody2D>().freezeRotation = false;
 
         //particles
         //animation
