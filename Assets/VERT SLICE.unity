@@ -6305,7 +6305,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.04996872, y: -0.044234633}
+  m_Offset: {x: -0.04996872, y: -0.046396304}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -6316,7 +6316,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.7000625, y: 0.09934878}
+  m_Size: {x: 0.7000625, y: 0.09502544}
   m_EdgeRadius: 0
 --- !u!23 &285699105
 MeshRenderer:
@@ -6989,7 +6989,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.04996872, y: -0.044234633}
+  m_Offset: {x: -0.04996872, y: -0.04611373}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -7000,7 +7000,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.7000625, y: 0.09934878}
+  m_Size: {x: 0.7000625, y: 0.09559059}
   m_EdgeRadius: 0
 --- !u!23 &321951068
 MeshRenderer:
@@ -19346,6 +19346,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1250873318121912233, guid: 6b69d07e11bdc9c428f8159aa88a49be,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: -0.005354121
+      objectReference: {fileID: 0}
+    - target: {fileID: 1250873318121912233, guid: 6b69d07e11bdc9c428f8159aa88a49be,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.009379075
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6b69d07e11bdc9c428f8159aa88a49be, type: 3}
