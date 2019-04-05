@@ -19,7 +19,7 @@ public class DamageTrigger : MonoBehaviour {
         {
             if (collision.gameObject.GetComponent<PlayerData>())
             {
-                collision.gameObject.GetComponent<PlayerData>().takeDamage(10, 5);
+                collision.gameObject.GetComponent<PlayerData>().takeDamage(10, 5, Vector2.zero);
             }
             if (collision.gameObject.GetComponent<EnemyCombat>())
             {

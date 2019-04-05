@@ -5,13 +5,19 @@ using UnityEngine;
 public class EnemyContact : MonoBehaviour
 {
     [SerializeField] float damage = 10;
+    [SerializeField] float knockBack = 10;
     [SerializeField] float iFrames = 1;
 
-    private void OnCollisionStay2D(Collision2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        if(collision.gameObject.GetComponent<PlayerData>())
+        Debug.Log("REEEEEEE");
+        if (collision.gameObject.GetComponent<PlayerData>())
         {
-            collision.gameObject.GetComponent<PlayerData>().takeDamage(damage, iFrames);
+            Debug.Log("internal REEEEEEE");
+            Vector2 knock = (collision.gameObject.transform.position - gameObject.transform.position).normalized * knockBack;
+            collision.gameObject.GetComponent<PlayerData>().takeDamage(damage, iFrames, knock);
+
+            gameObject.GetComponent<Rigidbody2D>().AddForce(-knock);
         }
     }
 }

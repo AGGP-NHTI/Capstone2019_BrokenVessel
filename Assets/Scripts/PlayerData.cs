@@ -22,11 +22,12 @@ public class PlayerData : MonoBehaviour {
     public bool chargeJump = false;
     public int shipControl = 0;
 
-    public void takeDamage(float value, float iFrames) //, Vector2 Knockback
+    public void takeDamage(float value, float iFrames, Vector2 Knockback)
     {
         //Debug.Log("ow");
         if(iFrameTimer <= 0 && !ignoreDamage)
         {
+            GetComponent<Rigidbody2D>().AddForce(Knockback, ForceMode2D.Impulse);
             //Debug.Log("dmg");
             health -= value;
             iFrameTimer = iFrames;
