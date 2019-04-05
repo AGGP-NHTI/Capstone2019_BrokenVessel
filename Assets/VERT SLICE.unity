@@ -8381,7 +8381,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.00007147342, y: -0.0071582478}
+  m_Offset: {x: 0.00007147342, y: 0.006847284}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -8392,7 +8392,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.012513347, y: 0.00093013374}
+  m_Size: {x: 0.012513347, y: 0.0010848083}
   m_EdgeRadius: 0
 --- !u!23 &389903068
 MeshRenderer:
@@ -15945,15 +15945,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c3a8f7c72d495a438afbeace5e521ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpStrength: 20
+  jumpStrength: 16
   wallJumpStrength: 10
   dashSpeed: 15
-  maxSpeed: 5
+  maxSpeed: 6
   groundSpeed: 45
   groundFriction: 25
   airSpeed: 10
   airFriction: 0
-  wallStickTime: 0.4
+  wallStickTime: 2
   wallJumpAngle: 60
   collisionMask:
     serializedVersion: 2

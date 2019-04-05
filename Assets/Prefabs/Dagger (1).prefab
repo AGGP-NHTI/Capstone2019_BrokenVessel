@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 947132596147951415}
   - component: {fileID: 1055619661558920708}
   - component: {fileID: 1107908970433036206}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: DaggerHitBox (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -131,7 +131,7 @@ GameObject:
   - component: {fileID: 8119396444416433851}
   - component: {fileID: 4414646808016831172}
   - component: {fileID: 5707698282506500355}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Dagger (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
