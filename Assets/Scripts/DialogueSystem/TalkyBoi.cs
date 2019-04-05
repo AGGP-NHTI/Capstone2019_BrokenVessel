@@ -5,7 +5,6 @@ using UnityEngine;
 public class TalkyBoi : MonoBehaviour {
 
     //learn how to draw your Ink document story into 3dTextBubbles
-
     public GameObject Cube1;
     public GameObject Cube2;
     public float Distance_;
@@ -14,10 +13,11 @@ public class TalkyBoi : MonoBehaviour {
     public GameObject textBoxInstance;
     public GameObject WorldScriptManager;
     public GameObject canvas;
+    public GameObject SceneController;
 
     // Use this for initialization
     void Start () {
-		
+        SceneController = GameObject.Find("Scene Controller");
 	}
 	
 	// Update is called once per frame
@@ -34,6 +34,8 @@ public class TalkyBoi : MonoBehaviour {
             if (WorldScriptManager.GetComponent<KeysPressed>().jHeld == true)
             {
                 canvas.SetActive(true);
+                SceneController.GetComponent<BasicInkExample>().RemoveChildren();
+                SceneController.GetComponent<BasicInkExample>().StartStory();
             }
         }
         else
