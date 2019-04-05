@@ -28,10 +28,10 @@ public class Dagger : Weapon
     public IEnumerator SwingDagger()
     {
         yield return new WaitForSeconds(.1f);
-        HitBox.GetComponent<BoxCollider>().enabled = true;
+        HitBox.GetComponent<BoxCollider2D>().enabled = true;
         gameObject.transform.Translate(0, 0, 1f);
         yield return new WaitForSeconds(.1f);
         gameObject.transform.Translate(0, 0, -1f);
-        HitBox.GetComponent<BoxCollider>().enabled = false;
+        HitBox.GetComponent<BoxCollider2D>().enabled = false;
     }
 }
