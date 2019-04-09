@@ -18,8 +18,11 @@ ModelImporter:
     400010: //RootNode
     400012: Wall
     2100000: lambert3
+    2100002: lambert4
     2300000: Wall
+    2300002: //RootNode
     3300000: Wall
+    3300002: //RootNode
     4300000: Wall
   externalObjects: {}
   materials:
