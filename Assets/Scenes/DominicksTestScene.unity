@@ -256,6 +256,7 @@ MonoBehaviour:
   textBoxInstance: {fileID: 0}
   WorldScriptManager: {fileID: 849191884}
   canvas: {fileID: 1839792143}
+  SceneController: {fileID: 0}
 --- !u!65 &55609556
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -680,7 +681,6 @@ MonoBehaviour:
   phaseDash: 0
   chargeJump: 0
   shipControl: 0
-  testShield: {fileID: 0}
 --- !u!114 &312877414
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -694,8 +694,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hotBarItems:
-  - {fileID: 1035899845998428, guid: ff68d355f3870874b81f909cbe30691d, type: 3}
-  - {fileID: 1675117104826286, guid: 8be15c403f7a97442b4027c9b54dc012, type: 3}
+  - {fileID: 8650363113513189237, guid: 64ca225cdfdd6bb4c8cd3286677590c2, type: 3}
+  - {fileID: 3344352509959185452, guid: 3d951a1b87dd7f8419d5db1bdbccfbd7, type: 3}
   inventoryStorage: []
 --- !u!1 &351075052
 GameObject:
@@ -1576,7 +1576,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66e957d58a4584a8894329531ec0b096, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canvasBoi: {fileID: 1839792143}
   inkJSONAsset: {fileID: 4900000, guid: dcbdbb1010174a84193122441872ee48, type: 3}
   canvas: {fileID: 1839792147}
   textPrefab: {fileID: 11456674, guid: 1aab6ef84d87c416f8f0b3e1ef3d77d2, type: 3}
