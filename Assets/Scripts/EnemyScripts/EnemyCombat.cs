@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyCombat : MonoBehaviour {
+public class EnemyCombat : BrokenVessel.Actor.Actor {
 
     public float health = 100;
     public bool dead = false;
@@ -32,6 +32,7 @@ public class EnemyCombat : MonoBehaviour {
 
     void Update ()
     {
+        if (paused) { return; }
         switch (choice)
         {
             case DetectionType.none:
@@ -47,7 +48,7 @@ public class EnemyCombat : MonoBehaviour {
             {
                 case DetectionType.ray:
                     seePlayer = Physics2D.Raycast(faceCheck.position, transform.right * transform.localScale.x, range, target);
-                    Debug.DrawRay(faceCheck.position, Vector2.right * transform.localScale.x, Color.red, range);
+                    Debug.DrawRay(faceCheck.position, Vector2.right * transform.localScale.x * range, Color.red, range);
                     break;
                 case DetectionType.circle:
                     seePlayer = Physics2D.CircleCast(transform.position, range, Vector2.zero, 0, target);

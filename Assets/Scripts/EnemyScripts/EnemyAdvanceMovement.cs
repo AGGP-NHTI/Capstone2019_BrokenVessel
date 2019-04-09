@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyAdvanceMovement : MonoBehaviour
+public class EnemyAdvanceMovement : BrokenVessel.Actor.Actor
 {
     [SerializeField] bool targetIsRadius = false;
     public float speed = 5;
@@ -28,6 +28,7 @@ public class EnemyAdvanceMovement : MonoBehaviour
 
     void Update()
     {
+        if (paused) { return; }
         if (!ec.dead)
         {
             timer -= Time.deltaTime;

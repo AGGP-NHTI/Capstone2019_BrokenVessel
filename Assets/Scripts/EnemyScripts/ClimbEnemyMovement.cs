@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ClimbEnemyMovement : MonoBehaviour {
+public class ClimbEnemyMovement : BrokenVessel.Actor.Actor
+{
 
 
     [SerializeField] float speed = 5;
@@ -30,7 +31,8 @@ public class ClimbEnemyMovement : MonoBehaviour {
 	
 	void Update ()
     {
-		if(!ec.dead)
+        if (paused) { return; }
+        if (!ec.dead)
         {
             grounded = Physics2D.CircleCast(ledgeCheck.position, .2f, Vector2.zero, 0, realGround);
             onLedge = !Physics2D.CircleCast(ledgeCheck.position, .075f, Vector2.zero, 0, realGround);

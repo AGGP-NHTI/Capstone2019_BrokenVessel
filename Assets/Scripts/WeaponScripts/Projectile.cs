@@ -2,17 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Projectile : MonoBehaviour {
+public class Projectile : BrokenVessel.Actor.Actor {
 
-    public float speed = 5;
+    public float speed = 100;
     public Vector2 movement = Vector2.one;
     public bool shootByX = false;
-    
+    float lifeTime = 10f;
 
 	void Start ()
     {
-        Destroy(gameObject, 10f);
+        
         if (shootByX) { GetComponent<Rigidbody2D>().velocity = movement * speed; }
         else { GetComponent<Rigidbody2D>().velocity = transform.forward * speed; }
+    }
+    private void Update()
+    {
+        if (paused) { return; }
+        lifeTime -= Time.deltaTime;
+        if(lifeTime < 0) { Destroy(gameObject); }
+        
     }
 }

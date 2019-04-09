@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyContact : MonoBehaviour
+public class EnemyContact : BrokenVessel.Actor.Actor
 {
     [SerializeField] float damage = 10;
     [SerializeField] float knockBack = 10;
@@ -10,7 +10,7 @@ public class EnemyContact : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        Debug.Log("REEEEEEE");
+        if (paused) { return; }
         if (collision.gameObject.GetComponent<PlayerData>())
         {
             Debug.Log("internal REEEEEEE");

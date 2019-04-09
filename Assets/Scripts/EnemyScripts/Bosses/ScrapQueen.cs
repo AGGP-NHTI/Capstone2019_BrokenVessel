@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ScrapQueen : MonoBehaviour
+public class ScrapQueen : BrokenVessel.Actor.Actor
 {
     public bool start = false;
 
@@ -35,6 +35,7 @@ public class ScrapQueen : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (paused) { return; }
         if (start)
         {
             if (intro)

@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class JumpingEnemyMovement : MonoBehaviour {
+public class JumpingEnemyMovement : BrokenVessel.Actor.Actor
+{
 
     public float speed = 5;
     public float jump = 3;
     float jumpTimer = 0;
+    [SerializeField] bool jumpIsAttack = false;
 
     [SerializeField] Transform faceCheck;
     [SerializeField] Transform ledgeCheck;
@@ -28,6 +30,7 @@ public class JumpingEnemyMovement : MonoBehaviour {
 
     void Update()
     {
+        if (paused) { return; }
         if (!ec.dead)
         {
             if (face.hit)
@@ -35,35 +38,27 @@ public class JumpingEnemyMovement : MonoBehaviour {
                 Flip();
                 speed = -speed;
             }
-            if (!feet.hit && jumpTimer < 0)
-            {
-                transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
-                RaycastHit2D hit = Physics2D.Raycast(ledgeCheck.position, Vector2.down, .25f, realGround);
-                if (hit)
-                {
-                    transform.position = new Vector3(transform.position.x, hit.transform.position.y + (hit.transform.localScale.y / 2));
-                }
-            }
-
             face.hit = false;
 
             //---------------------------------------------------------------------------------------
             //--Movement-----------------------------------------------------------------------------
 
             Vector2 processVelocity = transform.InverseTransformDirection(rig.velocity);
-            if ((ec.seePlayer && !ec.AlwaysMove) || (ec.AlwaysMove && !ec.attacking))
+
+            
+            if (feet.hit)
             {
-                if (feet.hit)
+                processVelocity.x = speed / 2;
+                jumpTimer -= Time.deltaTime;
+                if ((jumpTimer <= 0 && !jumpIsAttack) || (jumpTimer <= 0 && jumpIsAttack && ec.seePlayer))
                 {
-                    jumpTimer -= Time.deltaTime;
-                    if(jumpTimer <= 0)
-                    {
-                        jumpTimer = 1f;
-                        processVelocity.x = speed;
-                        processVelocity.y = jump;
-                    } 
+                    jumpTimer = .5f;
+                    processVelocity.x = speed * 2;
+                    processVelocity.y = jump;
                 }
             }
+            
+            
             rig.velocity = transform.TransformDirection(processVelocity);
         }
     }

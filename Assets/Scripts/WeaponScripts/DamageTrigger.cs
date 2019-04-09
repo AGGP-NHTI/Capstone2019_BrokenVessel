@@ -14,7 +14,6 @@ public class DamageTrigger : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Hit Trigger");
         if (collision.gameObject.layer != OwnerLayer)
         {
             if (collision.gameObject.GetComponent<PlayerData>())

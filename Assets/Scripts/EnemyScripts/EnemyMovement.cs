@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class EnemyMovement : MonoBehaviour {
+using BrokenVessel.Actor;
+public class EnemyMovement : BrokenVessel.Actor.Actor
+{
 
     public float speed = 5;
 
@@ -29,6 +30,8 @@ public class EnemyMovement : MonoBehaviour {
 
     void Update()
     {
+        if (paused) { return; }
+
         if (!ec.dead)
         {
             grounded = Physics2D.CircleCast(ledgeCheck.position, .2f, Vector2.zero, 0, realGround);
@@ -54,12 +57,12 @@ public class EnemyMovement : MonoBehaviour {
                 }
                 else
                 {
-                    if(!bounceOffLedge)
+                    if (!bounceOffLedge)
                     {
                         processVelocity.x = speed / 2;
                     }
                     processVelocity.y -= 4.5f;
-                    if(processVelocity.y < -18f)
+                    if (processVelocity.y < -18f)
                     {
                         processVelocity.y = -18f;
                     }

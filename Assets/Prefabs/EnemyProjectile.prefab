@@ -66,7 +66,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b9b167db5912bc47ba05ee9233898e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 100
+  movement: {x: 1, y: 1}
+  shootByX: 0
 --- !u!1 &1259641436445242
 GameObject:
   m_ObjectHideFlags: 0

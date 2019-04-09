@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerData : MonoBehaviour {
+public class PlayerData : BrokenVessel.Actor.Actor
+{
 
-    public float health = 100.0f;
+    public float health = 10f;
     public float energy = 100.0f;
     public int metalScrap = 0;
 
@@ -36,7 +37,8 @@ public class PlayerData : MonoBehaviour {
     }
     void Update()
     {
-        if(iFrameTimer > 0)
+        if (paused) { return; }
+        if (iFrameTimer > 0)
         {
             iFrameTimer -= Time.deltaTime;
         }

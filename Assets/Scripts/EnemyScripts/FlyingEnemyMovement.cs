@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FlyingEnemyMovement : MonoBehaviour {
+using BrokenVessel.Actor;
+public class FlyingEnemyMovement : BrokenVessel.Actor.Actor
+{
 
     [SerializeField] float speed = 2;
     [SerializeField] float orbitField = 3;
@@ -25,9 +27,12 @@ public class FlyingEnemyMovement : MonoBehaviour {
         rig.gravityScale = 0;
     }
 	
-	void Update ()
+	void Update()
     {
-		if(!ec.dead)
+        if (paused) { GetComponent<Rigidbody2D>().simulated = false; return; }
+        else { GetComponent<Rigidbody2D>().simulated = false; }
+
+        if (!ec.dead)
         {
             if(ec.seePlayer)
             {

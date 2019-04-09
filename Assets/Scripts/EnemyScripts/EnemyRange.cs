@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyRange : MonoBehaviour {
+public class EnemyRange : BrokenVessel.Actor.Actor
+{
 
     [SerializeField] Transform weapon;
     [SerializeField] GameObject projectile;
@@ -36,6 +37,7 @@ public class EnemyRange : MonoBehaviour {
 
     void Update()
     {
+        if (paused) { return; }
         if (!attacking)
         {
             rangeTimer -= Time.deltaTime;
@@ -43,7 +45,6 @@ public class EnemyRange : MonoBehaviour {
         if (ec.seePlayer && rangeTimer <= 0 && ec.playerDistance < attackRange && ec.playerDistance != -1f)
         {
             attacking = true;
-            Debug.Log("pew");
             rangeTimer = rangeCD;
             StartCoroutine(rangeAttack());
         }

@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyMelee : MonoBehaviour {
+public class EnemyMelee : BrokenVessel.Actor.Actor
+{
 
     [SerializeField] Transform weapon;
-    [SerializeField] float damage = 10f;
     [SerializeField] float meleeCD = 1f;
     [SerializeField] float attackRange = 3f;
 
@@ -22,6 +22,7 @@ public class EnemyMelee : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
+        if(paused) { return; }
         if (!attacking)
         {
             meleeTimer -= Time.deltaTime;
