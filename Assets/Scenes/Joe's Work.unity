@@ -2076,6 +2076,21 @@ MonoBehaviour:
   placeHolder: {fileID: 0}
   equippedWeaponInstance: {fileID: 1797478943047646076}
   Player: {fileID: 1369542907}
+--- !u!114 &1369542915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1369542907}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b9d6520490bae04f86abc3a52e8dfa4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  facingRight: 1
+  isJumping: 0
+  move: 0
 --- !u!1 &1413682508
 GameObject:
   m_ObjectHideFlags: 0
@@ -2668,6 +2683,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0.93
+      objectReference: {fileID: 0}
+    - target: {fileID: 8554025775870450152, guid: 458c528f291b02a4a902445464f1e3c9,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8554025775870450152, guid: 458c528f291b02a4a902445464f1e3c9,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6691549669107433910, guid: 458c528f291b02a4a902445464f1e3c9,
         type: 3}
