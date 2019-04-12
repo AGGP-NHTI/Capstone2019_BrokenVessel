@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311926, g: 0.38074008, b: 0.35872707, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -193,8 +193,8 @@ Transform:
   m_LocalPosition: {x: 136.1903, y: -12.504359, z: 170.1892}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 479379469}
-  - {fileID: 1415414585}
+  - {fileID: 1287286004}
+  - {fileID: 1595737822}
   m_Father: {fileID: 405372974}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -220,11 +220,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1306414863}
     m_Modifications:
-    - target: {fileID: 8132353960412816915, guid: 5aed5a7e91abefc44a4ab20b3dc39e7d,
-        type: 3}
-      propertyPath: m_Name
-      value: Hallway W/Collider (22)
-      objectReference: {fileID: 0}
     - target: {fileID: 9114907164163452716, guid: 5aed5a7e91abefc44a4ab20b3dc39e7d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -294,6 +289,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8132353960412816915, guid: 5aed5a7e91abefc44a4ab20b3dc39e7d,
+        type: 3}
+      propertyPath: m_Name
+      value: Hallway W/Collider (22)
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 162440198373561399, guid: 5aed5a7e91abefc44a4ab20b3dc39e7d, type: 3}
@@ -467,11 +467,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb6d1b6d1da44fd4693e031229807cb3, type: 3}
---- !u!4 &15575431 stripped
+--- !u!4 &15575431
 Transform:
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 15575430}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 318880396}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1996679966}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &16634772 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6337698857930094849, guid: 4b23ebad8a93182469a33df009e400a1,
@@ -922,11 +931,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb6d1b6d1da44fd4693e031229807cb3, type: 3}
---- !u!4 &51972799 stripped
+--- !u!4 &51972799
 Transform:
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 51972798}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 659618758}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 361882542}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &54210462
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1709,6 +1727,37 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 501106467}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &77247756
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 577806756}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 77247757}
+  m_Layer: 0
+  m_Name: Hallway_Door.ma (1) (Missing Prefab)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &77247757
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 577806756}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 77247756}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 577806757}
+  m_Father: {fileID: 1311286243}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &81920183 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1250873318121912236, guid: 6b69d07e11bdc9c428f8159aa88a49be,
@@ -2137,6 +2186,22 @@ Transform:
   m_Father: {fileID: 1753703380}
   m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &98664850
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 1541166350}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1541166351}
+  m_Layer: 0
+  m_Name: Missing Prefab (Dummy)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &99236960
 GameObject:
   m_ObjectHideFlags: 0
@@ -2765,6 +2830,22 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 466908883}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &121041288
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 281874024}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 281874025}
+  m_Layer: 0
+  m_Name: Missing Prefab (Dummy)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &123478475
 GameObject:
   m_ObjectHideFlags: 0
@@ -3722,6 +3803,37 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: c54ebaf7ab17e7146b10f3b92cc8b5f4, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6b69d07e11bdc9c428f8159aa88a49be, type: 3}
+--- !u!1 &166270636
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 281874024}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 166270637}
+  m_Layer: 0
+  m_Name: Hallway_Door.ma (Missing Prefab)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &166270637
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 281874024}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 166270636}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 281874025}
+  m_Father: {fileID: 1737257511}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &166587197
 GameObject:
   m_ObjectHideFlags: 0
@@ -3951,11 +4063,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1618934132}
     m_Modifications:
-    - target: {fileID: 8132353960412816915, guid: 5aed5a7e91abefc44a4ab20b3dc39e7d,
-        type: 3}
-      propertyPath: m_Name
-      value: Hallway W/Collider (2)
-      objectReference: {fileID: 0}
     - target: {fileID: 9114907164163452716, guid: 5aed5a7e91abefc44a4ab20b3dc39e7d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4025,6 +4132,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8132353960412816915, guid: 5aed5a7e91abefc44a4ab20b3dc39e7d,
+        type: 3}
+      propertyPath: m_Name
+      value: Hallway W/Collider (2)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5aed5a7e91abefc44a4ab20b3dc39e7d, type: 3}
@@ -6894,11 +7006,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb6d1b6d1da44fd4693e031229807cb3, type: 3}
---- !u!4 &281874025 stripped
+--- !u!4 &281874025
 Transform:
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 281874024}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 121041288}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 166270637}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &282588687
 GameObject:
   m_ObjectHideFlags: 0
@@ -7360,8 +7481,8 @@ Transform:
   m_LocalPosition: {x: 130.38031, y: -12.504359, z: 170.1892}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1912895596}
-  - {fileID: 469637284}
+  - {fileID: 483355288}
+  - {fileID: 1400166909}
   m_Father: {fileID: 405372974}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7372,11 +7493,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 327870758}
     m_Modifications:
-    - target: {fileID: 8132353960412816915, guid: 5aed5a7e91abefc44a4ab20b3dc39e7d,
-        type: 3}
-      propertyPath: m_Name
-      value: Hallway W/Collider (11)
-      objectReference: {fileID: 0}
     - target: {fileID: 9114907164163452716, guid: 5aed5a7e91abefc44a4ab20b3dc39e7d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7446,6 +7562,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 8132353960412816915, guid: 5aed5a7e91abefc44a4ab20b3dc39e7d,
+        type: 3}
+      propertyPath: m_Name
+      value: Hallway W/Collider (11)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5aed5a7e91abefc44a4ab20b3dc39e7d, type: 3}
@@ -8054,6 +8175,22 @@ Transform:
   m_Father: {fileID: 236340312}
   m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!1 &318880396
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 15575430}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 15575431}
+  m_Layer: 0
+  m_Name: Missing Prefab (Dummy)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &320374633
 GameObject:
   m_ObjectHideFlags: 0
@@ -8542,6 +8679,22 @@ Transform:
   m_Father: {fileID: 405372974}
   m_RootOrder: 144
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!1 &330222424
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 1269419789}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1269419790}
+  m_Layer: 0
+  m_Name: Missing Prefab (Dummy)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &330969884
 GameObject:
   m_ObjectHideFlags: 0
@@ -9457,11 +9610,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1618934132}
     m_Modifications:
-    - target: {fileID: 8132353960412816915, guid: 5aed5a7e91abefc44a4ab20b3dc39e7d,
-        type: 3}
-      propertyPath: m_Name
-      value: Hallway W/Collider (4)
-      objectReference: {fileID: 0}
     - target: {fileID: 9114907164163452716, guid: 5aed5a7e91abefc44a4ab20b3dc39e7d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9532,6 +9680,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8132353960412816915, guid: 5aed5a7e91abefc44a4ab20b3dc39e7d,
+        type: 3}
+      propertyPath: m_Name
+      value: Hallway W/Collider (4)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5aed5a7e91abefc44a4ab20b3dc39e7d, type: 3}
 --- !u!4 &358998207 stripped
@@ -9540,6 +9693,53 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 597988190}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &360350320
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 1984615590}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1984615591}
+  m_Layer: 0
+  m_Name: Missing Prefab (Dummy)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &361882541
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 51972798}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 361882542}
+  m_Layer: 0
+  m_Name: Hallway_Door.ma (Missing Prefab)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &361882542
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 51972798}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 361882541}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 51972799}
+  m_Father: {fileID: 417662959}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &375015761 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 34af3090059bded4fbbfb185dab8547a,
@@ -10461,8 +10661,8 @@ Transform:
   - {fileID: 146817829}
   - {fileID: 758556996}
   - {fileID: 810585434}
-  - {fileID: 1591155915}
   - {fileID: 758000837}
+  - {fileID: 1591155915}
   - {fileID: 1218592771}
   - {fileID: 1771674944}
   - {fileID: 377600561}
@@ -10689,13 +10889,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 414636486}
-  m_LocalRotation: {x: -0.40989506, y: -0.70262414, z: 0.30795407, w: 0.49342644}
+  m_LocalRotation: {x: 0.37012428, y: 0.60044646, z: 0.35476515, w: 0.61368877}
   m_LocalPosition: {x: -0.17227875, y: -0.10889326, z: -0.06495569}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 717164699}
   m_RootOrder: 76
-  m_LocalEulerAnglesHint: {x: 1.6190001, y: 71.124, z: 61.674004}
+  m_LocalEulerAnglesHint: {x: 1.6190001, y: 449.717, z: 61.674004}
 --- !u!1 &417617322
 GameObject:
   m_ObjectHideFlags: 0
@@ -10854,8 +11054,8 @@ Transform:
   m_LocalPosition: {x: -21.72969, y: -31.58436, z: 170.1892}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 51972799}
-  - {fileID: 1237013695}
+  - {fileID: 361882542}
+  - {fileID: 1642125246}
   m_Father: {fileID: 405372974}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -11747,6 +11947,37 @@ Transform:
   m_Father: {fileID: 236340312}
   m_RootOrder: 48
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!1 &458472507
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 1350488545}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 458472508}
+  m_Layer: 0
+  m_Name: Hallway_Door.ma (1) (Missing Prefab)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &458472508
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 1350488545}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 458472507}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1350488546}
+  m_Father: {fileID: 1047320893}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &462608384
 GameObject:
   m_ObjectHideFlags: 0
@@ -12116,11 +12347,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb6d1b6d1da44fd4693e031229807cb3, type: 3}
---- !u!4 &469637284 stripped
+--- !u!4 &469637284
 Transform:
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 469637283}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1262431341}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1400166909}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &472234906 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1250873318121912236, guid: 6b69d07e11bdc9c428f8159aa88a49be,
@@ -12196,11 +12436,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb6d1b6d1da44fd4693e031229807cb3, type: 3}
---- !u!4 &474349431 stripped
+--- !u!4 &474349431
 Transform:
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 474349430}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 502694994}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1266699148}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &477265411
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12374,11 +12623,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb6d1b6d1da44fd4693e031229807cb3, type: 3}
---- !u!4 &479379469 stripped
+--- !u!4 &479379469
 Transform:
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 479379468}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1228006126}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1287286004}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &479444925
 GameObject:
   m_ObjectHideFlags: 0
@@ -12520,6 +12778,37 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 110122098}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &483355287
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 1912895595}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 483355288}
+  m_Layer: 0
+  m_Name: Hallway_Door.ma (Missing Prefab)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &483355288
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 1912895595}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 483355287}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1912895596}
+  m_Father: {fileID: 289110260}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &485680221
 GameObject:
   m_ObjectHideFlags: 0
@@ -12882,6 +13171,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 34af3090059bded4fbbfb185dab8547a, type: 3}
+--- !u!1 &502694994
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 474349430}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 474349431}
+  m_Layer: 0
+  m_Name: Missing Prefab (Dummy)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &506117559
 GameObject:
   m_ObjectHideFlags: 0
@@ -13602,11 +13907,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1618934132}
     m_Modifications:
-    - target: {fileID: 8132353960412816915, guid: 5aed5a7e91abefc44a4ab20b3dc39e7d,
-        type: 3}
-      propertyPath: m_Name
-      value: Hallway W/Collider (9)
-      objectReference: {fileID: 0}
     - target: {fileID: 9114907164163452716, guid: 5aed5a7e91abefc44a4ab20b3dc39e7d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -13676,6 +13976,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8132353960412816915, guid: 5aed5a7e91abefc44a4ab20b3dc39e7d,
+        type: 3}
+      propertyPath: m_Name
+      value: Hallway W/Collider (9)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5aed5a7e91abefc44a4ab20b3dc39e7d, type: 3}
@@ -13990,6 +14295,37 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: c54ebaf7ab17e7146b10f3b92cc8b5f4, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0dfc65c0d29968d43b4b7851fbaf2dad, type: 3}
+--- !u!1 &563685143
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 1801025695}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 563685144}
+  m_Layer: 0
+  m_Name: Hallway_Door.ma (Missing Prefab)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &563685144
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 1801025695}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 563685143}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1801025696}
+  m_Father: {fileID: 1989478952}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &567872580
 GameObject:
   m_ObjectHideFlags: 0
@@ -14285,11 +14621,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb6d1b6d1da44fd4693e031229807cb3, type: 3}
---- !u!4 &577806757 stripped
+--- !u!4 &577806757
 Transform:
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 577806756}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 609835078}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 77247757}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &578917397
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15125,6 +15470,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 27d8cad2d44cdc4478e2d794069f3c22, type: 3}
+--- !u!1 &609835078
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 577806756}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 577806757}
+  m_Layer: 0
+  m_Name: Missing Prefab (Dummy)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1001 &610310764
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15359,11 +15720,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1753703380}
     m_Modifications:
-    - target: {fileID: 8132353960412816915, guid: 5aed5a7e91abefc44a4ab20b3dc39e7d,
-        type: 3}
-      propertyPath: m_Name
-      value: Hallway W/Collider (15)
-      objectReference: {fileID: 0}
     - target: {fileID: 9114907164163452716, guid: 5aed5a7e91abefc44a4ab20b3dc39e7d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -15433,6 +15789,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 8132353960412816915, guid: 5aed5a7e91abefc44a4ab20b3dc39e7d,
+        type: 3}
+      propertyPath: m_Name
+      value: Hallway W/Collider (15)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5aed5a7e91abefc44a4ab20b3dc39e7d, type: 3}
@@ -15841,6 +16202,22 @@ Transform:
   m_Father: {fileID: 1306414863}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &659618758
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 51972798}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 51972799}
+  m_Layer: 0
+  m_Name: Missing Prefab (Dummy)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1001 &660198303
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16955,11 +17332,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 327870758}
     m_Modifications:
-    - target: {fileID: 8132353960412816915, guid: 5aed5a7e91abefc44a4ab20b3dc39e7d,
-        type: 3}
-      propertyPath: m_Name
-      value: Hallway W/Collider (14)
-      objectReference: {fileID: 0}
     - target: {fileID: 9114907164163452716, guid: 5aed5a7e91abefc44a4ab20b3dc39e7d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -17030,6 +17402,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.35
       objectReference: {fileID: 0}
+    - target: {fileID: 8132353960412816915, guid: 5aed5a7e91abefc44a4ab20b3dc39e7d,
+        type: 3}
+      propertyPath: m_Name
+      value: Hallway W/Collider (14)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5aed5a7e91abefc44a4ab20b3dc39e7d, type: 3}
 --- !u!1001 &698573134
@@ -17039,11 +17416,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1306414863}
     m_Modifications:
-    - target: {fileID: 8132353960412816915, guid: 5aed5a7e91abefc44a4ab20b3dc39e7d,
-        type: 3}
-      propertyPath: m_Name
-      value: Hallway W/Collider (19)
-      objectReference: {fileID: 0}
     - target: {fileID: 9114907164163452716, guid: 5aed5a7e91abefc44a4ab20b3dc39e7d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -17113,6 +17485,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8132353960412816915, guid: 5aed5a7e91abefc44a4ab20b3dc39e7d,
+        type: 3}
+      propertyPath: m_Name
+      value: Hallway W/Collider (19)
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6323428014986983846, guid: 5aed5a7e91abefc44a4ab20b3dc39e7d, type: 3}
@@ -17500,11 +17877,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1306414863}
     m_Modifications:
-    - target: {fileID: 8132353960412816915, guid: 5aed5a7e91abefc44a4ab20b3dc39e7d,
-        type: 3}
-      propertyPath: m_Name
-      value: Hallway W/Collider (20)
-      objectReference: {fileID: 0}
     - target: {fileID: 9114907164163452716, guid: 5aed5a7e91abefc44a4ab20b3dc39e7d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -17574,6 +17946,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8132353960412816915, guid: 5aed5a7e91abefc44a4ab20b3dc39e7d,
+        type: 3}
+      propertyPath: m_Name
+      value: Hallway W/Collider (20)
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 162440198373561399, guid: 5aed5a7e91abefc44a4ab20b3dc39e7d, type: 3}
@@ -19767,11 +20144,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1306414863}
     m_Modifications:
-    - target: {fileID: 8132353960412816915, guid: 5aed5a7e91abefc44a4ab20b3dc39e7d,
-        type: 3}
-      propertyPath: m_Name
-      value: Hallway W/Collider (18)
-      objectReference: {fileID: 0}
     - target: {fileID: 9114907164163452716, guid: 5aed5a7e91abefc44a4ab20b3dc39e7d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -19842,6 +20214,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8132353960412816915, guid: 5aed5a7e91abefc44a4ab20b3dc39e7d,
+        type: 3}
+      propertyPath: m_Name
+      value: Hallway W/Collider (18)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5aed5a7e91abefc44a4ab20b3dc39e7d, type: 3}
 --- !u!1001 &792218538
@@ -19851,11 +20228,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1618934132}
     m_Modifications:
-    - target: {fileID: 8132353960412816915, guid: 5aed5a7e91abefc44a4ab20b3dc39e7d,
-        type: 3}
-      propertyPath: m_Name
-      value: Hallway W/Collider (7)
-      objectReference: {fileID: 0}
     - target: {fileID: 9114907164163452716, guid: 5aed5a7e91abefc44a4ab20b3dc39e7d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -19926,9 +20298,30 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8132353960412816915, guid: 5aed5a7e91abefc44a4ab20b3dc39e7d,
+        type: 3}
+      propertyPath: m_Name
+      value: Hallway W/Collider (7)
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 162440198373561399, guid: 5aed5a7e91abefc44a4ab20b3dc39e7d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 5aed5a7e91abefc44a4ab20b3dc39e7d, type: 3}
+--- !u!1 &792441335
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 1350488545}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1350488546}
+  m_Layer: 0
+  m_Name: Missing Prefab (Dummy)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!4 &795035856 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6337698857930094849, guid: 4b23ebad8a93182469a33df009e400a1,
@@ -21975,11 +22368,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb6d1b6d1da44fd4693e031229807cb3, type: 3}
---- !u!4 &916370536 stripped
+--- !u!4 &916370536
 Transform:
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 916370535}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1376833566}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1117917407}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &921825603
 GameObject:
   m_ObjectHideFlags: 0
@@ -22061,8 +22463,8 @@ Transform:
   m_LocalPosition: {x: -30.859695, y: -12.384359, z: 170.1892}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 15575431}
-  - {fileID: 1541166351}
+  - {fileID: 1996679966}
+  - {fileID: 1659128701}
   m_Father: {fileID: 405372974}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -23122,11 +23524,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1618934132}
     m_Modifications:
-    - target: {fileID: 8132353960412816915, guid: 5aed5a7e91abefc44a4ab20b3dc39e7d,
-        type: 3}
-      propertyPath: m_Name
-      value: Hallway W/Collider (3)
-      objectReference: {fileID: 0}
     - target: {fileID: 9114907164163452716, guid: 5aed5a7e91abefc44a4ab20b3dc39e7d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -23196,6 +23593,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8132353960412816915, guid: 5aed5a7e91abefc44a4ab20b3dc39e7d,
+        type: 3}
+      propertyPath: m_Name
+      value: Hallway W/Collider (3)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5aed5a7e91abefc44a4ab20b3dc39e7d, type: 3}
@@ -23693,6 +24095,22 @@ Transform:
   m_Father: {fileID: 1753703380}
   m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1030240052
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 1912895595}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1912895596}
+  m_Layer: 0
+  m_Name: Missing Prefab (Dummy)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1040238298
 GameObject:
   m_ObjectHideFlags: 0
@@ -24032,8 +24450,8 @@ Transform:
   m_LocalPosition: {x: -7.2996826, y: -12.504359, z: 170.1892}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1552954965}
-  - {fileID: 1350488546}
+  - {fileID: 1661747477}
+  - {fileID: 458472508}
   m_Father: {fileID: 405372974}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -25853,6 +26271,53 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1485444670}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1117917406
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 916370535}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1117917407}
+  m_Layer: 0
+  m_Name: Hallway_Door.ma (Missing Prefab)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1117917407
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 916370535}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1117917406}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 916370536}
+  m_Father: {fileID: 1172541679}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1118410098
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 1801025695}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1801025696}
+  m_Layer: 0
+  m_Name: Missing Prefab (Dummy)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!4 &1123384030 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6337698857930094849, guid: 4b23ebad8a93182469a33df009e400a1,
@@ -26507,41 +26972,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 327870758}
     m_Modifications:
-    - target: {fileID: 8132353960412816915, guid: 5aed5a7e91abefc44a4ab20b3dc39e7d,
-        type: 3}
-      propertyPath: m_Name
-      value: Hallway W/Collider (13)
-      objectReference: {fileID: 0}
-    - target: {fileID: 162440198373561399, guid: 5aed5a7e91abefc44a4ab20b3dc39e7d,
-        type: 3}
-      propertyPath: m_Offset.x
-      value: -0.4927951
-      objectReference: {fileID: 0}
-    - target: {fileID: 162440198373561399, guid: 5aed5a7e91abefc44a4ab20b3dc39e7d,
-        type: 3}
-      propertyPath: m_Size.x
-      value: 0.28003907
-      objectReference: {fileID: 0}
-    - target: {fileID: 162440198373561399, guid: 5aed5a7e91abefc44a4ab20b3dc39e7d,
-        type: 3}
-      propertyPath: m_Size.y
-      value: 0.08433342
-      objectReference: {fileID: 0}
-    - target: {fileID: 6323428014986983846, guid: 5aed5a7e91abefc44a4ab20b3dc39e7d,
-        type: 3}
-      propertyPath: m_Offset.x
-      value: -0.48421395
-      objectReference: {fileID: 0}
-    - target: {fileID: 6323428014986983846, guid: 5aed5a7e91abefc44a4ab20b3dc39e7d,
-        type: 3}
-      propertyPath: m_Size.x
-      value: 0.2972014
-      objectReference: {fileID: 0}
-    - target: {fileID: 6323428014986983846, guid: 5aed5a7e91abefc44a4ab20b3dc39e7d,
-        type: 3}
-      propertyPath: m_Size.y
-      value: 0.08677411
-      objectReference: {fileID: 0}
     - target: {fileID: 9114907164163452716, guid: 5aed5a7e91abefc44a4ab20b3dc39e7d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -26611,6 +27041,41 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 8132353960412816915, guid: 5aed5a7e91abefc44a4ab20b3dc39e7d,
+        type: 3}
+      propertyPath: m_Name
+      value: Hallway W/Collider (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 162440198373561399, guid: 5aed5a7e91abefc44a4ab20b3dc39e7d,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: -0.4927951
+      objectReference: {fileID: 0}
+    - target: {fileID: 162440198373561399, guid: 5aed5a7e91abefc44a4ab20b3dc39e7d,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.28003907
+      objectReference: {fileID: 0}
+    - target: {fileID: 162440198373561399, guid: 5aed5a7e91abefc44a4ab20b3dc39e7d,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.08433342
+      objectReference: {fileID: 0}
+    - target: {fileID: 6323428014986983846, guid: 5aed5a7e91abefc44a4ab20b3dc39e7d,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: -0.48421395
+      objectReference: {fileID: 0}
+    - target: {fileID: 6323428014986983846, guid: 5aed5a7e91abefc44a4ab20b3dc39e7d,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.2972014
+      objectReference: {fileID: 0}
+    - target: {fileID: 6323428014986983846, guid: 5aed5a7e91abefc44a4ab20b3dc39e7d,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.08677411
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5aed5a7e91abefc44a4ab20b3dc39e7d, type: 3}
@@ -26845,6 +27310,37 @@ Transform:
   m_Father: {fileID: 236340312}
   m_RootOrder: 33
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!1 &1155872670
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 1984615590}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1155872671}
+  m_Layer: 0
+  m_Name: Hallway_Door.ma (1) (Missing Prefab)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1155872671
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 1984615590}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1155872670}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1984615591}
+  m_Father: {fileID: 1737257511}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1156325945
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27504,8 +28000,8 @@ Transform:
   m_LocalPosition: {x: 88.50031, y: 21.73564, z: 170.1892}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 916370536}
-  - {fileID: 474349431}
+  - {fileID: 1117917407}
+  - {fileID: 1266699148}
   m_Father: {fileID: 405372974}
   m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -28467,6 +28963,38 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 273587270}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1228006126
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 479379468}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 479379469}
+  m_Layer: 0
+  m_Name: Missing Prefab (Dummy)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1233689963
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 1552954964}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1552954965}
+  m_Layer: 0
+  m_Name: Missing Prefab (Dummy)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1001 &1237013694
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28536,11 +29064,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb6d1b6d1da44fd4693e031229807cb3, type: 3}
---- !u!4 &1237013695 stripped
+--- !u!4 &1237013695
 Transform:
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 1237013694}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1505128650}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1642125246}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1237616188
 GameObject:
   m_ObjectHideFlags: 0
@@ -28712,6 +29249,53 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1537627804}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1262431341
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 469637283}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 469637284}
+  m_Layer: 0
+  m_Name: Missing Prefab (Dummy)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1266699147
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 474349430}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1266699148}
+  m_Layer: 0
+  m_Name: Hallway_Door.ma (1) (Missing Prefab)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1266699148
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 474349430}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1266699147}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 474349431}
+  m_Father: {fileID: 1172541679}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1266947027
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28927,11 +29511,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb6d1b6d1da44fd4693e031229807cb3, type: 3}
---- !u!4 &1269419790 stripped
+--- !u!4 &1269419790
 Transform:
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 1269419789}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 330222424}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1572755705}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1272159913
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29229,6 +29822,37 @@ Transform:
   m_Father: {fileID: 236340312}
   m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!1 &1287286003
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 479379468}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1287286004}
+  m_Layer: 0
+  m_Name: Hallway_Door.ma (Missing Prefab)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1287286004
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 479379468}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1287286003}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 479379469}
+  m_Father: {fileID: 883116}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1287484696 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3383662694771170047, guid: a9835d76e2abe2e449b982cdf3dd8435,
@@ -30184,8 +30808,8 @@ Transform:
   m_LocalPosition: {x: 191.30031, y: 8.42564, z: 170.1892}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1411683044}
-  - {fileID: 577806757}
+  - {fileID: 1385288520}
+  - {fileID: 77247757}
   m_Father: {fileID: 405372974}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -30765,11 +31389,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1618934132}
     m_Modifications:
-    - target: {fileID: 8132353960412816915, guid: 5aed5a7e91abefc44a4ab20b3dc39e7d,
-        type: 3}
-      propertyPath: m_Name
-      value: Hallway W/Collider (6)
-      objectReference: {fileID: 0}
     - target: {fileID: 9114907164163452716, guid: 5aed5a7e91abefc44a4ab20b3dc39e7d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -30839,6 +31458,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8132353960412816915, guid: 5aed5a7e91abefc44a4ab20b3dc39e7d,
+        type: 3}
+      propertyPath: m_Name
+      value: Hallway W/Collider (6)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5aed5a7e91abefc44a4ab20b3dc39e7d, type: 3}
@@ -30911,11 +31535,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb6d1b6d1da44fd4693e031229807cb3, type: 3}
---- !u!4 &1350488546 stripped
+--- !u!4 &1350488546
 Transform:
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 1350488545}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 792441335}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 458472508}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1352917963 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6337698857930094849, guid: 4b23ebad8a93182469a33df009e400a1,
@@ -31225,6 +31858,22 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 1250873318121912233, guid: 6b69d07e11bdc9c428f8159aa88a49be, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 6b69d07e11bdc9c428f8159aa88a49be, type: 3}
+--- !u!1 &1376833566
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 916370535}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 916370536}
+  m_Layer: 0
+  m_Name: Missing Prefab (Dummy)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1379256184
 GameObject:
   m_ObjectHideFlags: 0
@@ -31489,6 +32138,37 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2137164214}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1385288519
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 1411683043}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1385288520}
+  m_Layer: 0
+  m_Name: Hallway_Door.ma (Missing Prefab)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1385288520
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 1411683043}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1385288519}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1411683044}
+  m_Father: {fileID: 1311286243}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1388845506
 GameObject:
   m_ObjectHideFlags: 0
@@ -31600,11 +32280,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1618934132}
     m_Modifications:
-    - target: {fileID: 8132353960412816915, guid: 5aed5a7e91abefc44a4ab20b3dc39e7d,
-        type: 3}
-      propertyPath: m_Name
-      value: Hallway W/Collider (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 9114907164163452716, guid: 5aed5a7e91abefc44a4ab20b3dc39e7d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -31674,6 +32349,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8132353960412816915, guid: 5aed5a7e91abefc44a4ab20b3dc39e7d,
+        type: 3}
+      propertyPath: m_Name
+      value: Hallway W/Collider (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5aed5a7e91abefc44a4ab20b3dc39e7d, type: 3}
@@ -31959,6 +32639,37 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 34af3090059bded4fbbfb185dab8547a, type: 3}
+--- !u!1 &1400166908
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 469637283}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1400166909}
+  m_Layer: 0
+  m_Name: Hallway_Door.ma (1) (Missing Prefab)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1400166909
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 469637283}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1400166908}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 469637284}
+  m_Father: {fileID: 289110260}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1404335930
 GameObject:
   m_ObjectHideFlags: 0
@@ -32144,11 +32855,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb6d1b6d1da44fd4693e031229807cb3, type: 3}
---- !u!4 &1411683044 stripped
+--- !u!4 &1411683044
 Transform:
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 1411683043}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2089825832}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1385288520}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1415414584
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -32218,11 +32938,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb6d1b6d1da44fd4693e031229807cb3, type: 3}
---- !u!4 &1415414585 stripped
+--- !u!4 &1415414585
 Transform:
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 1415414584}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1580047430}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1595737822}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1415630845
 GameObject:
   m_ObjectHideFlags: 0
@@ -34569,13 +35298,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1497045515}
-  m_LocalRotation: {x: -0.40989506, y: -0.70262414, z: 0.30795407, w: 0.49342644}
-  m_LocalPosition: {x: -0.18289992, y: -0.056099985, z: -0.0385}
+  m_LocalRotation: {x: -0.46699187, y: -0.7930141, z: 0.21158542, w: 0.32905748}
+  m_LocalPosition: {x: -0.18289992, y: -0.0646, z: -0.0535}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 717164699}
   m_RootOrder: 75
-  m_LocalEulerAnglesHint: {x: 1.6190001, y: 71.124, z: 61.674004}
+  m_LocalEulerAnglesHint: {x: 1.6190001, y: 226.038, z: 61.674004}
 --- !u!4 &1499787503 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1250873318121912236, guid: 6b69d07e11bdc9c428f8159aa88a49be,
@@ -34672,6 +35401,22 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1870540305}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1505128650
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 1237013694}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1237013695}
+  m_Layer: 0
+  m_Name: Missing Prefab (Dummy)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1506331443
 GameObject:
   m_ObjectHideFlags: 0
@@ -35590,11 +36335,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb6d1b6d1da44fd4693e031229807cb3, type: 3}
---- !u!4 &1541166351 stripped
+--- !u!4 &1541166351
 Transform:
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 1541166350}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 98664850}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1659128701}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1552954964
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -35664,11 +36418,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb6d1b6d1da44fd4693e031229807cb3, type: 3}
---- !u!4 &1552954965 stripped
+--- !u!4 &1552954965
 Transform:
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 1552954964}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1233689963}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1661747477}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1561129552
 GameObject:
   m_ObjectHideFlags: 0
@@ -35857,6 +36620,37 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 27d8cad2d44cdc4478e2d794069f3c22, type: 3}
+--- !u!1 &1572755704
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 1269419789}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1572755705}
+  m_Layer: 0
+  m_Name: Hallway_Door.ma (1) (Missing Prefab)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1572755705
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 1269419789}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1572755704}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1269419790}
+  m_Father: {fileID: 1989478952}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1573088384 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4016638316605615039, guid: 27d8cad2d44cdc4478e2d794069f3c22,
@@ -36031,6 +36825,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 27d8cad2d44cdc4478e2d794069f3c22, type: 3}
+--- !u!1 &1580047430
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 1415414584}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1415414585}
+  m_Layer: 0
+  m_Name: Missing Prefab (Dummy)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!4 &1585151772 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6337698857930094849, guid: 4b23ebad8a93182469a33df009e400a1,
@@ -36050,11 +36860,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1618934132}
     m_Modifications:
-    - target: {fileID: 8132353960412816915, guid: 5aed5a7e91abefc44a4ab20b3dc39e7d,
-        type: 3}
-      propertyPath: m_Name
-      value: Hallway W/Collider (5)
-      objectReference: {fileID: 0}
     - target: {fileID: 9114907164163452716, guid: 5aed5a7e91abefc44a4ab20b3dc39e7d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -36124,6 +36929,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8132353960412816915, guid: 5aed5a7e91abefc44a4ab20b3dc39e7d,
+        type: 3}
+      propertyPath: m_Name
+      value: Hallway W/Collider (5)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5aed5a7e91abefc44a4ab20b3dc39e7d, type: 3}
@@ -36237,6 +37047,37 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 961477735}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1595737821
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 1415414584}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1595737822}
+  m_Layer: 0
+  m_Name: Hallway_Door.ma (1) (Missing Prefab)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1595737822
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 1415414584}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1595737821}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1415414585}
+  m_Father: {fileID: 883116}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1596186056
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -36442,11 +37283,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1306414863}
     m_Modifications:
-    - target: {fileID: 8132353960412816915, guid: 5aed5a7e91abefc44a4ab20b3dc39e7d,
-        type: 3}
-      propertyPath: m_Name
-      value: Hallway W/Collider (17)
-      objectReference: {fileID: 0}
     - target: {fileID: 9114907164163452716, guid: 5aed5a7e91abefc44a4ab20b3dc39e7d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -36516,6 +37352,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8132353960412816915, guid: 5aed5a7e91abefc44a4ab20b3dc39e7d,
+        type: 3}
+      propertyPath: m_Name
+      value: Hallway W/Collider (17)
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 162440198373561399, guid: 5aed5a7e91abefc44a4ab20b3dc39e7d, type: 3}
@@ -37066,6 +37907,37 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: c54ebaf7ab17e7146b10f3b92cc8b5f4, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6b69d07e11bdc9c428f8159aa88a49be, type: 3}
+--- !u!1 &1642125245
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 1237013694}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1642125246}
+  m_Layer: 0
+  m_Name: Hallway_Door.ma (1) (Missing Prefab)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1642125246
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 1237013694}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1642125245}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1237013695}
+  m_Father: {fileID: 417662959}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1643260225
 GameObject:
   m_ObjectHideFlags: 0
@@ -37323,6 +38195,68 @@ Transform:
   m_Children: []
   m_Father: {fileID: 261572352}
   m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1659128700
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 1541166350}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1659128701}
+  m_Layer: 0
+  m_Name: Hallway_Door.ma (1) (Missing Prefab)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1659128701
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 1541166350}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1659128700}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1541166351}
+  m_Father: {fileID: 921825606}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1661747476
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 1552954964}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1661747477}
+  m_Layer: 0
+  m_Name: Hallway_Door.ma (Missing Prefab)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1661747477
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 1552954964}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1661747476}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1552954965}
+  m_Father: {fileID: 1047320893}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1665309497
 PrefabInstance:
@@ -38838,8 +39772,8 @@ Transform:
   m_LocalPosition: {x: 175.8603, y: -12.504359, z: 170.1892}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 281874025}
-  - {fileID: 1984615591}
+  - {fileID: 166270637}
+  - {fileID: 1155872671}
   m_Father: {fileID: 405372974}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -40351,11 +41285,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb6d1b6d1da44fd4693e031229807cb3, type: 3}
---- !u!4 &1801025696 stripped
+--- !u!4 &1801025696
 Transform:
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 1801025695}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1118410098}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 563685144}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1802370651
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -40363,11 +41306,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1306414863}
     m_Modifications:
-    - target: {fileID: 8132353960412816915, guid: 5aed5a7e91abefc44a4ab20b3dc39e7d,
-        type: 3}
-      propertyPath: m_Name
-      value: Hallway W/Collider (24)
-      objectReference: {fileID: 0}
     - target: {fileID: 9114907164163452716, guid: 5aed5a7e91abefc44a4ab20b3dc39e7d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -40437,6 +41375,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8132353960412816915, guid: 5aed5a7e91abefc44a4ab20b3dc39e7d,
+        type: 3}
+      propertyPath: m_Name
+      value: Hallway W/Collider (24)
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 162440198373561399, guid: 5aed5a7e91abefc44a4ab20b3dc39e7d, type: 3}
@@ -41558,11 +42501,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1306414863}
     m_Modifications:
-    - target: {fileID: 8132353960412816915, guid: 5aed5a7e91abefc44a4ab20b3dc39e7d,
-        type: 3}
-      propertyPath: m_Name
-      value: Hallway W/Collider (23)
-      objectReference: {fileID: 0}
     - target: {fileID: 9114907164163452716, guid: 5aed5a7e91abefc44a4ab20b3dc39e7d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -41632,6 +42570,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8132353960412816915, guid: 5aed5a7e91abefc44a4ab20b3dc39e7d,
+        type: 3}
+      propertyPath: m_Name
+      value: Hallway W/Collider (23)
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 162440198373561399, guid: 5aed5a7e91abefc44a4ab20b3dc39e7d, type: 3}
@@ -42481,11 +43424,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb6d1b6d1da44fd4693e031229807cb3, type: 3}
---- !u!4 &1912895596 stripped
+--- !u!4 &1912895596
 Transform:
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 1912895595}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1030240052}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 483355288}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1914184442 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4016638316605615039, guid: 27d8cad2d44cdc4478e2d794069f3c22,
@@ -43049,11 +44001,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1306414863}
     m_Modifications:
-    - target: {fileID: 8132353960412816915, guid: 5aed5a7e91abefc44a4ab20b3dc39e7d,
-        type: 3}
-      propertyPath: m_Name
-      value: Hallway W/Collider (21)
-      objectReference: {fileID: 0}
     - target: {fileID: 9114907164163452716, guid: 5aed5a7e91abefc44a4ab20b3dc39e7d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -43123,6 +44070,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8132353960412816915, guid: 5aed5a7e91abefc44a4ab20b3dc39e7d,
+        type: 3}
+      propertyPath: m_Name
+      value: Hallway W/Collider (21)
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 162440198373561399, guid: 5aed5a7e91abefc44a4ab20b3dc39e7d, type: 3}
@@ -44610,11 +45562,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb6d1b6d1da44fd4693e031229807cb3, type: 3}
---- !u!4 &1984615591 stripped
+--- !u!4 &1984615591
 Transform:
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 1984615590}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 360350320}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1155872671}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1987588330
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -44622,11 +45583,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1306414863}
     m_Modifications:
-    - target: {fileID: 8132353960412816915, guid: 5aed5a7e91abefc44a4ab20b3dc39e7d,
-        type: 3}
-      propertyPath: m_Name
-      value: Hallway W/Collider (16)
-      objectReference: {fileID: 0}
     - target: {fileID: 9114907164163452716, guid: 5aed5a7e91abefc44a4ab20b3dc39e7d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -44696,6 +45652,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8132353960412816915, guid: 5aed5a7e91abefc44a4ab20b3dc39e7d,
+        type: 3}
+      propertyPath: m_Name
+      value: Hallway W/Collider (16)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5aed5a7e91abefc44a4ab20b3dc39e7d, type: 3}
@@ -44780,8 +45741,8 @@ Transform:
   m_LocalPosition: {x: 106.18031, y: -12.504359, z: 170.1892}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1801025696}
-  - {fileID: 1269419790}
+  - {fileID: 563685144}
+  - {fileID: 1572755705}
   m_Father: {fileID: 405372974}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -44993,6 +45954,37 @@ Transform:
   m_Father: {fileID: 405372974}
   m_RootOrder: 131
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!1 &1996679965
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 15575430}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1996679966}
+  m_Layer: 0
+  m_Name: Hallway_Door.ma (Missing Prefab)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1996679966
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 15575430}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1996679965}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 15575431}
+  m_Father: {fileID: 921825606}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1999936583 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 34af3090059bded4fbbfb185dab8547a,
@@ -45064,11 +46056,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1618934132}
     m_Modifications:
-    - target: {fileID: 8132353960412816915, guid: 5aed5a7e91abefc44a4ab20b3dc39e7d,
-        type: 3}
-      propertyPath: m_Name
-      value: Hallway W/Collider (8)
-      objectReference: {fileID: 0}
     - target: {fileID: 9114907164163452716, guid: 5aed5a7e91abefc44a4ab20b3dc39e7d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -45138,6 +46125,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8132353960412816915, guid: 5aed5a7e91abefc44a4ab20b3dc39e7d,
+        type: 3}
+      propertyPath: m_Name
+      value: Hallway W/Collider (8)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5aed5a7e91abefc44a4ab20b3dc39e7d, type: 3}
@@ -46225,11 +47217,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 327870758}
     m_Modifications:
-    - target: {fileID: 8132353960412816915, guid: 5aed5a7e91abefc44a4ab20b3dc39e7d,
-        type: 3}
-      propertyPath: m_Name
-      value: Hallway W/Collider (12)
-      objectReference: {fileID: 0}
     - target: {fileID: 9114907164163452716, guid: 5aed5a7e91abefc44a4ab20b3dc39e7d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -46300,6 +47287,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.35
       objectReference: {fileID: 0}
+    - target: {fileID: 8132353960412816915, guid: 5aed5a7e91abefc44a4ab20b3dc39e7d,
+        type: 3}
+      propertyPath: m_Name
+      value: Hallway W/Collider (12)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5aed5a7e91abefc44a4ab20b3dc39e7d, type: 3}
 --- !u!1001 &2088472844
@@ -46364,6 +47356,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: faa0fc0ba75183140a889e4221eede86, type: 3}
+--- !u!1 &2089825832
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 1411683043}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1411683044}
+  m_Layer: 0
+  m_Name: Missing Prefab (Dummy)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!4 &2100357894
 Transform:
   m_ObjectHideFlags: 0
@@ -47687,11 +48695,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1618934132}
     m_Modifications:
-    - target: {fileID: 8132353960412816915, guid: 5aed5a7e91abefc44a4ab20b3dc39e7d,
-        type: 3}
-      propertyPath: m_Name
-      value: Hallway W/Collider
-      objectReference: {fileID: 0}
     - target: {fileID: 9114907164163452716, guid: 5aed5a7e91abefc44a4ab20b3dc39e7d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -47761,6 +48764,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8132353960412816915, guid: 5aed5a7e91abefc44a4ab20b3dc39e7d,
+        type: 3}
+      propertyPath: m_Name
+      value: Hallway W/Collider
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5aed5a7e91abefc44a4ab20b3dc39e7d, type: 3}
