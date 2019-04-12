@@ -38,7 +38,7 @@ public class EnemyRange : BrokenVessel.Actor.Actor
 
     void Update()
     {
-        if (paused) { return; }
+        if (paused) { StopCoroutine(rangeAttack()); return; }
         if (!attacking)
         {
             rangeTimer -= Time.deltaTime;
