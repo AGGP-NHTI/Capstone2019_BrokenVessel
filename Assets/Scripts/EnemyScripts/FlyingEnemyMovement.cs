@@ -29,8 +29,7 @@ public class FlyingEnemyMovement : BrokenVessel.Actor.Actor
 	
 	void Update()
     {
-        if (paused) { GetComponent<Rigidbody2D>().simulated = false; return; }
-        else { GetComponent<Rigidbody2D>().simulated = false; }
+        if (paused) { return; }
 
         if (!ec.dead)
         {
