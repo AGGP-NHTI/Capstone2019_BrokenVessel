@@ -20,6 +20,7 @@ public class EnemyRange : BrokenVessel.Actor.Actor
     float rangeTimer = 0;
 
     EnemyCombat ec;
+    GameObject refer;
 
     void Start()
     {
@@ -29,10 +30,10 @@ public class EnemyRange : BrokenVessel.Actor.Actor
 
     void UpdateProjectile()
     {
-        Projectile pro = projectile.GetComponent<Projectile>();
-        pro.speed = speed;
-        pro.shootByX = shootByX;
-        projectile.GetComponentInChildren<DamageTrigger>().OwnerLayer = gameObject.layer;
+        refer = projectile;
+        refer.GetComponent<Projectile>().speed = speed;
+        refer.GetComponentInChildren<DamageTrigger>().OwnerLayer = gameObject.layer;
+        refer.GetComponentInChildren<DamageTrigger>().damage = damage;
     }
 
     void Update()
@@ -53,8 +54,8 @@ public class EnemyRange : BrokenVessel.Actor.Actor
     IEnumerator rangeAttack()
     {
         yield return new WaitForSeconds(.5f);
-        GameObject refer = Instantiate(projectile, weapon.transform.position, weapon.transform.rotation) as GameObject;
-        refer.GetComponent<Projectile>().movement = weapon.transform.right * transform.localScale.x;
+        refer = Instantiate(projectile, weapon.transform.position, weapon.transform.rotation) as GameObject;
+        refer.GetComponent<Projectile>().movement = movement * transform.localScale;
         yield return new WaitForSeconds(.5f);
         attacking = false;
     }
