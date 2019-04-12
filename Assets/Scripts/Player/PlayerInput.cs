@@ -4,9 +4,12 @@ namespace BrokenVessel.Player
 {
 	public class PlayerInput : MonoBehaviour
 	{
+        [SerializeField]
+        private KeyCode attackKey = KeyCode.Mouse0;
+        [SerializeField]
+        private KeyCode swapKey = KeyCode.Mouse1;
 
-        
-		[SerializeField]
+        [SerializeField]
 		private KeyCode jumpKey = KeyCode.Space;
 		[SerializeField]
 		private KeyCode interactKey = KeyCode.E;
@@ -18,7 +21,9 @@ namespace BrokenVessel.Player
 		private float dblClickThreshold = 0.2f;
 
 
-		public bool Jump { get => Input.GetKeyDown(jumpKey); }
+        public bool Attack { get => Input.GetKeyDown(attackKey); }
+        public bool Swap { get => Input.GetKeyDown(swapKey); }
+        public bool Jump { get => Input.GetKeyDown(jumpKey); }
 		public bool JumpEnd { get => Input.GetKeyUp(jumpKey); }
 		public bool Interact { get => Input.GetKeyDown(interactKey); }
 		public bool Left { get => Input.GetKey(leftKey); }
