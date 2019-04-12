@@ -6,6 +6,7 @@ public class DamageTrigger : MonoBehaviour {
 
     public int OwnerLayer;
     public bool isProjectile = true;
+    public float damage = 10;
 
     private void Start()
     {
@@ -18,11 +19,11 @@ public class DamageTrigger : MonoBehaviour {
         {
             if (collision.gameObject.GetComponent<PlayerData>())
             {
-                collision.gameObject.GetComponent<PlayerData>().takeDamage(10, 5, Vector2.zero);
+                collision.gameObject.GetComponent<PlayerData>().takeDamage(damage, 5, Vector2.zero);
             }
             if (collision.gameObject.GetComponent<EnemyCombat>())
             {
-                collision.gameObject.GetComponent<EnemyCombat>().takeDamage(10);
+                collision.gameObject.GetComponent<EnemyCombat>().takeDamage(damage);
             }
 
             if (isProjectile)
