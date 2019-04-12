@@ -23,9 +23,9 @@ public class Spear : Weapon {
     {
         yield return new WaitForSeconds(.1f);
         gameObject.GetComponent<BoxCollider2D>().enabled = true;
-        gameObject.transform.Translate(0, 0, -1f);
+        gameObject.transform.Translate(1f, 0, 0);
         yield return new WaitForSeconds(.1f);
-        gameObject.transform.localPosition = new Vector3(0,1,0);
+        gameObject.transform.localPosition = new Vector3(0,.5f,0);
         gameObject.GetComponent<BoxCollider2D>().enabled = false;
     }
 }

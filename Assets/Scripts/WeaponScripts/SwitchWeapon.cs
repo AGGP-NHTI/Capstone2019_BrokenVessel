@@ -22,15 +22,17 @@ public class SwitchWeapon : MonoBehaviour {
             equippedWeaponInstance = Instantiate(Player.GetComponent<InventoryScript>().hotBarItems[0], Player.transform);
             equippedWeaponInstance.transform.parent = Player.transform;
         }
-        if (Input.GetKeyDown("e"))
-        {
-            Switch();
-            Destroy(equippedWeaponInstance);
-        }
-        if (Input.GetKeyDown("q"))
-        {
-            equippedWeaponInstance.GetComponent<Weapon>().Attack();
-        }
+    }
+
+    public void SwitchEquip()
+    {
+        Switch();
+        Destroy(equippedWeaponInstance);
+    }
+
+    public void Attack()
+    {
+        equippedWeaponInstance.GetComponent<Weapon>().Attack();
     }
 
     void Switch()
