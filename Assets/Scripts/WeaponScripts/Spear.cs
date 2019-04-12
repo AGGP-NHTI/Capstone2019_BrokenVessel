@@ -5,6 +5,7 @@ using UnityEngine;
 public class Spear : Weapon {
 
     Vector3 mouse;
+    bool attacking = false;
 
 
     void Update ()
@@ -16,17 +17,23 @@ public class Spear : Weapon {
 
     public override void Attack()
     {
-        StartCoroutine(PushSpear());
-        base.Attack();
+        if (!attacking)
+        {
+            StartCoroutine(PushSpear());
+            base.Attack();
+        }
     }
 
     public IEnumerator PushSpear()
     {
+        attacking = true;
         yield return new WaitForSeconds(.1f);
         gameObject.GetComponent<BoxCollider2D>().enabled = true;
         gameObject.transform.Translate(transform.parent.localScale.x, 0, 0);
         yield return new WaitForSeconds(.1f);
         gameObject.transform.localPosition = new Vector3(0,.5f,0);
         gameObject.GetComponent<BoxCollider2D>().enabled = false;
+        yield return new WaitForSeconds(.5f);
+        attacking = false;
     }
 }
