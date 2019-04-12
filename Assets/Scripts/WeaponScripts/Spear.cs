@@ -10,7 +10,8 @@ public class Spear : Weapon {
     void Update ()
     {
         mouse = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10)) - transform.position;
-        transform.rotation = Quaternion.Euler(Mathf.Atan2(mouse.y, mouse.x) * Mathf.Rad2Deg, -90, 0);
+        transform.rotation = Quaternion.Euler(0, 0, Mathf.Atan2(mouse.y, mouse.x) * Mathf.Rad2Deg);
+        transform.localScale = transform.parent.localScale;
     }
 
     public override void Attack()
@@ -23,9 +24,9 @@ public class Spear : Weapon {
     {
         yield return new WaitForSeconds(.1f);
         gameObject.GetComponent<BoxCollider2D>().enabled = true;
-        gameObject.transform.Translate(0, 0, -1f);
+        gameObject.transform.Translate(transform.parent.localScale.x, 0, 0);
         yield return new WaitForSeconds(.1f);
-        gameObject.transform.localPosition = new Vector3(0,1,0);
+        gameObject.transform.localPosition = new Vector3(0,.5f,0);
         gameObject.GetComponent<BoxCollider2D>().enabled = false;
     }
 }

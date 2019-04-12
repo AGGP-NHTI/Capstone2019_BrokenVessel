@@ -10,6 +10,9 @@ public class FlyingEnemyMovement : BrokenVessel.Actor.Actor
     [SerializeField] float orbitField = 3;
     [SerializeField] bool approachPlayer;
     [SerializeField] float approachDistance = 2;
+    [SerializeField] float approachTimer = 2f;
+    float timer = 0;
+    
 
     Transform target;
     Vector3 process;
@@ -29,11 +32,11 @@ public class FlyingEnemyMovement : BrokenVessel.Actor.Actor
 	
 	void Update()
     {
-        if (paused) { GetComponent<Rigidbody2D>().simulated = false; return; }
-        else { GetComponent<Rigidbody2D>().simulated = false; }
+        if (paused) { return; }
 
         if (!ec.dead)
         {
+            timer -= Time.deltaTime;
             if(ec.seePlayer)
             {
                 target = GameObject.FindGameObjectWithTag("Player").transform;
@@ -42,9 +45,22 @@ public class FlyingEnemyMovement : BrokenVessel.Actor.Actor
                     la.FocusObject = target;
                 }
                 process = target.position;
-                offSet.y += 1.15f; //adding so target is center of player
-                offSet = (offSet - process).normalized * orbitField;
-                offSet.y = Mathf.Abs(offSet.y) + 2f;
+                if (approachPlayer && timer < 0)
+                {
+                    offSet.y += .5f; //adding so target is center of player
+                    offSet = (offSet - process).normalized * approachDistance;
+                    offSet.y = Mathf.Abs(offSet.y) + 1f;
+                    if (timer < -approachTimer)
+                    {
+                        timer = approachTimer;
+                    }
+                }
+                else
+                {
+                    offSet.y += .5f; //adding so target is center of player
+                    offSet = (offSet - process).normalized * orbitField;
+                    offSet.y = Mathf.Abs(offSet.y) + 2f;
+                }
             }
             else
             {

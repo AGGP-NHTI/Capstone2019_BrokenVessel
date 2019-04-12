@@ -5,9 +5,11 @@ namespace BrokenVessel.Player
 	public class PlayerInput : MonoBehaviour
 	{
         [SerializeField]
-        private KeyCode pauseKey = KeyCode.Escape;
-        
-		[SerializeField]
+        private KeyCode attackKey = KeyCode.Mouse0;
+        [SerializeField]
+        private KeyCode swapKey = KeyCode.Mouse1;
+
+        [SerializeField]
 		private KeyCode jumpKey = KeyCode.Space;
 		[SerializeField]
 		private KeyCode interactKey = KeyCode.E;
@@ -18,8 +20,10 @@ namespace BrokenVessel.Player
 		[SerializeField]
 		private float dblClickThreshold = 0.2f;
 
-        public bool Pause { get => Input.GetKeyDown(pauseKey); }
-		public bool Jump { get => Input.GetKeyDown(jumpKey); }
+
+        public bool Attack { get => Input.GetKeyDown(attackKey); }
+        public bool Swap { get => Input.GetKeyDown(swapKey); }
+        public bool Jump { get => Input.GetKeyDown(jumpKey); }
 		public bool JumpEnd { get => Input.GetKeyUp(jumpKey); }
 		public bool Interact { get => Input.GetKeyDown(interactKey); }
 		public bool Left { get => Input.GetKey(leftKey); }
@@ -32,26 +36,6 @@ namespace BrokenVessel.Player
 		void Update()
 		{
 			Dash = 0;
-
-            if (Input.GetKeyDown(pauseKey))
-            {
-                if (BrokenVessel.Actor.Actor.paused)
-                {
-                    BrokenVessel.Actor.Actor.paused = false;
-                    foreach (Rigidbody2D rb2d in FindObjectsOfType<Rigidbody2D>())
-                    {
-                        rb2d.simulated = true;
-                    }
-                }
-                else
-                {
-                    BrokenVessel.Actor.Actor.paused = true;
-                    foreach (Rigidbody2D rb2d in FindObjectsOfType<Rigidbody2D>())
-                    {
-                        rb2d.simulated = false;
-                    }
-                }
-            }
 
 			if (Input.GetKeyDown(rightKey) || Input.GetKeyDown(leftKey))
 			{
