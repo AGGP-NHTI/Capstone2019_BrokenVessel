@@ -2054,11 +2054,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54a832bc6ffaccc45817dac72553ec80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackKey: 323
+  swapKey: 324
   jumpKey: 32
   interactKey: 101
   leftKey: 97
   rightKey: 100
   dblClickThreshold: 0.2
+--- !u!114 &1369542914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1369542907}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f9b13ad009a9ce49929fd9f1353ac64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  placeHolder: {fileID: 0}
+  equippedWeaponInstance: {fileID: 1797478943047646076}
+  Player: {fileID: 1369542907}
 --- !u!1 &1413682508
 GameObject:
   m_ObjectHideFlags: 0
@@ -2574,6 +2591,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1797478943047646076 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1797478943047646076, guid: 458c528f291b02a4a902445464f1e3c9,
+    type: 3}
+  m_PrefabInstance: {fileID: 7947595073108565327}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7947595073108565327
 PrefabInstance:
   m_ObjectHideFlags: 0
