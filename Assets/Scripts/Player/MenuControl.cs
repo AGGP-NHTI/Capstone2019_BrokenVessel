@@ -13,6 +13,10 @@ public class MenuControl : MonoBehaviour
     [SerializeField]
     private KeyCode pauseKey = KeyCode.Escape;
 
+    [SerializeField] Transform[] hearts;
+    [SerializeField] Texture fullHeart;
+    [SerializeField] Texture emptyHeart;
+
     public bool Pause { get => Input.GetKeyDown(pauseKey); }
 
     bool ScenePaused = false;
@@ -27,6 +31,21 @@ public class MenuControl : MonoBehaviour
         if (Input.GetKeyDown(pauseKey))
         {
             TogglePlay();
+        }
+    }
+
+    public void UpdateHealth(int currentHP)
+    {
+        for (int i = 0; i < 10; i++)
+        {
+            if(i < currentHP)
+            {
+                hearts[i].GetComponent<RawImage>().texture = fullHeart;
+            }
+            else
+            {
+                hearts[i].GetComponent<RawImage>().texture = emptyHeart;
+            }
         }
     }
 

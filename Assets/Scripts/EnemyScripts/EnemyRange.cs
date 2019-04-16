@@ -7,7 +7,7 @@ public class EnemyRange : BrokenVessel.Actor.Actor
 
     [SerializeField] Transform weapon;
     [SerializeField] GameObject projectile;
-    [SerializeField] float damage = 10f;
+    [SerializeField] int damage = 10;
     [SerializeField] float rangeCD = .5f;
     [SerializeField] float attackRange = 3f;
 

@@ -423,7 +423,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a7cd29b0d4e42d40960e46dbffc72ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 10
+  damage: 1
   knockBack: 10
   iFrames: 0.5
 --- !u!114 &7535358940366121727
@@ -441,7 +441,7 @@ MonoBehaviour:
   weapon: {fileID: 4057384757749019486}
   projectile: {fileID: 4729449168212702019, guid: f4a222a20e832b14aa8de08c291a44ea,
     type: 3}
-  damage: 10
+  damage: 1
   rangeCD: 0.5
   attackRange: 10
   speed: 7

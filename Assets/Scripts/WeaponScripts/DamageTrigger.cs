@@ -6,7 +6,7 @@ public class DamageTrigger : MonoBehaviour {
 
     public int OwnerLayer;
     public bool isProjectile = true;
-    public float damage = 10;
+    public int damage = 10;
 
     private void Start()
     {

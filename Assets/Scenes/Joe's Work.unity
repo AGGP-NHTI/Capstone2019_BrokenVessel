@@ -1426,7 +1426,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 893537751}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.67, y: 4.52, z: -0.13776684}
+  m_LocalPosition: {x: -45.59, y: 3.99, z: -0.13776684}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1731317013}
@@ -2121,9 +2121,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackKey: 323
+  ControllerAttack: 335
   swapKey: 324
+  ControllerSwap: 334
   jumpKey: 32
+  ControllerJump: 330
   interactKey: 101
+  ControllerInteract: 333
   leftKey: 97
   rightKey: 100
   dblClickThreshold: 0.2

@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerData : BrokenVessel.Actor.Actor
 {
 
-    public float health = 10f;
+    public int health = 10;
     public float energy = 100.0f;
     public int metalScrap = 0;
 
@@ -23,7 +23,7 @@ public class PlayerData : BrokenVessel.Actor.Actor
     public bool chargeJump = false;
     public int shipControl = 0;
 
-    public void takeDamage(float value, float iFrames, Vector2 Knockback)
+    public void takeDamage(int value, float iFrames, Vector2 Knockback)
     {
         //Debug.Log("ow");
         if(iFrameTimer <= 0 && !ignoreDamage)
@@ -32,6 +32,7 @@ public class PlayerData : BrokenVessel.Actor.Actor
             //Debug.Log("dmg");
             health -= value;
             iFrameTimer = iFrames;
+            MenuControl.MC.UpdateHealth(health);
             //knockback
         }
     }
