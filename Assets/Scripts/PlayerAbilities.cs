@@ -68,11 +68,50 @@ public class PlayerAbilities : MonoBehaviour {
                 }
             }
         }
+        if (dashUnlocked)
+        {
+            if (Input.GetKeyDown(KeyCode.Button2) && dashTimer <= 0) //X Button on Xbox360
+            {
+                dash = true;
+                dashTimer = .6f;
+                dashDuration = .2f;
+            }
+            if (dash)
+            {
+                dashDuration -= Time.deltaTime;
+                if (dashDuration <= 0)
+                {
+                    dash = false;
+                }
+            }
+        }
         //----------------------------------------------------------------------------------------
         //---WALL GRAB----------------------------------------------------------------------------
         if (wallGrabUnlocked)
         {
             if (!grounded && !Input.GetKeyDown(KeyCode.Space) && sideCollide)
+            {
+                wallJump = false;
+                wallClimb = true;
+            }
+            else
+            {
+                wallClimb = false;
+            }
+
+
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                wallJump = true;
+            }
+            if (Input.GetKeyUp(KeyCode.Space))
+            {
+                wallJump = false;
+            }
+        }
+        if (wallGrabUnlocked)
+        {
+            if (!grounded && !Input.GetKeyDown(KeyCode.Button0) && sideCollide) //A button
             {
                 wallJump = false;
                 wallClimb = true;

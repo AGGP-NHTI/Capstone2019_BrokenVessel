@@ -7,13 +7,21 @@ namespace BrokenVessel.Player
         [SerializeField]
         private KeyCode attackKey = KeyCode.Mouse0;
         [SerializeField]
+        private KeyCode ControllerAttack = KeyCode.Button5; //RB
+        [SerializeField]
         private KeyCode swapKey = KeyCode.Mouse1;
+        [SerializeField]
+        private KeyCode ControllerSwap = KeyCode.Button4; //LB
 
         [SerializeField]
 		private KeyCode jumpKey = KeyCode.Space;
-		[SerializeField]
+        [SerializeField]
+        private KeyCode ControllerJump = KeyCode.Button0; //A
+        [SerializeField]
 		private KeyCode interactKey = KeyCode.E;
-		[SerializeField]
+        [SerializeField]
+        private KeyCode ControllerInteract = KeyCode.Button3; //Y
+        [SerializeField]
 		private KeyCode leftKey = KeyCode.A;
 		[SerializeField]
 		private KeyCode rightKey = KeyCode.D;
@@ -29,8 +37,14 @@ namespace BrokenVessel.Player
 		public bool Left { get => Input.GetKey(leftKey); }
 		public bool Right { get => Input.GetKey(rightKey); }
 		public float Dash { get; private set; }
+        public bool Attack { get => Input.GetKeyDown(ControllerAttack); }
+        public bool Swap { get => Input.GetKeyDown(ControllerSwap); }
+        public bool Jump { get => Input.GetKeyDown(ControllerJump); }
+        public bool JumpEnd { get => Input.GetKeyUp(ControllerJump); }
+        public bool Interact { get => Input.GetKeyDown(ControllerInteract); }
+        public float Dash { get; private set; }
 
-		private float time = 0;
+        private float time = 0;
 		private KeyCode lastKey = KeyCode.None;
 
 		void Update()
