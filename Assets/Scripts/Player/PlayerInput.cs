@@ -29,20 +29,14 @@ namespace BrokenVessel.Player
 		private float dblClickThreshold = 0.2f;
 
 
-        public bool Attack { get => Input.GetKeyDown(attackKey); }
-        public bool Swap { get => Input.GetKeyDown(swapKey); }
-        public bool Jump { get => Input.GetKeyDown(jumpKey); }
-		public bool JumpEnd { get => Input.GetKeyUp(jumpKey); }
-		public bool Interact { get => Input.GetKeyDown(interactKey); }
+        public bool Attack { get => Input.GetKeyDown(attackKey) || Input.GetKeyDown(ControllerAttack); }
+        public bool Swap { get => Input.GetKeyDown(swapKey) || Input.GetKeyDown(ControllerSwap); }
+        public bool Jump { get => Input.GetKeyDown(jumpKey) || Input.GetKeyDown(ControllerJump); }
+		public bool JumpEnd { get => Input.GetKeyUp(jumpKey) || Input.GetKeyUp(ControllerJump); }
+		public bool Interact { get => Input.GetKeyDown(interactKey) || Input.GetKeyDown(ControllerInteract); }
 		public bool Left { get => Input.GetKey(leftKey); }
 		public bool Right { get => Input.GetKey(rightKey); }
 		public float Dash { get; private set; }
-        public bool Attack { get => Input.GetKeyDown(ControllerAttack); }
-        public bool Swap { get => Input.GetKeyDown(ControllerSwap); }
-        public bool Jump { get => Input.GetKeyDown(ControllerJump); }
-        public bool JumpEnd { get => Input.GetKeyUp(ControllerJump); }
-        public bool Interact { get => Input.GetKeyDown(ControllerInteract); }
-        public float Dash { get; private set; }
 
         private float time = 0;
 		private KeyCode lastKey = KeyCode.None;
