@@ -32,11 +32,11 @@ public class PlayerMovement : MonoBehaviour {
         {
             isJumping = false;
         }
-        if (Input.GetButton(KeyCode.Button0))
+        if (Input.GetKeyDown(KeyCode.JoystickButton0))
         {
             isJumping = true;
         }
-        if (Input.GetButton(KeyCode.Button0))
+        if (Input.GetKeyUp(KeyCode.JoystickButton0))
         {
             isJumping = false;
         }

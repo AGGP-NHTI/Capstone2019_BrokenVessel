@@ -70,7 +70,7 @@ public class PlayerAbilities : MonoBehaviour {
         }
         if (dashUnlocked)
         {
-            if (Input.GetKeyDown(KeyCode.Button2) && dashTimer <= 0) //X Button on Xbox360
+            if (Input.GetKeyDown(KeyCode.JoystickButton2) && dashTimer <= 0) //X Button on Xbox360
             {
                 dash = true;
                 dashTimer = .6f;
@@ -111,7 +111,7 @@ public class PlayerAbilities : MonoBehaviour {
         }
         if (wallGrabUnlocked)
         {
-            if (!grounded && !Input.GetKeyDown(KeyCode.Button0) && sideCollide) //A button
+            if (!grounded && !Input.GetKeyDown(KeyCode.JoystickButton0) && sideCollide) //A button
             {
                 wallJump = false;
                 wallClimb = true;

@@ -7,20 +7,20 @@ namespace BrokenVessel.Player
         [SerializeField]
         private KeyCode attackKey = KeyCode.Mouse0;
         [SerializeField]
-        private KeyCode ControllerAttack = KeyCode.Button5; //RB
+        private KeyCode ControllerAttack = KeyCode.JoystickButton5; //RB
         [SerializeField]
         private KeyCode swapKey = KeyCode.Mouse1;
         [SerializeField]
-        private KeyCode ControllerSwap = KeyCode.Button4; //LB
+        private KeyCode ControllerSwap = KeyCode.JoystickButton4; //LB
 
         [SerializeField]
 		private KeyCode jumpKey = KeyCode.Space;
         [SerializeField]
-        private KeyCode ControllerJump = KeyCode.Button0; //A
+        private KeyCode ControllerJump = KeyCode.JoystickButton0; //A
         [SerializeField]
 		private KeyCode interactKey = KeyCode.E;
         [SerializeField]
-        private KeyCode ControllerInteract = KeyCode.Button3; //Y
+        private KeyCode ControllerInteract = KeyCode.JoystickButton3; //Y
         [SerializeField]
 		private KeyCode leftKey = KeyCode.A;
 		[SerializeField]
