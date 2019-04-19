@@ -4,24 +4,19 @@ using UnityEngine;
 
 public class PlayerData : BrokenVessel.Actor.Actor
 {
+    public static PlayerData PD;
 
     public int health = 10;
     public float energy = 100.0f;
     public int metalScrap = 0;
 
-    public float speed = 7f;
-    public float jumpForce = 11f;
-
     public float iFrameTimer = 0f;
     public bool ignoreDamage = false;
 
-    public bool dash = false;
-    public bool wallGrab = false;
-    public bool grappleHook = false;
-    public bool phase = false;
-    public bool phaseDash = false;
-    public bool chargeJump = false;
-    public int shipControl = 0;
+    private void Awake()
+    {
+        PD = this;
+    }
 
     public void takeDamage(int value, float iFrames, Vector2 Knockback)
     {
@@ -36,6 +31,29 @@ public class PlayerData : BrokenVessel.Actor.Actor
             //knockback
         }
     }
+
+    public void Heal(int value)
+    {
+        health += value;
+        MenuControl.MC.UpdateHealth(health);
+    }
+
+    public void gainScrap(int value)
+    {
+        metalScrap += value;
+        MenuControl.MC.UpdateScrap(metalScrap);
+    }
+
+    public void loseScrap(int value)
+    {
+        metalScrap -= value;
+        if(metalScrap < 0)
+        {
+            metalScrap = 0;
+        }
+        MenuControl.MC.UpdateScrap(metalScrap);
+    }
+
     void Update()
     {
         if (paused) { return; }

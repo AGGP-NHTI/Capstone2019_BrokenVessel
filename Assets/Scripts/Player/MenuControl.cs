@@ -8,7 +8,9 @@ public class MenuControl : MonoBehaviour
 {
     public static MenuControl MC;
 
+    [SerializeField] GameObject TileScreen;
     [SerializeField] GameObject PauseScreen;
+    [SerializeField] GameObject Hud;
 
     [SerializeField]
     private KeyCode pauseKey = KeyCode.Escape;
@@ -17,13 +19,17 @@ public class MenuControl : MonoBehaviour
     [SerializeField] Texture fullHeart;
     [SerializeField] Texture emptyHeart;
 
+    [SerializeField] Text ScrapAmount;
+
     public bool Pause { get => Input.GetKeyDown(pauseKey); }
 
     bool ScenePaused = false;
+    bool MainMenu = false;
 
     private void Awake()
     {
         MC = this;
+        DontDestroyOnLoad(gameObject);
     }
 
     void Update()
@@ -31,6 +37,17 @@ public class MenuControl : MonoBehaviour
         if (Input.GetKeyDown(pauseKey))
         {
             TogglePlay();
+        }
+        if(MainMenu)
+        {
+            TileScreen.SetActive(true);
+            PauseScreen.SetActive(false);
+            Hud.SetActive(false);
+        }
+        else
+        {
+            TileScreen.SetActive(false);
+            Hud.SetActive(true);
         }
     }
 
@@ -47,6 +64,11 @@ public class MenuControl : MonoBehaviour
                 hearts[i].GetComponent<RawImage>().texture = emptyHeart;
             }
         }
+    }
+
+    public void UpdateScrap(int currentScrap)
+    {
+        ScrapAmount.text = "x " + currentScrap;
     }
 
     public void TogglePlay()
@@ -86,11 +108,20 @@ public class MenuControl : MonoBehaviour
 
     public void PlayGame()
     {
-        SceneManager.LoadScene("PlayGame");
+        MainMenu = false;
+        SceneManager.LoadScene("Joe's Work");
+        //SceneManager.LoadScene("PlayGame");
     }
 
     public void QuitPlayTime()
     {
+        MainMenu = true;
         SceneManager.LoadScene("MainMenu");
     }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+
 }
