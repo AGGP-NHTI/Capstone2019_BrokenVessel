@@ -13,6 +13,9 @@ public class ScrapQueen : BrokenVessel.Actor.Actor
     public float angle = -Mathf.PI / 2;
     [SerializeField] float radius = 10;
 
+    public GameObject stationaryCollider;
+    public GameObject deathPlatform;
+
     bool attacking = false;
 
     public bool intro;
@@ -100,6 +103,7 @@ public class ScrapQueen : BrokenVessel.Actor.Actor
 
     IEnumerator SpawnMinions()
     {
+        stationaryCollider.SetActive(true);
         attacking = true;
         yield return new WaitForSeconds(4f);
         for(int i = 0; i < FlyingSpawns.Count; i++) //check for dead enemies in the list
@@ -128,6 +132,7 @@ public class ScrapQueen : BrokenVessel.Actor.Actor
         float randoAngle = Random.Range(0, Mathf.PI * 2);
         spawnMinionsPoint.position = new Vector3(pivot.x + (radius * Mathf.Cos(randoAngle)), pivot.y + (radius * Mathf.Sin(randoAngle)), 4);
         attacking = false;
+        stationaryCollider.SetActive(false);
     }
 
     void Intro()
