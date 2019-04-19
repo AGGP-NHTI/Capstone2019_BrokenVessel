@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4662215454626238555}
   - component: {fileID: 4662215454626238534}
   - component: {fileID: 4662215454626238554}
+  - component: {fileID: 4007087249433146548}
   m_Layer: 10
   m_Name: ScrapQueen
   m_TagString: Untagged
@@ -73,6 +74,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d78b9db0644868d42a4c5c3887fae552, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  start: 0
   speed: 0.5
   crawlSpawn: {fileID: 5077835121062871675, guid: ff00ec93924f7a24aaf33aaf5964d1ca,
     type: 3}
@@ -110,6 +112,30 @@ MonoBehaviour:
   AlwaysMove: 0
   attacking: 0
   faceCheck: {fileID: 0}
+--- !u!114 &4007087249433146548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4662215454626238535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3ba27483d902c740af63d52f4463e11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthPickUp: {fileID: 3544268066043229547, guid: 72dd021d290706643ae7c69c5efbcfbc,
+    type: 3}
+  scrapPickUp: {fileID: 980363145638152826, guid: ad3ba6c92e58bf14590058270753c1e0,
+    type: 3}
+  isTypeRandom: 0
+  Drop: 1
+  isAmountRandom: 0
+  minHealthAmount: 0
+  maxHealthAmount: 0
+  minScrapAmount: 0
+  maxScrapAmount: 0
+  Amount: 1000
 --- !u!1 &4662215454939761012
 GameObject:
   m_ObjectHideFlags: 0

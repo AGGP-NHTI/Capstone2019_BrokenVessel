@@ -120,6 +120,7 @@ public class EnemyCombat : BrokenVessel.Actor.Actor {
         GetComponent<Rigidbody2D>().gravityScale = 1;
         GetComponent<Rigidbody2D>().isKinematic = false;
         GetComponent<Rigidbody2D>().freezeRotation = false;
+        
 
         //particles
         //animation

@@ -13,12 +13,6 @@ public class TalkyBoi : MonoBehaviour {
     public GameObject textBoxInstance;
     public GameObject WorldScriptManager;
     public GameObject canvas;
-    public GameObject SceneController;
-
-    // Use this for initialization
-    void Start () {
-        SceneController = GameObject.Find("Scene Controller");
-	}
 	
 	// Update is called once per frame
 	void Update () {
@@ -34,8 +28,8 @@ public class TalkyBoi : MonoBehaviour {
             if (WorldScriptManager.GetComponent<KeysPressed>().jHeld == true)
             {
                 canvas.SetActive(true);
-                SceneController.GetComponent<BasicInkExample>().RemoveChildren();
-                SceneController.GetComponent<BasicInkExample>().StartStory();
+                WorldScriptManager.GetComponent<BasicInkExample>().RemoveChildren();
+                WorldScriptManager.GetComponent<BasicInkExample>().StartStory();
             }
         }
         else

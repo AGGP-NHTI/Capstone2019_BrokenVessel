@@ -70,6 +70,51 @@ PrefabInstance:
       propertyPath: faceCheck
       value: 
       objectReference: {fileID: 5075623451023286965}
+    - target: {fileID: 114619048996695446, guid: faa0fc0ba75183140a889e4221eede86,
+        type: 3}
+      propertyPath: isAmountRandom
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114619048996695446, guid: faa0fc0ba75183140a889e4221eede86,
+        type: 3}
+      propertyPath: isTypeRandom
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114619048996695446, guid: faa0fc0ba75183140a889e4221eede86,
+        type: 3}
+      propertyPath: Amount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4290480560847078282, guid: faa0fc0ba75183140a889e4221eede86,
+        type: 3}
+      propertyPath: minHealthAmount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4290480560847078282, guid: faa0fc0ba75183140a889e4221eede86,
+        type: 3}
+      propertyPath: maxHealthAmount
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4290480560847078282, guid: faa0fc0ba75183140a889e4221eede86,
+        type: 3}
+      propertyPath: minScrapAmount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4290480560847078282, guid: faa0fc0ba75183140a889e4221eede86,
+        type: 3}
+      propertyPath: maxScrapAmount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4290480560847078282, guid: faa0fc0ba75183140a889e4221eede86,
+        type: 3}
+      propertyPath: Amount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4290480560847078282, guid: faa0fc0ba75183140a889e4221eede86,
+        type: 3}
+      propertyPath: isTypeRandom
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: faa0fc0ba75183140a889e4221eede86, type: 3}
 --- !u!4 &5075529916840839351 stripped
