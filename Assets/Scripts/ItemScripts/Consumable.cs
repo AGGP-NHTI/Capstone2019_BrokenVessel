@@ -11,7 +11,16 @@ namespace BrokenVessel.Interact
         public int amount = 0;
         public override void Impulse()
         {
-
+            switch(type)
+            {
+                case "Health":
+                    PlayerData.PD.Heal(amount);
+                    break;
+                case "Scrap":
+                    PlayerData.PD.gainScrap(amount);
+                    break;
+            }
+            Destroy(gameObject);
         }
     }
 }
