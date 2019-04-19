@@ -309,7 +309,6 @@ GameObject:
   - component: {fileID: 4445944837501212038}
   - component: {fileID: 3250294672683217897}
   - component: {fileID: 7535358940366121727}
-  - component: {fileID: 5103555623437994020}
   m_Layer: 10
   m_Name: FlyingShootEnemy
   m_TagString: Untagged
@@ -449,30 +448,6 @@ MonoBehaviour:
   movement: {x: 1, y: 1}
   shootByX: 0
   attacking: 0
---- !u!114 &5103555623437994020
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6530266425189079619}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3ba27483d902c740af63d52f4463e11, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  healthPickUp: {fileID: 3544268066043229547, guid: 72dd021d290706643ae7c69c5efbcfbc,
-    type: 3}
-  scrapPickUp: {fileID: 980363145638152826, guid: ad3ba6c92e58bf14590058270753c1e0,
-    type: 3}
-  isTypeRandom: 1
-  Drop: 0
-  isAmountRandom: 1
-  minHealthAmount: 1
-  maxHealthAmount: 2
-  minScrapAmount: 30
-  maxScrapAmount: 70
-  Amount: 0
 --- !u!1 &8064933011254873437
 GameObject:
   m_ObjectHideFlags: 0
