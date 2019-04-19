@@ -64,6 +64,21 @@ PrefabInstance:
       propertyPath: faceCheck
       value: 
       objectReference: {fileID: 923074373336169970}
+    - target: {fileID: 114448538464671302, guid: b8970f260b7af784582d7ec551836433,
+        type: 3}
+      propertyPath: isTypeRandom
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114448538464671302, guid: b8970f260b7af784582d7ec551836433,
+        type: 3}
+      propertyPath: isAmountRandom
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114448538464671302, guid: b8970f260b7af784582d7ec551836433,
+        type: 3}
+      propertyPath: Amount
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1812528421932969130, guid: b8970f260b7af784582d7ec551836433,
         type: 3}
       propertyPath: approachPlayer
@@ -110,6 +125,41 @@ PrefabInstance:
     - target: {fileID: 1959761353278258, guid: b8970f260b7af784582d7ec551836433, type: 3}
       propertyPath: m_Layer
       value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 8997319233539134381, guid: b8970f260b7af784582d7ec551836433,
+        type: 3}
+      propertyPath: isTypeRandom
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8997319233539134381, guid: b8970f260b7af784582d7ec551836433,
+        type: 3}
+      propertyPath: isAmountRandom
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8997319233539134381, guid: b8970f260b7af784582d7ec551836433,
+        type: 3}
+      propertyPath: maxHealthAmount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8997319233539134381, guid: b8970f260b7af784582d7ec551836433,
+        type: 3}
+      propertyPath: Amount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8997319233539134381, guid: b8970f260b7af784582d7ec551836433,
+        type: 3}
+      propertyPath: maxScrapAmount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8997319233539134381, guid: b8970f260b7af784582d7ec551836433,
+        type: 3}
+      propertyPath: minScrapAmount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8997319233539134381, guid: b8970f260b7af784582d7ec551836433,
+        type: 3}
+      propertyPath: minHealthAmount
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b8970f260b7af784582d7ec551836433, type: 3}

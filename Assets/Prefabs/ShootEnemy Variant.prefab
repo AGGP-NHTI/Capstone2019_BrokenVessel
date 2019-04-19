@@ -92,6 +92,16 @@ PrefabInstance:
       propertyPath: faceCheck
       value: 
       objectReference: {fileID: 7973453910302117137}
+    - target: {fileID: 4290480560847078282, guid: faa0fc0ba75183140a889e4221eede86,
+        type: 3}
+      propertyPath: minScrapAmount
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4290480560847078282, guid: faa0fc0ba75183140a889e4221eede86,
+        type: 3}
+      propertyPath: maxScrapAmount
+      value: 60
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: faa0fc0ba75183140a889e4221eede86, type: 3}
 --- !u!1 &7975666679350291935 stripped

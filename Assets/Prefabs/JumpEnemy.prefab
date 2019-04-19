@@ -431,6 +431,7 @@ GameObject:
   - component: {fileID: 50788702740641000}
   - component: {fileID: 114101392986804076}
   - component: {fileID: 114677174111816832}
+  - component: {fileID: 9205967110202831430}
   m_Layer: 10
   m_Name: JumpEnemy
   m_TagString: Untagged
@@ -550,6 +551,30 @@ MonoBehaviour:
   AlwaysMove: 1
   attacking: 0
   faceCheck: {fileID: 4270063163469516}
+--- !u!114 &9205967110202831430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1663019428700090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3ba27483d902c740af63d52f4463e11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthPickUp: {fileID: 3544268066043229547, guid: 72dd021d290706643ae7c69c5efbcfbc,
+    type: 3}
+  scrapPickUp: {fileID: 980363145638152826, guid: ad3ba6c92e58bf14590058270753c1e0,
+    type: 3}
+  isTypeRandom: 1
+  Drop: 0
+  isAmountRandom: 1
+  minHealthAmount: 0
+  maxHealthAmount: 2
+  minScrapAmount: 10
+  maxScrapAmount: 30
+  Amount: 0
 --- !u!1 &1803390726733194
 GameObject:
   m_ObjectHideFlags: 0
