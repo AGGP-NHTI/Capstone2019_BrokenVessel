@@ -493,19 +493,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400008, guid: 98ef46e5adbbb4644b6aa91e851ac548, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400008, guid: 98ef46e5adbbb4644b6aa91e851ac548, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 400008, guid: 98ef46e5adbbb4644b6aa91e851ac548, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400008, guid: 98ef46e5adbbb4644b6aa91e851ac548, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 400008, guid: 98ef46e5adbbb4644b6aa91e851ac548, type: 3}
       propertyPath: m_RootOrder
@@ -517,11 +517,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400008, guid: 98ef46e5adbbb4644b6aa91e851ac548, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 400008, guid: 98ef46e5adbbb4644b6aa91e851ac548, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400008, guid: 98ef46e5adbbb4644b6aa91e851ac548, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 400008, guid: 98ef46e5adbbb4644b6aa91e851ac548, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 400008, guid: 98ef46e5adbbb4644b6aa91e851ac548, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 98ef46e5adbbb4644b6aa91e851ac548, type: 3}
@@ -694,11 +706,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb0f692b34d4d83478b8437db80368d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  data: {fileID: 0}
+  pm: {fileID: 0}
+  pa: {fileID: 0}
+  speed: 0
+  jumpForce: 0
+  wallJumping: 0
+  wallside: 0
+  sideCollide: 0
   center: {fileID: 294159906}
+  grounded: 0
   groundCheck: {fileID: 437346211}
   realGround:
-    serializedVersion: 2
     m_Bits: 1
+  boxCheckSize: {x: 0.9, y: 0.25}
+  rig: {fileID: 0}
 --- !u!114 &312877412
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -711,14 +733,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c947466ca2648cf4993e95c5d44aee86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  data: {fileID: 0}
+  dashUnlocked: 0
+  wallGrabUnlocked: 0
+  grappleHookUnlocked: 0
+  phaseUnlocked: 0
+  phaseDashUnlocked: 0
+  chargeJumpUnlocked: 0
+  shipControlUnlocked: 0
   groundCheck: {fileID: 437346211}
   realGround:
-    serializedVersion: 2
     m_Bits: 1
+  boxCheckSize: {x: 0.9, y: 0.25}
+  grounded: 1
   dash: 0
   dashTimer: 0
+  dashDuration: 0
   wallClimb: 0
   wallJump: 0
+  sideCollide: 0
   center: {fileID: 294159906}
 --- !u!114 &312877413
 MonoBehaviour:
