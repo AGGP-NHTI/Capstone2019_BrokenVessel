@@ -102,13 +102,13 @@ public class ScrapQueen : BrokenVessel.Actor.Actor
     {
         attacking = true;
         yield return new WaitForSeconds(4f);
-        foreach(GameObject enemy in FlyingSpawns) //check for dead enemies in the list
+        for(int i = 0; i < FlyingSpawns.Count; i++) //check for dead enemies in the list
         {
-            if (enemy == null) FlyingSpawns.Remove(enemy);
+            if (FlyingSpawns[i] == null) FlyingSpawns.Remove(FlyingSpawns[i]);
         }
-        foreach (GameObject enemy in CrawlingSpawns) //check for dead enemies in the list
+        for (int i = 0; i < CrawlingSpawns.Count; i++) //check for dead enemies in the list
         {
-            if (enemy == null) CrawlingSpawns.Remove(enemy);
+            if (CrawlingSpawns[i] == null) CrawlingSpawns.Remove(FlyingSpawns[i]);
         }
         if (FlyingSpawns.Count < flyingSpawnCap)
         {

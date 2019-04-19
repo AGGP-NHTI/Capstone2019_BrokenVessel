@@ -6,6 +6,7 @@ public class Spear : Weapon {
 
     Vector3 mouse;
     bool attacking = false;
+    public float stabCooldown = 0.2f;
 
 
     void Update ()
@@ -33,7 +34,7 @@ public class Spear : Weapon {
         yield return new WaitForSeconds(.1f);
         gameObject.transform.localPosition = new Vector3(0,.5f,0);
         gameObject.GetComponent<BoxCollider2D>().enabled = false;
-        yield return new WaitForSeconds(.5f);
+        yield return new WaitForSeconds(stabCooldown);
         attacking = false;
     }
 }
