@@ -515,6 +515,9 @@ GameObject:
   - component: {fileID: 312877411}
   - component: {fileID: 312877410}
   - component: {fileID: 312877414}
+  - component: {fileID: 312877417}
+  - component: {fileID: 312877416}
+  - component: {fileID: 312877415}
   m_Layer: 9
   m_Name: Player
   m_TagString: Untagged
@@ -693,9 +696,69 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hotBarItems:
-  - {fileID: 8650363113513189237, guid: 64ca225cdfdd6bb4c8cd3286677590c2, type: 3}
+  - {fileID: 1797478943047646076, guid: 458c528f291b02a4a902445464f1e3c9, type: 3}
   - {fileID: 3344352509959185452, guid: 3d951a1b87dd7f8419d5db1bdbccfbd7, type: 3}
   inventoryStorage: []
+--- !u!114 &312877415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 312877405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7c9ea972c292ba4382746f874e134fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &312877416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 312877405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c3a8f7c72d495a438afbeace5e521ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumpStrength: 10
+  wallJumpStrength: 10
+  dashSpeed: 10
+  maxSpeed: 5
+  groundSpeed: 45
+  groundFriction: 25
+  airSpeed: 10
+  airFriction: 0
+  wallStickTime: 0.1
+  wallJumpAngle: 45
+  collisionMask:
+    serializedVersion: 2
+    m_Bits: 0
+--- !u!114 &312877417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 312877405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54a832bc6ffaccc45817dac72553ec80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackKey: 323
+  ControllerAttack: 335
+  swapKey: 324
+  ControllerSwap: 334
+  jumpKey: 32
+  ControllerJump: 330
+  interactKey: 101
+  ControllerInteract: 333
+  leftKey: 97
+  rightKey: 100
+  dblClickThreshold: 0.2
 --- !u!1 &351075052
 GameObject:
   m_ObjectHideFlags: 0
