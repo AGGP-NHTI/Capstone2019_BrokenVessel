@@ -4,7 +4,7 @@ namespace BrokenVessel.Player
 {
 	[RequireComponent(typeof(BoxCollider2D))]
 	public class PlayerPhysics : BrokenVessel.Actor.Actor
-    {
+	{
 		[Header("Stats")]
 		[SerializeField]
 		private float jumpStrength = 10;
@@ -49,9 +49,9 @@ namespace BrokenVessel.Player
 
 		void Update()
 		{
-            if (paused) { return; }
-            // Check floor
-            if (grounded = CheckFloor())
+			if (paused) { return; }
+			// Check floor
+			if (grounded = CheckFloor())
 			{
 				halvedJump = true; // Reset jump halver
 			}
@@ -75,9 +75,9 @@ namespace BrokenVessel.Player
 
 		public void Jump()
 		{
-            if (paused) { return; }
+			if (paused) { return; }
 
-            if (grounded)
+			if (grounded)
 			{
 				rg.AddForce(Vector2.up * jumpStrength, ForceMode2D.Impulse);
 			}
@@ -100,8 +100,8 @@ namespace BrokenVessel.Player
 
 		public void HalveJump()
 		{
-            if (paused) { return; }
-            Vector2 vel = rg.velocity;
+			if (paused) { return; }
+			Vector2 vel = rg.velocity;
 
 			if (halvedJump && vel.y > 0)
 			{
@@ -114,8 +114,8 @@ namespace BrokenVessel.Player
 
 		public void Move(float dir)
 		{
-            if (paused) { return; }
-            lastDir = dir;
+			if (paused) { return; }
+			lastDir = dir;
 
 			Vector2 vel = rg.velocity;
 
@@ -148,18 +148,18 @@ namespace BrokenVessel.Player
 
 		public void Dash(float dir)
 		{
-            if (paused) { return; }
-            rg.AddForce(Vector2.right * Mathf.Sign(dir) * dashSpeed, ForceMode2D.Impulse);
+         if (paused) { return; }
+         rg.AddForce(Vector2.right * Mathf.Sign(dir) * dashSpeed, ForceMode2D.Impulse);
 		}
 		
 		private bool CheckFloor()
 		{
-            return Physics2D.BoxCast(transform.position, box.size, 0, Vector2.down, 0.1f, collisionMask).distance != 0;
+			return Physics2D.BoxCast(transform.position, box.size, 0, Vector2.down, 0.1f, collisionMask).distance != 0;
 		}
 
 		private bool CheckWall()
 		{
-            Vector2 size = box.size;
+			Vector2 size = box.size;
 			size.x *= 1.05f;
 			size.y *= 0.75f;
 			return Physics2D.OverlapBox(transform.position, size, 0, collisionMask) != null;

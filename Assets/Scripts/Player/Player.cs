@@ -4,12 +4,12 @@ namespace BrokenVessel.Player
 {
 	[RequireComponent(typeof(PlayerInput))]
 	[RequireComponent(typeof(PlayerPhysics))]
-    [RequireComponent(typeof(SwitchWeapon))]
-    public class Player : MonoBehaviour
+	[RequireComponent(typeof(SwitchWeapon))]
+	public class Player : MonoBehaviour
 	{
 		private PlayerInput input;
 		private PlayerPhysics phys;
-        private SwitchWeapon combat;
+		private SwitchWeapon combat;
 
 		public static Player This { get; private set; }
 
@@ -17,14 +17,14 @@ namespace BrokenVessel.Player
 		{
 			input = GetComponent<PlayerInput>();
 			phys = GetComponent<PlayerPhysics>();
-            combat = GetComponent<SwitchWeapon>();
+			combat = GetComponent<SwitchWeapon>();
 			This = this;
 		}
 		
 		void Update()
 		{
-            if (input.Attack) { combat.Attack(); }
-            if(input.Swap) { combat.SwitchEquip(); }
+			if (input.Attack) { combat.Attack(); }
+			if(input.Swap) { combat.SwitchEquip(); }
 			if (input.Jump) { phys.Jump(); }
 			if (input.JumpEnd) { phys.HalveJump(); }
 			if (input.Left == input.Right) { phys.Move(0); }
