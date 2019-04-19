@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 1797478943047646076}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.5854, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 6691549669107932566}
   m_Father: {fileID: 0}
@@ -48,6 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HitBox: {fileID: 0}
   WorldScriptManager: {fileID: 0}
+  stabCooldown: 0.2
 --- !u!61 &7166204881032030336
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -88,7 +89,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   OwnerLayer: 9
   isProjectile: 0
-  damage: 30
+  damage: 50
 --- !u!1001 &6691549669107533590
 PrefabInstance:
   m_ObjectHideFlags: 0
