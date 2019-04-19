@@ -22,6 +22,10 @@ public class ScrapQueen : BrokenVessel.Actor.Actor
     [SerializeField] Transform offSet;
     [SerializeField] Transform spawnMinionsPoint;
 
+    List<GameObject> FlyingSpawns = new List<GameObject>();
+    List<GameObject> CrawlingSpawns = new List<GameObject>();
+    int flyingSpawnCap = 8;
+    int crawlerSpawnCap = 20;
     Rigidbody2D rig;
 
     void Start()
@@ -97,13 +101,30 @@ public class ScrapQueen : BrokenVessel.Actor.Actor
     IEnumerator SpawnMinions()
     {
         attacking = true;
-        yield return new WaitForSeconds(2f);
-        Instantiate(flySpawn, spawnMinionsPoint.position, Quaternion.identity);
-        yield return new WaitForSeconds(.5f);
-        Instantiate(crawlSpawn, spawnMinionsPoint.position, Quaternion.identity);
-        yield return new WaitForSeconds(.5f);
-        Instantiate(flySpawn, spawnMinionsPoint.position, Quaternion.identity);
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(4f);
+        foreach(GameObject enemy in FlyingSpawns) //check for dead enemies in the list
+        {
+            if (enemy == null) FlyingSpawns.Remove(enemy);
+        }
+        foreach (GameObject enemy in CrawlingSpawns) //check for dead enemies in the list
+        {
+            if (enemy == null) CrawlingSpawns.Remove(enemy);
+        }
+        if (FlyingSpawns.Count < flyingSpawnCap)
+        {
+            FlyingSpawns.Add(Instantiate(flySpawn, spawnMinionsPoint.position, Quaternion.identity));
+        }
+        if (CrawlingSpawns.Count < crawlerSpawnCap)
+        {
+            yield return new WaitForSeconds(.5f);
+            CrawlingSpawns.Add(Instantiate(crawlSpawn, spawnMinionsPoint.position, Quaternion.identity));
+        }
+        if (FlyingSpawns.Count < flyingSpawnCap)
+        {
+            yield return new WaitForSeconds(.5f);
+            FlyingSpawns.Add(Instantiate(flySpawn, spawnMinionsPoint.position, Quaternion.identity));
+        }
+        yield return new WaitForSeconds(4f);
         float randoAngle = Random.Range(0, Mathf.PI * 2);
         spawnMinionsPoint.position = new Vector3(pivot.x + (radius * Mathf.Cos(randoAngle)), pivot.y + (radius * Mathf.Sin(randoAngle)), 4);
         attacking = false;
@@ -136,8 +157,18 @@ public class ScrapQueen : BrokenVessel.Actor.Actor
                 Destroy(platform);
                 intro = false;
             }
-        }
-        
+        } 
+    }
 
+    public void removeFlyer(GameObject deadFlyer)
+    {
+        FlyingSpawns.Remove(deadFlyer);
+        Debug.Log("Remove Flyer");
+    }
+
+    public void removeCrawler(GameObject deadCrawler)
+    {
+        CrawlingSpawns.Remove(deadCrawler);
+        Debug.Log("Remove Crawler");
     }
 }
