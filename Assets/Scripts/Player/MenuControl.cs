@@ -8,9 +8,7 @@ public class MenuControl : MonoBehaviour
 {
     public static MenuControl MC;
 
-    [SerializeField] GameObject TitleScreen;
     [SerializeField] GameObject PauseScreen;
-    [SerializeField] GameObject Hud;
 
     [SerializeField]
     private KeyCode pauseKey = KeyCode.Escape;
@@ -18,42 +16,22 @@ public class MenuControl : MonoBehaviour
     [SerializeField] Transform[] hearts;
     [SerializeField] Texture fullHeart;
     [SerializeField] Texture emptyHeart;
-    [SerializeField] Text Scrap;
 
     public bool Pause { get => Input.GetKeyDown(pauseKey); }
 
-    bool MainMenu = false;
     bool ScenePaused = false;
 
     private void Awake()
     {
         MC = this;
-        DontDestroyOnLoad(gameObject);
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(pauseKey) && !MainMenu)
+        if (Input.GetKeyDown(pauseKey))
         {
             TogglePlay();
         }
-
-        if(MainMenu)
-        {
-            TitleScreen.SetActive(true);
-            PauseScreen.SetActive(false);
-            Hud.SetActive(false);
-        }
-        else
-        {
-            Hud.SetActive(true);
-            TitleScreen.SetActive(false);
-        }
-    }
-
-    public void UpdateScrap(int currentScrap)
-    {
-        Scrap.text = "x " + currentScrap;
     }
 
     public void UpdateHealth(int currentHP)
@@ -108,13 +86,11 @@ public class MenuControl : MonoBehaviour
 
     public void PlayGame()
     {
-        MainMenu = false;
         SceneManager.LoadScene("PlayGame");
     }
 
     public void QuitPlayTime()
     {
-        MainMenu = true;
         SceneManager.LoadScene("MainMenu");
     }
 }
