@@ -248,8 +248,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34a0ded8db5a843468774ab1dca00962, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Cube1: {fileID: 55609554}
-  Cube2: {fileID: 312877405}
+  Player: {fileID: 312877405}
+  Speaker: {fileID: 55609554}
   Distance_: 0
   textBoxVisible: 0
   textBox: {fileID: 1194463155629516, guid: f2166035106ad944db41408566a99f0e, type: 3}
