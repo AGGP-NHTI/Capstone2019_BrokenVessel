@@ -9,6 +9,11 @@ namespace BrokenVessel.Interact
     {
         public string type = "";
         public int amount = 0;
+        [SerializeField] Transform body;
+        private void Update()
+        {
+            body.Rotate(Vector2.up, 150 * Time.deltaTime);
+        }
         public override void Impulse()
         {
             switch(type)

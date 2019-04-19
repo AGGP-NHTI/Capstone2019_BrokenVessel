@@ -277,6 +277,7 @@ GameObject:
   - component: {fileID: 114448538464671302}
   - component: {fileID: 1812528421932969130}
   - component: {fileID: 5343827563386610216}
+  - component: {fileID: 4930898544276666182}
   m_Layer: 10
   m_Name: FlyingEnemy
   m_TagString: Untagged
@@ -394,6 +395,27 @@ MonoBehaviour:
   damage: 1
   knockBack: 10
   iFrames: 0.5
+--- !u!114 &4930898544276666182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1867132984220346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c09ffa208da77046bc7f34a50708ebf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthPickUp: {fileID: 801170893940979804, guid: f2494febb7c82704c8dc318a700b1a4f,
+    type: 3}
+  scrapPickUp: {fileID: 4549247633265145247, guid: d96a26789ead0f84fbf3c5d114091985,
+    type: 3}
+  isTypeRandom: 1
+  dropType: 0
+  isAmountRandom: 1
+  Amount: 1
+  range: {x: 1, y: 1}
 --- !u!1 &1876038205391468
 GameObject:
   m_ObjectHideFlags: 0

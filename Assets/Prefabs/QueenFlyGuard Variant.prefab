@@ -7,14 +7,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1867132984220346, guid: b8970f260b7af784582d7ec551836433, type: 3}
-      propertyPath: m_Name
-      value: QueenFlyGuard Variant
-      objectReference: {fileID: 0}
-    - target: {fileID: 1867132984220346, guid: b8970f260b7af784582d7ec551836433, type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
     - target: {fileID: 4522589568659046, guid: b8970f260b7af784582d7ec551836433, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.482
@@ -58,6 +50,14 @@ PrefabInstance:
     - target: {fileID: 4522589568659046, guid: b8970f260b7af784582d7ec551836433, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1867132984220346, guid: b8970f260b7af784582d7ec551836433, type: 3}
+      propertyPath: m_Name
+      value: QueenFlyGuard Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 1867132984220346, guid: b8970f260b7af784582d7ec551836433, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 114448538464671302, guid: b8970f260b7af784582d7ec551836433,
         type: 3}
@@ -110,6 +110,26 @@ PrefabInstance:
     - target: {fileID: 1959761353278258, guid: b8970f260b7af784582d7ec551836433, type: 3}
       propertyPath: m_Layer
       value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 4930898544276666182, guid: b8970f260b7af784582d7ec551836433,
+        type: 3}
+      propertyPath: dropType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4930898544276666182, guid: b8970f260b7af784582d7ec551836433,
+        type: 3}
+      propertyPath: isTypeRandom
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4930898544276666182, guid: b8970f260b7af784582d7ec551836433,
+        type: 3}
+      propertyPath: range.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4930898544276666182, guid: b8970f260b7af784582d7ec551836433,
+        type: 3}
+      propertyPath: range.y
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b8970f260b7af784582d7ec551836433, type: 3}
