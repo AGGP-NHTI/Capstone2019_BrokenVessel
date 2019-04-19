@@ -1,33 +1,25 @@
 fileFormatVersion: 2
-guid: 0d7c3d59394758e4d9a6a7a417daeb9e
+guid: e62e5a0342fb5a24f836e9a35870e0c3
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: pCube1
-    100002: pCube2
-    100004: pCylinder1
-    100006: pSphere1
-    100008: //RootNode
-    100010: transform1
-    100012: transform2
-    400000: pCube1
-    400002: pCube2
-    400004: pCylinder1
-    400006: pSphere1
-    400008: //RootNode
-    400010: transform1
-    400012: transform2
+    100000: //RootNode
+    100002: pCube1
+    100004: pCube2
+    100006: pCylinder1
+    400000: //RootNode
+    400002: pCube1
+    400004: pCube2
+    400006: pCylinder1
     2100000: metal1
-    2100002: past1
-    2100004: black1
-    2100006: plas2
-    2100008: lambert7
-    2100010: lambert2
-    2100012: lambert3
-    2100014: Default_Material
-    2100016: lambert1
-    2100018: lambert6
-    2100020: No Name
+    2100002: plast1
+    2100004: metal3
+    2100006: past4
+    2100008: past2
+    2100010: plas1
+    2100012: plast3
+    2100014: metal2
+    2100016: plas2
     2300000: pCube1
     2300002: pCube2
     2300004: pCylinder1
@@ -37,7 +29,6 @@ ModelImporter:
     4300000: pCube1
     4300002: pCylinder1
     4300004: pCube2
-    9500000: //RootNode
     2186277476908879412: ImportLogs
   externalObjects: {}
   materials:
@@ -91,8 +82,8 @@ ModelImporter:
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
-    previousCalculatedGlobalScale: 0.01
-    hasPreviousCalculatedGlobalScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -119,7 +110,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
