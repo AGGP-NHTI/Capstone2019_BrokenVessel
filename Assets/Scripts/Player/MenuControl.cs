@@ -20,6 +20,7 @@ public class MenuControl : MonoBehaviour
     public bool Pause { get => Input.GetKeyDown(pauseKey); }
 
     bool ScenePaused = false;
+    bool MainMenu = true;
 
     private void Awake()
     {
@@ -86,11 +87,18 @@ public class MenuControl : MonoBehaviour
 
     public void PlayGame()
     {
-        SceneManager.LoadScene("PlayGame");
+        SceneManager.LoadScene("Joe's Work");
+        //SceneManager.LoadScene("PlayGame");
     }
 
     public void QuitPlayTime()
     {
         SceneManager.LoadScene("MainMenu");
     }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+
 }
