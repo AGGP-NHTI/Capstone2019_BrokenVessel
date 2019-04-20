@@ -32,6 +32,14 @@ public class PlayerMovement : MonoBehaviour {
         {
             isJumping = false;
         }
+        if (Input.GetKeyDown(KeyCode.JoystickButton0))
+        {
+            isJumping = true;
+        }
+        if (Input.GetKeyUp(KeyCode.JoystickButton0))
+        {
+            isJumping = false;
+        }
     }
 
     void Flip()

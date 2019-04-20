@@ -13,6 +13,9 @@ public class ScrapQueen : BrokenVessel.Actor.Actor
     public float angle = -Mathf.PI / 2;
     [SerializeField] float radius = 10;
 
+    public GameObject stationaryCollider;
+    public GameObject deathPlatform;
+
     bool attacking = false;
 
     public bool intro;
@@ -22,6 +25,10 @@ public class ScrapQueen : BrokenVessel.Actor.Actor
     [SerializeField] Transform offSet;
     [SerializeField] Transform spawnMinionsPoint;
 
+    List<GameObject> FlyingSpawns = new List<GameObject>();
+    List<GameObject> CrawlingSpawns = new List<GameObject>();
+    int flyingSpawnCap = 8;
+    int crawlerSpawnCap = 20;
     Rigidbody2D rig;
 
     void Start()
@@ -96,17 +103,42 @@ public class ScrapQueen : BrokenVessel.Actor.Actor
 
     IEnumerator SpawnMinions()
     {
+        stationaryCollider.SetActive(true);
         attacking = true;
-        yield return new WaitForSeconds(2f);
-        Instantiate(flySpawn, spawnMinionsPoint.position, Quaternion.identity);
-        yield return new WaitForSeconds(.5f);
-        Instantiate(crawlSpawn, spawnMinionsPoint.position, Quaternion.identity);
-        yield return new WaitForSeconds(.5f);
-        Instantiate(flySpawn, spawnMinionsPoint.position, Quaternion.identity);
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(4f);
+        if (FlyingSpawns != null)
+        {
+            for (int i = 0; i < FlyingSpawns.Count; i++) //check for dead enemies in the list
+            {
+                if (FlyingSpawns[i] == null) FlyingSpawns.Remove(FlyingSpawns[i]);
+            }
+        }
+        if (CrawlingSpawns != null)
+        {
+            for (int i = 0; i < CrawlingSpawns.Count; i++) //check for dead enemies in the list
+            {
+                if (CrawlingSpawns[i] == null) CrawlingSpawns.Remove(FlyingSpawns[i]);
+            }
+        }
+        if (FlyingSpawns.Count < flyingSpawnCap)
+        {
+            FlyingSpawns.Add(Instantiate(flySpawn, spawnMinionsPoint.position, Quaternion.identity));
+        }
+        if (CrawlingSpawns.Count < crawlerSpawnCap)
+        {
+            yield return new WaitForSeconds(.5f);
+            CrawlingSpawns.Add(Instantiate(crawlSpawn, spawnMinionsPoint.position, Quaternion.identity));
+        }
+        if (FlyingSpawns.Count < flyingSpawnCap)
+        {
+            yield return new WaitForSeconds(.5f);
+            FlyingSpawns.Add(Instantiate(flySpawn, spawnMinionsPoint.position, Quaternion.identity));
+        }
+        yield return new WaitForSeconds(4f);
         float randoAngle = Random.Range(0, Mathf.PI * 2);
         spawnMinionsPoint.position = new Vector3(pivot.x + (radius * Mathf.Cos(randoAngle)), pivot.y + (radius * Mathf.Sin(randoAngle)), 4);
         attacking = false;
+        stationaryCollider.SetActive(false);
     }
 
     void Intro()
@@ -136,8 +168,18 @@ public class ScrapQueen : BrokenVessel.Actor.Actor
                 Destroy(platform);
                 intro = false;
             }
-        }
-        
+        } 
+    }
 
+    public void removeFlyer(GameObject deadFlyer)
+    {
+        FlyingSpawns.Remove(deadFlyer);
+        Debug.Log("Remove Flyer");
+    }
+
+    public void removeCrawler(GameObject deadCrawler)
+    {
+        CrawlingSpawns.Remove(deadCrawler);
+        Debug.Log("Remove Crawler");
     }
 }

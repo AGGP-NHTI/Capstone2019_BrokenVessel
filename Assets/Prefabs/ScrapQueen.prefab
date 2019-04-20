@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4662215454626238555}
   - component: {fileID: 4662215454626238534}
   - component: {fileID: 4662215454626238554}
+  - component: {fileID: 667728604818435094}
   m_Layer: 10
   m_Name: ScrapQueen
   m_TagString: Untagged
@@ -73,6 +74,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d78b9db0644868d42a4c5c3887fae552, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  start: 0
   speed: 0.5
   crawlSpawn: {fileID: 5077835121062871675, guid: ff00ec93924f7a24aaf33aaf5964d1ca,
     type: 3}
@@ -80,6 +82,8 @@ MonoBehaviour:
   pivot: {x: 0, y: 0, z: 0}
   angle: -1.5707964
   radius: 10
+  stationaryCollider: {fileID: 0}
+  deathPlatform: {fileID: 0}
   intro: 0
   platform: {fileID: 0}
   fc: {fileID: 4662215456051305472}
@@ -110,6 +114,27 @@ MonoBehaviour:
   AlwaysMove: 0
   attacking: 0
   faceCheck: {fileID: 0}
+--- !u!114 &667728604818435094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4662215454626238535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c09ffa208da77046bc7f34a50708ebf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthPickUp: {fileID: 801170893940979804, guid: f2494febb7c82704c8dc318a700b1a4f,
+    type: 3}
+  scrapPickUp: {fileID: 4549247633265145247, guid: d96a26789ead0f84fbf3c5d114091985,
+    type: 3}
+  isTypeRandom: 0
+  dropType: 2
+  isAmountRandom: 0
+  Amount: 1000
+  range: {x: 0, y: 2}
 --- !u!1 &4662215454939761012
 GameObject:
   m_ObjectHideFlags: 0
@@ -239,6 +264,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: mamabotFlight
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 406b638bd549ebb44b09eb5542b0cd32, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 406b638bd549ebb44b09eb5542b0cd32, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: 406b638bd549ebb44b09eb5542b0cd32, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 100006, guid: 406b638bd549ebb44b09eb5542b0cd32, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 406b638bd549ebb44b09eb5542b0cd32, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -299,6 +340,14 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 69660fce79b84ca43974b3cdfa709b6d, type: 2}
+    - target: {fileID: 100008, guid: 406b638bd549ebb44b09eb5542b0cd32, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 100010, guid: 406b638bd549ebb44b09eb5542b0cd32, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 406b638bd549ebb44b09eb5542b0cd32, type: 3}
 --- !u!4 &3362862548373738855 stripped

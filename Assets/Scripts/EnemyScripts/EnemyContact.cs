@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyContact : BrokenVessel.Actor.Actor
 {
-    [SerializeField] float damage = 10;
+    [SerializeField] int damage = 10;
     [SerializeField] float knockBack = 10;
     [SerializeField] float iFrames = 1;
 

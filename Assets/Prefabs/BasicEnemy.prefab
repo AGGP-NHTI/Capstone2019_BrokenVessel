@@ -503,6 +503,7 @@ GameObject:
   - component: {fileID: 114253093163872208}
   - component: {fileID: 114619048996695446}
   - component: {fileID: 8438670443624840110}
+  - component: {fileID: 3945044283230072118}
   m_Layer: 10
   m_Name: BasicEnemy
   m_TagString: Untagged
@@ -659,9 +660,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a7cd29b0d4e42d40960e46dbffc72ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 10
+  damage: 1
   knockBack: 5
   iFrames: 1
+--- !u!114 &3945044283230072118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1885734154438102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c09ffa208da77046bc7f34a50708ebf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthPickUp: {fileID: 801170893940979804, guid: f2494febb7c82704c8dc318a700b1a4f,
+    type: 3}
+  scrapPickUp: {fileID: 4549247633265145247, guid: d96a26789ead0f84fbf3c5d114091985,
+    type: 3}
+  isTypeRandom: 1
+  dropType: 0
+  isAmountRandom: 1
+  Amount: 1
+  range: {x: 0, y: 2}
 --- !u!1 &1894143432911296
 GameObject:
   m_ObjectHideFlags: 0
