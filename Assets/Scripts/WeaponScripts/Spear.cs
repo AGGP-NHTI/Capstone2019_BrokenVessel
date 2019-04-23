@@ -12,9 +12,9 @@ public class Spear : Weapon {
     void Update ()
     {
         mouse = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10)) - transform.position;
-        transform.rotation = Quaternion.Euler(0, 0, Mathf.Atan2(mouse.y, mouse.x) * Mathf.Rad2Deg);
+        //transform.rotation = Quaternion.Euler(0, 0, Mathf.Atan2(mouse.y, mouse.x) * Mathf.Rad2Deg);
         transform.localScale = transform.parent.localScale;
-        transform.rotation = Quaternion.Euler(0, 0, Mathf.Atan2(Input.GetAxis("RightHorizontal"), Input.GetAxis("RightVertical")));
+        transform.rotation = Quaternion.Euler(0, 0, Mathf.Atan2(Input.GetAxis("RightHorizontal"), Input.GetAxis("RightVertical") * Mathf.Rad2Deg));
     }
 
     public override void Attack()
