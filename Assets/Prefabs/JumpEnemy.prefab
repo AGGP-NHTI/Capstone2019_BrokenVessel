@@ -573,7 +573,7 @@ MonoBehaviour:
   dropType: 0
   isAmountRandom: 1
   Amount: 1
-  range: {x: 1, y: 2}
+  range: {x: 1, y: 3}
 --- !u!1 &1803390726733194
 GameObject:
   m_ObjectHideFlags: 0
