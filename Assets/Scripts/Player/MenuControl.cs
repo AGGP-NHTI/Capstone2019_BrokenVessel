@@ -158,7 +158,7 @@ public class MenuControl : MonoBehaviour
         selector.transform.localPosition = new Vector3(-9, -32, 0);
         selectedPlay = true;
         MainMenu = false;
-        SceneManager.LoadScene("Joe's Work");
+        SceneManager.LoadScene("VERT SLICE");
         //SceneManager.LoadScene("PlayGame");
     }
 

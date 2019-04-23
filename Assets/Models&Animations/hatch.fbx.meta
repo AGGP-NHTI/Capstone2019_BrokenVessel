@@ -1,19 +1,18 @@
 fileFormatVersion: 2
-guid: 491ca002aa9da144298c0af44021638a
+guid: 04ae379e97b172b42a506e4df85ae29e
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
-    100002: left
-    100004: StorageContainer
     400000: //RootNode
-    400002: left
-    400004: StorageContainer
-    2000000: left
-    2100000: lambert1
-    2300000: StorageContainer
-    3300000: StorageContainer
-    4300000: StorageContainer
+    2100000: past1
+    2100002: lambert3
+    2100004: lambert6
+    2100006: plast2
+    2100008: lambert5
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: pCube1
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -51,7 +50,7 @@ ModelImporter:
     useSRGBMaterialColor: 1
     importVisibility: 1
     importBlendShapes: 1
-    importCameras: 0
+    importCameras: 1
     importLights: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
