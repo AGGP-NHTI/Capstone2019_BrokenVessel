@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
-using UnityEditor;
-using BrokenVessel.Utility;
 
 namespace BrokenVessel.RoomSystem
 {
@@ -28,7 +26,7 @@ namespace BrokenVessel.RoomSystem
 
 		void Update()
 		{
-			if (!RectUtils.VectorInRect(player.position, CurrentRect))
+			/*if (!RectUtils.VectorInRect(player.position, CurrentRect))
 			{
 				foreach (Room room in Rooms)
 				{
@@ -40,7 +38,7 @@ namespace BrokenVessel.RoomSystem
 						break;
 					}
 				}
-			}
+			}*/
 		}
 
 		public static void LoadFromFile(string fileName)
@@ -83,11 +81,11 @@ namespace BrokenVessel.RoomSystem
 				else
 				{
 					// Spawn prefabs
-					GameObject obj = PrefabUtility.InstantiatePrefab(Resources.Load<GameObject>(values[0])) as GameObject;
-					obj.transform.parent = room.transform;
-					obj.transform.position = new Vector3(float.Parse(values[1]), float.Parse(values[2]), float.Parse(values[3]));
-					obj.transform.rotation = new Quaternion(float.Parse(values[4]), float.Parse(values[5]), float.Parse(values[6]), float.Parse(values[7]));
-					obj.transform.localScale = new Vector3(float.Parse(values[8]), float.Parse(values[9]), float.Parse(values[10]));
+					//GameObject obj = PrefabUtility.InstantiatePrefab(Resources.Load<GameObject>(values[0])) as GameObject;
+					//obj.transform.parent = room.transform;
+					//obj.transform.position = new Vector3(float.Parse(values[1]), float.Parse(values[2]), float.Parse(values[3]));
+					//obj.transform.rotation = new Quaternion(float.Parse(values[4]), float.Parse(values[5]), float.Parse(values[6]), float.Parse(values[7]));
+					//obj.transform.localScale = new Vector3(float.Parse(values[8]), float.Parse(values[9]), float.Parse(values[10]));
 				}
 
 				++counter;
@@ -166,30 +164,6 @@ namespace BrokenVessel.RoomSystem
 			{
 				if (room == null) { Rooms.Remove(room); }
 			}
-		}
-	}
-
-	[CustomEditor(typeof(RoomManager))]
-	public class RoomManagerEditor : Editor
-	{
-		public override void OnInspectorGUI()
-		{
-			DrawDefaultInspector();
-
-			RoomManager scr = (RoomManager)target;
-			if (GUILayout.Button("Load from File"))
-			{
-				string path = EditorUtility.OpenFilePanel("Load from File", $"{Application.dataPath}/Resources/Rooms/", "txt");
-				if (path.Length != 0)
-				{
-					path = Path.GetFileName(path);
-					RoomManager.LoadFromFile(path.Remove(path.Length-4));
-				}
-			}
-			/*if (GUILayout.Button("Clear Rooms"))
-			{
-				RoomManager.Rooms.Clear();
-			}*/
 		}
 	}
 }

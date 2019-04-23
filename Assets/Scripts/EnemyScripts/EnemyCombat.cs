@@ -25,6 +25,9 @@ public class EnemyCombat : BrokenVessel.Actor.Actor {
     public Transform faceCheck;
     Transform targetTransform;
 
+	[SerializeField]
+	private GameObject hitEffect;
+
     void Start()
     {
         targetTransform = GameObject.Find("Player").transform;
@@ -105,11 +108,18 @@ public class EnemyCombat : BrokenVessel.Actor.Actor {
 
     public void takeDamage(float value) //Vector2 knockback)
     {
-        health -= value;
-        if(health <= 0)
-        {
-            StartCoroutine(Die());
-        }
+		if (health > 0)
+		{
+			health -= value;
+
+			GameObject particle = Instantiate(hitEffect, transform.position, Quaternion.identity);
+			Destroy(particle, 2f);
+
+			if (health <= 0)
+			{
+				StartCoroutine(Die());
+			}
+		}
     }
 
     IEnumerator Die()

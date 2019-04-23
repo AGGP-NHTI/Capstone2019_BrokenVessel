@@ -38,23 +38,51 @@ public class MenuControl : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(pauseKey))
-        {
-            TogglePlay();
-        }
         if(MainMenu)
         {
             TileScreen.SetActive(true);
             PauseScreen.SetActive(false);
             Hud.SetActive(false);
-            if(Input.GetAxis("Horizontal") > .1)
+        }
+        else
+        {
+            TileScreen.SetActive(false);
+            Hud.SetActive(true);
+            if (Input.GetKeyDown(pauseKey))
             {
-                selector.transform.localPosition = new Vector3(100, 0, 0);
+                TogglePlay();
+            }
+        }
+        if (PauseScreen.activeSelf)
+        {
+            selector.SetActive(true);
+            if (Input.GetAxis("Vertical") > .1)
+            {
+                selector.transform.localPosition = new Vector3(-9, -32, 0);
+                selectedPlay = true;
+            }
+            if (Input.GetAxis("Vertical") < -.1)
+            {
+                selector.transform.localPosition = new Vector3(-10, -70, 0);
+                selectedPlay = false;
+            }
+            if (Input.GetKeyDown(returnKey))
+            {
+                if (selectedPlay) { TogglePlay(); }
+                else { QuitPlayTime(); }
+            }
+        }
+        else if (TileScreen.activeSelf)
+        {
+            selector.SetActive(true);
+            if (Input.GetAxis("Horizontal") > .1)
+            {
+                selector.transform.localPosition = new Vector3(86, 4, 0);
                 selectedPlay = false;
             }
             if (Input.GetAxis("Horizontal") < -.1)
             {
-                selector.transform.localPosition = new Vector3(-100, 0, 0);
+                selector.transform.localPosition = new Vector3(-114, 4, 0);
                 selectedPlay = true;
             }
             if (Input.GetKeyDown(returnKey))
@@ -65,8 +93,7 @@ public class MenuControl : MonoBehaviour
         }
         else
         {
-            TileScreen.SetActive(false);
-            Hud.SetActive(true);
+            selector.SetActive(false);
         }
     }
 
@@ -128,15 +155,24 @@ public class MenuControl : MonoBehaviour
     public void PlayGame()
     {
         Debug.Log("Play");
+        selector.transform.localPosition = new Vector3(-9, -32, 0);
+        selectedPlay = true;
         MainMenu = false;
-        //SceneManager.LoadScene("Joe's Work");
+        SceneManager.LoadScene("Joe's Work");
         //SceneManager.LoadScene("PlayGame");
     }
 
     public void QuitPlayTime()
     {
+        TogglePlay();
+        selector.transform.localPosition = new Vector3(-114, 4, 0);
+        selectedPlay = true;
         MainMenu = true;
         SceneManager.LoadScene("MainMenu");
+        if(GameObject.Find("Canvas"))
+        {
+            Destroy(gameObject);
+        }
     }
 
     public void QuitGame()

@@ -19,7 +19,7 @@ MonoBehaviour:
   rangeCD: 0.5
   attackRange: 10
   speed: 10
-  movement: {x: 1, y: 1}
+  movement: {x: 1, y: 2}
   shootByX: 1
   attacking: 0
 --- !u!1001 &7974170174003439625
