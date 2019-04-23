@@ -19,10 +19,10 @@ public class EnemyDrops : MonoBehaviour
     {
         if(isTypeRandom) { dropType = (Drops)Random.Range(0, 3); }
         if (dropType == Drops.scrap) { range *= 10; }
-        if (isAmountRandom) { Amount = (int)Random.Range(range.x, range.y); }
+        if (isAmountRandom) { Amount = Random.Range((int)range.x, (int)range.y); }
 
         GameObject temp;
-        if (Amount > 1)
+        if (Amount > 0)
         {
             switch (dropType)
             {
