@@ -22,7 +22,7 @@ public class EnemyDrops : MonoBehaviour
         if (isAmountRandom) { Amount = Random.Range((int)range.x, (int)range.y); }
 
         GameObject temp;
-        if (Amount > 1)
+        if (Amount > 0)
         {
             switch (dropType)
             {
