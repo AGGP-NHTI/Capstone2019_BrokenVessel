@@ -22,16 +22,19 @@ public class EnemyDrops : MonoBehaviour
         if (isAmountRandom) { Amount = (int)Random.Range(range.x, range.y); }
 
         GameObject temp;
-        switch(dropType)
+        if (Amount > 0)
         {
-            case Drops.health:
-                temp = Instantiate(healthPickUp, transform.position, Quaternion.identity) as GameObject;
-                temp.GetComponent<Consumable>().amount = Amount;
-                break;
-            case Drops.scrap:
-                temp = Instantiate(scrapPickUp, transform.position, Quaternion.identity) as GameObject;
-                temp.GetComponent<Consumable>().amount = Amount;
-                break;
+            switch (dropType)
+            {
+                case Drops.health:
+                    temp = Instantiate(healthPickUp, transform.position, Quaternion.identity) as GameObject;
+                    temp.GetComponent<Consumable>().amount = Amount;
+                    break;
+                case Drops.scrap:
+                    temp = Instantiate(scrapPickUp, transform.position, Quaternion.identity) as GameObject;
+                    temp.GetComponent<Consumable>().amount = Amount;
+                    break;
+            }
         }
     }
 }
