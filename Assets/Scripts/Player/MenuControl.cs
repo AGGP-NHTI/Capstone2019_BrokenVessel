@@ -15,10 +15,8 @@ public class MenuControl : MonoBehaviour
     [SerializeField] GameObject selector;
     [SerializeField] bool selectedPlay = true;
 
-    [SerializeField]
-    private KeyCode ControllerJump = KeyCode.JoystickButton0; //A
-    [SerializeField]
-    private KeyCode ControllerPause = KeyCode.JoystickButton7; //A
+    [SerializeField] private KeyCode ControllerJump = KeyCode.JoystickButton0; //A
+    [SerializeField] private KeyCode ControllerPause = KeyCode.JoystickButton7; //A
     [SerializeField] private KeyCode pauseKey = KeyCode.Escape;
     [SerializeField] private KeyCode returnKey = KeyCode.Return;
 
@@ -159,21 +157,23 @@ public class MenuControl : MonoBehaviour
     public void PlayGame()
     {
         Debug.Log("Play");
-        selector.transform.localPosition = new Vector3(-9, -32, 0);
         selectedPlay = true;
         MainMenu = false;
         SceneManager.LoadScene("VERT SLICE");
+        selector.SetActive(false);
+        selector.transform.localPosition = new Vector3(-9, -32, 0);
         //SceneManager.LoadScene("PlayGame");
     }
 
     public void QuitPlayTime()
     {
         TogglePlay();
-        selector.transform.localPosition = new Vector3(-114, 4, 0);
         selectedPlay = true;
         MainMenu = true;
         SceneManager.LoadScene("MainMenu");
-        if(GameObject.Find("Canvas"))
+        selector.SetActive(false);
+        selector.transform.localPosition = new Vector3(-114, 4, 0);
+        if (GameObject.Find("Canvas"))
         {
             Destroy(gameObject);
         }
