@@ -15,6 +15,10 @@ public class MenuControl : MonoBehaviour
     [SerializeField] GameObject selector;
     [SerializeField] bool selectedPlay = true;
 
+    [SerializeField]
+    private KeyCode ControllerJump = KeyCode.JoystickButton0; //A
+    [SerializeField]
+    private KeyCode ControllerPause = KeyCode.JoystickButton7; //A
     [SerializeField] private KeyCode pauseKey = KeyCode.Escape;
     [SerializeField] private KeyCode returnKey = KeyCode.Return;
 
@@ -24,8 +28,8 @@ public class MenuControl : MonoBehaviour
 
     [SerializeField] Text ScrapAmount;
 
-    public bool Pause { get => Input.GetKeyDown(pauseKey); }
-    public bool Select { get => Input.GetKeyDown(returnKey); }
+    public bool Pause { get => Input.GetKeyDown(pauseKey) || Input.GetKeyDown(ControllerPause); }
+    public bool Select { get => Input.GetKeyDown(returnKey) || Input.GetKeyDown(ControllerJump); }
 
     bool ScenePaused = false;
     bool MainMenu = true;
@@ -48,7 +52,7 @@ public class MenuControl : MonoBehaviour
         {
             TileScreen.SetActive(false);
             Hud.SetActive(true);
-            if (Input.GetKeyDown(pauseKey))
+            if (Pause)
             {
                 TogglePlay();
             }
@@ -66,7 +70,7 @@ public class MenuControl : MonoBehaviour
                 selector.transform.localPosition = new Vector3(-10, -70, 0);
                 selectedPlay = false;
             }
-            if (Input.GetKeyDown(returnKey))
+            if (Select)
             {
                 if (selectedPlay) { TogglePlay(); }
                 else { QuitPlayTime(); }
@@ -85,7 +89,7 @@ public class MenuControl : MonoBehaviour
                 selector.transform.localPosition = new Vector3(-114, 4, 0);
                 selectedPlay = true;
             }
-            if (Input.GetKeyDown(returnKey))
+            if (Select)
             {
                 if (selectedPlay) { PlayGame(); }
                 else { QuitGame(); }
@@ -158,7 +162,7 @@ public class MenuControl : MonoBehaviour
         selector.transform.localPosition = new Vector3(-9, -32, 0);
         selectedPlay = true;
         MainMenu = false;
-        SceneManager.LoadScene("Joe's Work");
+        SceneManager.LoadScene("VERT SLICE");
         //SceneManager.LoadScene("PlayGame");
     }
 
