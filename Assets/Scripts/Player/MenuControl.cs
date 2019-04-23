@@ -12,8 +12,11 @@ public class MenuControl : MonoBehaviour
     [SerializeField] GameObject PauseScreen;
     [SerializeField] GameObject Hud;
 
-    [SerializeField]
-    private KeyCode pauseKey = KeyCode.Escape;
+    [SerializeField] GameObject selector;
+    [SerializeField] bool selectedPlay = true;
+
+    [SerializeField] private KeyCode pauseKey = KeyCode.Escape;
+    [SerializeField] private KeyCode returnKey = KeyCode.Return;
 
     [SerializeField] Transform[] hearts;
     [SerializeField] Texture fullHeart;
@@ -22,9 +25,10 @@ public class MenuControl : MonoBehaviour
     [SerializeField] Text ScrapAmount;
 
     public bool Pause { get => Input.GetKeyDown(pauseKey); }
+    public bool Select { get => Input.GetKeyDown(returnKey); }
 
     bool ScenePaused = false;
-    bool MainMenu = false;
+    bool MainMenu = true;
 
     private void Awake()
     {
@@ -43,6 +47,21 @@ public class MenuControl : MonoBehaviour
             TileScreen.SetActive(true);
             PauseScreen.SetActive(false);
             Hud.SetActive(false);
+            if(Input.GetAxis("Horizontal") > .1)
+            {
+                selector.transform.localPosition = new Vector3(100, 0, 0);
+                selectedPlay = false;
+            }
+            if (Input.GetAxis("Horizontal") < -.1)
+            {
+                selector.transform.localPosition = new Vector3(-100, 0, 0);
+                selectedPlay = true;
+            }
+            if (Input.GetKeyDown(returnKey))
+            {
+                if (selectedPlay) { PlayGame(); }
+                else { QuitGame(); }
+            }
         }
         else
         {
@@ -108,8 +127,9 @@ public class MenuControl : MonoBehaviour
 
     public void PlayGame()
     {
+        Debug.Log("Play");
         MainMenu = false;
-        SceneManager.LoadScene("Joe's Work");
+        //SceneManager.LoadScene("Joe's Work");
         //SceneManager.LoadScene("PlayGame");
     }
 
@@ -121,6 +141,7 @@ public class MenuControl : MonoBehaviour
 
     public void QuitGame()
     {
+        Debug.Log("Quit");
         Application.Quit();
     }
 
