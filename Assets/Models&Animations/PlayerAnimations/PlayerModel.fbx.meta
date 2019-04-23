@@ -57,6 +57,74 @@ ModelImporter:
     100102: Player_Rig:Spine02_J
     100104: Player_Rig:Spine03_J
     100106: //RootNode
+    100108: bottom
+    100110: ChestCtl
+    100112: Head_J
+    100114: Hip_J
+    100116: HipCtl
+    100118: Left_Clavicus_J
+    100120: Left_Elbow_J
+    100122: Left_HandHandler
+    100124: Left_Knee_J
+    100126: Left_LegBottom_Ctl
+    100128: Left_LegBottom_J
+    100130: Left_LegHandler
+    100132: Left_LegTop_J
+    100134: Left_MiddleFinger_J
+    100136: Left_MiddleKnuckle_J
+    100138: Left_MiddleTip_J
+    100140: Left_Palm_Ctl
+    100142: Left_Palm_J
+    100144: Left_Pinkie_J
+    100146: Left_PinkieKnuckle_J
+    100148: Left_PinkieTip_J
+    100150: Left_PointerFinger_J
+    100152: Left_PointerKnuckle_J
+    100154: Left_PointerTip_J
+    100156: Left_RingFinger_J
+    100158: Left_RingKnuckle_J
+    100160: Left_RingTip_J
+    100162: Left_Shoulder_J
+    100164: Left_Thumb_J
+    100166: Left_ThumbTip_J
+    100168: Left_Toe_J
+    100170: Left_Wrist_J
+    100172: MasterCtl
+    100174: Neck_J
+    100176: NeckCtl
+    100178: PlayerModel
+    100180: Right_Clavicus_J
+    100182: Right_Elbow_J
+    100184: Right_HandHandler
+    100186: Right_Knee_J
+    100188: Right_LegBottom_Ctl
+    100190: Right_LegBottom_J
+    100192: Right_LegHandler
+    100194: Right_LegTop_J
+    100196: Right_MiddleFinger_J
+    100198: Right_MiddleKnuckle_J
+    100200: Right_MiddleTip_J
+    100202: Right_Palm_Ctl
+    100204: Right_Palm_J
+    100206: Right_Pinkie_J
+    100208: Right_PinkieKnuckle_J
+    100210: Right_PinkieTip_J
+    100212: Right_PointerFinger_J
+    100214: Right_PointerKnuckle_J
+    100216: Right_PointerTip_J
+    100218: Right_RingFinger_J
+    100220: Right_RingKnuckle_J
+    100222: Right_RingTip_J
+    100224: Right_Shoulder_J
+    100226: Right_Thumb_J
+    100228: Right_ThumbTip_J
+    100230: Right_Toe_J
+    100232: Right_Wrist_J
+    100234: Spine01_J
+    100236: Spine02_J
+    100238: Spine03_J
+    100240: SpineCurve
+    100242: SpineHandler
     400000: Player_Rig:Head_J
     400002: Player_Rig:Hip_J
     400004: Player_Rig:Left_Clavicus_J
@@ -111,10 +179,82 @@ ModelImporter:
     400102: Player_Rig:Spine02_J
     400104: Player_Rig:Spine03_J
     400106: //RootNode
+    400108: bottom
+    400110: ChestCtl
+    400112: Head_J
+    400114: Hip_J
+    400116: HipCtl
+    400118: Left_Clavicus_J
+    400120: Left_Elbow_J
+    400122: Left_HandHandler
+    400124: Left_Knee_J
+    400126: Left_LegBottom_Ctl
+    400128: Left_LegBottom_J
+    400130: Left_LegHandler
+    400132: Left_LegTop_J
+    400134: Left_MiddleFinger_J
+    400136: Left_MiddleKnuckle_J
+    400138: Left_MiddleTip_J
+    400140: Left_Palm_Ctl
+    400142: Left_Palm_J
+    400144: Left_Pinkie_J
+    400146: Left_PinkieKnuckle_J
+    400148: Left_PinkieTip_J
+    400150: Left_PointerFinger_J
+    400152: Left_PointerKnuckle_J
+    400154: Left_PointerTip_J
+    400156: Left_RingFinger_J
+    400158: Left_RingKnuckle_J
+    400160: Left_RingTip_J
+    400162: Left_Shoulder_J
+    400164: Left_Thumb_J
+    400166: Left_ThumbTip_J
+    400168: Left_Toe_J
+    400170: Left_Wrist_J
+    400172: MasterCtl
+    400174: Neck_J
+    400176: NeckCtl
+    400178: PlayerModel
+    400180: Right_Clavicus_J
+    400182: Right_Elbow_J
+    400184: Right_HandHandler
+    400186: Right_Knee_J
+    400188: Right_LegBottom_Ctl
+    400190: Right_LegBottom_J
+    400192: Right_LegHandler
+    400194: Right_LegTop_J
+    400196: Right_MiddleFinger_J
+    400198: Right_MiddleKnuckle_J
+    400200: Right_MiddleTip_J
+    400202: Right_Palm_Ctl
+    400204: Right_Palm_J
+    400206: Right_Pinkie_J
+    400208: Right_PinkieKnuckle_J
+    400210: Right_PinkieTip_J
+    400212: Right_PointerFinger_J
+    400214: Right_PointerKnuckle_J
+    400216: Right_PointerTip_J
+    400218: Right_RingFinger_J
+    400220: Right_RingKnuckle_J
+    400222: Right_RingTip_J
+    400224: Right_Shoulder_J
+    400226: Right_Thumb_J
+    400228: Right_ThumbTip_J
+    400230: Right_Toe_J
+    400232: Right_Wrist_J
+    400234: Spine01_J
+    400236: Spine02_J
+    400238: Spine03_J
+    400240: SpineCurve
+    400242: SpineHandler
+    2000000: bottom
     2100000: lambert1
+    2100002: lambert2
     4300000: Player_Rig:PlayerModel
+    4300002: PlayerModel
     9500000: //RootNode
     13700000: Player_Rig:PlayerModel
+    13700002: PlayerModel
     2186277476908879412: ImportLogs
   externalObjects: {}
   materials:
@@ -128,7 +268,8 @@ ModelImporter:
     resampleCurves: 1
     optimizeGameObjects: 0
     motionNodeName: 
-    rigImportErrors: 
+    rigImportErrors: "Avatar creation failed:\n\tCannot find root motion transform
+      'Player_Rig:PlayerModel'.\n"
     rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 
@@ -168,7 +309,7 @@ ModelImporter:
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
-    previousCalculatedGlobalScale: 0.099999994
+    previousCalculatedGlobalScale: 0.01
     hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60
@@ -191,7 +332,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    rootMotionBoneName: 
+    rootMotionBoneName: Hip_J
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
