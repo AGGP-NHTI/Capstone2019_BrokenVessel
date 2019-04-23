@@ -60,12 +60,12 @@ public class MenuControl : MonoBehaviour
             selector.SetActive(true);
             if (Input.GetAxis("Vertical") > .1)
             {
-                selector.transform.localPosition = new Vector3(-9, -32, 0);
+                selector.transform.localPosition = new Vector3(-18, -32, 0);
                 selectedPlay = true;
             }
             if (Input.GetAxis("Vertical") < -.1)
             {
-                selector.transform.localPosition = new Vector3(-10, -70, 0);
+                selector.transform.localPosition = new Vector3(-18, -70, 0);
                 selectedPlay = false;
             }
             if (Select)
