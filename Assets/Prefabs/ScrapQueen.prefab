@@ -114,6 +114,8 @@ MonoBehaviour:
   AlwaysMove: 0
   attacking: 0
   faceCheck: {fileID: 0}
+  hitEffect: {fileID: 2975679802408643475, guid: 6453757c1b04be342a68b540f1a564c9,
+    type: 3}
 --- !u!114 &667728604818435094
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -336,18 +338,18 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 50
       objectReference: {fileID: 0}
-    - target: {fileID: 2300000, guid: 406b638bd549ebb44b09eb5542b0cd32, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 69660fce79b84ca43974b3cdfa709b6d, type: 2}
-    - target: {fileID: 100008, guid: 406b638bd549ebb44b09eb5542b0cd32, type: 3}
-      propertyPath: m_Layer
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 100010, guid: 406b638bd549ebb44b09eb5542b0cd32, type: 3}
       propertyPath: m_Layer
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 100008, guid: 406b638bd549ebb44b09eb5542b0cd32, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 406b638bd549ebb44b09eb5542b0cd32, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 69660fce79b84ca43974b3cdfa709b6d, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 406b638bd549ebb44b09eb5542b0cd32, type: 3}
 --- !u!4 &3362862548373738855 stripped
