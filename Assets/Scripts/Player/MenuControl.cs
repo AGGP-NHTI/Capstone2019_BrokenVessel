@@ -16,7 +16,7 @@ public class MenuControl : MonoBehaviour
     [SerializeField] bool selectedPlay = true;
 
     [SerializeField] private KeyCode ControllerJump = KeyCode.JoystickButton0; //A
-    [SerializeField] private KeyCode ControllerPause = KeyCode.JoystickButton7; //A
+    [SerializeField] private KeyCode ControllerPause = KeyCode.JoystickButton7;
     [SerializeField] private KeyCode pauseKey = KeyCode.Escape;
     [SerializeField] private KeyCode returnKey = KeyCode.Return;
 
@@ -40,7 +40,7 @@ public class MenuControl : MonoBehaviour
 
     void Update()
     {
-        if(MainMenu)
+        if (MainMenu)
         {
             TileScreen.SetActive(true);
             PauseScreen.SetActive(false);
@@ -103,7 +103,7 @@ public class MenuControl : MonoBehaviour
     {
         for (int i = 0; i < 10; i++)
         {
-            if(i < currentHP)
+            if (i < currentHP)
             {
                 hearts[i].GetComponent<RawImage>().texture = fullHeart;
             }
@@ -121,7 +121,7 @@ public class MenuControl : MonoBehaviour
 
     public void TogglePlay()
     {
-        if(ScenePaused)
+        if (ScenePaused)
         {
             ScenePaused = false;
             PauseScreen.SetActive(false);
@@ -177,6 +177,12 @@ public class MenuControl : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    public void GameOver()
+    {
+        SceneManager.LoadScene("GameOver");
+        Destroy(gameObject);
     }
 
     public void QuitGame()

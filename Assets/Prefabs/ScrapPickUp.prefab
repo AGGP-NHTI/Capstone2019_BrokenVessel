@@ -74,7 +74,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: Scrap
   amount: 10
-  body: {fileID: 0}
+  body: {fileID: 3601472774166669825}
 --- !u!50 &459103095492522772
 Rigidbody2D:
   serializedVersion: 4

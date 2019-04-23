@@ -10,6 +10,7 @@ namespace BrokenVessel.Player
 		private PlayerInput input;
 		private PlayerPhysics phys;
         private SwitchWeapon combat;
+        public bool dead = false;
 
 		public static Player This { get; private set; }
 
@@ -23,6 +24,8 @@ namespace BrokenVessel.Player
 		
 		void Update()
 		{
+            if (dead) { return; }
+
             if (input.Attack) { combat.Attack(); }
             if(input.Swap) { combat.SwitchEquip(); }
 			if (input.Jump) { phys.Jump(); }
