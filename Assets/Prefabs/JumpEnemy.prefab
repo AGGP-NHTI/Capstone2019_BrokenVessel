@@ -551,6 +551,8 @@ MonoBehaviour:
   AlwaysMove: 1
   attacking: 0
   faceCheck: {fileID: 4270063163469516}
+  hitEffect: {fileID: 2975679802408643475, guid: 6453757c1b04be342a68b540f1a564c9,
+    type: 3}
 --- !u!114 &2156667921817030246
 MonoBehaviour:
   m_ObjectHideFlags: 0
