@@ -53,26 +53,7 @@ public class MenuControl : MonoBehaviour
                 TogglePlay();
             }
         }
-        if(TileScreen.activeSelf)
-        {
-            selector.SetActive(true);
-            if (Input.GetAxis("Horizontal") > .1)
-            {
-                selector.transform.localPosition = new Vector3(86, 4, 0);
-                selectedPlay = false;
-            }
-            if (Input.GetAxis("Horizontal") < -.1)
-            {
-                selector.transform.localPosition = new Vector3(-114, 4, 0);
-                selectedPlay = true;
-            }
-            if (Input.GetKeyDown(returnKey))
-            {
-                if (selectedPlay) { PlayGame(); }
-                else { QuitGame(); }
-            }
-        }
-        else if (PauseScreen.activeSelf)
+        if (PauseScreen.activeSelf)
         {
             selector.SetActive(true);
             if (Input.GetAxis("Vertical") > .1)
@@ -89,6 +70,25 @@ public class MenuControl : MonoBehaviour
             {
                 if (selectedPlay) { TogglePlay(); }
                 else { QuitPlayTime(); }
+            }
+        }
+        else if (TileScreen.activeSelf)
+        {
+            selector.SetActive(true);
+            if (Input.GetAxis("Horizontal") > .1)
+            {
+                selector.transform.localPosition = new Vector3(86, 4, 0);
+                selectedPlay = false;
+            }
+            if (Input.GetAxis("Horizontal") < -.1)
+            {
+                selector.transform.localPosition = new Vector3(-114, 4, 0);
+                selectedPlay = true;
+            }
+            if (Input.GetKeyDown(returnKey))
+            {
+                if (selectedPlay) { PlayGame(); }
+                else { QuitGame(); }
             }
         }
         else
@@ -158,12 +158,13 @@ public class MenuControl : MonoBehaviour
         selector.transform.localPosition = new Vector3(-9, -32, 0);
         selectedPlay = true;
         MainMenu = false;
-        //SceneManager.LoadScene("Joe's Work");
+        SceneManager.LoadScene("Joe's Work");
         //SceneManager.LoadScene("PlayGame");
     }
 
     public void QuitPlayTime()
     {
+        TogglePlay();
         selector.transform.localPosition = new Vector3(-114, 4, 0);
         selectedPlay = true;
         MainMenu = true;
