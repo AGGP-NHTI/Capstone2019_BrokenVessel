@@ -18,6 +18,12 @@ public class PlayerData : BrokenVessel.Actor.Actor
         PD = this;
     }
 
+    private void Start()
+    {
+        MenuControl.MC.UpdateHealth(health);
+        MenuControl.MC.UpdateScrap(metalScrap);
+    }
+
     public void takeDamage(int value, float iFrames, Vector2 Knockback)
     {
         //Debug.Log("ow");
