@@ -22,6 +22,8 @@ namespace BrokenVessel.Player
         [SerializeField]
         private KeyCode ControllerInteract = KeyCode.JoystickButton3; //Y
         [SerializeField]
+        private KeyCode ControllerDash = KeyCode.JoystickButton2; //X
+        [SerializeField]
 		private KeyCode leftKey = KeyCode.A;
 		[SerializeField]
 		private KeyCode rightKey = KeyCode.D;
@@ -45,12 +47,13 @@ namespace BrokenVessel.Player
 		{
 			Dash = 0;
 
-			if (Input.GetKeyDown(rightKey) || Input.GetKeyDown(leftKey))
+			if (Input.GetKeyDown(rightKey) || Input.GetKeyDown(leftKey) || Input.GetKeyDown(ControllerDash))
 			{
 				if (Input.GetKeyDown(rightKey) && lastKey != rightKey) { lastKey = KeyCode.None; }
 				if (Input.GetKeyDown(leftKey) && lastKey != leftKey) { lastKey = KeyCode.None; }
+                if (Input.GetKeyDown(ControllerDash) && lastKey != ControllerDash) { lastKey = KeyCode.None; }
 
-				if (Time.time < time + dblClickThreshold && lastKey != KeyCode.None)
+                if (Time.time < time + dblClickThreshold && lastKey != KeyCode.None)
 				{
 					Dash = lastKey == rightKey ? 1 : -1;
 				}
@@ -63,6 +66,7 @@ namespace BrokenVessel.Player
 
 			if (Input.GetKeyDown(rightKey)) { lastKey = rightKey; }
 			if (Input.GetKeyDown(leftKey)) { lastKey = leftKey; }
-		}
+            if (Input.GetKeyDown(ControllerDash)) { lastKey = ControllerDash; }
+        }
 	}
 }
