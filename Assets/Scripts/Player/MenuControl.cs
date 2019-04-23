@@ -15,10 +15,8 @@ public class MenuControl : MonoBehaviour
     [SerializeField] GameObject selector;
     [SerializeField] bool selectedPlay = true;
 
-    [SerializeField]
-    private KeyCode ControllerJump = KeyCode.JoystickButton0; //A
-    [SerializeField]
-    private KeyCode ControllerPause = KeyCode.JoystickButton7; //A
+    [SerializeField] private KeyCode ControllerJump = KeyCode.JoystickButton0; //A
+    [SerializeField] private KeyCode ControllerPause = KeyCode.JoystickButton7;
     [SerializeField] private KeyCode pauseKey = KeyCode.Escape;
     [SerializeField] private KeyCode returnKey = KeyCode.Return;
 
@@ -42,7 +40,7 @@ public class MenuControl : MonoBehaviour
 
     void Update()
     {
-        if(MainMenu)
+        if (MainMenu)
         {
             TileScreen.SetActive(true);
             PauseScreen.SetActive(false);
@@ -62,12 +60,12 @@ public class MenuControl : MonoBehaviour
             selector.SetActive(true);
             if (Input.GetAxis("Vertical") > .1)
             {
-                selector.transform.localPosition = new Vector3(-9, -32, 0);
+                selector.transform.localPosition = new Vector3(-18, -32, 0);
                 selectedPlay = true;
             }
             if (Input.GetAxis("Vertical") < -.1)
             {
-                selector.transform.localPosition = new Vector3(-10, -70, 0);
+                selector.transform.localPosition = new Vector3(-18, -70, 0);
                 selectedPlay = false;
             }
             if (Select)
@@ -105,7 +103,7 @@ public class MenuControl : MonoBehaviour
     {
         for (int i = 0; i < 10; i++)
         {
-            if(i < currentHP)
+            if (i < currentHP)
             {
                 hearts[i].GetComponent<RawImage>().texture = fullHeart;
             }
@@ -123,7 +121,7 @@ public class MenuControl : MonoBehaviour
 
     public void TogglePlay()
     {
-        if(ScenePaused)
+        if (ScenePaused)
         {
             ScenePaused = false;
             PauseScreen.SetActive(false);
@@ -159,24 +157,32 @@ public class MenuControl : MonoBehaviour
     public void PlayGame()
     {
         Debug.Log("Play");
-        selector.transform.localPosition = new Vector3(-9, -32, 0);
         selectedPlay = true;
         MainMenu = false;
         SceneManager.LoadScene("VERT SLICE");
+        selector.SetActive(false);
+        selector.transform.localPosition = new Vector3(-9, -32, 0);
         //SceneManager.LoadScene("PlayGame");
     }
 
     public void QuitPlayTime()
     {
         TogglePlay();
-        selector.transform.localPosition = new Vector3(-114, 4, 0);
         selectedPlay = true;
         MainMenu = true;
         SceneManager.LoadScene("MainMenu");
-        if(GameObject.Find("Canvas"))
+        selector.SetActive(false);
+        selector.transform.localPosition = new Vector3(-114, 4, 0);
+        if (GameObject.Find("Canvas"))
         {
             Destroy(gameObject);
         }
+    }
+
+    public void GameOver()
+    {
+        SceneManager.LoadScene("GameOver");
+        Destroy(gameObject);
     }
 
     public void QuitGame()
