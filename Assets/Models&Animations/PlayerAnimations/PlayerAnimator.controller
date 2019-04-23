@@ -397,7 +397,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: eafe8976735729646958911f5900b294, type: 3}
+  m_Motion: {fileID: 7400000, guid: 90e92c56efb4f7246bba95cf2a04b0e4, type: 3}
   m_Tag: PlayerLeftWallSlide
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -425,7 +425,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 32c8a7b99d20e7049bf6529d280a3bfc, type: 3}
+  m_Motion: {fileID: 7400000, guid: 9193d7403c7667f4592cd619f83186da, type: 3}
   m_Tag: PlayerWalk
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -452,7 +452,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 3657fcab3de1e11478ad256a1e01bdc5, type: 3}
+  m_Motion: {fileID: 7400000, guid: 7bb24b343a859874ebed9678c9951657, type: 3}
   m_Tag: PlayerRightWallSlide
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -480,7 +480,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 1e49227491291204a80ed2e466d9b07d, type: 3}
+  m_Motion: {fileID: 7400000, guid: 9f1383eddd44e42429615e5a70220435, type: 3}
   m_Tag: PlayerIdle
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -510,7 +510,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: ac1647f922f0a8546a6d026efcce7e76, type: 3}
+  m_Motion: {fileID: 7400000, guid: 7c9899a410c13b149be18566952cea79, type: 3}
   m_Tag: PlayerJump
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -538,7 +538,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 1f20767f91c08854d98b46bebc70f255, type: 3}
+  m_Motion: {fileID: 7400000, guid: 50462f5c9c28da94fbd164456ccd90b8, type: 3}
   m_Tag: PlayerDash
   m_SpeedParameter: 
   m_MirrorParameter: 
