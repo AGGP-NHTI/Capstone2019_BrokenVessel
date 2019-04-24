@@ -36,8 +36,8 @@ namespace BrokenVessel.Player
         public bool Jump { get => Input.GetKeyDown(jumpKey) || Input.GetKeyDown(ControllerJump); }
 		public bool JumpEnd { get => Input.GetKeyUp(jumpKey) || Input.GetKeyUp(ControllerJump); }
 		public bool Interact { get => Input.GetKeyDown(interactKey) || Input.GetKeyDown(ControllerInteract); }
-		public bool Left { get => Input.GetKey(leftKey) || Input.GetAxis("Horizontal") > 0.3; }
-		public bool Right { get => Input.GetKey(rightKey) || Input.GetAxis("Horizontal") > 0.3; }
+		public bool Left { get => Input.GetKey(leftKey) || Input.GetAxis("Horizontal") > 0; }
+		public bool Right { get => Input.GetKey(rightKey) || Input.GetAxis("Horizontal") > 0; }
 		public float Dash { get; private set; }
 
         private float time = 0;
