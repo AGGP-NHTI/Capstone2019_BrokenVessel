@@ -41,6 +41,9 @@ namespace BrokenVessel.Player
 		private BoxCollider2D box;
 		private Rigidbody2D rg;
 
+
+        float dashTimer = 0;
+
 		void Start()
 		{
 			box = GetComponent<BoxCollider2D>();
@@ -50,6 +53,7 @@ namespace BrokenVessel.Player
 		void Update()
 		{
             if (paused) { return; }
+            dashTimer -= Time.deltaTime;
             // Check floor
             if (grounded = CheckFloor())
 			{
@@ -148,7 +152,8 @@ namespace BrokenVessel.Player
 
 		public void Dash(float dir)
 		{
-            if (paused) { return; }
+            if (paused || dashTimer > 0 ) { return; }
+            dashTimer = .5f;
             rg.AddForce(Vector2.right * Mathf.Sign(4) * dashSpeed * dir, ForceMode2D.Impulse);
 		}
 		
