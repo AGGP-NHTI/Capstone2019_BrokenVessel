@@ -8,6 +8,11 @@ public class EnemyContact : BrokenVessel.Actor.Actor
     [SerializeField] float knockBack = 10;
     [SerializeField] float iFrames = 1;
 
+    private void Start()
+    {
+        
+    }
+
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (paused) { return; }
