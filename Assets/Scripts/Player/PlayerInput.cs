@@ -51,9 +51,17 @@ namespace BrokenVessel.Player
 			{
 				if (Input.GetKeyDown(rightKey) && lastKey != rightKey) { lastKey = KeyCode.None; }
 				if (Input.GetKeyDown(leftKey) && lastKey != leftKey) { lastKey = KeyCode.None; }
-                if (Input.GetKeyDown(ControllerDash) && lastKey != ControllerDash) { lastKey = KeyCode.None; }
 
-                if (Time.time < time + dblClickThreshold && lastKey != KeyCode.None)
+                if(Input.GetKeyDown(ControllerDash) && Input.GetAxis("Horizontal") != 0)
+                {
+                    if (Input.GetAxis("Horizontal") < 0)
+                    {
+                        Dash = -1;
+                    }
+                    else Dash = 1;
+                }
+
+                else if (Time.time < time + dblClickThreshold && lastKey != KeyCode.None)
 				{
 					Dash = lastKey == rightKey ? 1 : -1;
 				}

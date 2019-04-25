@@ -149,7 +149,7 @@ namespace BrokenVessel.Player
 		public void Dash(float dir)
 		{
             if (paused) { return; }
-            rg.AddForce(Vector2.right * Mathf.Sign(dir) * dashSpeed, ForceMode2D.Impulse);
+            rg.AddForce(Vector2.right * Mathf.Sign(4) * dashSpeed, ForceMode2D.Impulse);
 		}
 		
 		private bool CheckFloor()

@@ -2,10 +2,11 @@
 using UnityEngine.UI;
 using System.Collections;
 using Ink.Runtime;
+using System.Collections.Generic;
 
 // This is a super bare bones example of how to play and display a ink story in Unity.
 public class BasicInkExample : MonoBehaviour {
-	
+
 	void Awake () {
 		// Remove the default message
 		//RemoveChildren();
@@ -52,7 +53,6 @@ public class BasicInkExample : MonoBehaviour {
 			Button choice = CreateChoiceView("Drop The Ball");
 			choice.onClick.AddListener(delegate{
                 RemoveChildren();
-                Debug.Log("yep");
             });
 		}
 	}
