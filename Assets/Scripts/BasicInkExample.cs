@@ -31,7 +31,6 @@ using System.Collections.Generic;
         {
             story = new Story(inkJSONAsset.text);
             RefreshView();
-            //MenuControl.MC.stopActors();
         }
 
         // This is the main function called every time the story changes. It does a few things:
@@ -75,7 +74,7 @@ using System.Collections.Generic;
                 {
                     RemoveChildren();
                 });
-                //MenuControl.MC.resumeActors();
+                MenuControl.MC.resumeActors();
             }
         }
 

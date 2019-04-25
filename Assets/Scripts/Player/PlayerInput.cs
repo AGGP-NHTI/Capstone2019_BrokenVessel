@@ -57,11 +57,16 @@ namespace BrokenVessel.Player
                     if (Input.GetAxis("Horizontal") < 0)
                     {
                         Dash = -1;
+                        Debug.Log("Left");
                     }
-                    else Dash = 1;
+                    else
+                    {
+                        Dash = 1;
+                        Debug.Log("Right");
+                    }
                 }
 
-                else if (Time.time < time + dblClickThreshold && lastKey != KeyCode.None)
+                if (Time.time < time + dblClickThreshold && lastKey != KeyCode.None)
 				{
 					Dash = lastKey == rightKey ? 1 : -1;
 				}

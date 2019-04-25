@@ -36,7 +36,7 @@ public class TalkyBoi : MonoBehaviour {
                 canvas.SetActive(true);
                 WorldScriptManager.GetComponent<BasicInkExample>().RemoveChildren();
                 WorldScriptManager.GetComponent<BasicInkExample>().StartStory();
-                //call joe's pause function
+                MenuControl.MC.stopActors();
             }
         }
         else
