@@ -90,7 +90,7 @@ public class ScrapQueen : BrokenVessel.Actor.Actor
         stationaryCollider.SetActive(true);
         attacking = true;
         yield return new WaitForSeconds(4f);
-        if (FlyingSpawns != null)
+        if (FlyingSpawns != null || FlyingSpawns.Count != 0)
         {
             for (int i = 0; i < FlyingSpawns.Count; i++) //check for dead enemies in the list
             {
@@ -98,7 +98,7 @@ public class ScrapQueen : BrokenVessel.Actor.Actor
                 if (FlyingSpawns.Count == 0) break;
             }
         }
-        if (CrawlingSpawns != null)
+        if (CrawlingSpawns != null || CrawlingSpawns.Count != 0)
         {
             for (int i = 0; i < CrawlingSpawns.Count; i++) //check for dead enemies in the list
             {
