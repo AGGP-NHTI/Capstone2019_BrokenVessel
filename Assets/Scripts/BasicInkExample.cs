@@ -3,10 +3,9 @@ using UnityEngine.UI;
 using System.Collections;
 using Ink.Runtime;
 using System.Collections.Generic;
+using MenuControl;
 
-namespace MenuControl
-{
-    // This is a super bare bones example of how to play and display a ink story in Unity.
+// This is a super bare bones example of how to play and display a ink story in Unity.
     public class BasicInkExample : MonoBehaviour
     {
 
@@ -17,7 +16,7 @@ namespace MenuControl
             // Remove the default message
             //RemoveChildren();
             //StartStory();
-
+            
         }
 
         void Update()
@@ -137,4 +136,3 @@ namespace MenuControl
         [SerializeField]
         private Button buttonPrefab;
     }
-}
