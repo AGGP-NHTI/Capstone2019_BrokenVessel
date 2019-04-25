@@ -37,7 +37,7 @@ public class PlayerData : BrokenVessel.Actor.Actor
             MenuControl.MC.UpdateHealth(health);
             //knockback
         }
-        if(health >= 0)
+        if(health <= 0)
         {
             GetComponent<Player>().dead = true;
             StartCoroutine(Die());
