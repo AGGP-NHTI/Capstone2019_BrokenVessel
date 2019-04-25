@@ -11,6 +11,7 @@ public class MenuControl : MonoBehaviour
     [SerializeField] GameObject TileScreen;
     [SerializeField] GameObject PauseScreen;
     [SerializeField] GameObject Hud;
+    [SerializeField] GameObject BossSection;
 
     [SerializeField] GameObject selector;
     [SerializeField] bool selectedPlay = true;
@@ -96,6 +97,26 @@ public class MenuControl : MonoBehaviour
         else
         {
             selector.SetActive(false);
+        }
+    }
+
+    public void OpenBossBar(EnemyCombat EC)
+    {
+        if(BossSection.activeSelf == false)
+        {
+            BossSection.SetActive(true);
+            BossHealth.BH.maxHealth = EC.health;
+            BossHealth.BH.Refer = EC;
+        }
+    }
+
+    public void CloseBossBar()
+    {
+        if (BossSection.activeSelf == true)
+        {
+            BossHealth.BH.maxHealth = 0;
+            BossHealth.BH.Refer = null;
+            BossSection.SetActive(false);
         }
     }
 

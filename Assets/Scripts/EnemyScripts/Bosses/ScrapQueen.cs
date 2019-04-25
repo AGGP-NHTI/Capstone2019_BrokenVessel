@@ -50,6 +50,10 @@ public class ScrapQueen : BrokenVessel.Actor.Actor
             }
             else
             {
+                if(GetComponent<EnemyCombat>().health < 0)
+                {
+                    MenuControl.MC.CloseBossBar();
+                }
                 if (!attacking && (transform.position - spawnMinionsPoint.position).magnitude < 1f)
                 {
                     StartCoroutine(SpawnMinions());
@@ -126,8 +130,6 @@ public class ScrapQueen : BrokenVessel.Actor.Actor
     void Intro()
     {
         //start at top
-
-
         if ((angle - (Mathf.PI / 4)) < .025f && timer > 0)
         {
             angle += speed * Time.deltaTime;
@@ -148,6 +150,7 @@ public class ScrapQueen : BrokenVessel.Actor.Actor
             if ((angle - (Mathf.PI / 2)) < .025f && (angle - (Mathf.PI / 2)) > -.025f)
             {
                 Destroy(platform);
+                MenuControl.MC.OpenBossBar(GetComponent<EnemyCombat>());
                 intro = false;
             }
         } 
