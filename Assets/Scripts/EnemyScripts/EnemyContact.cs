@@ -22,7 +22,7 @@ public class EnemyContact : BrokenVessel.Actor.Actor
             Vector2 knock = (collision.gameObject.transform.position - gameObject.transform.position).normalized * knockBack;
             collision.gameObject.GetComponent<PlayerData>().takeDamage(damage, iFrames, knock);
 
-            gameObject.GetComponent<Rigidbody2D>().AddForce(-knock);
+            //gameObject.GetComponent<Rigidbody2D>().AddForce(-knock);
         }
     }
 }
