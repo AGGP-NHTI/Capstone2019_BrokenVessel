@@ -4,136 +4,129 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-namespace MenuControl
+
+
+public class MenuControl : MonoBehaviour
 {
-<<<<<<< HEAD
+
+
     public static MenuControl MC;
 
     [SerializeField] GameObject TileScreen;
     [SerializeField] GameObject PauseScreen;
-    [SerializeField] GameObject Hud;
     [SerializeField] GameObject BossSection;
-=======
-    public class MenuControl : MonoBehaviour
+    [SerializeField] GameObject Hud;
+
+    [SerializeField] GameObject selector;
+    [SerializeField] bool selectedPlay = true;
+
+    [SerializeField] private KeyCode ControllerJump = KeyCode.JoystickButton0; //A
+    [SerializeField] private KeyCode ControllerPause = KeyCode.JoystickButton7;
+    [SerializeField] private KeyCode pauseKey = KeyCode.Escape;
+    [SerializeField] private KeyCode returnKey = KeyCode.Return;
+
+    [SerializeField] Transform[] hearts;
+    [SerializeField] Texture fullHeart;
+    [SerializeField] Texture emptyHeart;
+
+    [SerializeField] Text ScrapAmount;
+
+    public bool Pause { get => Input.GetKeyDown(pauseKey) || Input.GetKeyDown(ControllerPause); }
+    public bool Select { get => Input.GetKeyDown(returnKey) || Input.GetKeyDown(ControllerJump); }
+
+    bool ScenePaused = false;
+    bool MainMenu = true;
+
+    private void Awake()
     {
-        public static MenuControl MC;
->>>>>>> 93ac18909fecef340451fb482490bb1b32b64344
+        MC = this;
+        DontDestroyOnLoad(gameObject);
+    }
 
-        [SerializeField] GameObject TileScreen;
-        [SerializeField] GameObject PauseScreen;
-        [SerializeField] GameObject Hud;
-
-        [SerializeField] GameObject selector;
-        [SerializeField] bool selectedPlay = true;
-
-        [SerializeField] private KeyCode ControllerJump = KeyCode.JoystickButton0; //A
-        [SerializeField] private KeyCode ControllerPause = KeyCode.JoystickButton7;
-        [SerializeField] private KeyCode pauseKey = KeyCode.Escape;
-        [SerializeField] private KeyCode returnKey = KeyCode.Return;
-
-        [SerializeField] Transform[] hearts;
-        [SerializeField] Texture fullHeart;
-        [SerializeField] Texture emptyHeart;
-
-        [SerializeField] Text ScrapAmount;
-
-        public bool Pause { get => Input.GetKeyDown(pauseKey) || Input.GetKeyDown(ControllerPause); }
-        public bool Select { get => Input.GetKeyDown(returnKey) || Input.GetKeyDown(ControllerJump); }
-
-        bool ScenePaused = false;
-        bool MainMenu = true;
-
-        private void Awake()
+    void Update()
+    {
+        if (MainMenu)
         {
-            MC = this;
-            DontDestroyOnLoad(gameObject);
+            TileScreen.SetActive(true);
+            PauseScreen.SetActive(false);
+            Hud.SetActive(false);
         }
-
-        void Update()
+        else
         {
-            if (MainMenu)
+            TileScreen.SetActive(false);
+            Hud.SetActive(true);
+            if (Pause)
             {
-                TileScreen.SetActive(true);
-                PauseScreen.SetActive(false);
-                Hud.SetActive(false);
+                TogglePlay();
+            }
+        }
+        if (PauseScreen.activeSelf)
+        {
+            selector.SetActive(true);
+            if (Input.GetAxis("Vertical") > .1)
+            {
+                selector.transform.localPosition = new Vector3(-18, -32, 0);
+                selectedPlay = true;
+            }
+            if (Input.GetAxis("Vertical") < -.1)
+            {
+                selector.transform.localPosition = new Vector3(-18, -70, 0);
+                selectedPlay = false;
+            }
+            if (Select)
+            {
+                if (selectedPlay) { TogglePlay(); }
+                else { QuitPlayTime(); }
+            }
+        }
+        else if (TileScreen.activeSelf)
+        {
+            selector.SetActive(true);
+            if (Input.GetAxis("Horizontal") > .1)
+            {
+                selector.transform.localPosition = new Vector3(86, 4, 0);
+                selectedPlay = false;
+            }
+            if (Input.GetAxis("Horizontal") < -.1)
+            {
+                selector.transform.localPosition = new Vector3(-114, 4, 0);
+                selectedPlay = true;
+            }
+            if (Select)
+            {
+                if (selectedPlay) { PlayGame(); }
+                else { QuitGame(); }
+            }
+        }
+        else
+        {
+            selector.SetActive(false);
+        }
+    }
+
+    public void UpdateHealth(int currentHP)
+    {
+        for (int i = 0; i < 10; i++)
+        {
+            if (i < currentHP)
+            {
+                hearts[i].GetComponent<RawImage>().texture = fullHeart;
             }
             else
             {
-                TileScreen.SetActive(false);
-                Hud.SetActive(true);
-                if (Pause)
-                {
-                    TogglePlay();
-                }
-            }
-            if (PauseScreen.activeSelf)
-            {
-                selector.SetActive(true);
-                if (Input.GetAxis("Vertical") > .1)
-                {
-                    selector.transform.localPosition = new Vector3(-18, -32, 0);
-                    selectedPlay = true;
-                }
-                if (Input.GetAxis("Vertical") < -.1)
-                {
-                    selector.transform.localPosition = new Vector3(-18, -70, 0);
-                    selectedPlay = false;
-                }
-                if (Select)
-                {
-                    if (selectedPlay) { TogglePlay(); }
-                    else { QuitPlayTime(); }
-                }
-            }
-            else if (TileScreen.activeSelf)
-            {
-                selector.SetActive(true);
-                if (Input.GetAxis("Horizontal") > .1)
-                {
-                    selector.transform.localPosition = new Vector3(86, 4, 0);
-                    selectedPlay = false;
-                }
-                if (Input.GetAxis("Horizontal") < -.1)
-                {
-                    selector.transform.localPosition = new Vector3(-114, 4, 0);
-                    selectedPlay = true;
-                }
-                if (Select)
-                {
-                    if (selectedPlay) { PlayGame(); }
-                    else { QuitGame(); }
-                }
-            }
-            else
-            {
-                selector.SetActive(false);
+                hearts[i].GetComponent<RawImage>().texture = emptyHeart;
             }
         }
+    }
 
-        public void UpdateHealth(int currentHP)
-        {
-            for (int i = 0; i < 10; i++)
-            {
-                if (i < currentHP)
-                {
-                    hearts[i].GetComponent<RawImage>().texture = fullHeart;
-                }
-                else
-                {
-                    hearts[i].GetComponent<RawImage>().texture = emptyHeart;
-                }
-            }
-        }
+    public void UpdateScrap(int currentScrap)
+    {
+        ScrapAmount.text = "x " + currentScrap;
+    }
 
-        public void UpdateScrap(int currentScrap)
-        {
-            ScrapAmount.text = "x " + currentScrap;
-        }
-
-<<<<<<< HEAD
     public void OpenBossBar(EnemyCombat EC)
     {
-        if(BossSection.activeSelf == false)
+        if (BossSection.activeSelf == false)
         {
             BossSection.SetActive(true);
             BossHealth.BH.maxHealth = EC.health;
@@ -151,82 +144,78 @@ namespace MenuControl
         }
     }
 
-    public void UpdateHealth(int currentHP)
+    public void TogglePlay()
+
     {
-        for (int i = 0; i < 10; i++)
-=======
-        public void TogglePlay()
->>>>>>> 93ac18909fecef340451fb482490bb1b32b64344
+        if (ScenePaused)
         {
-            if (ScenePaused)
-            {
-                ScenePaused = false;
-                PauseScreen.SetActive(false);
-                resumeActors();
-            }
-            else
-            {
-                ScenePaused = true;
-                PauseScreen.SetActive(true);
-                stopActors();
-            }
-        }
-
-        public void stopActors()
-        {
-            BrokenVessel.Actor.Actor.paused = true;
-            foreach (Rigidbody2D rb2d in FindObjectsOfType<Rigidbody2D>())
-            {
-                rb2d.simulated = false;
-            }
-        }
-
-        public void resumeActors()
-        {
+            ScenePaused = false;
             PauseScreen.SetActive(false);
-            BrokenVessel.Actor.Actor.paused = false;
-            foreach (Rigidbody2D rb2d in FindObjectsOfType<Rigidbody2D>())
-            {
-                rb2d.simulated = true;
-            }
+            resumeActors();
         }
-
-        public void PlayGame()
+        else
         {
-            Debug.Log("Play");
-            selectedPlay = true;
-            MainMenu = false;
-            SceneManager.LoadScene("VERT SLICE");
-            selector.SetActive(false);
-            selector.transform.localPosition = new Vector3(-9, -32, 0);
-            //SceneManager.LoadScene("PlayGame");
+            ScenePaused = true;
+            PauseScreen.SetActive(true);
+            stopActors();
         }
+    }
 
-        public void QuitPlayTime()
+    public void stopActors()
+    {
+        BrokenVessel.Actor.Actor.paused = true;
+        foreach (Rigidbody2D rb2d in FindObjectsOfType<Rigidbody2D>())
         {
-            TogglePlay();
-            selectedPlay = true;
-            MainMenu = true;
-            SceneManager.LoadScene("MainMenu");
-            selector.SetActive(false);
-            selector.transform.localPosition = new Vector3(-114, 4, 0);
-            if (GameObject.Find("Canvas"))
-            {
-                Destroy(gameObject);
-            }
+            rb2d.simulated = false;
         }
+    }
 
-        public void GameOver()
+    public void resumeActors()
+    {
+        PauseScreen.SetActive(false);
+        BrokenVessel.Actor.Actor.paused = false;
+        foreach (Rigidbody2D rb2d in FindObjectsOfType<Rigidbody2D>())
         {
-            SceneManager.LoadScene("GameOver");
+            rb2d.simulated = true;
+        }
+    }
+
+    public void PlayGame()
+    {
+        Debug.Log("Play");
+        selectedPlay = true;
+        MainMenu = false;
+        SceneManager.LoadScene("VERT SLICE");
+        selector.SetActive(false);
+        selector.transform.localPosition = new Vector3(-9, -32, 0);
+        //SceneManager.LoadScene("PlayGame");
+    }
+
+    public void QuitPlayTime()
+    {
+        TogglePlay();
+        selectedPlay = true;
+        MainMenu = true;
+        SceneManager.LoadScene("MainMenu");
+        selector.SetActive(false);
+        selector.transform.localPosition = new Vector3(-114, 4, 0);
+        if (GameObject.Find("Canvas"))
+        {
             Destroy(gameObject);
         }
-
-        public void QuitGame()
-        {
-            Debug.Log("Quit");
-            Application.Quit();
-        }
-
     }
+
+    public void GameOver()
+    {
+        SceneManager.LoadScene("GameOver");
+        Destroy(gameObject);
+    }
+
+    public void QuitGame()
+    {
+        Debug.Log("Quit");
+        Application.Quit();
+    }
+
 }
+
