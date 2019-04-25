@@ -3,9 +3,8 @@ using UnityEngine.UI;
 using System.Collections;
 using Ink.Runtime;
 using System.Collections.Generic;
-using MenuControl;
 
-// This is a super bare bones example of how to play and display a ink story in Unity.
+    // This is a super bare bones example of how to play and display a ink story in Unity.
     public class BasicInkExample : MonoBehaviour
     {
 
@@ -16,7 +15,7 @@ using MenuControl;
             // Remove the default message
             //RemoveChildren();
             //StartStory();
-            
+
         }
 
         void Update()
@@ -32,7 +31,7 @@ using MenuControl;
         {
             story = new Story(inkJSONAsset.text);
             RefreshView();
-            MenuControl.stopActors();
+            //MenuControl.MC.stopActors();
         }
 
         // This is the main function called every time the story changes. It does a few things:
@@ -76,7 +75,7 @@ using MenuControl;
                 {
                     RemoveChildren();
                 });
-                MenuControl.resumeActors();
+                //MenuControl.MC.resumeActors();
             }
         }
 
