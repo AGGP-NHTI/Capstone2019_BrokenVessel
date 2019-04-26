@@ -4,12 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-
-
 public class MenuControl : MonoBehaviour
 {
-
-
     public static MenuControl MC;
 
     [SerializeField] GameObject TileScreen;
@@ -203,6 +199,12 @@ public class MenuControl : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    public void Win(bool isJoe = false)
+    {
+        if(isJoe) { SceneManager.LoadScene("JoeCredits"); }
+        else { SceneManager.LoadScene("Credits"); }
     }
 
     public void GameOver()
