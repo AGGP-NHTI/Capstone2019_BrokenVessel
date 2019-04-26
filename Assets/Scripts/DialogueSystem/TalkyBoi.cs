@@ -14,6 +14,11 @@ public class TalkyBoi : MonoBehaviour {
     public GameObject WorldScriptManager;
     public GameObject canvas;
     public Transform spawnPosition;
+
+    // Use this for initialization
+    void Start () {
+        
+	}
 	
 	// Update is called once per frame
 	void Update () {

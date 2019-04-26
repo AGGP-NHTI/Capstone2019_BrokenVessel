@@ -28,6 +28,8 @@ public class EnemyCombat : BrokenVessel.Actor.Actor {
 	[SerializeField]
 	private GameObject hitEffect;
 
+    [SerializeField] EnemyContact Contact;
+
     void Start()
     {
         targetTransform = GameObject.Find("Player").transform;
@@ -124,6 +126,10 @@ public class EnemyCombat : BrokenVessel.Actor.Actor {
 
     IEnumerator Die()
     {
+        if(Contact)
+        {
+            Destroy(Contact.gameObject);
+        }
         dead = true;
         choice = DetectionType.none;
         AlwaysMove = false;
