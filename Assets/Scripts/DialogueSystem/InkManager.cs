@@ -83,8 +83,9 @@ public class InkManager : MonoBehaviour {
         {
             Button choice = CreateChoiceView("Leave");
             choice.onClick.AddListener(delegate {
-                //call joes unpause function
+                MenuControl.MC.resumeActors();
                 StartStory();
+                canvas.SetActive(false);
             });
         }
     }

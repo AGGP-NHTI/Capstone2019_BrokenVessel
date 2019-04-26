@@ -34,9 +34,9 @@ public class TalkyBoi : MonoBehaviour {
             if (Input.GetKeyDown(KeyCode.JoystickButton3))
             {
                 canvas.SetActive(true);
+                MenuControl.MC.stopActors();
                 WorldScriptManager.GetComponent<BasicInkExample>().RemoveChildren();
                 WorldScriptManager.GetComponent<BasicInkExample>().StartStory();
-                MenuControl.MC.stopActors();
             }
             if (Input.GetKeyDown(KeyCode.J))
             {
