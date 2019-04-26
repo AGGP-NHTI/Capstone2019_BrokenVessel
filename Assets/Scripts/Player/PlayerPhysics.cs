@@ -32,6 +32,10 @@ namespace BrokenVessel.Player
 		[Header("Technical")]
 		[SerializeField]
 		private LayerMask collisionMask;
+		[SerializeField]
+		private Animator anim;
+		[SerializeField]
+		private Transform mesh;
 		
 		private bool grounded = false;
 		private bool halvedJump = false;
@@ -71,6 +75,12 @@ namespace BrokenVessel.Player
 				stickFrames = 0;
 				canStickWall = true;
 			}
+
+			// Animation
+			anim.SetBool("PlayerJumping", !grounded);
+			mesh.localPosition = Vector3.zero;
+			anim.SetBool("PlayerLeftWallSlide", !grounded && (CheckRightWall() || CheckLeftWall()));
+
 		}
 
 		public void Jump()
@@ -144,12 +154,18 @@ namespace BrokenVessel.Player
 			}
 
 			rg.velocity = vel;
+
+			// Animation
+			anim.SetBool("PlayerWalking", dir != 0 && grounded);
+			if (dir == -1) { mesh.localScale = new Vector3(20, 20, 20); }
+			if (dir == 1) { mesh.localScale = new Vector3(20, 20, -20); }
 		}
 
 		public void Dash(float dir)
 		{
             if (paused) { return; }
             rg.AddForce(Vector2.right * Mathf.Sign(dir) * dashSpeed, ForceMode2D.Impulse);
+				anim.SetTrigger("PlayerDash");
 		}
 		
 		private bool CheckFloor()
