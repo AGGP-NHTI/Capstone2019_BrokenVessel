@@ -70,6 +70,8 @@ public class InkManager : MonoBehaviour {
         {
             for (int i = 0; i < story.currentChoices.Count; i++)
             {
+                //this is what creates all the buttons, so i can feed the selector it's number of choices from here.
+
                 Choice choice = story.currentChoices[i];
                 Button button = CreateChoiceView(choice.text.Trim());
                 // Tell the button what to do when we press it
@@ -84,6 +86,7 @@ public class InkManager : MonoBehaviour {
             Button choice = CreateChoiceView("Leave");
             choice.onClick.AddListener(delegate {
                 //call joes unpause function
+
                 StartStory();
             });
         }
