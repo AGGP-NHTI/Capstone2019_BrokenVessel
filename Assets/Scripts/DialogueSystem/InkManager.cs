@@ -81,8 +81,9 @@ public class InkManager : MonoBehaviour {
         // If we've read all the content and there's no choices, the story is finished!
         else
         {
-            Button choice = CreateChoiceView("ButtonBoi");
+            Button choice = CreateChoiceView("Leave");
             choice.onClick.AddListener(delegate {
+                //call joes unpause function
                 StartStory();
             });
         }

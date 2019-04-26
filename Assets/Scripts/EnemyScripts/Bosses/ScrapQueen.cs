@@ -21,8 +21,6 @@ public class ScrapQueen : BrokenVessel.Actor.Actor
     public bool intro;
     float timer = 1f;
     [SerializeField] GameObject platform;
-    [SerializeField] FaceCheck fc;
-    [SerializeField] Transform offSet;
     [SerializeField] Transform spawnMinionsPoint;
 
     List<GameObject> FlyingSpawns = new List<GameObject>();
@@ -52,24 +50,10 @@ public class ScrapQueen : BrokenVessel.Actor.Actor
             }
             else
             {
-                if ((int)offSet.rotation.eulerAngles.y == 90)
+                if(GetComponent<EnemyCombat>().health < 0)
                 {
-                    fc.gameObject.GetComponent<BoxCollider2D>().offset = Vector2.up;
+                    MenuControl.MC.CloseBossBar();
                 }
-                if ((int)offSet.rotation.eulerAngles.y == 270)
-                {
-                    fc.gameObject.GetComponent<BoxCollider2D>().offset = Vector2.down;
-                }
-
-                if (fc.hit && speed < 2)
-                {
-                    speed += 1;
-                }
-                if (fc.hit == false && speed >= 2)
-                {
-                    speed -= 1;
-                }
-
                 if (!attacking && (transform.position - spawnMinionsPoint.position).magnitude < 1f)
                 {
                     StartCoroutine(SpawnMinions());
@@ -106,18 +90,20 @@ public class ScrapQueen : BrokenVessel.Actor.Actor
         stationaryCollider.SetActive(true);
         attacking = true;
         yield return new WaitForSeconds(4f);
-        if (FlyingSpawns != null)
+        if (FlyingSpawns != null || FlyingSpawns.Count != 0)
         {
             for (int i = 0; i < FlyingSpawns.Count; i++) //check for dead enemies in the list
             {
                 if (FlyingSpawns[i] == null) FlyingSpawns.Remove(FlyingSpawns[i]);
+                if (FlyingSpawns.Count == 0) break;
             }
         }
-        if (CrawlingSpawns != null)
+        if (CrawlingSpawns != null || CrawlingSpawns.Count != 0)
         {
             for (int i = 0; i < CrawlingSpawns.Count; i++) //check for dead enemies in the list
             {
                 if (CrawlingSpawns[i] == null) CrawlingSpawns.Remove(FlyingSpawns[i]);
+                if (CrawlingSpawns.Count == 0) break;
             }
         }
         if (FlyingSpawns.Count < flyingSpawnCap)
@@ -144,8 +130,6 @@ public class ScrapQueen : BrokenVessel.Actor.Actor
     void Intro()
     {
         //start at top
-
-
         if ((angle - (Mathf.PI / 4)) < .025f && timer > 0)
         {
             angle += speed * Time.deltaTime;
@@ -166,6 +150,7 @@ public class ScrapQueen : BrokenVessel.Actor.Actor
             if ((angle - (Mathf.PI / 2)) < .025f && (angle - (Mathf.PI / 2)) > -.025f)
             {
                 Destroy(platform);
+                MenuControl.MC.OpenBossBar(GetComponent<EnemyCombat>());
                 intro = false;
             }
         } 

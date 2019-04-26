@@ -13,6 +13,7 @@ public class TalkyBoi : MonoBehaviour {
     public GameObject textBoxInstance;
     public GameObject WorldScriptManager;
     public GameObject canvas;
+    public Transform spawnPosition;
 
     // Use this for initialization
     void Start () {
@@ -22,19 +23,27 @@ public class TalkyBoi : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         Distance_ = Vector3.Distance(Player.transform.position, Speaker.transform.position);
-        if(Distance_ < 7)
+        if(Distance_ < 3)
         {
             if (textBoxVisible == false)
             {
-                textBoxInstance = Instantiate(textBox);
+                textBoxInstance = Instantiate(textBox, spawnPosition);
                 textBoxInstance.transform.parent = Speaker.transform;
                 textBoxVisible = true;
             }
-            if (WorldScriptManager.GetComponent<KeysPressed>().jHeld == true)
+            if (Input.GetKeyDown(KeyCode.JoystickButton3))
             {
                 canvas.SetActive(true);
                 WorldScriptManager.GetComponent<BasicInkExample>().RemoveChildren();
                 WorldScriptManager.GetComponent<BasicInkExample>().StartStory();
+                MenuControl.MC.stopActors();
+            }
+            if (Input.GetKeyDown(KeyCode.J))
+            {
+                canvas.SetActive(true);
+                WorldScriptManager.GetComponent<BasicInkExample>().RemoveChildren();
+                WorldScriptManager.GetComponent<BasicInkExample>().StartStory();
+                MenuControl.MC.stopActors();
             }
         }
         else
