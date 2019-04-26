@@ -10,6 +10,7 @@ public class DamageTrigger : MonoBehaviour {
 
     private void Start()
     {
+        gameObject.layer = 0;
         transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, 0, transform.rotation.eulerAngles.z);
     }
 
@@ -24,6 +25,10 @@ public class DamageTrigger : MonoBehaviour {
             if (collision.gameObject.GetComponent<EnemyCombat>())
             {
                 collision.gameObject.GetComponent<EnemyCombat>().takeDamage(damage);
+            }
+            if(collision.gameObject.layer == 12 || collision.gameObject.layer == 4)//skip is water or weapon
+            {
+                return;
             }
 
             if (isProjectile)

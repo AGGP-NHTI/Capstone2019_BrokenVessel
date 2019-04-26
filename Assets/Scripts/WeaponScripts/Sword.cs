@@ -13,8 +13,7 @@ public class Sword : Weapon {
     }
 
     // Update is called once per frame
-    public override void Update () {
-        base.Update();
+    public void Update () {
         if (HitBox == null)
         {
             HitBox = GameObject.Find("SwordHitBox");

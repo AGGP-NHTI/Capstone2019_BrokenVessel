@@ -380,7 +380,6 @@ GameObject:
   - component: {fileID: 3426652531439026310}
   - component: {fileID: 540436514353218011}
   - component: {fileID: 4445944837501212038}
-  - component: {fileID: 3250294672683217897}
   - component: {fileID: 7535358940366121727}
   - component: {fileID: 4115507426051226260}
   m_Layer: 10
@@ -471,6 +470,7 @@ MonoBehaviour:
   faceCheck: {fileID: 8739709557830097244}
   hitEffect: {fileID: 2975679802408643475, guid: 93ac990b2aa32ec44831a25509da57c8,
     type: 3}
+  Contact: {fileID: 83469739134110115}
 --- !u!114 &4445944837501212038
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -488,21 +488,6 @@ MonoBehaviour:
   approachPlayer: 1
   approachDistance: 3
   approachTimer: 2
---- !u!114 &3250294672683217897
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6530266425189079619}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a7cd29b0d4e42d40960e46dbffc72ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 1
-  knockBack: 10
-  iFrames: 0.5
 --- !u!114 &7535358940366121727
 MonoBehaviour:
   m_ObjectHideFlags: 0
