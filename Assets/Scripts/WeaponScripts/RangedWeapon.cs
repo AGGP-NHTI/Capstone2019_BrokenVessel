@@ -26,16 +26,17 @@ public class RangedWeapon : Weapon
         //mouse = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10)) - transform.position;
         //transform.rotation = Quaternion.Euler(0, 0, Mathf.Atan2(mouse.y, mouse.x) * Mathf.Rad2Deg);
         Rotation();
+        transform.localScale = transform.parent.localScale * 1f;
 
         if (transform.rotation.eulerAngles.z > 90 && transform.rotation.eulerAngles.z < 270)
         {
             Debug.Log("Flip");
-            Body.localPosition = new Vector3(0.219f, 1.268f, transform.position.z);
+            Body.localPosition = new Vector3(0.219f, 1.268f, 0);
             Body.localRotation = Quaternion.Euler(0, -90, 180);
         }
         else
         {
-            Body.localPosition = new Vector3(0.219f, -1.268f, transform.position.z);
+            Body.localPosition = new Vector3(0.219f, -1.268f, 0);
             Body.localRotation = Quaternion.Euler(0, -90, 0);
         }
     }
