@@ -33,6 +33,13 @@ public class TalkyBoi : MonoBehaviour {
                 WorldScriptManager.GetComponent<BasicInkExample>().StartStory();
                 MenuControl.MC.stopActors();
             }
+            if (Input.GetKeyDown(KeyCode.J))
+            {
+                canvas.SetActive(true);
+                WorldScriptManager.GetComponent<BasicInkExample>().RemoveChildren();
+                WorldScriptManager.GetComponent<BasicInkExample>().StartStory();
+                MenuControl.MC.stopActors();
+            }
         }
         else
         {
