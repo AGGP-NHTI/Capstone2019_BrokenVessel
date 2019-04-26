@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using BrokenVessel.Player;
 using UnityEngine;
 
 public class PlayerData : BrokenVessel.Actor.Actor
@@ -36,6 +37,18 @@ public class PlayerData : BrokenVessel.Actor.Actor
             MenuControl.MC.UpdateHealth(health);
             //knockback
         }
+        if(health <= 0)
+        {
+            GetComponent<Player>().dead = true;
+            StartCoroutine(Die());
+        }
+    }
+
+    IEnumerator Die()
+    {
+        GetComponent<Rigidbody2D>().freezeRotation = false;
+        yield return new WaitForSeconds(5);
+        MenuControl.MC.GameOver();
     }
 
     public void Heal(int value)

@@ -32,3 +32,6 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+Assets/Assets.meta
+Assets/Assets.meta
+Assets/Plugins/Ink/Example/Scripts.meta
