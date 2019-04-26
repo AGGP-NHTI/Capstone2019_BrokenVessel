@@ -44,7 +44,8 @@ public class Spear : Weapon
     {
         r1 = Input.GetAxis("RightHorizontal");
         r2 = Input.GetAxis("RightVertical");
-        if (r1 >= 0.3f || r2 >= 0.3f || r1 <= -0.3f || r2 <= -0.3f)
+        Vector2 aim = new Vector2(r1, r2);
+        if (aim.magnitude > 0.2f)
         {
             transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, (Mathf.Atan2(r1, r2) - 90) * 180 / Mathf.PI)); // this does the actual rotaion according to inputs
         }
