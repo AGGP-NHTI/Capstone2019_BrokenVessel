@@ -54,6 +54,10 @@ public class PlayerData : BrokenVessel.Actor.Actor
     public void Heal(int value)
     {
         health += value;
+        if (health >= 10)
+        {
+            health = 10;
+        }
         MenuControl.MC.UpdateHealth(health);
     }
 
