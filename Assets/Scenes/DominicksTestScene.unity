@@ -256,6 +256,7 @@ MonoBehaviour:
   textBoxInstance: {fileID: 0}
   WorldScriptManager: {fileID: 849191884}
   canvas: {fileID: 1839792143}
+  spawnPosition: {fileID: 0}
 --- !u!65 &55609556
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -537,12 +538,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 98ef46e5adbbb4644b6aa91e851ac548, type: 3}
---- !u!4 &236001682 stripped
+--- !u!4 &236001682
 Transform:
-  m_CorrespondingSourceObject: {fileID: 400008, guid: 98ef46e5adbbb4644b6aa91e851ac548,
-    type: 3}
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 236001681}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 885457995}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1251562069}
+  m_Father: {fileID: 866233088}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &294159905
 GameObject:
   m_ObjectHideFlags: 0
@@ -706,21 +716,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb0f692b34d4d83478b8437db80368d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: {fileID: 0}
-  pm: {fileID: 0}
-  pa: {fileID: 0}
-  speed: 0
-  jumpForce: 0
-  wallJumping: 0
-  wallside: 0
-  sideCollide: 0
-  center: {fileID: 294159906}
-  grounded: 0
-  groundCheck: {fileID: 437346211}
-  realGround:
-    m_Bits: 1
-  boxCheckSize: {x: 0.9, y: 0.25}
-  rig: {fileID: 0}
 --- !u!114 &312877412
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -733,26 +728,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c947466ca2648cf4993e95c5d44aee86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: {fileID: 0}
-  dashUnlocked: 0
-  wallGrabUnlocked: 0
-  grappleHookUnlocked: 0
-  phaseUnlocked: 0
-  phaseDashUnlocked: 0
-  chargeJumpUnlocked: 0
-  shipControlUnlocked: 0
-  groundCheck: {fileID: 437346211}
-  realGround:
-    m_Bits: 1
-  boxCheckSize: {x: 0.9, y: 0.25}
-  grounded: 1
-  dash: 0
-  dashTimer: 0
-  dashDuration: 0
-  wallClimb: 0
-  wallJump: 0
-  sideCollide: 0
-  center: {fileID: 294159906}
 --- !u!114 &312877413
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -768,17 +743,8 @@ MonoBehaviour:
   health: 100
   energy: 100
   metalScrap: 0
-  speed: 7
-  jumpForce: 11
   iFrameTimer: 0
   ignoreDamage: 0
-  dash: 0
-  wallGrab: 0
-  grappleHook: 0
-  phase: 0
-  phaseDash: 0
-  chargeJump: 0
-  shipControl: 0
 --- !u!114 &312877414
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -807,6 +773,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7c9ea972c292ba4382746f874e134fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dead: 0
 --- !u!114 &312877416
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -852,6 +819,7 @@ MonoBehaviour:
   ControllerJump: 330
   interactKey: 101
   ControllerInteract: 333
+  ControllerDash: 332
   leftKey: 97
   rightKey: 100
   dblClickThreshold: 0.2
@@ -1057,6 +1025,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &885457995
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 236001681}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 236001682}
+  m_Layer: 0
+  m_Name: SBlaster (Missing Prefab)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1162112503
 GameObject:
   m_ObjectHideFlags: 0
@@ -1160,6 +1144,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1251562068
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 236001681}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1251562069}
+  m_Layer: 0
+  m_Name: Missing Prefab (Dummy)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1251562069
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 400008, guid: 98ef46e5adbbb4644b6aa91e851ac548,
+    type: 3}
+  m_PrefabInstance: {fileID: 236001681}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1251562068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 236001682}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1369258732
 GameObject:
@@ -1765,10 +1780,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66e957d58a4584a8894329531ec0b096, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inkJSONAsset: {fileID: 4900000, guid: dcbdbb1010174a84193122441872ee48, type: 3}
-  canvas: {fileID: 1839792147}
-  textPrefab: {fileID: 11456674, guid: 1aab6ef84d87c416f8f0b3e1ef3d77d2, type: 3}
-  buttonPrefab: {fileID: 11455116, guid: 37c108a6c38964f79a6621eccb33ddc1, type: 3}
 --- !u!4 &2032996060
 Transform:
   m_ObjectHideFlags: 0
