@@ -85,7 +85,7 @@ public class InkManager : MonoBehaviour {
             choice.onClick.AddListener(delegate {
                 MenuControl.MC.resumeActors();
                 StartStory();
-                canvas.SetActive(false);
+                canvas.gameObject.SetActive(false);
             });
         }
     }
