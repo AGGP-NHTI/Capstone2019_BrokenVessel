@@ -921,6 +921,79 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 7880959370096703900}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &50723165
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 50723168}
+  - component: {fileID: 50723167}
+  - component: {fileID: 50723166}
+  m_Layer: 2
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &50723166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 50723165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0a6e220048241345857dede9293029c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Scene: Credits
+  winDoor: 1
+  cheese: 0
+--- !u!61 &50723167
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 50723165}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 7, y: 4}
+  m_EdgeRadius: 0
+--- !u!4 &50723168
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 50723165}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -320, y: -0.55, z: 4}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &54210462
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21624,6 +21697,16 @@ PrefabInstance:
     - target: {fileID: 4662215454626238534, guid: 43eee53e5db395743934d2b8d56f7547,
         type: 3}
       propertyPath: deathPlatform
+      value: 
+      objectReference: {fileID: 130162076}
+    - target: {fileID: 4662215454626238534, guid: 43eee53e5db395743934d2b8d56f7547,
+        type: 3}
+      propertyPath: door
+      value: 
+      objectReference: {fileID: 50723165}
+    - target: {fileID: 4662215454626238534, guid: 43eee53e5db395743934d2b8d56f7547,
+        type: 3}
+      propertyPath: winBarrier
       value: 
       objectReference: {fileID: 130162076}
     - target: {fileID: 3362862548374227271, guid: 43eee53e5db395743934d2b8d56f7547,
@@ -43899,8 +43982,8 @@ Transform:
   - {fileID: 301150500}
   - {fileID: 2128070141}
   - {fileID: 508593983}
-  - {fileID: 1050795859}
   - {fileID: 1669438573}
+  - {fileID: 1050795859}
   - {fileID: 1649304519}
   m_Father: {fileID: 748870441}
   m_RootOrder: 0

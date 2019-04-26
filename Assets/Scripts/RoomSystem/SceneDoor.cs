@@ -7,6 +7,7 @@ namespace BrokenVessel.Interact
     public class SceneDoor : Interact
     {
         public string Scene;
+        public bool winDoor;
         public bool cheese = false;
 
         public override void Impulse()
