@@ -83,7 +83,6 @@ public class InkManager : MonoBehaviour {
         {
             Button choice = CreateChoiceView("ButtonBoi");
             choice.onClick.AddListener(delegate {
-                //call joes unpause function
                 StartStory();
             });
         }

@@ -22,8 +22,6 @@ namespace BrokenVessel.Player
         [SerializeField]
         private KeyCode ControllerInteract = KeyCode.JoystickButton3; //Y
         [SerializeField]
-        private KeyCode ControllerDash = KeyCode.JoystickButton2; //X
-        [SerializeField]
 		private KeyCode leftKey = KeyCode.A;
 		[SerializeField]
 		private KeyCode rightKey = KeyCode.D;
@@ -36,8 +34,8 @@ namespace BrokenVessel.Player
         public bool Jump { get => Input.GetKeyDown(jumpKey) || Input.GetKeyDown(ControllerJump); }
 		public bool JumpEnd { get => Input.GetKeyUp(jumpKey) || Input.GetKeyUp(ControllerJump); }
 		public bool Interact { get => Input.GetKeyDown(interactKey) || Input.GetKeyDown(ControllerInteract); }
-		public bool Left { get => Input.GetKey(leftKey) || Input.GetAxis("Horizontal") < -0.3; }
-		public bool Right { get => Input.GetKey(rightKey) || Input.GetAxis("Horizontal") > 0.3; }
+		public bool Left { get => Input.GetKey(leftKey) || Input.GetAxis("Horizontal") == -1; }
+		public bool Right { get => Input.GetKey(rightKey) || Input.GetAxis("Horizontal") == 1; }
 		public float Dash { get; private set; }
 
         private float time = 0;
@@ -47,26 +45,12 @@ namespace BrokenVessel.Player
 		{
 			Dash = 0;
 
-			if (Input.GetKeyDown(rightKey) || Input.GetKeyDown(leftKey) || Input.GetKeyDown(ControllerDash))
+			if (Input.GetKeyDown(rightKey) || Input.GetKeyDown(leftKey))
 			{
 				if (Input.GetKeyDown(rightKey) && lastKey != rightKey) { lastKey = KeyCode.None; }
 				if (Input.GetKeyDown(leftKey) && lastKey != leftKey) { lastKey = KeyCode.None; }
 
-                if(Input.GetKeyDown(ControllerDash) && Input.GetAxis("Horizontal") != 0)
-                {
-                    if (Input.GetAxis("Horizontal") < 0)
-                    {
-                        Dash = -1;
-                        Debug.Log("Left");
-                    }
-                    else
-                    {
-                        Dash = 1;
-                        Debug.Log("Right");
-                    }
-                }
-
-                if (Time.time < time + dblClickThreshold && lastKey != KeyCode.None)
+				if (Time.time < time + dblClickThreshold && lastKey != KeyCode.None)
 				{
 					Dash = lastKey == rightKey ? 1 : -1;
 				}
@@ -79,7 +63,6 @@ namespace BrokenVessel.Player
 
 			if (Input.GetKeyDown(rightKey)) { lastKey = rightKey; }
 			if (Input.GetKeyDown(leftKey)) { lastKey = leftKey; }
-            if (Input.GetKeyDown(ControllerDash)) { lastKey = ControllerDash; }
-        }
+		}
 	}
 }
