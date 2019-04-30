@@ -24,11 +24,8 @@ namespace BrokenVessel.Player
 		
 		void Update()
 		{
-<<<<<<< HEAD
             if (dead) { return; }
 
-=======
->>>>>>> parent of 8379194... Animation stuff
             if (input.Attack) { combat.Attack(); }
             if(input.Swap) { combat.SwitchEquip(); }
 			if (input.Jump) { phys.Jump(); }
