@@ -30,6 +30,7 @@ public class MenuControl : MonoBehaviour
     public bool Pause { get => Input.GetKeyDown(pauseKey) || Input.GetKeyDown(ControllerPause); }
     public bool Select { get => Input.GetKeyDown(returnKey) || Input.GetKeyDown(ControllerJump); }
 
+    bool hideAll = false;
     bool ScenePaused = false;
     bool MainMenu = true;
 
@@ -41,7 +42,13 @@ public class MenuControl : MonoBehaviour
 
     void Update()
     {
-        if (MainMenu)
+        if(hideAll)
+        {
+            TileScreen.SetActive(false);
+            PauseScreen.SetActive(false);
+            Hud.SetActive(false);
+        }
+        else if (MainMenu)
         {
             TileScreen.SetActive(true);
             PauseScreen.SetActive(false);
@@ -203,6 +210,7 @@ public class MenuControl : MonoBehaviour
 
     public void Win(bool isJoe = false)
     {
+        hideAll = true;
         if(isJoe) { SceneManager.LoadScene("JoeCredits"); }
         else { SceneManager.LoadScene("Credits"); }
     }
