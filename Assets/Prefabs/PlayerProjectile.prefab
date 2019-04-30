@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 248463012057153251}
   - component: {fileID: 4218295093171876360}
   - component: {fileID: 4364626190849720178}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: PlayerProjectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -66,7 +66,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b9b167db5912bc47ba05ee9233898e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 35
   movement: {x: 1, y: 1}
   shootByX: 0
 --- !u!1 &4304660626255169349
@@ -82,7 +82,7 @@ GameObject:
   - component: {fileID: 1815809438397117657}
   - component: {fileID: 3712782732818283909}
   - component: {fileID: 7785781070903285510}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
