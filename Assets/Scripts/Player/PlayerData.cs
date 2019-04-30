@@ -17,6 +17,7 @@ public class PlayerData : BrokenVessel.Actor.Actor
     private void Awake()
     {
         PD = this;
+        name = "Player";
     }
 
     private void Start()

@@ -20,7 +20,7 @@ public class FollowMovement : MonoBehaviour {
     [SerializeField] bool isEnemy = false;
     public bool seePlayer = false;
 
-    void Awake ()
+    void Start ()
     {
         player = GameObject.Find("Player");
     }
