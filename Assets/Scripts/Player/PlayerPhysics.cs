@@ -152,9 +152,14 @@ namespace BrokenVessel.Player
 
 		public void Dash(float dir)
 		{
+<<<<<<< HEAD
             if (paused || dashTimer > 0 ) { return; }
             dashTimer = .5f;
             rg.AddForce(Vector2.right * Mathf.Sign(4) * dashSpeed * dir, ForceMode2D.Impulse);
+=======
+            if (paused) { return; }
+            rg.AddForce(Vector2.right * Mathf.Sign(dir) * dashSpeed, ForceMode2D.Impulse);
+>>>>>>> parent of 8379194... Animation stuff
 		}
 		
 		private bool CheckFloor()
