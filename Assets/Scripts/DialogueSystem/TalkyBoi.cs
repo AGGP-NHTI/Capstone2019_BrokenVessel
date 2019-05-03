@@ -42,6 +42,7 @@ public class TalkyBoi : MonoBehaviour {
             if (Input.GetKeyDown(KeyCode.J))
             {
                 canvas.SetActive(true);
+                BIE.ChangeSelectorView(true);
                 BIE.RemoveChildren();
                 BIE.StartStory();
                 MenuControl.MC.stopActors();
