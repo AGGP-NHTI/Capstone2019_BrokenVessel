@@ -1,36 +1,43 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.Rendering;
 using UnityEngine;
 
 public class CelingLightControl : MonoBehaviour
 {
     public Material LightOn_mat;
     public Material Lightoff_mat;
-    public Light LightObject;
-    public ParticleSystem particles;
-    Render render; 
+    public GameObject LightObject;
+    public GameObject particleObject;
+    Renderer render;
 
-
-    // Start is called before the first frame update
-    void Start()
+    public virtual void Start()
     {
-        render = gameObject.GetComponent<Render>(); 
+        render = gameObject.GetComponent<Renderer>();
     }
 
-    // Update is called once per frame
-    void Update()
+   
+    public virtual void Update()
     {
         
     }
 
-    public void LightOn()
+    public virtual void LightOn()
     {
-
+        Material[] mats = render.materials;
+        mats[2] = LightOn_mat;
+        render.materials = mats;
+        LightObject.SetActive(true);
+        particleObject.SetActive(true);
     }
 
-    public void LightOff()
+    public virtual void LightOff()
     {
-
+        Material[] mats = render.materials;
+        mats[2] = Lightoff_mat;
+        render.materials = mats;
+        LightObject.SetActive(false);
+        particleObject.SetActive(false);
     }
 
 
