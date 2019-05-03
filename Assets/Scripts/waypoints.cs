@@ -12,7 +12,11 @@ public class waypoints : MonoBehaviour {
     public bool rotatable = true;
     public bool rotateInPlace = false;
     public bool travel = true;
-    
+    public bool rotateInArc = false;
+	public float rotationArc = 0.0f;
+	public bool rotateOnX = false;
+	public bool rotateOnY = false;
+	public bool rotateOnZ = false;
 
     public bool moveUpDown = false;
     float moveSpeed = 0.005f;
@@ -53,6 +57,22 @@ public class waypoints : MonoBehaviour {
         { 
         Quaternion targetRotation = Quaternion.LookRotation(listpoints[current].transform.position - transform.position);
         transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Mathf.Min(rotationSpeed * Time.deltaTime, 1));
+        }
+		 if(rotateInArc)
+        { 
+        Quaternion targetRotation = Quaternion.LookRotation(listpoints[current].transform.position - transform.position);
+		if(rotateOnX)
+		{
+		transform.rotation = Quaternion.Euler(rotationArc * Mathf.Sin(Time.time * speed), 0f, 0f);
+		}
+		if(rotateOnY)
+		{
+		transform.rotation = Quaternion.Euler(0f, rotationArc * Mathf.Sin(Time.time * speed), 0f);
+		}
+		if(rotateOnZ)
+		{
+		transform.rotation = Quaternion.Euler(0f, 0f, rotationArc * Mathf.Sin(Time.time * speed));
+		}
         }
         if(rotateInPlace)
         {
