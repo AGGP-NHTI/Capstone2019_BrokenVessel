@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1737304294393506441}
-  - component: {fileID: 1737304294393506440}
   m_Layer: 0
   m_Name: pivot
   m_TagString: Untagged
@@ -31,33 +30,6 @@ Transform:
   m_Father: {fileID: 5912226908572342095}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1737304294393506440
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1737304294393506442}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 273d5a14e4491754f9580c24976bb92e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  listpoints: []
-  rotationSpeed: 10
-  speed: 0
-  WPradius: 1
-  rotatable: 0
-  rotateInPlace: 0
-  travel: 0
-  rotateInArc: 0
-  rotationArc: 45
-  rotateOnX: 0
-  rotateOnY: 0
-  rotateOnZ: 1
-  parent: {fileID: 5912226908572109679}
-  moveWithParent: 1
-  moveUpDown: 0
 --- !u!1 &5912226908572109569
 GameObject:
   m_ObjectHideFlags: 0
@@ -1502,22 +1474,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 5912226908572109679}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 273d5a14e4491754f9580c24976bb92e, type: 3}
+  m_Script: {fileID: 11500000, guid: 54cf3a4e150601643bedafccb03a169e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   listpoints: []
-  rotationSpeed: 20
-  speed: 2
+  rotationSpeed: 30
+  speed: 0
   WPradius: 1
   rotatable: 0
   rotateInPlace: 0
   travel: 0
   rotateInArc: 1
-  rotationArc: 90
+  rotationArc: 30
   rotateOnX: 0
   rotateOnY: 1
   rotateOnZ: 0
-  parent: {fileID: 5912226908572109681}
+  parent: {fileID: 0}
   moveWithParent: 0
   moveUpDown: 0
 --- !u!1 &5912226908572109681
@@ -1531,7 +1503,7 @@ GameObject:
   - component: {fileID: 5912226908572342097}
   - component: {fileID: 5912226908572109680}
   m_Layer: 0
-  m_Name: clawArm
+  m_Name: clawArmMoving
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
