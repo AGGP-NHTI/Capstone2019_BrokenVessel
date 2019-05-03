@@ -18,6 +18,9 @@ public class waypoints : MonoBehaviour {
 	public bool rotateOnY = false;
 	public bool rotateOnZ = false;
 
+    public GameObject parent;
+    public bool moveWithParent = false;
+
     public bool moveUpDown = false;
     float moveSpeed = 0.005f;
     //Vector3 offset;
@@ -36,8 +39,12 @@ public class waypoints : MonoBehaviour {
 
 
     // Update is called once per frame
-    void Update () {
+    void Update() {
 
+        if (moveWithParent)
+        { 
+        transform.rotation = Quaternion.Lerp(transform.rotation, parent.transform.rotation, (rotationSpeed * Time.deltaTime));
+        }
         if (travel)
         {
             if (Vector3.Distance(listpoints[current].transform.position, transform.position) < WPradius)
@@ -53,26 +60,28 @@ public class waypoints : MonoBehaviour {
                 transform.position = Vector3.MoveTowards(transform.position, listpoints[current].transform.position, Time.deltaTime * speed);
             }
         }
+
         if(rotatable)
         { 
         Quaternion targetRotation = Quaternion.LookRotation(listpoints[current].transform.position - transform.position);
         transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Mathf.Min(rotationSpeed * Time.deltaTime, 1));
         }
-		 if(rotateInArc)
-        { 
-        Quaternion targetRotation = Quaternion.LookRotation(listpoints[current].transform.position - transform.position);
-		if(rotateOnX)
-		{
-		transform.rotation = Quaternion.Euler(rotationArc * Mathf.Sin(Time.time * speed), 0f, 0f);
-		}
-		if(rotateOnY)
-		{
-		transform.rotation = Quaternion.Euler(0f, rotationArc * Mathf.Sin(Time.time * speed), 0f);
-		}
-		if(rotateOnZ)
-		{
-		transform.rotation = Quaternion.Euler(0f, 0f, rotationArc * Mathf.Sin(Time.time * speed));
-		}
+
+        if (rotateInArc)
+        {
+
+            if (rotateOnX)
+            {
+                transform.rotation = Quaternion.Euler( rotationArc * Mathf.Sin(Time.time * rotationSpeed/360), 0f, 0f);
+            }
+            if (rotateOnY)
+            {
+                transform.rotation = Quaternion.Euler( 0f, rotationArc * Mathf.Sin(Time.time * rotationSpeed/360), 0f);
+            }
+            if (rotateOnZ)
+		    {
+		    transform.rotation = Quaternion.Euler(0f, 0f, rotationArc * Mathf.Sin(Time.time * rotationSpeed/360));
+		    }
         }
         if(rotateInPlace)
         {
