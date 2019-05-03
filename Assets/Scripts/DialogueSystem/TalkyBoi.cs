@@ -15,13 +15,13 @@ public class TalkyBoi : MonoBehaviour {
     public GameObject canvas;
     public Transform spawnPosition;
 
-    // Use this for initialization
-    void Start () {
-        
-	}
-	
-	// Update is called once per frame
+    public BasicInkExample BIE;
+
+    int choice = 0;
+    float canMove = 0;
+
 	void Update () {
+
         Distance_ = Vector3.Distance(Player.transform.position, Speaker.transform.position);
         if(Distance_ < 3)
         {
@@ -35,16 +35,27 @@ public class TalkyBoi : MonoBehaviour {
             {
                 canvas.SetActive(true);
                 MenuControl.MC.stopActors();
-                WorldScriptManager.GetComponent<BasicInkExample>().RemoveChildren();
-                WorldScriptManager.GetComponent<BasicInkExample>().StartStory();
+                BIE.RemoveChildren();
+                BIE.StartStory();
             }
             if (Input.GetKeyDown(KeyCode.J))
             {
                 canvas.SetActive(true);
-                WorldScriptManager.GetComponent<BasicInkExample>().RemoveChildren();
-                WorldScriptManager.GetComponent<BasicInkExample>().StartStory();
+                BIE.RemoveChildren();
+                BIE.StartStory();
                 MenuControl.MC.stopActors();
             }
+            if(Input.GetAxis("Vertical") > .85f && (canMove <= 0 || canMove > .5f))
+            {
+                if(--choice < 0) { choice = 0; }
+                canMove += Time.deltaTime;
+            }
+            else if (Input.GetAxis("Vertical") < -.85f && (canMove <= 0 || canMove > .5f))
+            {
+                if (++choice <= BIE.GetChoice()) { choice = BIE.GetChoice() - 1; }
+                canMove += Time.deltaTime;
+            }
+            else{ canMove = 0; }
         }
         else
         {
