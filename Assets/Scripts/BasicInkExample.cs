@@ -110,6 +110,7 @@ public class BasicInkExample : MonoBehaviour
             choice.onClick.AddListener(delegate
             {
                 RemoveChildren();
+                ChangeSelectorView(false);
             });
             buttonList.Add(choice);
             MenuControl.MC.resumeActors();
