@@ -67,7 +67,7 @@ public class TalkyBoi : MonoBehaviour {
                 {
                     BIE.FinalizeSelect(choice);
                     choice = 0;
-                    BIE.ChangeSelectorView(false);
+                    //BIE.ChangeSelectorView(false);
                 }
                 
             }

@@ -59,7 +59,17 @@ public class BasicInkExample : MonoBehaviour
     }
     public void FinalizeSelect(int i)
     {
-        if (i >= 0) { OnClickChoiceButton(story.currentChoices[i]); }
+        if (i >= 0)
+        {
+            if (story.currentChoices.Count <= 0)
+            {
+                Debug.Log("REEE");
+                RemoveChildren();
+                ChangeSelectorView(false);
+                canvas.gameObject.SetActive(false);
+            }
+            else { OnClickChoiceButton(story.currentChoices[i]); }
+        }
     }
 
     // Creates a new Story object with the compiled story which we can then play!
@@ -106,14 +116,15 @@ public class BasicInkExample : MonoBehaviour
         // If we've read all the content and there's no choices, the story is finished!
         else
         {
-            Button choice = CreateChoiceView("You ignore the machine");
-            choice.onClick.AddListener(delegate
+            Button button = CreateChoiceView("You ignore the machine");
+            button.onClick.AddListener(delegate
             {
+                Debug.Log("REEE");
                 RemoveChildren();
                 ChangeSelectorView(false);
                 canvas.gameObject.SetActive(false);
             });
-            buttonList.Add(choice);
+            buttonList.Add(button);
             MenuControl.MC.resumeActors();
         }
     }
