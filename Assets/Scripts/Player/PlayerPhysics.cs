@@ -29,7 +29,12 @@ namespace BrokenVessel.Player
 		[SerializeField]
 		private float wallJumpAngle = 45;
 		[SerializeField]
-		private bool wallJumpSide = false;
+		private WallJumpSide wallJumpSide = WallJumpSide.AwayWall;
+
+		public enum WallJumpSide
+		{
+			ToWall, AwayWall, Both
+		}
 
 		[Header("Technical")]
 		[SerializeField]
@@ -95,10 +100,18 @@ namespace BrokenVessel.Player
 			}
 			else if (CheckWall())
 			{
-				if (wallJumpSide) { lastDir = -lastDir; }
+				if (wallJumpSide == WallJumpSide.ToWall) { lastDir = -lastDir; }
 
 				// Prevent wall jumping into the wall
-				if (lastDir == 0 || lastDir > 0 && !CheckLeftWall() || lastDir < 0 && !CheckRightWall())
+				if (lastDir == 0)
+				{
+					return;
+				}
+				else if (wallJumpSide == WallJumpSide.Both)
+				{
+					lastDir = CheckLeftWall() ? 1 : -1;
+				}
+				else if (lastDir > 0 && !CheckLeftWall() || lastDir < 0 && !CheckRightWall())
 				{
 					return;
 				}
@@ -109,8 +122,6 @@ namespace BrokenVessel.Player
 
 				// Apply force
 				rg.AddForce(Quaternion.Euler(0, 0, (90f - wallJumpAngle) * (lastDir > 0 ? -1 : 1)) * Vector2.up * wallJumpStrength, ForceMode2D.Impulse);
-
-				if (wallJumpSide) { lastDir = -lastDir; }
 			}
 		}
 

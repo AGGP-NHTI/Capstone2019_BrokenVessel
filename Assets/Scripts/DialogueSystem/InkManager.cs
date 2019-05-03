@@ -31,6 +31,9 @@ public class InkManager : MonoBehaviour {
         StartStory();
     }
 
+
+
+
     // Creates a new Story object with the compiled story which we can then play!
     void StartStory()
     {
