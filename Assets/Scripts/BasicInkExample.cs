@@ -111,6 +111,7 @@ public class BasicInkExample : MonoBehaviour
             {
                 RemoveChildren();
                 ChangeSelectorView(false);
+                canvas.gameObject.SetActive(false);
             });
             buttonList.Add(choice);
             MenuControl.MC.resumeActors();
@@ -158,5 +159,6 @@ public class BasicInkExample : MonoBehaviour
         {
             GameObject.Destroy(canvas.transform.GetChild(i).gameObject);
         }
+        
     }
 }
