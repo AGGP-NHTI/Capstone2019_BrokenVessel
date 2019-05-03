@@ -17,7 +17,7 @@ public class TalkyBoi : MonoBehaviour {
 
     public BasicInkExample BIE;
 
-    int choice = 0;
+    public int choice = 0;
     float canMove = 0;
 
 	void Update () {
@@ -34,9 +34,10 @@ public class TalkyBoi : MonoBehaviour {
             if (Input.GetKeyDown(KeyCode.JoystickButton3))
             {
                 canvas.SetActive(true);
-                MenuControl.MC.stopActors();
+                BIE.ChangeSelectorView(true);
                 BIE.RemoveChildren();
                 BIE.StartStory();
+                MenuControl.MC.stopActors();
             }
             if (Input.GetKeyDown(KeyCode.J))
             {
@@ -45,17 +46,30 @@ public class TalkyBoi : MonoBehaviour {
                 BIE.StartStory();
                 MenuControl.MC.stopActors();
             }
-            if(Input.GetAxis("Vertical") > .85f && (canMove <= 0 || canMove > .5f))
+            if (canvas.activeSelf)
             {
-                if(--choice < 0) { choice = 0; }
-                canMove += Time.deltaTime;
+                if (Input.GetAxis("Vertical") > .85f && (canMove <= 0 || canMove > .5f))
+                {
+                    Debug.Log("UP");
+                    if (--choice < 0) { choice = 0; }
+                    canMove += Time.deltaTime;
+                }
+                else if (Input.GetAxis("Vertical") < -.85f && (canMove <= 0 || canMove > .5f))
+                {
+                    if (++choice <= BIE.GetChoice()) { choice = BIE.GetChoice() - 1; }
+                    canMove += Time.deltaTime;
+                }
+                else { canMove = 0; }
+                BIE.SetSelector(choice);
+
+                if (Input.GetKeyDown(KeyCode.JoystickButton0))
+                {
+                    BIE.FinalizeSelect(choice);
+                    choice = 0;
+                    BIE.ChangeSelectorView(false);
+                }
+                
             }
-            else if (Input.GetAxis("Vertical") < -.85f && (canMove <= 0 || canMove > .5f))
-            {
-                if (++choice <= BIE.GetChoice()) { choice = BIE.GetChoice() - 1; }
-                canMove += Time.deltaTime;
-            }
-            else{ canMove = 0; }
         }
         else
         {

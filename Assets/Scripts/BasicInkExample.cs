@@ -16,6 +16,11 @@ public class BasicInkExample : MonoBehaviour
 
     [SerializeField]
     private Canvas canvas;
+    [SerializeField]
+    private Transform selector;
+    [SerializeField]
+    private RawImage haze;
+
 
     // UI Prefabs
     [SerializeField]
@@ -23,21 +28,15 @@ public class BasicInkExample : MonoBehaviour
     [SerializeField]
     private Button buttonPrefab;
 
+    List<Button> buttonList = new List<Button>();
+
     void Awake()
     {
         // Remove the default message
         //RemoveChildren();
         //StartStory();
-
     }
 
-    void Update()
-    {
-        if (Input.GetAxis("Horizontal") != 0)
-        {
-
-        }
-    }
 
     public int GetChoice()
     {
@@ -46,7 +45,21 @@ public class BasicInkExample : MonoBehaviour
 
     public void SetSelector(int i)
     {
+        if (i >= 0) {
+            Vector3 newPos = buttonList[i].transform.position;
+            newPos.x -= buttonList[i].GetComponent<RectTransform>().rect.xMax + 15;
+            selector.position = newPos;
+            //haze.GetComponent<RectTransform>().rect.xMax = buttonList[i].GetComponent<RectTransform>().rect.xMax + 25;
+        }
+    }
 
+    public void ChangeSelectorView(bool value)
+    {
+        selector.gameObject.SetActive(value);
+    }
+    public void FinalizeSelect(int i)
+    {
+        if (i >= 0) { OnClickChoiceButton(story.currentChoices[i]); }
     }
 
     // Creates a new Story object with the compiled story which we can then play!
@@ -74,7 +87,7 @@ public class BasicInkExample : MonoBehaviour
             // Display the text on screen!
             CreateContentView(text);
         }
-
+        buttonList.Clear();
         // Display all the choices, if there are any!
         if (story.currentChoices.Count > 0)
         {
@@ -87,16 +100,18 @@ public class BasicInkExample : MonoBehaviour
                 {
                     OnClickChoiceButton(choice);
                 });
+                buttonList.Add(button);
             }
         }
         // If we've read all the content and there's no choices, the story is finished!
         else
         {
-            Button choice = CreateChoiceView("Drop The Ball");
+            Button choice = CreateChoiceView("You ignore the machine");
             choice.onClick.AddListener(delegate
             {
                 RemoveChildren();
             });
+            buttonList.Add(choice);
             MenuControl.MC.resumeActors();
         }
     }
