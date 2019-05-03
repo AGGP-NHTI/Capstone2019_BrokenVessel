@@ -18,7 +18,6 @@ public class EnemyContact : BrokenVessel.Actor.Actor
         if (paused) { return; }
         if (collision.gameObject.GetComponent<PlayerData>())
         {
-            Debug.Log("internal REEEEEEE");
             Vector2 knock = (collision.gameObject.transform.position - gameObject.transform.position).normalized * knockBack;
             collision.gameObject.GetComponent<PlayerData>().takeDamage(damage, iFrames, knock);
 

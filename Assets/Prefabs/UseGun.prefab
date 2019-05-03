@@ -83,7 +83,7 @@ MonoBehaviour:
   barrelEnd: {fileID: 5901828884966389477}
   PlayerBullet: {fileID: 4057992948540162690, guid: 3dfde0d724fe87f4ea7a67261047236c,
     type: 3}
-  projectileSpeed: 5
+  projectileSpeed: 15
 --- !u!1001 &5901828885090870400
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -112,6 +112,14 @@ PrefabInstance:
       value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 100006, guid: 1271f476739d86b4dbb0047943b5c79b, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 100010, guid: 1271f476739d86b4dbb0047943b5c79b, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 100012, guid: 1271f476739d86b4dbb0047943b5c79b, type: 3}
       propertyPath: m_Layer
       value: 12
       objectReference: {fileID: 0}
@@ -170,14 +178,6 @@ PrefabInstance:
     - target: {fileID: 400008, guid: 1271f476739d86b4dbb0047943b5c79b, type: 3}
       propertyPath: m_LocalScale.z
       value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 100010, guid: 1271f476739d86b4dbb0047943b5c79b, type: 3}
-      propertyPath: m_Layer
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 100012, guid: 1271f476739d86b4dbb0047943b5c79b, type: 3}
-      propertyPath: m_Layer
-      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1271f476739d86b4dbb0047943b5c79b, type: 3}

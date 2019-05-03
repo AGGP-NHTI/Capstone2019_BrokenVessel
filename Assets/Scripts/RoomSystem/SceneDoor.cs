@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace BrokenVessel.Interact
 {
@@ -12,7 +13,11 @@ namespace BrokenVessel.Interact
 
         public override void Impulse()
         {
-            MenuControl.MC.Win(cheese);
+            if (winDoor) { MenuControl.MC.Win(cheese); }
+            else
+            {
+                SceneManager.LoadScene(Scene);
+            }
         }
     }
 }
