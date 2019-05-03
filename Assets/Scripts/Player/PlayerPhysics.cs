@@ -28,6 +28,8 @@ namespace BrokenVessel.Player
 		private float wallStickTime = 0.1f;
 		[SerializeField]
 		private float wallJumpAngle = 45;
+		[SerializeField]
+		private bool wallJumpSide = false;
 
 		[Header("Technical")]
 		[SerializeField]
@@ -93,6 +95,8 @@ namespace BrokenVessel.Player
 			}
 			else if (CheckWall())
 			{
+				if (wallJumpSide) { lastDir = -lastDir; }
+
 				// Prevent wall jumping into the wall
 				if (lastDir == 0 || lastDir > 0 && !CheckLeftWall() || lastDir < 0 && !CheckRightWall())
 				{
@@ -105,6 +109,8 @@ namespace BrokenVessel.Player
 
 				// Apply force
 				rg.AddForce(Quaternion.Euler(0, 0, (90f - wallJumpAngle) * (lastDir > 0 ? -1 : 1)) * Vector2.up * wallJumpStrength, ForceMode2D.Impulse);
+
+				if (wallJumpSide) { lastDir = -lastDir; }
 			}
 		}
 
