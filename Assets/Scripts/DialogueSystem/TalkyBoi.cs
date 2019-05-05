@@ -15,13 +15,13 @@ public class TalkyBoi : MonoBehaviour {
     public GameObject canvas;
     public Transform spawnPosition;
 
-    // Use this for initialization
-    void Start () {
-        
-	}
-	
-	// Update is called once per frame
+    public BasicInkExample BIE;
+
+    public int choice = 0;
+    float canMove = 0;
+
 	void Update () {
+
         Distance_ = Vector3.Distance(Player.transform.position, Speaker.transform.position);
         if(Distance_ < 3)
         {
@@ -34,16 +34,42 @@ public class TalkyBoi : MonoBehaviour {
             if (Input.GetKeyDown(KeyCode.JoystickButton3))
             {
                 canvas.SetActive(true);
+                BIE.ChangeSelectorView(true);
+                BIE.RemoveChildren();
+                BIE.StartStory();
                 MenuControl.MC.stopActors();
-                WorldScriptManager.GetComponent<BasicInkExample>().RemoveChildren();
-                WorldScriptManager.GetComponent<BasicInkExample>().StartStory();
             }
             if (Input.GetKeyDown(KeyCode.J))
             {
                 canvas.SetActive(true);
-                WorldScriptManager.GetComponent<BasicInkExample>().RemoveChildren();
-                WorldScriptManager.GetComponent<BasicInkExample>().StartStory();
+                BIE.ChangeSelectorView(true);
+                BIE.RemoveChildren();
+                BIE.StartStory();
                 MenuControl.MC.stopActors();
+            }
+            if (canvas.activeSelf)
+            {
+                if (Input.GetAxis("Vertical") > .85f && (canMove <= 0 || canMove > .5f))
+                {
+                    Debug.Log("UP");
+                    if (--choice < 0) { choice = 0; }
+                    canMove += Time.deltaTime;
+                }
+                else if (Input.GetAxis("Vertical") < -.85f && (canMove <= 0 || canMove > .5f))
+                {
+                    if (++choice <= BIE.GetChoice()) { choice = BIE.GetChoice() - 1; }
+                    canMove += Time.deltaTime;
+                }
+                else { canMove = 0; }
+                BIE.SetSelector(choice);
+
+                if (Input.GetKeyDown(KeyCode.JoystickButton0))
+                {
+                    BIE.FinalizeSelect(choice);
+                    choice = 0;
+                    //BIE.ChangeSelectorView(false);
+                }
+                
             }
         }
         else
