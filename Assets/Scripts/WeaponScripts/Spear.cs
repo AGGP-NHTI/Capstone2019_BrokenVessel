@@ -19,6 +19,11 @@ public class Spear : Weapon
         Rotation();
     }
 
+    private void Start()
+    {
+        gameObject.layer = 12;
+    }
+
     public override void Attack()
     {
         if (!attacking)
