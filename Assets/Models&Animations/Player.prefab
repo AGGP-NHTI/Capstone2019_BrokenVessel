@@ -27,7 +27,7 @@ Transform:
   m_LocalPosition: {x: 0, y: -0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 4512587730658575267}
+  - {fileID: 3160520691964908030}
   m_Father: {fileID: 4512587730729283207}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
@@ -223,11 +223,12 @@ MonoBehaviour:
   airFriction: 0
   wallStickTime: 0.4
   wallJumpAngle: 60
+  wallJumpSide: 1
   collisionMask:
     serializedVersion: 2
     m_Bits: 1
-  anim: {fileID: 4512587730649492521}
-  mesh: {fileID: 4512587730658575267}
+  anim: {fileID: 0}
+  mesh: {fileID: 0}
 --- !u!114 &4512587730729283214
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -276,7 +277,7 @@ MonoBehaviour:
   metalScrap: 0
   iFrameTimer: 0
   ignoreDamage: 0
---- !u!1001 &4512587730658974025
+--- !u!1001 &3160520691964513044
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -301,15 +302,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400106, guid: ea9838125410ac8498b647379159e9a6, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400106, guid: ea9838125410ac8498b647379159e9a6, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400106, guid: ea9838125410ac8498b647379159e9a6, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400106, guid: ea9838125410ac8498b647379159e9a6, type: 3}
       propertyPath: m_LocalRotation.w
@@ -343,22 +344,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 20
       objectReference: {fileID: 0}
-    - target: {fileID: 9500000, guid: ea9838125410ac8498b647379159e9a6, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 0fa71290760bee74eb6d56765cb7ac10, type: 2}
-    m_RemovedComponents:
-    - {fileID: 2000000, guid: ea9838125410ac8498b647379159e9a6, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea9838125410ac8498b647379159e9a6, type: 3}
---- !u!4 &4512587730658575267 stripped
+--- !u!4 &3160520691964908030 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400106, guid: ea9838125410ac8498b647379159e9a6,
     type: 3}
-  m_PrefabInstance: {fileID: 4512587730658974025}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &4512587730649492521 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 9500000, guid: ea9838125410ac8498b647379159e9a6,
-    type: 3}
-  m_PrefabInstance: {fileID: 4512587730658974025}
+  m_PrefabInstance: {fileID: 3160520691964513044}
   m_PrefabAsset: {fileID: 0}
