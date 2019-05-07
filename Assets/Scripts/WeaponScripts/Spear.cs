@@ -15,7 +15,7 @@ public class Spear : Weapon
     {
         mouse = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10)) - transform.position;
         //transform.rotation = Quaternion.Euler(0, 0, Mathf.Atan2(mouse.y, mouse.x) * Mathf.Rad2Deg);
-        transform.localScale = transform.parent.localScale * 7f;
+        transform.localScale = transform.parent.localScale * 9f;
         Rotation();
     }
 
