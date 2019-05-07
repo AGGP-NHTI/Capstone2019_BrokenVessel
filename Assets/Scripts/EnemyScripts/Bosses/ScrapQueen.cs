@@ -9,9 +9,9 @@ public class ScrapQueen : BrokenVessel.Actor.Actor
     [SerializeField] float speed = 2;
     [SerializeField] GameObject crawlSpawn;
     [SerializeField] GameObject flySpawn;
-    [SerializeField] Vector3 pivot;
+    public Vector3 pivot;
     public float angle = -Mathf.PI / 2;
-    [SerializeField] float radius = 10;
+    public float radius = 10;
 
     public GameObject stationaryCollider;
     public GameObject deathPlatform;
@@ -23,7 +23,9 @@ public class ScrapQueen : BrokenVessel.Actor.Actor
     public bool intro;
     float timer = 1f;
     [SerializeField] GameObject platform;
-    [SerializeField] Transform spawnMinionsPoint;
+
+    public bool ableToAttack = false;
+    public bool lap = false;
 
     List<GameObject> FlyingSpawns = new List<GameObject>();
     List<GameObject> CrawlingSpawns = new List<GameObject>();
@@ -47,7 +49,7 @@ public class ScrapQueen : BrokenVessel.Actor.Actor
         {
             Won();
         }
-        if (start)
+        else if (start)
         {
             if (intro)
             {
@@ -56,9 +58,11 @@ public class ScrapQueen : BrokenVessel.Actor.Actor
             }
             else
             {
-                if (!attacking && (transform.position - spawnMinionsPoint.position).magnitude < 1f)
+                if (!attacking && ableToAttack && lap)
                 {
                     StartCoroutine(SpawnMinions());
+                    ableToAttack = false;
+                    lap = false;
                 }
                 if (attacking == false)
                 {
@@ -117,21 +121,20 @@ public class ScrapQueen : BrokenVessel.Actor.Actor
         }
         if (FlyingSpawns.Count < flyingSpawnCap)
         {
-            FlyingSpawns.Add(Instantiate(flySpawn, spawnMinionsPoint.position, Quaternion.identity));
+            FlyingSpawns.Add(Instantiate(flySpawn, transform.position, Quaternion.identity));
         }
         if (CrawlingSpawns.Count < crawlerSpawnCap)
         {
             yield return new WaitForSeconds(.5f);
-            CrawlingSpawns.Add(Instantiate(crawlSpawn, spawnMinionsPoint.position, Quaternion.identity));
+            CrawlingSpawns.Add(Instantiate(crawlSpawn, transform.position, Quaternion.identity));
         }
         if (FlyingSpawns.Count < flyingSpawnCap)
         {
             yield return new WaitForSeconds(.5f);
-            FlyingSpawns.Add(Instantiate(flySpawn, spawnMinionsPoint.position, Quaternion.identity));
+            FlyingSpawns.Add(Instantiate(flySpawn, transform.position, Quaternion.identity));
         }
         yield return new WaitForSeconds(4f);
         float randoAngle = Random.Range(0, Mathf.PI * 2);
-        spawnMinionsPoint.position = new Vector3(pivot.x + (radius * Mathf.Cos(randoAngle)), pivot.y + (radius * Mathf.Sin(randoAngle)), 4);
         attacking = false;
         stationaryCollider.SetActive(false);
     }

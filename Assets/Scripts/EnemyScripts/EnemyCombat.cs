@@ -135,12 +135,13 @@ public class EnemyCombat : BrokenVessel.Actor.Actor {
         AlwaysMove = false;
         GetComponent<Rigidbody2D>().gravityScale = 1;
         GetComponent<Rigidbody2D>().isKinematic = false;
-        GetComponent<Rigidbody2D>().freezeRotation = false;
+        GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
         GetComponent<EnemyDrops>().DropItem();
         //particles
         //animation
 
         yield return new WaitForSeconds(2);
-        Destroy(gameObject);
+        if (!GetComponent<ScrapQueen>()){ Destroy(gameObject); }
+        else { Destroy(gameObject, 20); }
     }
 }
