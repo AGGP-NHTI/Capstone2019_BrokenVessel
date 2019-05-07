@@ -72,6 +72,64 @@ ModelImporter:
     100132: Player_Rig:SpineCurve
     100134: Player_Rig:SpineHandler
     100136: //RootNode
+    100138: Head_J
+    100140: Hip_J
+    100142: Left_Clavicus_J
+    100144: Left_Elbow_J
+    100146: Left_HandHandler
+    100148: Left_Knee_J
+    100150: Left_LegBottom_J
+    100152: Left_LegHandler
+    100154: Left_LegTop_J
+    100156: Left_MiddleFinger_J
+    100158: Left_MiddleKnuckle_J
+    100160: Left_MiddleTip_J
+    100162: Left_Palm_J
+    100164: Left_Pinkie_J
+    100166: Left_PinkieKnuckle_J
+    100168: Left_PinkieTip_J
+    100170: Left_PointerFinger_J
+    100172: Left_PointerKnuckle_J
+    100174: Left_PointerTip_J
+    100176: Left_RingFinger_J
+    100178: Left_RingKnuckle_J
+    100180: Left_RingTip_J
+    100182: Left_Shoulder_J
+    100184: Left_Thumb_J
+    100186: Left_ThumbTip_J
+    100188: Left_Toe_J
+    100190: Left_Wrist_J
+    100192: Neck_J
+    100194: PlayerModel
+    100196: Right_Clavicus_J
+    100198: Right_Elbow_J
+    100200: Right_HandHandler
+    100202: Right_Knee_J
+    100204: Right_LegBottom_J
+    100206: Right_LegHandler
+    100208: Right_LegTop_J
+    100210: Right_MiddleFinger_J
+    100212: Right_MiddleKnuckle_J
+    100214: Right_MiddleTip_J
+    100216: Right_Palm_J
+    100218: Right_Pinkie_J
+    100220: Right_PinkieKnuckle_J
+    100222: Right_PinkieTip_J
+    100224: Right_PointerFinger_J
+    100226: Right_PointerKnuckle_J
+    100228: Right_PointerTip_J
+    100230: Right_RingFinger_J
+    100232: Right_RingKnuckle_J
+    100234: Right_RingTip_J
+    100236: Right_Shoulder_J
+    100238: Right_Thumb_J
+    100240: Right_ThumbTip_J
+    100242: Right_Toe_J
+    100244: Right_Wrist_J
+    100246: Spine01_J
+    100248: Spine02_J
+    100250: Spine03_J
+    100252: SpineHandler
     400000: Player_Rig:bottom
     400002: Player_Rig:ChestCtl
     400004: Player_Rig:Head_J
@@ -141,11 +199,72 @@ ModelImporter:
     400132: Player_Rig:SpineCurve
     400134: Player_Rig:SpineHandler
     400136: //RootNode
+    400138: Head_J
+    400140: Hip_J
+    400142: Left_Clavicus_J
+    400144: Left_Elbow_J
+    400146: Left_HandHandler
+    400148: Left_Knee_J
+    400150: Left_LegBottom_J
+    400152: Left_LegHandler
+    400154: Left_LegTop_J
+    400156: Left_MiddleFinger_J
+    400158: Left_MiddleKnuckle_J
+    400160: Left_MiddleTip_J
+    400162: Left_Palm_J
+    400164: Left_Pinkie_J
+    400166: Left_PinkieKnuckle_J
+    400168: Left_PinkieTip_J
+    400170: Left_PointerFinger_J
+    400172: Left_PointerKnuckle_J
+    400174: Left_PointerTip_J
+    400176: Left_RingFinger_J
+    400178: Left_RingKnuckle_J
+    400180: Left_RingTip_J
+    400182: Left_Shoulder_J
+    400184: Left_Thumb_J
+    400186: Left_ThumbTip_J
+    400188: Left_Toe_J
+    400190: Left_Wrist_J
+    400192: Neck_J
+    400194: PlayerModel
+    400196: Right_Clavicus_J
+    400198: Right_Elbow_J
+    400200: Right_HandHandler
+    400202: Right_Knee_J
+    400204: Right_LegBottom_J
+    400206: Right_LegHandler
+    400208: Right_LegTop_J
+    400210: Right_MiddleFinger_J
+    400212: Right_MiddleKnuckle_J
+    400214: Right_MiddleTip_J
+    400216: Right_Palm_J
+    400218: Right_Pinkie_J
+    400220: Right_PinkieKnuckle_J
+    400222: Right_PinkieTip_J
+    400224: Right_PointerFinger_J
+    400226: Right_PointerKnuckle_J
+    400228: Right_PointerTip_J
+    400230: Right_RingFinger_J
+    400232: Right_RingKnuckle_J
+    400234: Right_RingTip_J
+    400236: Right_Shoulder_J
+    400238: Right_Thumb_J
+    400240: Right_ThumbTip_J
+    400242: Right_Toe_J
+    400244: Right_Wrist_J
+    400246: Spine01_J
+    400248: Spine02_J
+    400250: Spine03_J
+    400252: SpineHandler
     2000000: Player_Rig:bottom
     2100000: lambert1
+    2100002: lambert2
     4300000: Player_Rig:PlayerModel
+    4300002: PlayerModel
     9500000: //RootNode
     13700000: Player_Rig:PlayerModel
+    13700002: PlayerModel
     2186277476908879412: ImportLogs
   externalObjects: {}
   materials:

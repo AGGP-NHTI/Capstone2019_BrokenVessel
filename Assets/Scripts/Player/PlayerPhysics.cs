@@ -175,7 +175,7 @@ namespace BrokenVessel.Player
 			// Animation
 			anim.SetBool("PlayerWalking", dir != 0 && grounded);
 			if (dir == -1) { mesh.localScale = new Vector3(20, 20, 20); }
-			if (dir == 1) { mesh.localScale = new Vector3(20, 20, -20); }
+			if (dir == 1) { mesh.localScale = new Vector3(-20, 20, 20); }
 		}
 
 		public void Dash(float dir)
