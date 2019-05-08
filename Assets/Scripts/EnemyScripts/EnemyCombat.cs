@@ -137,6 +137,7 @@ public class EnemyCombat : BrokenVessel.Actor.Actor {
         GetComponent<Rigidbody2D>().isKinematic = false;
         GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
         GetComponent<EnemyDrops>().DropItem();
+        GetComponent<Collider2D>().isTrigger = false;
         //particles
         //animation
 
